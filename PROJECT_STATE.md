@@ -2,7 +2,7 @@
 
 Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
-Windows and Android 2.8.3 are built and validated; delivery/publication follows below.
+Public Windows and Android v2.8.3 are published; local delivery and downloads hash-verified.
 
 ## First two hours — 2.8.3 validated
 
@@ -17,7 +17,12 @@ Literal six-hour campaigns: Energy 416.936 h,
 Matter 407.152 h, Time 395.249 h.
 Gameplay saves unchanged; 18/19 protected files match;
 1 non-save Editor Analytics cache updates. English only.
-PENDING: hash-verified desktop delivery and GitHub 2.8.3 publication.
+PUBLISHED: https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.3.
+Five assets anonymously downloaded and matched; README and four guide/order images
+verified. Main and codex/onboarding-2-8-3 contain source/gallery.
+DELIVERED: Desktop / Calestial Maker; older versioned files retained.
+APK certificate matches 2.8.2. Release tag source: 8236fe81f58ebff305fbc18607d600093923e272.
+Gameplay build source: df657f7482db3624a5f5fa6baa3a453e6346cbbc. Publication record: Docs/Release/publication.json.
 UNVERIFIED: physical S26 Ultra interaction and display FPS. No desktop control.
 Evidence: Docs/Release/VALIDATION.md, FIRST-STEPS-2.8.3.md, Logs/Release283.
 

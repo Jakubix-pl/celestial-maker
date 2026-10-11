@@ -39,3 +39,5 @@ Earlier completed late-performance run (no further measurements after the user r
 Gameplay saves/exports/backups remain byte-identical. 18/19 protected files unchanged; 1 non-save Editor Analytics cache updates. Clean-source publication audit excludes credentials, personal saves, SDK/JDK, Library and binary output.
 
 **UNVERIFIED:** physical S26 Ultra install/touch/lifecycle/FPS, physical Windows FPS/DPI, human usability and clean-machine installer behavior. No OS input, desktop capture, visible editor or visible game was used. No further performance measurements were started after the user requested skipping them.
+
+**PUBLISHED / DELIVERED:** [Public 2.8.3 release](https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.3); five assets anonymously downloaded and matched, README and four tutorial/list images verified. Installer/ZIP/APK and checksums copied to Desktop / Calestial Maker with hash verification; previous versions retained. [Publication record](publication.json).
