@@ -5,16 +5,23 @@ Copy-Item -LiteralPath (Join-Path $script:Root 'Design/CelestialMaker.ico') -Des
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ObservatoryPerformance/Create Desktop Shortcut.ps1') -Destination $release
 $build=Get-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/build-release.json') -Raw | ConvertFrom-Json
 $player=Get-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/player-headless.json') -Raw | ConvertFrom-Json
-if(!$player.pass -or $player.version -ne '2.8.2'){throw 'A passing headless release check is required'}
+if(!$player.pass -or $player.version -ne '2.8.3'){throw 'A passing headless release check is required'}
 if($build.result -ne 'Succeeded' -or $build.errors -ne 0 -or !(Test-Path -LiteralPath (Join-Path $release 'CelestialMaker.exe'))){throw 'Successful Observatory build required'}
 @'
-Celestial Maker 2.8.2 - Observatory
+Celestial Maker 2.8.3 - Observatory
 
 Extract this entire folder and run CelestialMaker.exe.
 Create Desktop Shortcut.ps1 creates a shortcut with the original Celestial icon.
 The executable also contains the icon. Keep the ICO beside the executable.
 The game interface and number formatting use English.
 Your existing Celestial Maker saves are loaded from the same local profile.
+
+New in 2.8.3: an optional First steps guide follows real purchases, explains
+the production chain, and leads to a reviewed Prestige and a paid autobuyer.
+During a genuinely fresh first run, consumers leave 20% of incoming supply
+for purchases. The buffer ends at first Prestige. Purchased and truly maxed
+items move to the end of their lists; production milestones are not caps.
+Reopen the guide with Show tutorial. No resources or points are granted.
 
 New in 2.8.2: distinct, smoothly increasing research prices and chapter-local
 process upgrades. Building prices separate the entry process from advanced units.
@@ -114,4 +121,4 @@ $before=Get-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/saves
 $saves=@($before | ForEach-Object {[pscustomobject]@{path=$_.path;unchanged=((Get-FileHash -LiteralPath $_.path).Hash -eq $_.sha256)}})
 if(@($saves | Where-Object {!$_.unchanged}).Count){throw 'User saves changed during this task; inspect before delivery'}
 $saves | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/save-integrity.json')
-[pscustomobject]@{version='2.8.2';path=$zipPath;bytes=(Get-Item -LiteralPath $zipPath).Length;sha256=(Get-FileHash -LiteralPath $zipPath).Hash;verifiedEntries=$verified;userSavesUnchanged=$saves.Count;build=$build.result;errors=$build.errors;desktopControlled=$false;screenCaptured=$false;playerLaunched=$true;visiblePlayerLaunched=$false;graphicsEnabled=$false;headlessPlayerPassed=$player.pass;visual='OBSERVED: offscreen Unity URP UI fixtures; desktop interaction and FPS unverified';utc=[DateTime]::UtcNow.ToString('o')} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/artifact.json')
+[pscustomobject]@{version='2.8.3';path=$zipPath;bytes=(Get-Item -LiteralPath $zipPath).Length;sha256=(Get-FileHash -LiteralPath $zipPath).Hash;verifiedEntries=$verified;userSavesUnchanged=$saves.Count;build=$build.result;errors=$build.errors;desktopControlled=$false;screenCaptured=$false;playerLaunched=$true;visiblePlayerLaunched=$false;graphicsEnabled=$false;headlessPlayerPassed=$player.pass;visual='OBSERVED: offscreen Unity URP UI fixtures; desktop interaction and FPS unverified';utc=[DateTime]::UtcNow.ToString('o')} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/artifact.json')

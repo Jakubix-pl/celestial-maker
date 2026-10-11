@@ -44,6 +44,7 @@ namespace CelestialMaker.EditorTools {
    File.WriteAllText(Path.Combine(renderDir,"render-manifest.json"),JsonUtility.ToJson(new RenderEvidence{files=rendered.ToArray(),utc=DateTime.UtcNow.ToString("o"),device=SystemInfo.graphicsDeviceName,pipeline=renderedPipeline},true));
   }
   static void RenderPublication(){
+   RenderOnboarding(1920,1080,"publication-");
    RenderPurchases(1920,1080,"publication-");
    Fixture(false,1,false,1920,1080);Set("page","Production");Call("ShowPc");Shot("prestige-fresh-production");
    session.Sim.S.resources[0]=session.Sim.Cost(1)-session.Sim.Rate(0)*30;Call("ShowPc");Shot("prestige-30second-discovery");
@@ -57,6 +58,15 @@ namespace CelestialMaker.EditorTools {
    Set("page","Automation");Call("ShowPc");Call("GoalSequencePc");Shot("publication-goals");Call("ClosePcModal");
    Call("ChroniclePc");Shot("publication-chronicle");Call("ClosePcModal");
    Fixture(true,1,true,1920,1080);Set("page","Overview");Call("ShowPc");Shot("publication-dawn");
+  }
+  static void RenderOnboarding(int width,int height,string prefix){
+   Fixture(false,1,false,width,height);session.CurrentSettings.tutorial=true;Set("page","Overview");Call("ShowPc");Shot(prefix+"first-steps");
+   Set("page","Production");Call("ShowPc");Shot(prefix+"first-production");Call("FirstStepsHelpPc");Shot(prefix+"first-steps-help");Call("ClosePcModal");
+   var checkpoint=Path.Combine(ProjectBootstrap.Root,"Logs/Onboarding/283-validated-guided-15m-save.json");
+   if(!File.Exists(checkpoint))throw new Exception("Two-hour real simulation checkpoint missing");
+   var state=JsonUtility.FromJson<State>(File.ReadAllText(checkpoint));state.settings.tutorial=true;state.settings.textScale=1;state.settings.lightUI=false;
+   session.Sim=new Simulation(GameSession.Content,state);Call("BuildPc");Set("page","Overview");Call("ShowPc");Shot(prefix+"two-hour-overview");
+   Set("page","Research");Call("ShowPc");Shot(prefix+"pending-research");Shot(prefix+"purchased-research",0);
   }
   static void RenderPurchases(int width,int height,string prefix){
    Fixture(false,1,false,width,height);session.Sim.S.resources[0]=new BreakInfinity.BigDouble(90);Set("page","Production");Call("ShowPc");Shot(prefix+"purchase-production");

@@ -13,6 +13,19 @@ namespace CelestialMaker {
   bool pcCompactNav,pcSearchFavorites;string pcExpandedResearch="",pcPaletteQuery="",pcGoalNotice="";
   TMP_InputField pcListSearch,pcPaletteInput;RectTransform pcPaletteResults;
   float pcSearchDue=-1,pcPaletteDue=-1;
+  int pcCompletedStamp=-1,pcStarterStep=-1;
+  bool RefreshCompletedListsPc(){if(!pcModal&&(CompletedStampPc()!=pcCompletedStamp||StarterGuideVisiblePc&&Sim.FirstSteps().step!=pcStarterStep)){ShowPc();return true;}return false;}
+  int CompletedStampPc(){var e=EconomyPc;switch(page){case "Research":case "Upgrades":return e.S.purchases.Count;case "Production":int mask=0;for(int i=0;i<24;i++)if(e.ProcessMaxed(i))mask|=1<<i;return mask;case "Automation":int buyers=0;for(int i=0;i<6;i++)if(S.autobuyers[i])buyers|=1<<i;return buyers;case "Prestige":return S.prestigePurchases.Count;case "Trees":case "Constellations":return S.talents.Count+32*Sim.Meta.ascensionUpgrades.Count+1024*Sim.Meta.genesisUpgrades.Count;case "Megastructures":int projects=0;for(int i=0;i<3;i++)if(Sim.Meta.megas[i].level>=6)projects|=1<<i;return projects;case "Challenges":return S.completedChallenges.Count;default:return 0;}}
+  bool StarterGuideVisiblePc=>S!=null&&S.settings.tutorial&&!menu&&(page=="Overview"||page=="Production"&&pcWorld==0)&&Sim.Discover.scenario==0&&S.activeChallenge=="";
+  void StarterGuidePc(){
+   pcStarterStep=-1;if(!StarterGuideVisiblePc)return;var tip=Sim.FirstSteps();pcStarterStep=tip.step;
+   var card=PCard(list,"First steps guide");VerticalPaddingPc(card,12,5);Caption(tip.step>=7?"FIRST STEPS / COMPLETE":"FIRST STEPS / "+(Math.Min(6,tip.step)+1)+" OF 7",card);Label(tip.title,card,22);
+   var info=Label("",card,18,0,CosmicStyle.Muted);BindVisible(info,()=>info.text=tip.step==4?"Lifetime Energy "+new Number(Sim.PrestigeProduction)+" / "+new Number(BigDouble.Pow10(ProgressionBalance.FirstPrestigeEnergyLog))+". Keep investing; spending does not remove lifetime progress.":tip.detail);
+   var actions=HRow(card,"First steps actions",0,8);var buy=Primary(tip.action,actions,()=>{if(tip.process>=0){Sim.Buy(tip.process,tip.step==4?Math.Max(1,Sim.MaxBuy(tip.process)):1);ShowPc();}else if(tip.upgrade!=null){Sim.Purchase(tip.upgrade);ShowPc();}else NavigatePc(tip.route);});buy.name="First steps action";
+   if(tip.process>=0)ProcessBarPc(buy,()=>Sim,tip.process);else if(tip.upgrade!=null){var u=tip.upgrade;var price=BigDouble.Parse(u.cost);PurchaseBarPc(buy,()=>Simulation.PurchaseFunding(S.resources[u.costResource].Value,price),()=>Sim.CanResearch(u),()=>S.purchases.Contains(u.id));}
+   PcButton("Explain first steps",actions,FirstStepsHelpPc);PcButton("Hide first steps",actions,()=>{S.settings.tutorial=false;ShowPc();});
+  }
+  void FirstStepsHelpPc(){var dialog=ModalPc("Your first cosmos",900,760);Label("Build three Vacuum Dynamos, then a Particle Loom and a Zero-point Array. Research Quantum memory 1. Keep investing in Energy until your first Prestige is ready. Review the reset, then spend an earned Prestige Point on the Particles autobuyer.\n\nThe guide reads your actual save: purchases made elsewhere count, and it can be reopened. It never grants resources or performs a reset for you.\n\nDuring the first run, consumers leave at least 20% of incoming supply available for purchases. They keep running. This starter buffer ends at your first Prestige; guided routing and reserves then let you manage supply.\n\nTo build Matter later: Particle Loom → Atomic Forge → Matter Condenser. A process needs its upstream resource to run. Research says exactly which prerequisite is missing. Purchased items move to the end; only a true ownership cap counts as maxed.",dialog,18);PcButton("Close",dialog,ClosePcModal);FocusModalPc();}
   // The track lives inside the button and never participates in layout or hit testing.
   // Yellow measures funding; green also requires the real purchase prerequisites.
   void PurchaseBarPc(Button button,Func<double> funding,Func<bool> eligible,Func<bool> completed=null,Func<bool> show=null){
@@ -23,7 +36,7 @@ namespace CelestialMaker {
    var target=button.GetComponentInChildren<TMP_Text>();BindVisible(target,update);BindLive(target,update);
   }
   void ResearchBarPc(Button button,Upgrade u){var price=BigDouble.Parse(u.cost);PurchaseBarPc(button,()=>Simulation.PurchaseFunding(EconomyPc.S.resources[u.costResource].Value,price),()=>EconomyPc.CanResearch(u),()=>EconomyPc.S.purchases.Contains(u.id));}
-  void ProcessBarPc(Button button,Func<Simulation> economy,int id){var g=GameSession.Content.generators[id];PurchaseBarPc(button,()=>{var e=economy();return Simulation.PurchaseFunding(e.ResearchAvailable(g.costResource),e.Cost(id));},()=>{var e=economy();return e.Open(g)&&e.MaxBuy(id)>0;});}
+  void ProcessBarPc(Button button,Func<Simulation> economy,int id){var g=GameSession.Content.generators[id];PurchaseBarPc(button,()=>{var e=economy();return Simulation.PurchaseFunding(e.ResearchAvailable(g.costResource),e.Cost(id));},()=>{var e=economy();return e.Open(g)&&e.MaxBuy(id)>0;},()=>economy().ProcessMaxed(id));}
   void PurchaseGuidePc(){
    Label("Yellow: saving resources · Green: ready to buy. Expand a row for details.",list,16,0,CosmicStyle.Muted);
    if(page!="Research"||PrefsPc.researchFilter==2)return;
@@ -74,7 +87,7 @@ namespace CelestialMaker {
    var favorite=PcButton(favorites?"Favorites: On":"Favorites: Off",toolbar,()=>{if(research)p.researchFavorites=!p.researchFavorites;else p.upgradeFavorites=!p.upgradeFavorites;ShowPc();});EmphasizePc(favorite,favorites);
    if(research)PcButton("Research plan ("+EconomyPc.S.researchPlan.queue.Count+")",toolbar,ResearchPlanPc);
    var modes=HRow(list,"Research filters",0,8);for(int i=0;i<3;i++){int f=i;var button=PcButton(new[]{"All","Available","Purchased"}[i],modes,()=>{if(research)p.researchFilter=f;else p.upgradeFilter=f;ShowPc();});EmphasizePc(button,filter==i);button.name="Research filter "+i;}}
-   var sim=EconomyPc;var visible=defs.Where(u=>sim.StageOpen(u.stage)&&(filter!=1||sim.CanResearch(u))&&(filter!=2||sim.S.purchases.Contains(u.id))&&(!favorites||FavoritePc(u.id))&&MatchesUpgradePc(u,query)).ToArray();
+   var sim=EconomyPc;var visible=defs.Where(u=>sim.StageOpen(u.stage)&&(filter!=1||sim.CanResearch(u))&&(filter!=2||sim.S.purchases.Contains(u.id))&&(!favorites||FavoritePc(u.id))&&MatchesUpgradePc(u,query)).OrderBy(u=>sim.S.purchases.Contains(u.id)).ToArray();
    Caption(visible.Length+" RESULTS / "+WorldNamePc,list);if(filter==1)Label("Available results refresh when you change filters or reopen this view.",list,18,0,CosmicStyle.Muted);
    if(visible.Length==0){Label("No matches. Try a broader search or clear the filters.",list,18);PcButton("Clear research filters",list,()=>{if(research){p.researchFilter=0;p.researchSearch="";p.researchFavorites=false;}else{p.upgradeFilter=0;p.upgradeSearch="";p.upgradeFavorites=false;}ShowPc();});return;}
    foreach(var u in visible){var d=u;bool expanded=pcExpandedResearch==d.id;

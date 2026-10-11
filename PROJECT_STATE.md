@@ -4,6 +4,19 @@ Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
 Public Windows and Android v2.8.2 are published; local delivery and public downloads are hash-verified.
 
+## First two hours — 2.8.3 in validation
+
+IMPLEMENTED: adaptive optional First steps guide, first-run supply buffer,
+purchased/maxed-last ordering including automatic purchases; old saves retained.
+COMPILED: shared Core 332/332, Unity Core 20/20, desktop UI 1500/1500,
+phone UI 464/464 and system audit 63/63. Final campaign/offline regression running.
+OBSERVED: guided literal 60 Hz two-hour simulations; first Prestige at
+35 min with five-minute visits, 60 min with fifteen-minute visits.
+PENDING: private visual inspection, late UI benchmark, clean-source verification,
+Windows/Android builds, delivery and public GitHub 2.8.3 release.
+UNVERIFIED: physical phone and actual display FPS. No desktop control.
+Evidence: Logs/Release283 and Logs/Onboarding/283-validated.json.
+
 ## Purchase clarity and casual progression — 2.8.2 validated
 
 IMPLEMENTED: chapter cost curves, corrected upgrade targets, thin yellow/green bars,
