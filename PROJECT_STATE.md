@@ -2,7 +2,7 @@
 
 Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
-Public Windows v2.8.0 is published and its local delivery is verified.
+Public Windows v2.8.1 is published and its local delivery is verified.
 
 ## Observatory refinement — 2.8.1
 
@@ -18,7 +18,16 @@ Nine event-stepped policies 376.544–417.011 h; all within 360–440 h.
 Private UI/guide renders and 20 distinct animation phases inspected; final
 offscreen benchmark 22 cases/5,280 frames. Physical FPS/human play unverified.
 Report: Docs/Observatory281/REPORT.md; raw public evidence: Docs/Release.
-GitHub publication and local delivery pending final hash verification.
+Published: https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.1.
+Source/tag commit: 6d5220af5e6c94c151b4b8390680c41986c5f356.
+Main and codex/observatory-2-8-1 contain the source, English README and gallery.
+Anonymous readback verified README, 13 images and downloadable checksums.
+All three GitHub asset digests match tested binaries. Local installer and
+versioned ZIP delivered to C:/Users/Jakubix/Desktop/Calestial Maker; hashes match.
+Previous versions retained. Evidence: Logs/Release281/local-delivery.json,
+github-verification.json, public-readback.json, final-preservation.json.
+18/19 baseline files unchanged; Unity Editor analytics cache updated during
+private rendering. All campaign saves/exports/backups are unchanged.
 
 ## Prestige automation and discovery — 2.8.0
 

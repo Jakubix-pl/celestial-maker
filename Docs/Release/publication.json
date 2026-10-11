@@ -1,0 +1,39 @@
+{
+  "version": "2.8.1",
+  "release": "https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.1",
+  "sourceTagCommit": "6d5220af5e6c94c151b4b8390680c41986c5f356",
+  "publicRepository": true,
+  "verifiedAssets": [
+    {
+      "name": "CelestialMaker-2.8.1-SHA256.txt",
+      "bytes": 204,
+      "digest": "sha256:16f51b72b4a9a6ebec7465b3d82bd7f4c89e5f390643227b6937f8c6365024c9"
+    },
+    {
+      "name": "CelestialMaker-Observatory-Windows.zip",
+      "bytes": 49714422,
+      "digest": "sha256:bb5c3b8cedd866d3b51419f3640a81dfb6153e11676271206f0056a0f3c559f0"
+    },
+    {
+      "name": "CelestialMaker-Setup-2.8.1.exe",
+      "bytes": 36137033,
+      "digest": "sha256:2b1ff7dcb0430086614bf03acfd8184702a12b0be4fd3149eb309930ba6e9611"
+    }
+  ],
+  "anonymousReadback": {
+    "publicReadback": true,
+    "commit": "6d5220af5e6c94c151b4b8390680c41986c5f356",
+    "galleryImages": 13,
+    "readme": true,
+    "releaseChecksums": true,
+    "noCredentialsUsed": true
+  },
+  "localDeliveryVerified": true,
+  "localFilenames": [
+    "CelestialMaker-Setup-2.8.1.exe",
+    "CelestialMaker-2.8.1-Windows.zip"
+  ],
+  "earlierLocalVersionsRetained": true,
+  "desktopControlled": false,
+  "visibleGameWindow": false
+}
