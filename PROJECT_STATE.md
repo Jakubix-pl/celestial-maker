@@ -2,7 +2,7 @@
 
 Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
-Public Windows v2.7.0 is published and its local delivery is verified.
+Public Windows v2.8.0 is published and its local delivery is verified.
 
 ## Prestige automation and discovery — 2.8.0
 
@@ -18,7 +18,15 @@ Matter exceeds the old 360–440 h acceptance band. Physical FPS and human play
 remain unverified. Offscreen benchmark spikes are recorded, not hidden.
 Report: Docs/PrestigeAutomation/REPORT.md and Docs/Release/VALIDATION.md.
 Android APK work is deferred following the user's change of scope; no SDK acceptance.
-Publication/delivery of 2.8.0 is prepared; verify final release record before claiming it live.
+Published: https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.0.
+Source/tag commit: 04ec7f7cce8b858effae0690d53a026efa09a32b.
+Anonymous readback verified the README, 12 gallery images and downloadable
+checksums. All three GitHub asset digests match the tested local artifacts.
+Delivered to C:/Users/Jakubix/Desktop/Calestial Maker:
+CelestialMaker-Setup-2.8.0.exe and CelestialMaker-2.8.0-Windows.zip.
+Local checksums use those filenames. Previous 2.7.0 packages were retained.
+Evidence: Logs/PrestigeAutomation/local-delivery.json, github-verification.json
+and public-readback.json. No visible game was launched.
 
 ## Android phone preparation - 2026-10-11
 
@@ -30,7 +38,7 @@ APK NOT BUILT: missing SDK/NDK. Work was deferred by the later request; no SDK t
 No phone runtime, touch, 16 KB native binary or physical FPS pass is claimed.
 Continuation: Docs/Android/STATUS.md. Windows release remains available below.
 
-## Public Windows delivery - 2026-10-11
+## Previous public Windows delivery — 2.7.0, 2026-10-11
 
 Public repository: https://github.com/Jakubix-pl/celestial-maker.
 Published release: https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.7.0.
