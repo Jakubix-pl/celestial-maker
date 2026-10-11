@@ -53,15 +53,19 @@ Local checksums use those filenames. Previous 2.7.0 packages were retained.
 Evidence: Logs/PrestigeAutomation/local-delivery.json, github-verification.json
 and public-readback.json. No visible game was launched.
 
-## Android phone preparation - 2026-10-11
+## Android 2.8.1 — S26 Ultra
 
-Branch: codex/android-s26. Full Observatory adapted for Android, portrait and
-landscape touch controls, safe-area scaling, resource overview and ARM64/API 37
-sideload profile. Phone geometry/callback checks 432/432; desktop regression
-1479/1479. Editor compilation and private render fixtures OBSERVED.
-APK NOT BUILT: missing SDK/NDK. Work was deferred by the later request; no SDK terms accepted.
-No phone runtime, touch, 16 KB native binary or physical FPS pass is claimed.
-Continuation: Docs/Android/STATUS.md. Windows release remains available below.
+IMPLEMENTED: complete current English game, touch/safe-area/rotation UI and
+custom adaptive/legacy launcher icons through Editor APIs.
+COMPILED: Android target / ARM64 IL2CPP; phone UI 448/448.
+BUILT: single APK, target/compile API 37, min 26, version/code 2.8.1/28101,
+zero errors, 40846935 bytes. Unity development signing; no production key.
+OBSERVED: 34 package checks; all 6 native libraries and APK pass 16 KB alignment;
+20 private phone-layout renders, custom icon inspected. 19 protected files unchanged.
+Physical phone runtime/touch/lifecycle/FPS UNVERIFIED. No visible game or desktop control.
+User explicitly accepted Google SDK terms; local SDK/NDK/JDK installed.
+Report: Docs/Android/STATUS.md; raw evidence: Logs/Android281.
+Delivery/publication awaiting final hash verification.
 
 ## Previous public Windows delivery — 2.7.0, 2026-10-11
 

@@ -1,0 +1,222 @@
+{
+  "pass": true,
+  "checks": [
+    "Expected application identifier",
+    "Version 2.8.1 / 28101",
+    "Minimum Android API 26",
+    "Target Android API 37",
+    "ARM64 application",
+    "Development instrumentation disabled",
+    "APK v2 signature verified",
+    "APK 16 KB ZIP alignment verified",
+    "No billing or unrelated sensitive permissions",
+    "All ZIP payload CRCs valid",
+    "No payment SDK or signing secrets packaged",
+    "Native libraries present",
+    "No non-ARM64 native payload",
+    "AArch64 ELF: lib/arm64-v8a/lib_burst_generated.so",
+    "16 KB ELF LOAD alignment: lib/arm64-v8a/lib_burst_generated.so",
+    "AArch64 ELF: lib/arm64-v8a/libc++_shared.so",
+    "16 KB ELF LOAD alignment: lib/arm64-v8a/libc++_shared.so",
+    "AArch64 ELF: lib/arm64-v8a/libgame.so",
+    "16 KB ELF LOAD alignment: lib/arm64-v8a/libgame.so",
+    "AArch64 ELF: lib/arm64-v8a/libil2cpp.so",
+    "16 KB ELF LOAD alignment: lib/arm64-v8a/libil2cpp.so",
+    "AArch64 ELF: lib/arm64-v8a/libmain.so",
+    "16 KB ELF LOAD alignment: lib/arm64-v8a/libmain.so",
+    "AArch64 ELF: lib/arm64-v8a/libunity.so",
+    "16 KB ELF LOAD alignment: lib/arm64-v8a/libunity.so",
+    "Launcher icons packaged",
+    "Launcher raster resources resolve through the resource table",
+    "Valid launcher PNG: app_icon",
+    "Valid launcher PNG: ic_launcher_foreground",
+    "Valid launcher PNG: ic_launcher_foreground",
+    "Valid launcher PNG: ic_launcher_foreground",
+    "Valid launcher PNG: ic_launcher_foreground",
+    "Valid launcher PNG: ic_launcher_foreground",
+    "Valid launcher PNG: ic_launcher_foreground"
+  ],
+  "version": "2.8.1",
+  "versionCode": 28101,
+  "package": "com.celestialmaker.game",
+  "minSdk": 26,
+  "targetSdk": 37,
+  "abi": [
+    "arm64-v8a"
+  ],
+  "bytes": 40846935,
+  "sha256": "2603E4D02E2FED05FBC8C6B16EFF8CF2AEC01C322D162964B4917F8AD3AC516F",
+  "permissions": [
+    "android.permission.INTERNET",
+    "com.celestialmaker.game.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "nativeLibraries": [
+    {
+      "path": "lib/arm64-v8a/lib_burst_generated.so",
+      "bytes": 377696,
+      "sha256": "cced036bb2ec9113d15c43b9cc1f34e6030c25d965c3088debd6af7ee05d9e9d",
+      "storedUncompressed": false,
+      "loadSegments": [
+        {
+          "offset": 0,
+          "virtualAddress": 0,
+          "alignment": 16384
+        },
+        {
+          "offset": 218004,
+          "virtualAddress": 234388,
+          "alignment": 16384
+        },
+        {
+          "offset": 372624,
+          "virtualAddress": 405392,
+          "alignment": 16384
+        },
+        {
+          "offset": 375712,
+          "virtualAddress": 424864,
+          "alignment": 16384
+        }
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libc++_shared.so",
+      "bytes": 1292904,
+      "sha256": "4397241b4bd20a8e579bfb41d21107857e12985f6a01ca0c2a5f83380d1270b4",
+      "storedUncompressed": false,
+      "loadSegments": [
+        {
+          "offset": 0,
+          "virtualAddress": 0,
+          "alignment": 16384
+        },
+        {
+          "offset": 634032,
+          "virtualAddress": 650416,
+          "alignment": 16384
+        },
+        {
+          "offset": 1250032,
+          "virtualAddress": 1282800,
+          "alignment": 16384
+        },
+        {
+          "offset": 1289792,
+          "virtualAddress": 1338944,
+          "alignment": 16384
+        }
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libgame.so",
+      "bytes": 152480,
+      "sha256": "6695ad952e8614de5195b388e07c2ba804dd212fbd5aa185c33892592d19b248",
+      "storedUncompressed": false,
+      "loadSegments": [
+        {
+          "offset": 0,
+          "virtualAddress": 0,
+          "alignment": 16384
+        },
+        {
+          "offset": 145008,
+          "virtualAddress": 161392,
+          "alignment": 16384
+        },
+        {
+          "offset": 149432,
+          "virtualAddress": 182200,
+          "alignment": 16384
+        }
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libil2cpp.so",
+      "bytes": 50508912,
+      "sha256": "bea0d1575ff45513e2b9983a6e80959a18a9d9849c243983c1dd4a8a10102f91",
+      "storedUncompressed": false,
+      "loadSegments": [
+        {
+          "offset": 0,
+          "virtualAddress": 0,
+          "alignment": 16384
+        },
+        {
+          "offset": 18220960,
+          "virtualAddress": 18237344,
+          "alignment": 16384
+        },
+        {
+          "offset": 46815056,
+          "virtualAddress": 46847824,
+          "alignment": 16384
+        },
+        {
+          "offset": 48943864,
+          "virtualAddress": 48993016,
+          "alignment": 16384
+        }
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libmain.so",
+      "bytes": 6696,
+      "sha256": "5210b07b478d42cc104ec5645cb6a15d82aeaa70452bd7f1c105aa4b8fc25a9d",
+      "storedUncompressed": false,
+      "loadSegments": [
+        {
+          "offset": 0,
+          "virtualAddress": 0,
+          "alignment": 16384
+        },
+        {
+          "offset": 2592,
+          "virtualAddress": 18976,
+          "alignment": 16384
+        },
+        {
+          "offset": 3872,
+          "virtualAddress": 36640,
+          "alignment": 16384
+        },
+        {
+          "offset": 4432,
+          "virtualAddress": 53584,
+          "alignment": 16384
+        }
+      ]
+    },
+    {
+      "path": "lib/arm64-v8a/libunity.so",
+      "bytes": 20706384,
+      "sha256": "75a7031524fe578cc7e246318a652298a5a1a9bc77ed8f688cfa52344066a6e2",
+      "storedUncompressed": false,
+      "loadSegments": [
+        {
+          "offset": 0,
+          "virtualAddress": 0,
+          "alignment": 16384
+        },
+        {
+          "offset": 4980208,
+          "virtualAddress": 4996592,
+          "alignment": 16384
+        },
+        {
+          "offset": 20295056,
+          "virtualAddress": 20327824,
+          "alignment": 16384
+        },
+        {
+          "offset": 20577472,
+          "virtualAddress": 20626624,
+          "alignment": 16384
+        }
+      ]
+    }
+  ],
+  "signature": "Unity development signing identity; not production-signed",
+  "physicalDevice": "UNVERIFIED",
+  "desktopControlled": false,
+  "visibleGameWindow": false
+}

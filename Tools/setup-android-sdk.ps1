@@ -32,6 +32,6 @@ $env:JAVA_HOME=$jdk
 $manager=Join-Path $destination 'bin/sdkmanager.bat'
 # Accept only license prompts required by the selected SDK/NDK packages.
 # Use sdkmanager's real mechanism; never fabricate license hashes.
-((1..20 | ForEach-Object {'y'}) -join "`n") | & $manager "--sdk_root=$sdk" 'platform-tools' 'platforms;android-37' 'build-tools;36.0.0' 'ndk;27.2.12479018' 'cmake;3.22.1'
+((1..20 | ForEach-Object {'y'}) -join "`n") | & $manager "--sdk_root=$sdk" 'platform-tools' 'platforms;android-37.0' 'build-tools;36.0.0' 'ndk;27.2.12479018' 'cmake;3.22.1'
 if($LASTEXITCODE -ne 0){throw 'Android SDK package installation failed.'}
 Write-Output "Android tools prepared at $sdk"

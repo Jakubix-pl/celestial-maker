@@ -8,7 +8,7 @@ A patient cosmos. An unfolding experiment. Build production chains, automate you
 
 **Windows x64 · English · Single player · Free to play · No account required**
 
-[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-Setup-2.8.1.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md)
+[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-Setup-2.8.1.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md) · [Android APK](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-Android-arm64.apk)
 
 ![Celestial Maker title screen and orbital artwork](Docs/images/menu.png)
 
@@ -80,6 +80,12 @@ Three measured policies that revisit the game every six hours completed the camp
 3. Choose **New Game**. Existing supported saves are migrated when loaded; a new game is not required for an upgrade.
 
 The installer offers a desktop shortcut with the game's icon. It does not launch the game automatically. Uninstalling preserves player saves. Local profiles and export/import work without an account or backend. The current installer is unsigned; published [SHA-256 checksums](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-SHA256.txt) identify these exact files.
+
+## Android build
+
+An English ARM64 APK is available for Android 17 / One UI 9, intended for S26 Ultra. Portrait and landscape touch layouts share the complete 2.8.1 game. Package checks passed; physical device installation, touch, lifecycle and FPS remain unverified. The APK uses development signing for sideloading, not a store release. [Android evidence and installation](Docs/Android/STATUS.md).
+
+![Portrait autobuyer introduction](Docs/Android/Images/portrait-autobuyer-guide.png)
 
 ## Release verification
 

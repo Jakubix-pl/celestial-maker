@@ -1,50 +1,66 @@
-# Android 17 / One UI 9 preparation
+# Android 2.8.1 — S26 Ultra build
 
-Updated 2026-10-11. Intended device: Samsung Galaxy S26 Ultra.
+Prepared 2026-10-11 for Samsung Galaxy S26 Ultra with Android 17 / One UI 9. English only. The APK is built and package-validated; installation, touch, lifecycle and FPS on that physical device remain unverified.
 
-**IMPLEMENTED:** the complete Observatory is enabled on Android, with compact touch navigation, 52-unit minimum button targets, density scaling based on the short screen dimension, safe-area anchors and rebuilds after rotation/inset changes. The narrow header opens all discovered resource balances on tap. Both portrait and landscape use the same full game screens, including Discovery. Fresh Android campaigns default to Mobile quality and a 60 FPS limit. This is a limit, not a measured phone frame rate.
+[Download APK](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-Android-arm64.apk) · [SHA-256](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-Android-SHA256.txt)
 
-**COMPILED / OBSERVED:** Unity 6000.6.3f1 compiled the changes for the Windows editor. 432/432 phone layout/target checks passed at 480x1040, 1040x480, 360x800 and 800x360 logical sizes, early/late state and 100/125% text. The existing desktop regression also passed 1479/1479. Sixteen actual uGUI/URP offscreen phone fixtures were rendered, with representative screens inspected. These do not emulate Android lifecycle, a soft keyboard, physical touch or the Samsung display.
+## IMPLEMENTED
 
-**NOT BUILT:** no APK has been produced in this pass. The Android Unity module and OpenJDK exist, but SDK/NDK are absent. Earlier records explicitly deferred acceptance of Google's SDK terms. The user redirected the task to Prestige automation and Observatory changes. APK work is deferred. No package was downloaded or license accepted.
+Complete 2.8.1 economy and Observatory, including around-400-hour pacing, paid chapter buyers and safe five-step practice. Portrait/landscape touch navigation, 52-unit targets, short-side density scaling, safe-area anchors and resource drawer. Fresh Android campaigns use Mobile quality and a 60 FPS cap. Suspend/resume uses the existing save/offline simulation; the OS may suspend the application, so production catches up on return.
 
-## Build configuration
+Adaptive icons now explicitly use the game's emblem, a dark background and padded foreground through Unity Editor APIs. Unity retained a default legacy bitmap despite the legacy icon API assignment, so an Editor Gradle callback replaces that generated fallback resource with the emblem at its original dimensions. Both extracted variants were inspected before delivery. No Windows artifacts were replaced.
 
-The new `AndroidAPKSideload` profile uses ARM64 IL2CPP, Android target API 37, minimum API 26, Mobile quality, package `com.celestialmaker.game`, version 2.8.1/code 28101 and a single APK. It disables development-build instrumentation and uses Unity's development signing identity; production signing is not requested. Default backend configuration is empty. No Google Play account or billing setup is required for a local APK.
+## COMPILED / TESTED
 
-`Tools/setup-android-sdk.ps1` prepares project-local tools only after explicit license acceptance. It validates the official command-line archive's size and SHA-384, then uses sdkmanager's actual license prompts for the selected packages. It does not fabricate license hashes. Required tools: SDK platform 37, build-tools 36.0.0, NDK 27.2.12479018/r27c, CMake 3.22.1, platform-tools, CLI 16 and OpenJDK 17. The SDK installer script is prepared and parsed, but has not been executed.
+- Unity 6000.6.3f1 compiled the Android target and ARM64 IL2CPP player.
+- **448/448** phone layout/callback checks: early/late states, portrait/landscape, 360–1040 logical dimensions, 100/125% text, dialogs, navigation, touch targets and the new autobuyer guide.
+- **34/34** APK checks: identifier/version, min/target SDK, ARM64, non-debuggable manifest, v2 signature, CRCs, 16 KB ZIP alignment, all 6 AArch64 ELF libraries and launcher resources.
+- **19/19** protected local baseline files unchanged.
 
-After acceptance:
+The shared Core/runtime sources are unchanged from the tested Windows 2.8.1 release (297 Core and 63 system checks). Those earlier results are not physical Android gameplay evidence.
+
+## BUILT
+
+`CelestialMaker-2.8.1-Android-arm64.apk`, **40.85 MB**, zero Unity build errors. Package `com.celestialmaker.game`, version 2.8.1/code 28101, ARM64 only, minimum API 26, target/compile API 37. One installable APK; no split files or OBB.
+
+Signed with Unity's development signing identity for local sideloading, not a production/store key. Development instrumentation is disabled. Update packages must retain the same identifier and signing certificate. The signing key is not published. [Artifact hashes](artifacts-2.8.1.json), [build evidence](build-2.8.1.json), [APK checks](apk-verification.json).
+
+The native libraries are compressed in the APK and extracted by Android (`extractNativeLibs=true`); every ELF LOAD segment passes 16 KB alignment. `zipalign -c -P 16 -v 4` also succeeds. These are static compatibility checks, not a device boot test.
+
+Permissions: `android.permission.INTERNET` and the package-local AndroidX receiver permission. No billing, camera, microphone, contacts, location or broad-storage permission. Default backend URL is empty. No account or payment is needed.
+
+## OBSERVED / NOT OBSERVED
+
+Twenty real Unity uGUI/URP phone-layout images were rendered privately, including both guide orientations. Representative Overview, Automation, guide start/completion and extracted launcher images were inspected. The renderer is a desktop GPU using phone logical dimensions; it does not emulate a Samsung device. [Capture manifest](screenshots-2.8.1.json).
+
+No desktop control/capture, visible Unity/game window, emulator or physical phone run. Physical install, keyboard, touch, back gesture, cutout/insets, rotation, suspend/resume, offline catch-up, thermal behavior and FPS on S26 Ultra are **UNVERIFIED**. No store review or production signing is claimed.
+
+## Install
+
+Transfer/download the APK to the phone, open it and allow installation from that source if Android requests it. This is a sideload build, not a Google Play release. The phone uses its own save folder; existing PC progress can be transferred through the game's JSON export/import. Device import and update behavior still require a physical test.
+
+## Rebuild
+
+Google SDK terms were explicitly accepted by the user in this task. Dependencies are local and ignored by Git: CLI 16, platform 37.0 revision 2, build tools 36.0.0, platform tools 37.0.1, NDK r27c, CMake 3.22.1 and JDK 17.0.18. The SDK package name was corrected from `platforms;android-37` to `platforms;android-37.0` based on Google's package inventory.
 
 ```powershell
 ./Tools/setup-android-sdk.ps1 -AcceptGoogleSdkLicense
 ./Tools/build-android.ps1 -Sideload
+python Tools/verify-android-apk.py --apk Builds/Android/CelestialMaker-2.8.1-Android-arm64.apk --sdk Tools/AndroidSetup/SDK --jdk Tools/AndroidSetup/OpenJDK --output Logs/AndroidVerification
 ```
 
-Planned output: `Builds/Android/CelestialMaker-2.8.1-Android-arm64.apk`.
-This path is a target, not an existing deliverable.
+The license switch requires the operator's own acceptance. Use the pinned editor; do not close an unrelated editor if the project is locked. Verification never installs or launches an app.
 
-## Remaining acceptance
+## Screens
 
-1. Install the authorized SDK/NDK tools, compile the Android player and resolve Android-specific compiler/Gradle/IL2CPP errors if any.
-2. Verify package name, SDK target, ARM64 ABI, installed permissions and signature from the produced APK.
-3. Inspect native ELF load/RELRO alignment and APK zip alignment for 16 KB page-size compatibility.
-4. Verify no payment SDK or production credentials are packaged.
-5. Hash and copy the verified APK to the requested `Calestial Maker` desktop folder; publish it only with its accurate test status.
-6. Physical installation, touch, keyboard, rotation, suspend/resume, offline catch-up, thermal behavior and FPS on the S26 Ultra remain unverified without the device. An offscreen fixture is not a device test.
-
-## UI previews
-
-Actual Unity UI rendered into a private RenderTexture from a synthetic late-campaign state. No desktop was captured.
-
-![Portrait overview](Images/portrait-overview.png)
-![Portrait production](Images/portrait-production.png)
+![Portrait Observatory](Images/portrait-overview.png)
 ![Landscape automation](Images/landscape-automation.png)
-![Portrait title screen](Images/portrait-menu.png)
+![Safe autobuyer introduction](Images/portrait-autobuyer-guide.png)
 
-## Reference material
+## References
 
-- [Android 17 migration and compatibility testing](https://developer.android.com/about/versions/17/migration): compatibility testing remains necessary even when an application compiles; targeting the new API is a separate step.
-- [Unity 6000.6 supported Android dependencies](https://docs.unity.com/en-us/engine/6000.6/manual/platform-specific/android/getting-started/sdksetup/supported-dependency-versions): the pinned editor uses NDK r27c and OpenJDK 17; its bundled SDK tool versions are documented here.
-- [Android native 16 KB page-size checks](https://developer.android.com/guide/practices/page-sizes): inspect native alignment and validate the final APK with `zipalign -c -P 16 -v 4`.
-- [Google Android SDK terms](https://developer.android.com/studio/terms).
+- [Android 17 compatibility](https://developer.android.com/about/versions/17/migration): compilation and targeting do not replace device testing.
+- [Unity 6000.6 dependencies](https://docs.unity.com/en-us/engine/6000.6/manual/platform-specific/android/getting-started/sdksetup/supported-dependency-versions): NDK r27c and JDK 17.
+- [Android 16 KB checks](https://developer.android.com/guide/practices/page-sizes): native ELF and ZIP alignment.
+- [Unity platform icon API](https://docs.unity.com/en-us/engine/6000.6/script-reference/unityeditor/android/androidplatformiconkind).
+- [Google SDK terms](https://developer.android.com/studio/terms).

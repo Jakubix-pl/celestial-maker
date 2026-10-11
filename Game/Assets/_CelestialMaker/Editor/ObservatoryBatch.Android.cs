@@ -16,7 +16,7 @@ namespace CelestialMaker.EditorTools {
      string context="Phone/"+late+"/"+scale+"/"+sizes[size,0]+"x"+sizes[size,1];
      foreach(string route in routes)Check(context+"/"+route,()=>{Set("page",route);Call("ShowPc");Settle();Geometry(context+"/"+route);});
      Check(context+"/Navigation",()=>{Call("NavigationDrawerPc");Settle();Geometry(context);Require(Button("Settings"),"Settings unreachable");Call("ClosePcModal");});
-     foreach(string dialog in new[]{"GoalSequencePc","PlanLaboratoryPc","LessonsPc","ChroniclePc","PhoneResourcesPc"})Check(context+"/"+dialog,()=>{Call(dialog);Settle();Geometry(dialog);Call("ClosePcModal");});
+     foreach(string dialog in new[]{"GoalSequencePc","PlanLaboratoryPc","LessonsPc","ChroniclePc","PhoneResourcesPc","AutobuyerGuidePc"})Check(context+"/"+dialog,()=>{Call(dialog);Settle();Geometry(dialog);Call("ClosePcModal");});
      Check(context+"/Touch targets",()=>{Set("page","Overview");Call("ShowPc");Settle();foreach(var button in ui.GetComponentsInChildren<Button>())Require(((RectTransform)button.transform).rect.height>=51,"Touch target too short: "+button.name);});
      Check(context+"/Menu",()=>{ui.menu=true;Call("BuildPc");Settle();Geometry(context);ui.menu=false;});
     }
@@ -29,6 +29,7 @@ namespace CelestialMaker.EditorTools {
      Fixture(true,1,false,landscape?1040:480,landscape?480:1040);
      foreach(string page in new[]{"Overview","Production","Research","Automation","Megastructures","Settings"}){Set("page",page);Call("ShowPc");Shot("phone-"+(landscape?"landscape-":"portrait-")+page.ToLowerInvariant());}
      Call("GoalSequencePc");Shot("phone-"+(landscape?"landscape-":"portrait-")+"goals");Call("ClosePcModal");
+     Call("AutobuyerGuidePc");Shot("phone-"+(landscape?"landscape-":"portrait-")+"autobuyer-guide");for(int step=0;step<5;step++)Click("Perform practice step");Shot("phone-"+(landscape?"landscape-":"portrait-")+"autobuyer-complete");Call("ClosePcModal");
      ui.menu=true;Call("BuildPc");Shot("phone-"+(landscape?"landscape-":"portrait-")+"menu");
     }
    }finally{Set("phoneReview",false);}

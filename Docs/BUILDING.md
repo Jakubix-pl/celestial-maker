@@ -56,6 +56,18 @@ The per-user installer is English, offers an optional desktop shortcut, preserve
 
 These require a working graphics device. They run hidden Unity batch sessions and render the actual uGUI/TMP hierarchy through URP into private RenderTextures. No desktop screenshot or visible player is used. The benchmark includes synchronous GPU readback overhead and must not be labeled as desktop/player FPS.
 
+## Android ARM64 sideload
+
+After explicitly accepting Google's SDK terms, install the project-local tools and build the single APK:
+
+```powershell
+./Tools/setup-android-sdk.ps1 -AcceptGoogleSdkLicense
+./Tools/build-android.ps1 -Sideload
+python Tools/verify-android-apk.py --apk Builds/Android/CelestialMaker-2.8.1-Android-arm64.apk --sdk Tools/AndroidSetup/SDK --jdk Tools/AndroidSetup/OpenJDK --output Logs/AndroidVerification
+```
+
+Use JDK 17, NDK r27c, SDK platform `platforms;android-37.0`, build tools 36.0.0 and the pinned editor. The setup script expects the pinned JDK under `Tools/AndroidSetup/OpenJDK` or `CM_ANDROID_JDK`. SDK/NDK paths can be overridden through `CM_ANDROID_SDK` / `CM_ANDROID_NDK`. The APK uses Unity's development signing identity, targets API 37 and contains ARM64 libraries only. The validation checks package/signature/16 KB compatibility without installing or launching it. Device testing remains separate. [Android results](Android/STATUS.md).
+
 ## Optional web source
 
 The Windows game works without this service. With a recent Node version supporting TypeScript stripping:
@@ -65,4 +77,4 @@ node --test Backend/test/*.test.ts
 node Website/build.mjs
 ```
 
-The website build can succeed without a WebGL export; that does not create a playable WebGL game. Account integrations require separately configured services. Android and refreshed WebGL players are not part of the verified 2.8.1 release.
+The website build can succeed without a WebGL export; that does not create a playable WebGL game. Account integrations require separately configured services. WebGL is not refreshed in 2.8.1. The Android addition has separate package evidence and open device tests described above.

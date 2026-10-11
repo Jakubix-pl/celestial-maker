@@ -1,0 +1,63 @@
+{
+  "files": [
+    "phone-portrait-overview.png",
+    "phone-portrait-production.png",
+    "phone-portrait-research.png",
+    "phone-portrait-automation.png",
+    "phone-portrait-megastructures.png",
+    "phone-portrait-settings.png",
+    "phone-portrait-goals.png",
+    "phone-portrait-autobuyer-guide.png",
+    "phone-portrait-autobuyer-complete.png",
+    "phone-portrait-menu.png",
+    "phone-landscape-overview.png",
+    "phone-landscape-production.png",
+    "phone-landscape-research.png",
+    "phone-landscape-automation.png",
+    "phone-landscape-megastructures.png",
+    "phone-landscape-settings.png",
+    "phone-landscape-goals.png",
+    "phone-landscape-autobuyer-guide.png",
+    "phone-landscape-autobuyer-complete.png",
+    "phone-landscape-menu.png"
+  ],
+  "utc": "2026-10-11T18:26:58.5117176Z",
+  "device": "NVIDIA GeForce RTX 4070 Ti",
+  "pipeline": "UniversalRenderPipelineAsset / Desktop / PC",
+  "version": "2.8.1",
+  "desktopControlled": false,
+  "desktopCaptured": false,
+  "visibleGameWindow": false,
+  "method": "Edit-mode uGUI / TMP fixture rendered directly to RenderTexture",
+  "fixture": "Fresh menu and synthetic 2.8.1 Energy campaign, plus isolated autobuyer practice. Unity desktop graphics renderer with phone logical layout; not captured from a physical phone.",
+  "publicImages": [
+    {
+      "path": "Docs/Android/Images/portrait-overview.png",
+      "sha256": "A27E8FE0D0E534D7BF09B3295D2437D7A1359EAABF90AE96F4EC607237225B02"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-production.png",
+      "sha256": "74D60A37041B694A3A8BCEB1F26C2E6D1DC7D8AD8AE4E6CE4711C3596D0A1704"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-research.png",
+      "sha256": "DF1634771A8F7D055C4200296BAC6C819FB0D028031553060ECA679F381ED0A8"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-automation.png",
+      "sha256": "2B9628A95DB1AA7C31C9008875AA6B1CCF1F2B2F2136D0C76CC634F27A16F787"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-menu.png",
+      "sha256": "64802284ACFC2E9D83F0EAAB74344E7AF2B4C6EF00523CEA885493D84DC8F609"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-autobuyer-guide.png",
+      "sha256": "A9F8FA612E4A03ADD9D7635E37465FA61CA224D9EE0629EF04E2366973B8DD87"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-autobuyer-complete.png",
+      "sha256": "858873ED2C73442942F6839750602D221EE3F84AAB5021B56F75AF93FA428EAA"
+    }
+  ]
+}

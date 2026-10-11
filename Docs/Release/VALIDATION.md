@@ -20,6 +20,10 @@ Evidence collected 2026-10-11. Historical 2.8.0 results remain in Git and [its r
 
 **OBSERVED:** three fresh six-hour offline campaigns replayed all ticks and completed in 417.011 / 407.344 / 395.945 hours. Nine event-stepped online policies also meet 360–440 hours. [Raw pacing](pacing.json). Actual private Unity UI renders, lesson steps and 20 distinct animation phases were inspected. [Manifest](screenshots.json). Late-game UI CPU and whole-workload timing measured before/after; synchronous GPU readback and spikes remain in the data. [Report](../Observatory281/REPORT.md).
 
-**UNVERIFIED:** physical FPS, human usability, Windows DPI, clean-machine install, other hardware, Android runtime/APK and refreshed WebGL. Mono allocation counter unsupported; no zero-allocation claim. Hosted CI remains inactive because the credential lacks workflow permission. No signing/store/service deployment claimed.
+**UNVERIFIED:** physical FPS, human usability, Windows DPI, clean-machine install, other hardware, physical Android runtime and refreshed WebGL. Mono allocation counter unsupported; no zero-allocation claim. Hosted CI remains inactive because the credential lacks workflow permission. No signing/store/service deployment claimed.
 
 No desktop control/capture or visible game/editor. All campaign saves/exports/backups unchanged; 18 of 19 baseline files match. Unity's Editor analytics cache updated during rendering. Installer preservation checks passed before that rendering. Private paths, backups and detailed save evidence remain in ignored local Logs.
+
+## Android addition
+
+The separate ARM64 2.8.1 APK is now built and package-validated. It does not change the Windows results above. Physical phone runtime remains unverified. See [Android validation](../Android/STATUS.md).

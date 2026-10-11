@@ -33,6 +33,12 @@ Existing supported saves retain progress. The new first-stage duration applies t
 
 Core 297/297, systems 63/63, Unity Core 20/20, desktop UI 1484/1484, phone geometry 432/432. Windows Release built with zero errors. Packaged and installed EXE each passed 108 checks; installer/upgrade/uninstall checks passed 32/32. Protected saves remained unchanged.
 
-Private UI renders and a late-game offscreen benchmark were inspected. Physical display FPS, human playtesting and a clean machine remain unverified. No desktop control/capture or visible game/editor was used. No APK is included.
+Private UI renders and a late-game offscreen benchmark were inspected. Physical display FPS, human playtesting and a clean machine remain unverified. No desktop control/capture or visible game/editor was used. Android has separate verification below.
 
 See [validation](https://github.com/Jakubix-pl/celestial-maker/blob/main/Docs/Release/VALIDATION.md) and [screenshots](https://github.com/Jakubix-pl/celestial-maker).
+
+## Android addition — S26 Ultra
+
+**CelestialMaker-2.8.1-Android-arm64.apk** is a single English ARM64 sideload package targeting Android API 37, intended for S26 Ultra / Android 17 / One UI 9. **40.85 MB**, zero Unity build errors, phone UI **448/448** and package **34/34** checks. Six native libraries pass 16 KB alignment checks. Includes portrait/landscape UI and custom adaptive/legacy launcher icons.
+
+The APK uses Unity's development signing identity; it is not a production/store release. Physical installation, touch, lifecycle, thermal behavior and FPS on the phone remain **UNVERIFIED**. The Windows artifacts above are retained unchanged. **CelestialMaker-2.8.1-Android-SHA256.txt** identifies the Android download. [Android validation and installation](https://github.com/Jakubix-pl/celestial-maker/blob/main/Docs/Android/STATUS.md).

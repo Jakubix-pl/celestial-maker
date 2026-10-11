@@ -15,10 +15,37 @@ namespace CelestialMaker.EditorTools {
   static string[] Args=>Environment.GetCommandLineArgs();
   public static void Web(){PlayerSettings.WebGL.compressionFormat=WebGLCompressionFormat.Disabled;PlayerSettings.WebGL.dataCaching=false;Build(BuildTarget.WebGL,"Web");}
   public static void Android(){
+PrepareAndroidIcons();
 #if UNITY_ANDROID
 UnityEditor.Android.AndroidExternalToolsSettings.sdkRootPath=Environment.GetEnvironmentVariable("CM_ANDROID_SDK");UnityEditor.Android.AndroidExternalToolsSettings.ndkRootPath=Environment.GetEnvironmentVariable("CM_ANDROID_NDK");UnityEditor.Android.AndroidExternalToolsSettings.jdkRootPath=Environment.GetEnvironmentVariable("CM_ANDROID_JDK");
 #endif
 bool test=Args.Contains("-cmTestAAB"),sideload=Args.Contains("-cmSideload");PlayerSettings.Android.minSdkVersion=AndroidSdkVersions.AndroidApiLevel26;PlayerSettings.Android.targetSdkVersion=(AndroidSdkVersions)37;PlayerSettings.Android.bundleVersionCode=28101;PlayerSettings.bundleVersion=GameUI.ObservatoryVersion;PlayerSettings.defaultInterfaceOrientation=UIOrientation.AutoRotation;PlayerSettings.allowedAutorotateToPortrait=true;PlayerSettings.allowedAutorotateToPortraitUpsideDown=false;PlayerSettings.allowedAutorotateToLandscapeLeft=true;PlayerSettings.allowedAutorotateToLandscapeRight=true;PlayerSettings.Android.renderOutsideSafeArea=true;PlayerSettings.SetScriptingBackend(NamedBuildTarget.Android,ScriptingImplementation.IL2CPP);PlayerSettings.Android.targetArchitectures=AndroidArchitecture.ARM64;EditorUserBuildSettings.buildAppBundle=Args.Contains("-cmRelease")||test;Build(BuildTarget.Android,sideload?"Android/CelestialMaker-2.8.1-Android-arm64.apk":test?"Android/CelestialMaker-test.aab":EditorUserBuildSettings.buildAppBundle?"Android/CelestialMaker.aab":"Android/CelestialMaker.apk");}
+  static void PrepareAndroidIcons(){
+   const string sourcePath="Assets/_CelestialMaker/Resources/UI/PC/CelestialIcon.png",folder="Assets/_CelestialMaker/Art/AndroidIcons";
+   if(!AssetDatabase.IsValidFolder("Assets/_CelestialMaker/Art"))AssetDatabase.CreateFolder("Assets/_CelestialMaker","Art");
+   if(!AssetDatabase.IsValidFolder(folder))AssetDatabase.CreateFolder("Assets/_CelestialMaker/Art","AndroidIcons");
+   var source=new Texture2D(2,2,TextureFormat.RGBA32,false);if(!source.LoadImage(File.ReadAllBytes(sourcePath)))throw new Exception("Celestial icon missing");
+   var foreground=new Texture2D(512,512,TextureFormat.RGBA32,false);var pixels=new Color[512*512];
+   for(int y=0;y<512;y++)for(int x=0;x<512;x++){float u=((x+.5f)/512-.5f)/.66f+.5f,v=((y+.5f)/512-.5f)/.66f+.5f;pixels[y*512+x]=u>=0&&u<=1&&v>=0&&v<=1?source.GetPixelBilinear(u,v):Color.clear;}
+   foreground.SetPixels(pixels);foreground.Apply();var background=new Texture2D(64,64,TextureFormat.RGBA32,false);background.SetPixels(Enumerable.Repeat(new Color(13/255f,20/255f,34/255f),64*64).ToArray());background.Apply();
+   foreach(var pair in new[]{(name:"Foreground",texture:foreground),(name:"Background",texture:background)}){string path=folder+"/"+pair.name+".png";File.WriteAllBytes(path,pair.texture.EncodeToPNG());AssetDatabase.ImportAsset(path);var importer=(TextureImporter)AssetImporter.GetAtPath(path);importer.textureType=TextureImporterType.Default;importer.mipmapEnabled=false;importer.alphaIsTransparency=pair.name=="Foreground";importer.textureCompression=TextureImporterCompression.Uncompressed;importer.SaveAndReimport();}
+   UnityEngine.Object.DestroyImmediate(source);UnityEngine.Object.DestroyImmediate(foreground);UnityEngine.Object.DestroyImmediate(background);
+   var legacy=AssetDatabase.LoadAssetAtPath<Texture2D>(sourcePath);var front=AssetDatabase.LoadAssetAtPath<Texture2D>(folder+"/Foreground.png");var back=AssetDatabase.LoadAssetAtPath<Texture2D>(folder+"/Background.png");
+   PlayerSettings.SetIcons(NamedBuildTarget.Android,Enumerable.Repeat(legacy,PlayerSettings.GetIconSizes(NamedBuildTarget.Android,IconKind.Application).Length).ToArray(),IconKind.Application);
+   var kinds=PlayerSettings.GetSupportedIconKinds(NamedBuildTarget.Android);if(kinds.Length==0)throw new Exception("Android icon API requires active Android target");
+   foreach(var kind in kinds){var icons=PlayerSettings.GetPlatformIcons(NamedBuildTarget.Android,kind);foreach(var icon in icons){if(icon.minLayerCount==1)icon.SetTexture(legacy);else{var labels=(string[])typeof(PlatformIconKind).GetProperty("customLayerLabels",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(kind);if(labels==null||labels.Length<icon.minLayerCount)throw new Exception("Unknown Android icon layer schema");var layers=new Texture2D[icon.minLayerCount];for(int layer=0;layer<layers.Length;layer++){string label=labels[layer].ToLowerInvariant();layers[layer]=label.Contains("foreground")?front:label.Contains("background")?back:throw new Exception("Unknown Android icon layer: "+label);}icon.SetTextures(layers);}}PlayerSettings.SetPlatformIcons(NamedBuildTarget.Android,kind,icons);}
+   AssetDatabase.SaveAssets();Debug.Log("CELESTIAL ANDROID ICONS ASSIGNED / "+kinds.Length+" kinds");
+  }
+#if UNITY_ANDROID
+  public sealed class AndroidLegacyIconPostprocessor:UnityEditor.Android.IPostGenerateGradleAndroidProject {
+   public int callbackOrder=>100;
+   public void OnPostGenerateGradleAndroidProject(string path){
+    var source=new Texture2D(2,2,TextureFormat.RGBA32,false);source.LoadImage(File.ReadAllBytes("Assets/_CelestialMaker/Resources/UI/PC/CelestialIcon.png"));int replaced=0;
+    try{foreach(string directory in new[]{Path.Combine(path,"src/main/res"),Path.Combine(Path.GetDirectoryName(path),"launcher/src/main/res")}){if(!Directory.Exists(directory))continue;foreach(string file in Directory.GetFiles(directory,"app_icon.png",SearchOption.AllDirectories)){var original=new Texture2D(2,2,TextureFormat.RGBA32,false);original.LoadImage(File.ReadAllBytes(file));int width=original.width,height=original.height;UnityEngine.Object.DestroyImmediate(original);var target=new Texture2D(width,height,TextureFormat.RGBA32,false);var pixels=new Color[width*height];for(int y=0;y<height;y++)for(int x=0;x<width;x++)pixels[y*width+x]=source.GetPixelBilinear((x+.5f)/width,(y+.5f)/height);target.SetPixels(pixels);target.Apply();File.WriteAllBytes(file,target.EncodeToPNG());UnityEngine.Object.DestroyImmediate(target);replaced++;}}}finally{UnityEngine.Object.DestroyImmediate(source);}
+    if(replaced==0)throw new Exception("Generated Android legacy icon resource missing");Debug.Log("CELESTIAL ANDROID LEGACY ICON RESOURCES / "+replaced);
+   }
+  }
+#endif
   public static string GameSourceHash(){
    string game=Directory.GetParent(Application.dataPath).FullName;
    var files=Directory.GetFiles(Application.dataPath,"*",SearchOption.AllDirectories).Concat(Directory.GetFiles(Path.Combine(game,"ProjectSettings"),"*",SearchOption.AllDirectories)).Concat(new[]{Path.Combine(game,"Packages/manifest.json"),Path.Combine(game,"Packages/packages-lock.json")}).OrderBy(x=>x,StringComparer.Ordinal);
