@@ -1,0 +1,32 @@
+{
+  "release": "https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.1",
+  "androidSourceCommit": "c8d7b796ad2fdbea56bd8e267f3b881a855323ef",
+  "originalWindowsTagRetained": true,
+  "windowsAssetsUnchanged": true,
+  "androidAssets": [
+    {
+      "name": "CelestialMaker-2.8.1-Android-arm64.apk",
+      "bytes": 40846935,
+      "digest": "sha256:2603e4d02e2fed05fbc8c6b16eff8cf2aec01c322d162964b4917f8ad3ac516f",
+      "url": "https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-Android-arm64.apk"
+    },
+    {
+      "name": "CelestialMaker-2.8.1-Android-SHA256.txt",
+      "bytes": 106,
+      "digest": "sha256:a821c1b17a07d47d00cf5a488fd316060ae5d222c552a12202ae4c419e836e1e",
+      "url": "https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-Android-SHA256.txt"
+    }
+  ],
+  "anonymousDownloadHashesVerified": true,
+  "readmeAndAndroidReportVerified": true,
+  "phoneScreenshotsVerified": 7,
+  "publicRepository": true,
+  "physicalDevice": "UNVERIFIED",
+  "localDeliveryVerified": true,
+  "localFilenames": [
+    "CelestialMaker-2.8.1-Android-arm64.apk",
+    "CelestialMaker-2.8.1-Android-SHA256.txt"
+  ],
+  "desktopControlled": false,
+  "visibleGameWindow": false
+}

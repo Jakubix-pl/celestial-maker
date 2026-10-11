@@ -65,7 +65,13 @@ OBSERVED: 34 package checks; all 6 native libraries and APK pass 16 KB alignment
 Physical phone runtime/touch/lifecycle/FPS UNVERIFIED. No visible game or desktop control.
 User explicitly accepted Google SDK terms; local SDK/NDK/JDK installed.
 Report: Docs/Android/STATUS.md; raw evidence: Logs/Android281.
-Delivery/publication awaiting final hash verification.
+DELIVERED: APK and Android SHA-256 in C:/Users/Jakubix/Desktop/Calestial Maker.
+PUBLISHED: APK/checksums added to public v2.8.1 release; Windows assets/tag unchanged.
+Android source commit: c8d7b796ad2fdbea56bd8e267f3b881a855323ef.
+Anonymous full APK download matches local SHA-256; README/report and seven
+phone gallery images verified. Main and codex/android-2-8-1 updated.
+Public record: Docs/Android/publication-2.8.1.json.
+Local evidence: Logs/Android281/local-delivery.json, github-verification.json.
 
 ## Previous public Windows delivery — 2.7.0, 2026-10-11
 
