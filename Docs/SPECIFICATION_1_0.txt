@@ -1,0 +1,836 @@
+CELESTIAL MAKER — KOMPLETNA GRA IDLE INCREMENTAL 1.0
+NOWY PROJEKT UNITY OD ZERA + WINDOWS + ANDROID + GOTOWA STRONA Z GRĄ
+
+CEL
+Stwórz, zintegruj, przetestuj i przygotuj do wydania kompletną grę
+Celestial Maker 1.0. Nie kończ na planie, prototypie, szkielecie projektu
+ani demonstracji interfejsu. Wszystkie opisane systemy mają działać
+w jednej spójnej grze.
+
+Ten dokument jest jednym zleceniem obejmującym cały projekt:
+środowisko → nowy projekt Unity → pełna gra → witryna i backend →
+testy i poprawki → dostępne buildy oraz dokumentacja wydania.
+Nie zakładaj ręcznego utworzenia projektu ani podłączania scen przeze mnie.
+
+Pracuj samodzielnie w ramach dostępnych narzędzi i uprawnień.
+Brakujące decyzje projektowe podejmuj zgodnie z poniższymi zasadami.
+Nie wymagaj kolejnych promptów zatwierdzających każdy etap.
+Nie publikuj niczego, nie aktywuj płatnych usług, nie wykonuj
+prawdziwych zakupów i nie ujawniaj sekretów bez upoważnienia.
+Nie omijaj ograniczeń sesji: jeżeli uniemożliwią ukończenie,
+pozostaw aktualny stan i uczciwie opisz pozostały zakres.
+
+1. UTWÓRZ NOWY PROJEKT UNITY — OD PUSTEGO FOLDERU DO GOTOWEGO ŚRODOWISKA
+
+Nie zakładaj, że projekt już istnieje. Sam utwórz prawidłowy projekt
+Unity, skonfiguruj go, otwórz, wygeneruj sceny i zasoby oraz sprawdź
+uruchamianie. Następnie bez kolejnego zatwierdzenia realizuj cały
+zakres Celestial Maker 1.0 opisany w dalszej części tego prompta.
+Samo przygotowanie instrukcji, skryptu instalacyjnego lub folderów
+Assets/Packages/ProjectSettings nie oznacza wykonania tego zadania.
+
+1.1. LOKALIZACJA I OCHRONA ISTNIEJĄCYCH PROJEKTÓW
+
+Domyślny katalog główny:
+C:\Projects\CelestialMaker
+
+Właściwy projekt Unity:
+C:\Projects\CelestialMaker\Game
+
+Celestial Maker jest osobną grą. Nie używaj Regional Logistics,
+CubeClickera ani innego istniejącego projektu jako bazy.
+Nie kopiuj z nich Assets, Packages, ustawień, zapisów ani sekretów.
+
+Jeżeli wskazana lokalizacja jest niedostępna, wybierz nowy katalog
+CelestialMaker w dozwolonym, zapisywalnym obszarze roboczym.
+Nie obchodź ograniczeń dostępu. Zapisz faktycznie używaną ścieżkę.
+Jeżeli folder zawiera potwierdzony projekt Celestial Maker, wznów
+pracę bez tworzenia duplikatu. Jeżeli zawiera obce pliki, nie kasuj
+ich i nie nadpisuj: wybierz osobny, jednoznacznie nazwany katalog.
+
+Utwórz strukturę:
+
+CelestialMaker/
+  AGENTS.md
+  PROJECT_STATE.md
+  README.md
+  Game/                         właściwy projekt Unity
+    Assets/_CelestialMaker/
+      Scripts/Core/
+      Scripts/Runtime/
+      Scripts/UI/
+      Scripts/Persistence/
+      Scripts/Platform/
+      Editor/
+      Scenes/
+      Prefabs/
+      Data/
+      Art/
+      Audio/
+      Settings/
+      Tests/EditMode/
+      Tests/PlayMode/
+    Packages/
+    ProjectSettings/
+  Website/                      witryna i integracja builda web
+  Backend/                      konta, płatności i uprawnienia
+  Tools/                        konfiguracja, testy i budowanie
+  Builds/Windows/
+  Builds/Android/
+  Builds/Web/
+  Docs/
+  Logs/
+
+Nie umieszczaj node_modules, backendu, buildów i raportów w Assets.
+Ścieżki w narzędziach wyliczaj względem katalogu repozytorium;
+C:\Projects jest lokalizacją domyślną, nie wymaganiem zaszytym w kodzie.
+
+1.2. WYKRYCIE UNITY I ZALEŻNOŚCI
+
+Sprawdź Unity Hub, rzeczywiście zainstalowane edytory Unity 6,
+stan licencji, moduły platformowe, Git, Node.js i potrzebny .NET SDK.
+Nie zakładaj konkretnego numeru Unity na podstawie poprzednich projektów.
+
+Preferuj zainstalowaną, stabilną wersję Unity 6 obsługującą potrzebne
+platformy. Nie instaluj nowego edytora wyłącznie dlatego, że jest nowszy.
+Po wyborze przypnij wersję i zapisz ją w Docs/ENVIRONMENT.md.
+Przy wznowieniu respektuj Game/ProjectSettings/ProjectVersion.txt.
+
+Sprawdź zależności potrzebne dla:
+- Windows x64; IL2CPP tylko z dostępnym, zgodnym toolchainem;
+- Android Build Support wraz z SDK, NDK i OpenJDK zgodnymi z edytorem;
+- Web Build Support/WebGL Build Support odpowiednim dla tej wersji.
+
+Preferuj narzędzia Androida dostarczane z wybraną instalacją Unity.
+Nie podmieniaj SDK/NDK/JDK na przypadkowe globalne wersje.
+Brakujące bezpłatne zależności instaluj tylko z oficjalnych źródeł,
+jeżeli dostępne uprawnienia i warunki środowiska na to pozwalają.
+Najpierw sprawdź lokalne --help zamiast zgadywać polecenia Unity Hub.
+
+Nie loguj się za użytkownika, nie akceptuj za niego umów ani nie
+obchodź aktywacji. Brak licencji, wymagane logowanie, brak zgody
+instalatora lub brak dostępu zapisz jako konkretną blokadę.
+Nie zatrzymuj niezablokowanych prac nad innymi platformami.
+
+1.3. FAKTYCZNE UTWORZENIE PROJEKTU
+
+Użyj szablonu Universal 3D/URP Blank zgodnego z wybranym edytorem,
+bez dużych przykładowych scen i zbędnych pakietów demonstracyjnych.
+Nie wybieraj HDRP ani projektu pozostającego w Built-in Pipeline.
+
+Wybierz najkrótszą dostępną, udokumentowaną drogę:
+A. Unity Hub z szablonem URP, jeśli masz narzędzia obsługi interfejsu.
+B. Unity.exe -createProject, a następnie instalacja i konfiguracja URP.
+C. -createProject razem z -cloneFromTemplate, ale tylko jeżeli
+   wykryty edytor obsługuje ten argument i istnieje zgodny szablon.
+
+Przykładowy schemat inicjalizacji pustego projektu, nie gotowa
+komenda z wpisaną na sztywno lokalizacją edytora:
+
+"<wykryty Unity.exe>" -batchmode -quit -createProject "<ROOT>\Game" -logFile "<ROOT>\Logs\create-project.log"
+
+Przed wywołaniem utwórz katalog logów. Zaczekaj na zakończenie
+procesu, sprawdź kod wyjścia, log i rzeczywiście utworzone pliki.
+Samo uruchomienie procesu nie jest dowodem powodzenia.
+Po wariancie B osobno skonfiguruj URP; -createProject tworzy pusty
+projekt, a nie kompletny projekt URP.
+
+Nie uruchamiaj równolegle dwóch edytorów na tym samym projekcie.
+Nie zamykaj cudzych sesji Unity i nie usuwaj aktywnych blokad projektu.
+
+1.4. POWTARZALNA KONFIGURACJA PRZEZ UNITY EDITOR
+
+Utwórz Tools/bootstrap.ps1 oraz klasę edytorową
+CelestialMaker.EditorTools.ProjectBootstrap z metodą Run.
+Dodaj odpowiednik w menu: Tools > Celestial Maker > Setup Project.
+
+Najpierw rozwiąż pakiety i błędy kompilacji, potem uruchom konfigurację
+przez udokumentowane -executeMethod albo menu edytora.
+Nie kończ na napisaniu metody: wykonaj ją i sprawdź zapisane zasoby.
+Przy operacjach asynchronicznych obsłuż zakończenie i przeładowanie
+domeny; nie zamykaj edytora przed ukończeniem konfiguracji.
+
+Generator tworzy lub aktualizuje tylko własne zasoby.
+Ponowne uruchomienie nie dubluje obiektów, nie zmienia ich GUID,
+nie zeruje balansu ani nie niszczy późniejszych ręcznych zmian.
+Nie uruchamiaj destrukcyjnej regeneracji przy każdym imporcie.
+
+Sceny, prefaby, materiały, ustawienia i referencje twórz przez
+właściwe Unity Editor API. Nie zgaduj ręcznie YAML ani GUID.
+Włącz Force Text i Visible Meta Files. Zachowuj pliki .meta.
+Nie regeneruj całego projektu jako sposobu naprawiania drobnych błędów.
+
+1.5. PAKIETY, RENDEROWANIE I ORGANIZACJA KODU
+
+Zainstaluj tylko potrzebne, kompatybilne zależności:
+URP, Input System, uGUI z TextMeshPro oraz Unity Test Framework.
+Sprawdź, jak TMP jest dostarczany w wybranej wersji, aby nie dodawać
+drugiej, konfliktującej implementacji. Importuj wymagane zasoby TMP.
+Przypnij wersje w manifest.json; zachowaj wygenerowany packages-lock.json.
+Nie używaj pływających wersji typu latest dla projektu.
+
+Główny interfejs wykonaj w uGUI + TextMeshPro.
+Nie buduj tych samych ekranów równolegle w UI Toolkit.
+Dodaj Input Actions dla myszy, klawiatury i dotyku oraz poprawnie
+podłączony EventSystem. Nie mieszaj przypadkowo obu systemów wejścia.
+
+Utwórz URP Asset i Universal Renderer, przypisz je w Graphics oraz
+we właściwych poziomach Quality. Dodaj profile Desktop i Mobile/Web.
+Użyj materiałów zgodnych z URP i lekkich efektów Particle System.
+Nie uzależniaj podstawowej oprawy od compute shaders lub VFX Graph.
+
+Rozdziel assembly definitions: czysty Core, kod uruchomieniowy,
+narzędzia Editor i testy. Dodawaj kolejne granice tylko z realnej potrzeby.
+Core nie odwołuje się do UnityEngine, UnityEditor ani interfejsu.
+Kod edytora i testów nie trafia do buildów gracza.
+Nie dodawaj ECS, rozbudowanego DI, multiplayera, DOTS ani Addressables
+bez wykazanej potrzeby. Brak tych narzędzi nie jest brakującą funkcją.
+
+1.6. SCENY, PREFABY I DZIAŁAJĄCY START
+
+Utwórz i zapisz:
+- 00_Bootstrap.unity: inicjalizacja usług, danych, ustawień i zapisu;
+- 01_MainMenu.unity: New Game, Continue, Settings, Credits;
+- 02_Game.unity: produkcja, interfejs i scena kosmosu 2.5D.
+
+Bootstrap ma być pierwszą sceną w buildzie. Nie dodawaj scen testowych
+i przykładowej SampleScene do konfiguracji wydania.
+Kontroler startowy ma występować raz; zmiana scen nie może dublować
+symulacji, AudioListener, EventSystem ani autosave.
+
+Zapisz rzeczywiście podłączone prefaby i zasoby:
+GameRoot, ekran główny, HUD, karty generatorów, zakładki,
+modal prestige, tooltips, ustawienia, dialog offline,
+CameraRig, tło kosmosu oraz pierwsze efekty i materiały.
+
+Podłącz referencje, Input Actions, fonty, przyciski i domyślne dane.
+Nie zostawiaj użytkownikowi ręcznego przeciągania komponentów
+w Inspectorze. Każdy przycisk musi mieć działającą akcję.
+Continue jest dostępne tylko dla prawidłowego zapisu.
+New Game nie usuwa automatycznie dotychczasowego postępu.
+
+Dodaj edytorowy start od Bootstrap także przy otwartej scenie Game,
+jeżeli nie komplikuje to projektu. Nie uruchamiaj Play Mode
+samoczynnie po każdym imporcie.
+
+Wykonaj jeden krótki test infrastruktury:
+Bootstrap → Main Menu → New Game → Game → pasywna produkcja.
+To sprawdzenie instalacji i połączenia scen, nie seria pełnych testów.
+Po nim kontynuuj całą implementację; pełne testy rozgrywki i balansu
+wykonaj po zintegrowaniu wymaganej zawartości 1.0.
+
+1.7. USTAWIENIA PRODUKTU I PLATFORM
+
+Product Name: Celestial Maker.
+Root namespace: CelestialMaker.
+Company Name: CelestialMaker — wyłącznie techniczna etykieta projektu,
+nie deklaracja istnienia firmy.
+Wersja docelowa: 1.0.0; robocze buildy oznacz jako development.
+Proponowany identyfikator aplikacji: com.celestialmaker.game.
+Oznacz go do sprawdzenia i zatwierdzenia przed publikacją.
+Nie traktuj tej nazwy jako potwierdzenia własności domeny lub marki.
+
+Windows:
+x64, skalowalne okno, pełny ekran, obsługa ultrawide;
+Mono dopuszczalne w development, IL2CPP tylko po sprawdzeniu zależności.
+
+Android:
+IL2CPP + ARM64; pionowy interfejs jako podstawowy,
+używalny wariant poziomy, safe area i sterowanie dotykiem;
+minimum API zgodne z wybranym Unity, target API sprawdzony względem
+aktualnych wymagań publikacji; bez wymyślania stałego numeru.
+Debug APK do testów; produkcyjne podpisy i hasła wyłącznie
+z bezpiecznej konfiguracji poza repozytorium.
+
+Web:
+sprawdź kompilację AOT i wszystkie używane biblioteki;
+nie opieraj rdzenia na wątkach ani blokującym oczekiwaniu;
+długie obliczenia offline dziel na porcje także bez wielowątkowości.
+Skonfiguruj kompresję, pamięć i wariant jakości na podstawie testów.
+Bez niepotrzebnych wymagań cross-origin isolation.
+
+W całej grze: angielski tekst, brak click-to-produce,
+rozdzielona częstotliwość symulacji, UI i renderowania.
+Limitowanie FPS nie może zmieniać wyniku gospodarki.
+
+1.8. PROFILE BUDOWANIA I LOKALNE NARZĘDZIA
+
+Przygotuj zapisane konfiguracje Windows Development/Release,
+Android APK Development/AAB Release oraz Web Development/Release.
+Korzystaj z Build Profiles lub zgodnego API wykrytej wersji Unity.
+Nie zakładaj identycznego API dla wszystkich wydań Unity 6.
+
+Utwórz działające narzędzia PowerShell i odpowiednie metody Editor:
+bootstrap.ps1, open-unity.ps1, validate.ps1,
+build-windows.ps1, build-android.ps1, build-web.ps1,
+build-all.ps1 oraz start-website.ps1.
+Skrypty są cienkimi nakładkami na wspólną konfigurację,
+nie ośmioma kopiami logiki.
+
+Każdy skrypt ustala root, wykrywa zależności, obsługuje ścieżki
+ze spacjami, zapisuje log i zwraca rzetelny kod zakończenia.
+Nie zmieniaj globalnej polityki bezpieczeństwa PowerShell.
+
+Buduj platformy kolejno, a nie równolegle na tym samym projekcie.
+Nie ukrywaj błędu IL2CPP przez ciche przełączenie backendu.
+Brak modułu oznacz jako BLOCKED, nie SUCCESS.
+Sprawdzaj wynik Unity BuildReport i istnienie artefaktów.
+Windows ZIP ma zawierać komplet plików potrzebnych do uruchomienia,
+a nie wyłącznie plik .exe.
+
+1.9. STRONA I BACKEND JAKO CZĘŚCI TEGO SAMEGO ZADANIA
+
+Od początku przygotuj Website oraz Backend poza projektem Unity.
+W każdym dodaj package.json, zgodne wersje zależności,
+lockfile, .env.example i działające polecenia lokalnego uruchomienia.
+Nie kopiuj żadnych sekretów do kodu przeglądarki lub builda Unity.
+
+build-web.ps1 ma zbudować grę, skopiować komplet aktualnych plików
+we właściwe miejsce Website i zbudować witrynę produkcyjną.
+Nie pozostawiaj ręcznego kroku „teraz podmień pliki WebGL”.
+Nie przenoś starych assetów z poprzedniego wydania jako nowych.
+
+Uruchom witrynę przez lokalny serwer HTTP i sprawdź /play.
+Dwuklik pliku index.html nie zastępuje testu wersji web.
+Po inicjalizacji sprawdź połączenie z grą; pełną witrynę i integracje
+zrealizuj według dalszych rozdziałów tego prompta.
+
+Brak domeny lub sekretów blokuje publikację lub prawdziwe płatności,
+nie lokalną grę, witrynę i wykonanie pozostałego kodu.
+Service worker nie może cache'ować prywatnych odpowiedzi konta
+ani operacji płatniczych. Aktualizacja strony nie usuwa zapisu.
+
+1.10. REPOZYTORIUM, KONTROLA STANU I DALSZA REALIZACJA
+
+Jeżeli Git jest dostępny i katalog nie należy do obcego repozytorium,
+zainicjalizuj lokalne repozytorium w katalogu głównym.
+Nie twórz zdalnego repozytorium i niczego nie wysyłaj.
+Nie zmieniaj globalnej konfiguracji Git.
+
+Dodaj .gitignore dla Unity, Node.js, buildów, logów, plików lokalnych,
+sekretów i keystore. Zachowaj Assets z .meta, Packages,
+ProjectSettings, źródła oraz lockfile. Nie wykonuj destrukcyjnego
+czyszczenia ani resetów usuwających nieznaną pracę użytkownika.
+
+AGENTS.md: krótkie zasady, struktura i najważniejsze komendy.
+PROJECT_STATE.md: etap, decyzje, dowody wykonania, blokady,
+faktyczny projekt, następny konkretny krok.
+Docs/ENVIRONMENT.md: wykryte wersje i wymagane moduły.
+
+Przed opuszczeniem etapu startowego sprawdź:
+projekt otwiera się w wybranym Unity; import i kompilacja przechodzą;
+URP, sceny, fonty i referencje są poprawne; start gry działa;
+dane i środowisko są zapisane; konfiguracja jest powtarzalna.
+Nie deklaruj kontroli wizualnej bez rzeczywistego uruchomienia.
+
+Następnie samodzielnie wykonaj rozdziały 2–13 tego prompta.
+Nie kończ raportem „projekt utworzony — co dalej?”.
+Nie ograniczaj zakresu 1.0 do pierwszej sceny i działającego UI.
+Planuj etapami, ale nie żądaj osobnego prompta do każdego etapu.
+
+Oszczędzaj kontekst: celowane odczyty plików, krótkie raporty,
+jedna aktualna lista zadań, testy dotkniętych modułów w trakcie pracy,
+pełna walidacja po integracji. Bez CI, zbędnych frameworków
+ani agentów powtarzających tę samą analizę.
+Jeżeli sesja się zakończy lub wystąpi blokada, pozostaw uczciwy stan
+oraz instrukcję wznowienia, zamiast deklarować ukończenie całej gry.
+
+2. ZAŁOŻENIA GRY
+
+Nazwa: Celestial Maker.
+Język wszystkich tekstów gracza: angielski.
+Platformy: Windows x64, Android, przeglądarka.
+Model: darmowa pełna gra z opcjonalnymi zakupami.
+Oprawa: 2.5D, ciemny kosmiczny interfejs, rozwijająca się scena.
+Rozgrywka: produkcja pasywna; żadnego klikania generującego zasoby.
+
+Przyciski zakupów, konfiguracji i zarządzania pozostają normalną
+częścią interfejsu. Usuń mechanikę „klikaj, aby produkować”.
+
+Inspiracje: głębia progresji, automatyzacja, ogromne liczby,
+odblokowywanie systemów i wizualny rozwój kojarzone z Antimatter
+Dimensions oraz ISEPS. Stwórz własne nazwy, teksty, balans,
+mechaniki szczegółowe, interfejs i materiały. Nie kopiuj ich gry.
+
+Etapy tematyczne:
+Particles → Atoms → Planets → Stars → Galaxies → Universes.
+
+To stylizowana progresja gry, nie deklaracja zgodności z kosmologią.
+
+3. PODSTAWOWA PĘTLA I GOSPODARKA
+
+Gracz zaczyna z automatycznie działającym źródłem energii.
+Pierwsza sensowna decyzja zakupowa ma być dostępna szybko.
+Nie wymagaj ręcznego wygenerowania pierwszego zasobu.
+
+Zbuduj kilka połączonych łańcuchów produkcji, nie jedną walutę
+z wieloma identycznymi generatorami.
+
+Przykładowa struktura:
+- Energia zasila wytwarzanie cząstek.
+- Cząstki przekształcają się w atomy i materię.
+- Materia pozwala tworzyć struktury planetarne i paliwo gwiazdowe.
+- Gwiazdy dostarczają energii wyższego poziomu i gwiezdnego pyłu.
+- Grawitacja i ciemna materia otwierają rozwój galaktyk.
+- Galaktyki i czasoprzestrzeń prowadzą do tworzenia wszechświatów.
+
+Dopracuj tę strukturę tak, aby występowały współzależności,
+alternatywne konfiguracje i czytelne wąskie gardła.
+
+Dla każdego generatora pokaż:
+koszt, produkcję, zużycie, wynik netto, aktywne mnożniki,
+następny próg ulepszenia oraz powód ewentualnego przestoju.
+
+Implementuj zakup 1/10/100/Max i przejście do kolejnego milestone.
+Obliczaj duże zakupy zbiorczo, bez pętli po pojedynczych sztukach.
+
+Rozdziel koszt zakupu od bieżącego zużycia produkcyjnego.
+Brak surowca ma ograniczać produkcję, a nie tworzyć ujemne stany.
+Dodaj możliwość wstrzymania procesu i ustawienia rezerw zasobów.
+Każdy zastój musi mieć zrozumiałą drogę wyjścia bez płacenia.
+
+Własny wyróżnik: Resonance Links.
+Gracz łączy wybrane gałęzie produkcji, uzyskując konkretne synergie
+i kompromisy. Liczba połączeń jest ograniczona i rośnie z progresją.
+Zmiana konfiguracji jest bezpłatna. Efekty są widoczne w podglądzie.
+Nie dopuszczaj do niekontrolowanych, natychmiastowych pętli mnożników.
+
+4. TRZY WARSTWY PRESTIGE
+
+Każda warstwa daje trwałą walutę, ulepszenia i nową mechanikę.
+Nie implementuj trzech resetów różniących się tylko mnożnikiem.
+
+I. Stellar Rebirth
+Waluta: Stellar Essence.
+Pierwszy reset po 60–120 minutach sensownej gry bez płatnych bonusów.
+Odblokowuje rozbudowane zarządzanie energią, pierwsze Resonance Links
+i podstawową automatyzację zakupów.
+
+II. Galactic Collapse
+Waluta: Galactic Cores.
+Odblokowuje specjalizacje konstelacji, rozbudowane konfiguracje
+talentów, ekspedycje i bardziej zaawansowane reguły automatyzacji.
+
+III. Universal Genesis
+Waluta: Genesis Shards.
+Odblokowuje prawa wszechświata zmieniające reguły produkcji,
+nowe zależności czasoprzestrzeni i powtarzalną progresję końcową.
+
+Robocze cele balansu:
+druga warstwa po około 12–24 godzinach,
+trzecia po około 3–7 dniach,
+główna ścieżka zawartości na około 14–30 dni.
+Są to cele do sprawdzenia, nie wyniki, które wolno zadeklarować
+bez pomiaru lub symulacji.
+
+Każdy reset potrzebuje:
+podglądu nagrody, jawnych wymagań, listy resetowanych elementów,
+listy zachowanych elementów i potwierdzenia pierwszego wykonania.
+
+Zdefiniuj jedną tabelę zasad resetowania, wspólną dla logiki i UI.
+Zakupy premium, ustawienia i odpowiednie trwałe osiągnięcia
+nie mogą znikać podczas prestige.
+
+Pierwsze wejście w nową warstwę jest decyzją gracza.
+Automatyczne powtarzanie już poznanych resetów odblokowuje się
+później, jest dobrowolne i działa według ustawionych reguł.
+
+5. ZAWARTOŚĆ WERSJI 1.0
+
+Dostarcz co najmniej:
+- 24 różne generatory lub procesy, rozłożone na sześć etapów;
+- 60 zwykłych ulepszeń;
+- 30 węzłów badań;
+- 24 węzły talentów w trzech specjalizacjach;
+- 12 wyzwań ze zmienionymi zasadami;
+- 48 osiągnięć;
+- 8 typów ekspedycji z rozwijanymi poziomami;
+- 12 krótkich rozdziałów fabuły.
+
+Wszystkie wpisy muszą być osiągalne, mieć realny efekt, tekst,
+warunki odblokowania, zapis oraz obsługę w interfejsie.
+Nie zaliczaj pustych definicji i nieaktywnych przycisków jako zawartości.
+
+Badania:
+gałęzie i zależności, podgląd skutków, wybór priorytetów;
+pierwsze dostępne przed pierwszym prestige.
+
+Talenty:
+specjalizacje produkcji, synergii i ekspedycji;
+bezpłatny, jasno opisany respec i zapis konfiguracji;
+brak możliwości farmienia nagród przez wielokrotne przestawianie.
+
+Wyzwania:
+rzeczywiste modyfikatory zasad, cel, nagroda, restart i wyjście.
+Płatne mnożniki nie wpływają na wynik ani rekord wyzwania.
+Wyzwania nie mogą pozostawiać modyfikatorów po ich zakończeniu.
+
+Osiągnięcia:
+automatyczne przyznawanie, widoczne wymagania, umiarkowane bonusy.
+Nie wymagaj zakupu jako warunku osiągnięcia.
+
+Ekspedycje:
+wybór celu, przydział dostępnych sond lub zasobów, timer,
+jawny zakres nagród, odbiór i późniejszy automatyczny powrót.
+Działają offline. Odbiór nagrody musi być jednokrotny.
+
+Fabuła:
+krótkie wpisy powiązane z odkryciami i resetami, z archiwum.
+Możliwość pominięcia; fabuła nie blokuje podstawowej obsługi gry.
+
+Automatyzacja:
+autobuyery, priorytety, rezerwy, progi opłacalności resetu,
+powtarzanie ekspedycji i zapis profili.
+Każda reguła ma objaśnienie i przełącznik.
+Automatyzację zdobywa się przez grę, nie kupuje jako konieczność.
+
+Po głównej ścieżce pozostaje działająca progresja powtarzalna
+z celami i skalowaniem; nie pusty komunikat „coming soon”.
+
+6. OPRAWA, INTERFEJS I OBSŁUGA
+
+Stwórz rzeczywistą scenę 2.5D:
+cząstki, atomy, planety, gwiazdy, galaktyki i wszechświaty,
+z warstwami głębi, orbitami, delikatnym paralaksem i przejściami.
+
+Użyj lekkich modeli, sprite’ów, materiałów i efektów proceduralnych.
+Wizualizuj reprezentatywną liczbę obiektów, nigdy każdy zasób.
+Nie uzależniaj tempa symulacji od liczby animowanych cząstek.
+
+Styl: ciemny kosmos, czytelne kontrasty, spójne ikony,
+ograniczony bloom i oszczędne animacje.
+Dodaj proste, oryginalne dźwięki UI i ambient z niezależną głośnością.
+Dźwięk w przeglądarce uruchamiaj dopiero po interakcji użytkownika.
+
+Desktop: szeroki układ z wygodnymi panelami.
+Android: przede wszystkim pionowy układ z dużymi celami dotyku;
+poziomy wariant ma pozostać używalny.
+Obsłuż safe area, zmianę rozmiaru, skalowanie tekstu i ultrawide.
+
+Sekcje:
+Overview, Production, Research, Prestige, Constellations,
+Challenges, Expeditions, Achievements, Codex, Shop, Settings.
+
+Odsłaniaj sekcje stopniowo. Pokazuj następny cel i przyczynę blokady.
+Nie prezentuj początkującemu wszystkich systemów jednocześnie.
+
+Dodaj:
+samouczek możliwy do pominięcia i wznowienia,
+tooltips działające myszą i dotykiem,
+ustawienia notacji liczb, ograniczenia FPS, jakości, dźwięku,
+reduced motion, potwierdzenia resetów i eksportu zapisu.
+
+Cały interfejs, opisy efektów i komunikaty błędów mają być po angielsku.
+Nie zostawiaj tekstów technicznych ani nazw pól z kodu w UI.
+
+7. ARCHITEKTURA I DUŻE LICZBY
+
+Jedna implementacja symulacji dla wszystkich platform.
+Rdzeń w czystym C#, oddzielony od UnityEngine, UI i renderowania.
+Rozdziel Core, Content, Presentation, Persistence i PlatformServices
+zgodnie ze strukturą projektu i bez dublowania modułów z rozdziału 1.
+Stosuj małe moduły oraz assembly definitions, nie pojedynczy
+wielotysięczny GameManager.
+
+Balans i definicje zawartości przechowuj w danych:
+ScriptableObjects lub walidowanych plikach danych.
+Nadaj definicjom stabilne identyfikatory.
+Jeżeli używasz ScriptableObjects, Core otrzymuje ich niezależną
+od Unity reprezentację, nie odwołania do silnika.
+
+Użyj przypiętej, licencjonowanej biblioteki dużych liczb,
+preferencyjnie BreakInfinity.cs, za cienką warstwą abstrakcji.
+Zachowaj licencję i informację o wersji.
+
+Nie używaj float/double jako samodzielnego magazynu rosnących walut
+i kosztów. Biblioteka może wewnętrznie korzystać z ograniczonej
+mantysy i wykładnika; jej zakres i precyzja muszą być jawne.
+Zwykłe typy mogą obsługiwać czas, proporcje i ograniczone liczniki.
+Płatności pieniężne nie korzystają z przybliżonej arytmetyki gry.
+
+Sprawdź operacje i zapis co najmniej dla wartości 1e10000.
+Obsłuż formatowanie, porównania, logarytmy, potęgi,
+koszty zbiorcze, zaokrąglenia i granice reprezentacji.
+Nie maskuj błędów NaN/Infinity przez ciche zerowanie postępu.
+
+Symulacja ma być deterministyczna dla tego samego stanu,
+czasu i sekwencji decyzji. Zdefiniuj sposób kontroli zgodności
+między platformami z uwzględnieniem precyzji używanej arytmetyki.
+Renderowanie może działać w 30/60 FPS niezależnie od symulacji.
+Aktualizuj teksty i listy tylko wtedy, gdy jest to potrzebne.
+Unikaj alokacji, formatowania liczb i przebudowy całego UI co klatkę.
+
+8. NIEOGRANICZONY POSTĘP OFFLINE
+
+Nie wprowadzaj limitu godzin, redukcji wydajności offline
+ani płatnego zwiększania takiego limitu.
+Offline obowiązują te same zasady produkcji co online.
+
+Wspólny silnik Advance(elapsedTime) ma obsługiwać:
+produkcję, zużycie, odblokowania, automatyczne zakupy,
+dozwolone automatyczne resety, ekspedycje i wygaśnięcie boostów.
+
+Nie sprowadzaj obliczeń do:
+„produkcja w chwili wyjścia × cały czas nieobecności”.
+Nie wykonuj też pojedynczego ticka za każdą sekundę nieobecności.
+
+Użyj obliczeń analitycznych tam, gdzie są poprawne,
+oraz przeskoków pomiędzy istotnymi zdarzeniami.
+Granice obejmują m.in. wyczerpanie surowca, próg zakupu,
+ukończenie ekspedycji i koniec mnożnika.
+Zachowaj deterministyczną kolejność zdarzeń równoczesnych.
+
+Długie przeliczenie dziel na porcje, utrzymując responsywność.
+Pokaż postęp i zapamiętuj kursor przeliczenia.
+Limit pracy na klatkę nie może odrzucać czasu ani nagród.
+Po przerwaniu wznów przeliczenie bez naliczania go drugi raz.
+
+Używaj czasu monotonicznego w sesji i UTC pomiędzy sesjami.
+Cofnięcie zegara nie może odejmować zasobów ani duplikować nagród.
+Nie deklaruj pełnej odporności lokalnej gry na zmianę czasu.
+
+Podsumowanie powrotu pokazuje czas, zasoby, odblokowania,
+wykonane automatyczne resety i zakończone ekspedycje.
+
+9. ZAPIS I ODTWARZANIE
+
+Zapis wersjonowany, walidowany, z migracjami, kopią zapasową
+i bezpiecznym zapisem atomowym na platformach natywnych.
+Duże liczby serializuj bez utraty zakresu.
+
+Autosave co około 20 sekund oraz po ważnych operacjach.
+Zapis przy pauzie i utracie widoczności; nie polegaj wyłącznie
+na zdarzeniu zamknięcia aplikacji.
+
+Windows/Android: trwała lokalizacja danych aplikacji.
+Web: trwały zapis IndexedDB, z potwierdzaniem zakończenia zapisu
+i stabilną lokalizacją między kolejnymi wydaniami strony.
+Zabezpiecz profil przed równoczesnym zapisem z wielu kart.
+Wyjaśnij graczowi, że usunięcie danych przeglądarki może usunąć
+lokalny zapis, i udostępnij eksport bez konieczności zakupu.
+
+Dodaj eksport/import kompatybilny pomiędzy platformami,
+walidację rozmiaru i schematu oraz odzyskiwanie kopii.
+Nie nadpisuj dobrego zapisu uszkodzonym importem.
+
+Eksport nie przenosi sekretów ani nie jest dowodem zakupu.
+Zaimportowany zapis nie może przyznawać nowych płatnych uprawnień.
+
+10. PEŁNA STRONA INTERNETOWA
+
+Przygotuj katalog Website z gotową responsywną witryną,
+nie tylko domyślnym ekranem ładowania Unity.
+Użyj prostego stosu HTML/CSS/TypeScript z lekkim narzędziem budowania.
+
+Witryna zawiera:
+- stronę główną z własną identyfikacją gry i przyciskiem Play;
+- /play z rzeczywiście działającym buildem gry;
+- opis mechanik, FAQ i instrukcję sterowania;
+- changelog oraz sekcję pobierania Windows/Android;
+- informacje o prywatności, zapisach, zakupach i wsparciu.
+
+Gra ładuje się dopiero po wejściu do /play.
+Dodaj postęp ładowania, obsługę błędu pobrania, ponowienie,
+tryb pełnoekranowy i informację o braku wymaganego wsparcia.
+Nie uruchamiaj drugiej instancji gry przy zmianie widoku strony.
+
+Zapewnij właściwe MIME types, kompresję, nagłówki,
+ścieżki zasobów, HTTPS-ready konfigurację i bezpieczne mostki JS.
+Nie przekazuj dowolnych komend do Unity przez niezaufane wiadomości.
+
+Dodaj favicon, metadane, stronę 404, manifest PWA
+i wersjonowane cache potrzebne do działania offline po pobraniu gry.
+Aktualizacja cache nie może usuwać zapisu ani przerywać sesji.
+Nie obiecuj działania offline usług wymagających połączenia.
+
+Materiały promocyjne i screeny mają pochodzić z rzeczywistej gry.
+Linki pobierania wskazują istniejące paczki albo pokazują uczciwy
+stan niedostępności; żadnych atrap przycisków.
+
+Dodaj lokalny start, produkcyjny build, konfigurację jednego
+konkretnego sposobu hostowania i instrukcję wdrożenia.
+Nie wykonuj publicznego wdrożenia bez upoważnienia.
+
+Nie wymyślaj danych firmy, domeny, adresu wsparcia ani administratora.
+Brakujące dane prawne i konfigurację publikacji wypisz jako blokady.
+Treści prawne oznacz do weryfikacji przed publicznym wydaniem.
+
+11. MONETYZACJA I INTEGRACJE
+
+Pełną progresję można ukończyć bez płacenia.
+Nie dodawaj paywalli, obowiązkowych reklam, energii blokującej grę,
+loot boxów, presji codziennego logowania ani fałszywych promocji.
+
+Zaimplementuj mały, kompletny katalog:
+- boost produkcji 2× przez 4 godziny;
+- kosmetyczny pakiet motywów kosmosu;
+- pakiet wspierający z kosmetykami i oznaczeniem profilu.
+
+Boost wymaga świadomej aktywacji.
+Czas boosta to czas rzeczywisty, również podczas nieobecności.
+Kolejne aktywacje przedłużają czas, nie mnożą siły bez ograniczeń.
+Wyjaśnij działanie przed zakupem.
+Prestige nie usuwa aktywnego uprawnienia.
+
+Android Google Play: aktualna, zgodna z użytym Unity integracja IAP.
+Windows i web: Stripe Checkout przez niewielki backend.
+Nie kieruj androidowych zakupów cyfrowych do zewnętrznej płatności
+zamiast przewidzianej integracji sklepowej.
+Sprawdź aktualną dokumentację i warunki wybranych integracji przed
+wdrożeniem; nie zgaduj wersji SDK ani zasad rozliczania.
+
+Backend umieść w osobnym katalogu.
+Użyj prostego stosu Node.js/TypeScript, trwałej bazy danych
+i oficjalnych SDK. Dodaj migracje, konfigurację oraz testy.
+
+Zapewnij opcjonalną tożsamość konta do odzyskiwania zakupów.
+Podstawowa gra nie wymaga logowania.
+Przed płatnością wymagaj odzyskiwalnego konta.
+Użyj sprawdzonego rozwiązania uwierzytelniania, nie własnej kryptografii.
+Nie utożsamiaj konta zakupowego z ukończoną synchronizacją zapisów:
+przenoszenie postępu musi działać przez wymagany eksport/import.
+
+Zakup przyznaje backend po weryfikacji:
+produktu, statusu płatności, użytkownika i unikalnej transakcji.
+Obsłuż podpisy webhooków, ponowienia, duplikaty, opóźnione płatności,
+anulowanie, zwroty oraz właściwe potwierdzanie zakupów Google Play.
+
+Rejestr transakcji i wydania produktów musi być trwały,
+idempotentny i odporny na równoległe żądania.
+Powrót na success URL ani flaga w lokalnym zapisie nie przyznają produktu.
+
+Aktywacja boosta ma unikalny identyfikator i zapisany na serwerze
+przedział czasu. Przywrócenie starego save’a nie przedłuża go.
+Przy awarii sieci zachowaj grę, a stan zakupu pokaż jako oczekujący.
+Nie obciążaj ponownie gracza przy ponowieniu sprawdzenia.
+
+Przywracaj posiadane kosmetyki i aktywne uprawnienia.
+Nie „odtwarzaj” ponownie już zużytych produktów.
+Backend chroni rozliczanie zakupów; nie udawaj, że zabezpiecza
+całą lokalną symulację przed dowolną modyfikacją.
+
+Bez danych kont i kluczy:
+gra oraz strona nadal działają;
+prawdziwy checkout jest wyłączony z jasnym komunikatem;
+testowe płatności działają wyłącznie w oznaczonym trybie developerskim.
+Żadnego pozornego sukcesu zakupu w produkcji.
+
+Dostarcz .env.example, konfigurację katalogu produktów
+i instrukcję uruchomienia. Brak sekretów nie usprawiedliwia
+pozostawienia niezaimplementowanego adaptera.
+
+12. TESTY, BALANS I KRYTERIA WYDANIA
+
+W trakcie implementacji kontroluj kompilację, integralność danych
+i krytyczną matematykę. Po jednorazowej weryfikacji infrastruktury
+opisanej w rozdziale 1 pełne testy rozgrywki wykonaj dopiero
+po zintegrowaniu całej zawartości, następnie popraw problemy.
+
+Dodaj bezinterfejsowy symulator korzystający z tego samego rdzenia
+i danych co gra. Nie pisz drugiej, uproszczonej gospodarki do testów.
+
+Sprawdź:
+- rozwój od nowego zapisu do każdej warstwy prestige;
+- brak konieczności klikania produkcyjnego i płacenia;
+- pierwszy prestige w 60–120 minut według opisanej strategii;
+- dostępność wszystkich generatorów, badań, talentów i wyzwań;
+- automatyzację oraz poprawność zasad każdego resetu;
+- ogromne liczby, Max Buy i brak ujemnych zasobów;
+- save/load, uszkodzony zapis, migrację i import między platformami;
+- offline: 1 h, 24 h, 7 dni, 30 dni i 365 dni;
+- równoważność online/offline przy tych samych decyzjach;
+- boost kończący się w środku nieobecności;
+- przerwanie i wznowienie naliczania offline;
+- jednokrotny odbiór ekspedycji i transakcji;
+- duplikaty webhooków, restart backendu i utratę połączenia;
+- brak developerskich przycisków przyznających nagrody w release;
+- responsywność desktop, ultrawide i telefon;
+- działanie strony, /play, zapisów i aktualizacji zasobów;
+- ponowne uruchomienie konfiguracji bez utraty scen, GUID i postępu;
+- otwarcie projektu oraz budowanie przez dołączone skrypty.
+
+Dla odcinków możliwych do dokładnego obliczenia wymagaj zgodności.
+Dla metod przybliżonych ustal i zmierz tolerancję, celując
+w odchylenie poniżej 0,5% dla reprezentatywnych scenariuszy.
+Zdefiniuj metrykę błędu również dla bardzo dużych wartości.
+Nie deklaruj zgodności bez porównania wyników.
+
+Cel wydajności: 60 FPS desktop, stabilne 30 FPS Android/web mobile,
+bez długotrwałego blokowania UI podczas obliczeń offline.
+Raportuj faktycznie zmierzone urządzenia i warunki.
+Emulacja małego ekranu nie jest testem fizycznego Androida.
+
+Długą progresję sprawdzaj przyspieszoną symulacją.
+Oddziel wyniki symulatora od ręcznej oceny grywalności.
+Nie twierdź, że balans był sprawdzany przez miesiąc, jeśli nie był.
+
+13. ARTEFAKTY I ZAKOŃCZENIE
+
+Przygotuj:
+- pełny, nowo utworzony i skonfigurowany projekt Unity;
+- Windows x64 build i ZIP;
+- Android APK do testów oraz konfigurację i build AAB, gdy dostępne
+  są wymagane zależności; oznacz rzeczywisty tryb podpisania;
+- podpisany produkcyjny release tylko przy właściwych kluczach;
+- build web zintegrowany z gotową witryną;
+- backend, schemat bazy i konfigurację;
+- skrypty konfiguracji, budowania oraz uruchamiania;
+- README, PROJECT_STATE, opis środowiska i balansu, raport testów,
+  instrukcję wdrożenia i rejestr licencji;
+- screeny rzeczywistej gry na desktopie i w układzie mobilnym.
+
+W README wskaż dokładnie, który folder otworzyć w Unity Hub:
+<ROOT>/Game, a nie sam katalog nadrzędny z Website i Backend.
+Podaj sprawdzone lokalnie polecenia do otwarcia projektu,
+uruchomienia witryny, testów i budowania trzech platform.
+
+Brak modułu, urządzenia, klucza lub konta oznacz dokładnie.
+Wykonaj wszystkie pozostałe niezablokowane zadania.
+Nie nazywaj eksportu projektu gotowym APK ani konfiguracji
+hostingu opublikowaną stroną.
+
+Definicja ukończenia:
+cała wymagana rozgrywka działa, zawartość jest osiągalna,
+zapisy i offline są przetestowane, strona rzeczywiście uruchamia grę,
+a dostępne buildy zostały zbudowane i sprawdzone.
+
+Nie pozostawiaj TODO, pustych ekranów ani atrap w głównej rozgrywce.
+Nie oznaczaj całości jako „1.0 complete”, jeśli wymagane elementy
+pozostały niezaimplementowane lub niezweryfikowane.
+Rozróżniaj COMPLETE, IMPLEMENTED—UNVERIFIED oraz BLOCKED.
+
+Raport końcowy ma zawierać wyłącznie:
+1. Ukończone elementy.
+2. Ścieżki do rzeczywiście utworzonych artefaktów.
+3. Wyniki testów i pomiarów.
+4. Znane problemy.
+5. Zewnętrzne czynności potrzebne do publikacji i płatności.
+
+Rozpocznij od krótkiej inspekcji środowiska, utwórz nowy projekt,
+zapisz plan i przejdź do implementacji całego zakresu.
+Nie kończ na bootstrapie.
+
+DOKUMENTACJA STARTOWA
+
+Poniższe strony doprecyzowują sposób konfiguracji Unity. Korzystaj
+z odpowiedników dla faktycznie wykrytej wersji edytora. Nie traktuj
+samego adresu dokumentacji 6000.6 jako polecenia zmiany Unity.
+Czytaj tylko fragmenty potrzebne do danej operacji.
+
+Unity Editor CLI:
+https://docs.unity3d.com/6000.6/Documentation/Manual/EditorCommandLineArguments.html
+
+Nowy projekt URP:
+https://docs.unity3d.com/6000.6/Documentation/Manual/urp/creating-a-new-project-with-urp.html
+
+Instalacja i konfiguracja URP:
+https://docs.unity3d.com/6000.6/Documentation/Manual/urp/InstallURPIntoAProject.html
+
+Android — konfiguracja środowiska:
+https://docs.unity3d.com/6000.6/Documentation/Manual/android-sdksetup.html
+
+Build Profiles:
+https://docs.unity3d.com/6000.6/Documentation/Manual/build-profiles.html
+
+Budowanie Web:
+https://docs.unity3d.com/6000.6/Documentation/Manual/webgl-building.html

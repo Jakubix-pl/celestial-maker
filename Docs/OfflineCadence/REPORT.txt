@@ -1,0 +1,106 @@
+Celestial Maker 2.6.0 - Offline cadence
+Final verified Windows release.
+
+IMPLEMENTED
+- Live and offline production use the same 1/60-second integration. Every quantum
+  advances stock, gross lifetime production, construction and parallel economies.
+  Rates are cached only while there is no decision/depletion/unlock boundary;
+  elapsed production is never replaced by rate multiplied by the whole absence.
+- Purchases, research, previously enabled resets, expeditions and transfers run
+  at their simulated decision times. First-time resets remain manual.
+- Catch-up yields after a soft 6 ms work budget (checked every 32 ticks) and shows
+  progress. Remaining time and report travel together in the save. Newly elapsed
+  real time and live-clock backlog are added exactly once. No absence cap.
+- A pre-offline restore point protects the original state. Resets inside a batch
+  do not write inconsistent intermediate cursors. Autosaves occur between batches.
+- Optional Automation > Development Plan selects Energy, Matter or Time after
+  first Prestige. The plan controls routing, purchases, focus, laws and unlocked
+  universes and repeats previously discovered resets. Existing saves start OFF.
+  Stop plan and automatic resets returns these decisions to the player.
+- Guided routing buys basic research after Prestige when no explicit queue is
+  pending. Manual reserves and construction funding remain protected. Advanced
+  research queues retain their Temporal workshop gate.
+- Construction base work is 6.6h (previously 6h), growth remains 2.06. This offsets
+  the recovery automation so full strategies still finish near 400h. Existing
+  construction work is retained in saves.
+- Resource-spend reports exclude the numerical underflow clamped at depletion.
+  Expedition comparisons use a consistent event-time tolerance.
+
+MEASURED CAMPAIGNS - actual offline tick replay
+Visits at 0, 6, 12, ... hours, including the opening. No accelerated first session.
+Each absence is fully replayed and serialized/reloaded. The script buys affordable
+research and relevant development at visits, chooses the named plan after first
+Prestige, and confirms the first reset of each layer. No manual reserves, no paid
+boosts. Completion means all Ascension/Genesis nodes, three level-six megastructures
+and three universes. Completion can happen before the next visit reveals it.
+Energy: completion 421.675790h; observed on visit at 426h; first Prestige/Ascension/Genesis 6/12/60h; 72 reloads; 427.9s host wall time.
+Matter: completion 377.909123h; observed on visit at 378h; first Prestige/Ascension/Genesis 6/12/36h; 64 reloads; 402.0s host wall time.
+Time: completion 411.452733h; observed on visit at 414h; first Prestige/Ascension/Genesis 6/12/66h; 70 reloads; 452.8s host wall time.
+
+All three meet the predefined 360-440h range. These are scripted strategies,
+not a guarantee for every player's choices or protected stock. Repeated endgame
+continues. Long late-game discovery gaps remain (up to 84h in these strategies).
+The nine event-accelerated active/hourly/check-in runs also meet the range;
+full tick campaigns, not the accelerator, substantiate the six-hour result.
+
+TICK AUDIT
+Three complete six-hour fixtures: early, repeat-reset and parallel economies.
+Each replays 1,296,000 full ticks. Compared against live FixedStepClock and a
+serialized interrupted replay. Resource/lifetime balances, purchases, resets,
+parallel balances and construction match to 1e-7 relative numeric tolerance.
+Reports balance against the scale of their ledger terms (important after large
+reset losses); exact bit identity is not promised for floating-point arithmetic.
+The reset fixture executed 288 Prestige, 36 Ascension and 1 Genesis resets;
+the parallel fixture claimed 249 expeditions and executed six transfers.
+
+The retired event accelerator is a separate diagnostic, not the authority for
+60 Hz balances. It matches the early/reset fixtures numerically. In the synthetic
+parallel fixture initialized with 1e18 stocks, purchases/resets/projects/transfers
+match, but some final resource quantities differ. That numerical equivalence test
+failed in the first audit and remains explicitly recorded as oracleMatch=false.
+The final parallel cross-check asserts progression only; live/offline/resumed tick
+balances still require full numeric agreement. Forecasts based on event stepping
+remain approximate. Campaign timing above uses full tick replay.
+
+Long absences: fully tested 1h, 6h and 24h. Queues of 7, 30 and 365 days were tested
+for bounded processing and lossless remaining-time reload after 10,000 ticks;
+a full year was NOT replayed. Large absences can take substantial processing time.
+
+Evidence: Logs/OfflineCadence/core-tests.json, tick-audit.json,
+Logs/Pacing400/ticks-{Energy,Matter,Time}.json, cadence-final.json.
+No desktop/input control, screen capture or visible editor/player was used.
+Physical display FPS, Windows DPI and natural human play remain unverified.
+
+COMPILED / TESTED
+Core 185/185, Unity Core 20/20, UI 1425/1425, PlayMode 1/1.
+Tick replay audit 12/12 acceptance checks; the separate event-accelerator numeric
+limitation remains disclosed above and in the raw JSON. Nine pacing scans and
+three complete tick campaigns meet the target. No production saves used as test
+outputs. The initial encoding and report-accounting failures were corrected;
+failed logs are retained alongside final runs.
+
+BUILT
+Windows Release 2.6.0, Unity 6000.6.3f1, zero build errors.
+Actual packaged EXE: 65/65 checks, no reported runtime errors, null graphics.
+The real player tested six-hour catch-up, partial save, return to menu, reload,
+automatic purchases/research, first-reset gating, checkpoint and stopping a plan.
+It processed 21,621.36 seconds (absence plus time elapsed during catch-up),
+1,297,281 full ticks, then had no remaining cursor. This is an early-player
+headless test, not a general graphical performance benchmark.
+
+OBSERVED
+20 private URP render fixtures for Automation, plan review/enabling, catch-up
+status and report in Night/Dawn at 100/200 percent. Representative layouts were
+inspected; the new explanation was shortened and active status clarified.
+Screens are generated RenderTextures, never desktop screenshots.
+All 13 protected file hashes match the pre-task baseline. Save JSON files were
+never modified. Unity Test Framework's default TestResults.xml was restored only
+after matching the generated file against this run's explicit test report and
+verifying the backup's baseline hash.
+
+ZIP: C:\Users\Jakubix\Desktop\Idle\Builds\CelestialMaker-Observatory-Windows.zip
+Bytes: 49685075
+Verified entries: 193
+SHA256: 9DC38D010662D29C94AC1F9A7B2B467F2BFEFAA7BFB68C65FB2E53F7CC34B5F4
+Final evidence: Logs/OfflineCadence/final-verification.json.
+Backup: C:\Users\Jakubix\Desktop\Idle\Backups\OfflineCadence-20261011-140629

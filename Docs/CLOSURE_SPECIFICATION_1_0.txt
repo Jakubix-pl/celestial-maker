@@ -1,0 +1,270 @@
+CELESTIAL MAKER — DOMKNIĘCIE 1.0 I WERYFIKACJA WYDANIA
+KONTYNUACJA ISTNIEJĄCEGO PROJEKTU, NIE TWORZENIE NOWEGO
+
+CEL I STAN POCZĄTKOWY
+
+Pracuj w C:\Users\Jakubix\Desktop\Idle.
+Projekt Unity jest w Game, witryna w Website, backend w Backend.
+Nie twórz drugiego projektu, nie uruchamiaj ponownie destrukcyjnego
+bootstrapu, nie zmieniaj silnika ani nie przebudowuj całej architektury.
+
+Ostatni raport deklaruje: działające buildy Windows i Web, zapisy/offline,
+lokalny backend; testy symulatora 50/50, Unity 9/9, backendu 8/8;
+Windows 59,4 FPS, średni krok symulacji 0,211 ms przy 24 typach procesów.
+Traktuj te informacje jako punkt odniesienia, nie dowód na kompletność
+każdej funkcji. Odczytaj istniejące dowody zamiast przepisywać deklaracje.
+
+Znane braki: brak APK/AAB i testów fizycznego Androida, niezweryfikowane
+płatności, niepełne podsumowanie zmian zasobów podczas nieobecności.
+
+Zadanie: zamknij wszystkie możliwe do naprawienia braki implementacji,
+sprawdź pokrycie uzgodnionej zawartości, przygotuj aktualne artefakty
+oraz oddziel kompletność kodu od gotowości do publicznego wydania.
+Nie kończ na audycie, planie lub samej aktualizacji dokumentacji.
+
+ZASADY OSZCZĘDZANIA PRACY I OCHRONY PROJEKTU
+
+- Zacznij od AGENTS.md, PROJECT_STATE.md, README.md, Docs/QA_REPORT.md,
+  ProjectVersion.txt i istniejącej specyfikacji. Potem czytaj celowo
+  pliki odpowiedzialne za wykryte braki; bez wielokrotnego skanu całości.
+- Respektuj zainstalowaną wersję Unity, lockfile i istniejące narzędzia.
+  Aktualizuj zależności tylko przy wykazanej potrzebie.
+- Nie dodawaj nowych systemów ponad specyfikację 1.0, CI, frameworków
+  ani osobnego silnika symulacji. Naprawiaj najmniejszy właściwy zakres.
+- Zachowaj niezacommitowane zmiany, GUID, stabilne identyfikatory danych,
+  tożsamość aplikacji i lokalizacje zapisów. Nie resetuj postępu gracza.
+  Testy wykonuj na odseparowanych profilach i kopiach zapisów.
+- Nie usuwaj poprzednich działających paczek przed sprawdzeniem nowych.
+  Nie wykonuj push, publikacji, płatnych operacji ani zmian kont.
+- Utrzymuj jeden aktualny PROJECT_STATE.md. Raportuj krótko etapy.
+  Po każdej zmianie uruchamiaj właściwe testy, nie całą grę od zera.
+- Brak kont, urządzenia lub modułu nie zatrzymuje pozostałych zadań.
+  Nie proś o ponowne zatwierdzanie ustalonych decyzji projektowych.
+  Nie obchodź uprawnień, logowania ani wymaganej zgody na instalację.
+
+1. SPRAWDŹ KOMPLETNOŚĆ — I NAPRAW RZECZYWISTE BRAKI
+
+Uzupełnij istniejącą listę funkcji; nowy Docs/FEATURE_AUDIT.md twórz
+wyłącznie, gdy projekt nie ma odpowiedniego dokumentu.
+Dla każdego systemu wskaż: definicje danych, wykonującą je logikę,
+dostęp gracza przez UI, zapis/odtworzenie i dowód sprawdzenia.
+Statusy: VERIFIED, IMPLEMENTED_UNVERIFIED, MISSING, BLOCKED.
+BLOCKED wymaga konkretnej zewnętrznej przeszkody, nie braku kodu.
+
+Porównaj projekt z wcześniejszą specyfikacją. Minimalny zakres:
+- sześć etapów Particles → Atoms → Planets → Stars → Galaxies → Universes;
+- co najmniej 24 procesy/generatory, 60 ulepszeń, 30 węzłów badań,
+  24 talenty, 12 wyzwań, 48 osiągnięć, 8 typów ekspedycji,
+  12 krótkich rozdziałów fabuły;
+- współzależne łańcuchy surowców, widoczne zużycie i produkcja netto,
+  zakupy 1/10/100/Max, rezerwy i wstrzymywanie procesów;
+- Stellar Rebirth, Galactic Collapse i Universal Genesis:
+  trzy warstwy resetu z różnymi nowymi mechanikami;
+- działające Resonance Links, konfiguracje talentów, automatyzacja,
+  wyzwania, ekspedycje i powtarzalna progresja końcowa;
+- brak klikania produkującego zasoby, pełna progresja bez płacenia,
+  brak limitu offline, angielski interfejs i rzeczywista oprawa 2.5D;
+- kompletne menu, tutorial, ustawienia, zapis/import/eksport,
+  witryna uruchamiająca grę i bezpieczny stan sklepu bez konfiguracji.
+
+Licz definicje na podstawie faktycznych danych. Puste wpisy, martwe
+przyciski i bonusy niepodłączone do obliczeń nie spełniają wymagań.
+Wspólny kod obsługujący wiele poprawnych definicji jest dopuszczalny;
+nie produkuj osobnych klas tylko dla zwiększenia liczby plików.
+Sprawdź osiągalność odblokowań, unikalność ID i zależności.
+Napraw luki, nie obniżaj kryteriów i nie dopisuj wypełniaczy do licznika.
+
+Użyj istniejącego symulatora i rzeczywistych danych gry, aby zmierzyć
+czas pierwszego prestige od czystego zapisu, bez bonusów premium
+oraz developerskiego przyznawania walut lub odblokowań.
+Cel: 60–120 minut czasu symulowanego przy opisanej, rozsądnej strategii.
+Przyspieszanie upływu czasu jest dozwolone; zmiana zasad testowanej
+gospodarki lub obchodzenie kosztów — nie.
+Sprawdź przejście przez pozostałe warstwy i brak zastoju bez wyjścia.
+Zachowaj wcześniejsze orientacyjne cele: 12–24 h do drugiej warstwy,
+3–7 dni do trzeciej, 14–30 dni głównej ścieżki. Raportuj rozbieżności
+uczciwie i popraw balans tam, gdzie potwierdzone testy wskazują problem.
+Dowód odblokowania przez narzędzie debug nie jest dowodem osiągalności.
+
+2. DOKOŃCZ PODSUMOWANIE OFFLINE
+
+Napraw obliczanie i wyświetlanie zmian WSZYSTKICH zasobów i walut,
+nie tylko głównego zasobu. Obejmij także zasoby odblokowane podczas
+nieobecności oraz zasoby wydane lub usunięte przez dozwolone resety.
+
+Podsumowanie pokazuje:
+- rzeczywisty przeliczony czas nieobecności;
+- zasób, stan przed, stan po i zmianę netto;
+- odblokowania, automatyczne zakupy i resety, ukończone ekspedycje;
+- nagrody prestige i czas działania boosta, jeżeli miały znaczenie.
+
+Domyślnie pokaż zmienione zasoby z opcją rozwinięcia szczegółów.
+Nie ujawniaj nieodkrytej zawartości przez listę wszystkich walut.
+Nie opisuj ujemnej zmiany netto jako ujemnej produkcji. Wyjaśnij
+wydatek lub reset. Sama różnica stanów nie jest produkcją brutto.
+Jeżeli pokazujesz Produced/Spent/Reset loss, zbieraj te sumy w rdzeniu
+przy faktycznych operacjach, także podczas obliczeń analitycznych.
+Nie odtwarzaj ich przez mnożenie aktualnej produkcji przez czas.
+
+Użyj istniejących dużych liczb i ich precyzji. Nowy zasób przed
+odblokowaniem ma dla porównania stan zerowy. Nie konwertuj wartości
+do zwykłego double tylko po to, aby obliczyć różnicę.
+
+Podsumowanie wyłącznie prezentuje wynik symulacji. Jego otwarcie,
+zamknięcie i ponowne uruchomienie aplikacji nie przyznają nagród.
+Zapisuj stan, kursor przeliczenia i podsumowanie spójnie, tak aby
+przerwanie i wznowienie nie podwajało ani nie usuwało postępu.
+Dla starszych zapisów zastosuj kompatybilne wartości domyślne/migrację.
+Agreguj wyniki; nie zapisuj osobnego zdarzenia za każdą sekundę.
+
+Dodaj testy obejmujące 1 h, 24 h, 7 dni, 30 dni i 365 dni,
+automatykę, reset, wyczerpanie surowca, nowe odblokowanie, wygaśnięcie
+boosta w środku nieobecności i przerwane przeliczenie.
+Porównuj online/offline przy tej samej strategii i granicach zdarzeń.
+Nie dodawaj limitu czasu ani ukrytego pomijania zdarzeń, aby test przeszedł.
+
+3. PRZYGOTUJ ANDROIDA BEZ UZALEŻNIANIA APK OD PUBLIKACJI
+
+Wykryj dokładną wersję Unity oraz Android Build Support, SDK, NDK,
+OpenJDK. Korzystaj z zależności zgodnych z istniejącym edytorem.
+Gdy brakuje modułów, spróbuj doinstalować je oficjalną, dostępną metodą,
+o ile pozwalają uprawnienia i niewymagające dodatkowej zgody warunki.
+Nie instaluj innego Unity tylko z powodu brakującego modułu.
+Jeżeli operację blokuje instalator, licencja lub uprawnienia, podaj
+konkretny brak i krótką instrukcję w istniejącym Unity Hub.
+
+Brak fizycznego telefonu, konta Google Play lub klucza produkcyjnego
+NIE jest powodem pominięcia budowania testowego APK.
+Po zapewnieniu toolchaina zbuduj APK podpisane kluczem debug.
+Zweryfikuj pakiet, ABI, podpis, manifest i rzeczywistą obecność pliku.
+Sprawdź zgodność konfiguracji ARM64/IL2CPP oraz używanych wtyczek.
+Nie zmieniaj istniejącego package ID bez uzasadnionej konieczności.
+
+Przygotuj AAB, gdy pozwala toolchain. Jawnie oznacz brak podpisu
+lub podpis testowy; taki artefakt nie jest produkcyjnym wydaniem.
+Konfiguracja podpisania release ma pobierać sekrety bezpiecznie,
+poza repozytorium i logami. Nie twórz i nie nadpisuj klucza
+produkcyjnego w ramach tego zadania. Nie przesyłaj nic do sklepu.
+Wymagania platformy sprawdź w dokumentacji aktualnej dla wydania,
+zamiast zgadywać numery API lub wersje bibliotek.
+
+Na już podłączonym i autoryzowanym urządzeniu wykonaj test:
+instalacja, uruchomienie, dotyk, pion/poziom, tło/powrót, zapis,
+offline, import/eksport i brak sieci. Nie odinstalowuj aplikacji
+z zapisami użytkownika bez zgody; korzystaj z izolowanego profilu.
+Bez urządzenia oznacz ten test UNVERIFIED. Emulator, symulacja
+ekranu i build APK są odrębnymi dowodami, nie zamiennikami telefonu.
+
+4. ZAMKNIJ LOKALNE LUKI PŁATNOŚCI I AUTORYZACJI
+
+Nie zastępuj istniejących integracji kolejnym backendem.
+Oddziel: testy lokalnej logiki, testy kontraktowe ze stubem,
+testy sandbox rzeczywistego dostawcy oraz gotowość produkcyjną.
+Przejście testów ze stubem nie weryfikuje integracji dostawcy.
+
+Sprawdź i popraw istniejący kod:
+- uprawnienie dopiero po weryfikacji transakcji i jej właściwego stanu;
+- autoryzacja użytkownika, produktu oraz powiązania z kontem;
+- podpisy webhooków i odrzucanie nieprawidłowych komunikatów;
+- duplikaty, ponowienia, równoległe żądania, zmiana kolejności zdarzeń,
+  transakcje oczekujące, anulowania, zwroty i restart backendu;
+- trwały rejestr transakcji i jednokrotne wydanie produktu;
+- boost nie przedłuża się po przywróceniu starego save’a;
+- import zapisu nie tworzy płatnych uprawnień;
+- developerskie przyznawanie nagród i testowe logowanie są niedostępne
+  w konfiguracji produkcyjnej, także przy ręcznym wywołaniu endpointu.
+
+Zweryfikuj istniejącą implementację OIDC zgodnie z dokumentacją
+użytej biblioteki; nie akceptuj tokenu wyłącznie po zdekodowaniu treści.
+Nie implementuj własnej kryptografii i nie dodawaj nowego dostawcy.
+
+Bez konfiguracji sklep wyświetla uczciwy komunikat niedostępności,
+checkout jest wyłączony, a cała gra działa bez backendu i logowania.
+Nie pokazuj pozornego sukcesu ani nie wymagaj płatności do progresji.
+
+Testy dostawców wykonaj tylko przy dostępnych danych testowych
+w izolowanym środowisku: Stripe sandbox i właściwie skonfigurowane
+testy Google Play Billing. Nigdy prawdziwe karty ani płatności live.
+Brak danych oznacza BLOCKED dla tego testu, nie usprawiedliwia atrap
+w implementacji. Uzupełnij .env.example i listę wymaganej konfiguracji
+bez sekretów; nie proś o wklejenie kluczy do rozmowy.
+
+5. SPRAWDŹ RZECZYWISTĄ WITRYNĘ, ZAPIS I PODSTAWOWĄ OBSŁUGĘ
+
+Uruchom produkcyjny Website/dist przez istniejący lokalny serwer,
+nie przez file:// i nie wyłącznie przez developerski serwer frontendowy.
+Sprawdź stronę główną → Play → Bootstrap → Continue/New Game.
+Gra ma działać również przy wyłączonym backendzie.
+
+Zweryfikuj lokalnie:
+- kompletność loadera, .wasm i danych, nagłówki/kompresję oraz brak 404;
+- odświeżenie /play, błędy ładowania i ponowienie bez drugiej instancji gry;
+- zapis po ponownym otwarciu, ochronę przed równoczesnym zapisem z kart;
+- import Windows → Web → Windows na kopiach, a Android, gdy dostępny;
+- aktualizację plików witryny bez zmiany miejsca zapisu lub jego usunięcia;
+- działanie PWA offline po pierwszym pełnym pobraniu, jeżeli wymagała
+  tego pierwotna specyfikacja; unikaj mieszania plików dwóch wydań;
+- właściwe adresy API, brak sekretów i localhost w konfiguracji
+  przeznaczonej do późniejszego hostowania;
+- działające linki pobierania prowadzące do aktualnych paczek.
+
+Popraw istniejący start-website.ps1, gdy wymaga tego test. Skrypt ma
+uruchamiać stronę powtarzalnie i wypisywać faktyczny lokalny adres.
+Nie wymyślaj portu w README i nie obchodź polityki wykonywania skryptów.
+Nie wykonuj publicznego wdrożenia ani nie wymyślaj danych operatora.
+
+Sprawdź UI przy 1920×1080, 2560×1440 i 3440×1440 oraz w pionowym
+układzie telefonu. Napraw ucięte teksty, nakładki, tooltips, przewijanie,
+zasłonięte przyciski, safe area i podsumowanie offline. Wszystko po angielsku.
+Potwierdź rzeczywistą oprawę 2.5D oraz poprawne wyświetlanie każdego
+etapu. Popraw błędy, ale nie przeprojektowuj całego stylu bez potrzeby.
+Zapisz screeny z uruchomionej gry, nie makiety.
+
+6. TESTY KOŃCOWE, POMIARY I ARTEFAKTY
+
+Nie zwiększaj liczby testów dla samego licznika. Dodaj przypadki
+związane z naprawami i brakującymi kryteriami akceptacji.
+W trakcie pracy uruchamiaj testy zależnych modułów. Po integracji
+wykonaj raz końcowy zestaw regresji oraz krótkie testy buildów.
+Stare logi zachowaj jako poprzedni wynik, nie wynik aktualnego kodu.
+
+Wydajność oceniaj w rzeczywistym Playerze, nie wyłącznie w Editorze.
+59,4 FPS nie uzasadnia samo w sobie przebudowy rdzenia. Najpierw
+sprawdź limit FPS/VSync i rozdziel czekanie od rzeczywistej pracy.
+Sprawdź wczesny i późny etap, rozbudowane UI, automatyzację oraz
+powrót po długiej nieobecności. Nie myl 24 typów procesów ze skalą
+rzeczywistego scenariusza obciążenia.
+Podaj sprzęt, rozdzielczość, build, długość pomiaru i scenariusz,
+a także średni/p95 czas klatki, czas kroku symulacji i pamięć tam,
+gdzie narzędzia zapewniają wiarygodny odczyt. Braki oznacz N/A.
+Nie przenoś wyniku z PC na telefon i nie optymalizuj na ślepo.
+
+Przebuduj Windows i Web po zmianach; odśwież paczki i Website/dist.
+Dodaj Android APK/AAB, gdy ich zbudowanie było możliwe.
+Zachowaj konwencje istniejących skryptów i nazw, usuwając nieaktualne
+odwołania w witrynie, ale nie niszcz poprzednich działających artefaktów.
+Każdy nowy artefakt powiąż z wersją/hashami źródeł, datą, profilem
+oraz SHA-256 paczki. Przy lokalnych zmianach nie udawaj czystego commita.
+
+Zaktualizuj istniejące README, PROJECT_STATE i QA_REPORT. W raporcie
+podaj rzeczywiście uruchomione komendy, wyniki, dowody, pominięte testy
+i przyczyny pominięcia. Nie twórz kolejnego zestawu dublujących dokumentów.
+
+KRYTERIUM ZAKOŃCZENIA
+
+Zakończ po wdrożeniu i sprawdzeniu wszystkich niezablokowanych poprawek.
+Nie oznaczaj pełnego wieloplatformowego 1.0 jako ukończonego, jeśli
+pozostała wymagana niezaimplementowana zawartość lub niezweryfikowana
+platforma. Osobno oceń: rozgrywkę, Windows, Web, Android, płatności
+oraz gotowość publikacji. Brak konta płatniczego nie blokuje offline
+gry, ale blokuje deklarację działającej produkcyjnej monetyzacji.
+
+Raport końcowy — krótko:
+1. Co faktycznie naprawiono i uzupełniono.
+2. Pokrycie zawartości i zmierzony czas pierwszego prestige.
+3. Wyniki testów oraz platformy nadal niezweryfikowane.
+4. Ścieżki do aktualnych artefaktów i sprawdzony sposób startu witryny.
+5. Pozostałe blokady: konkretna zależność/konto/urządzenie/dane operatora
+   oraz najmniejsza czynność użytkownika niezbędna do ich usunięcia.
+
+Zacznij od istniejącego stanu i przejdź do poprawek. Nie kończ na audycie.

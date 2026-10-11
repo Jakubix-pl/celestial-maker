@@ -1,0 +1,288 @@
+{
+  "id": "android",
+  "slug": "6000.6.3f1-windows-x86_64-android",
+  "name": "Android Build Support",
+  "description": "Android Playback Engine",
+  "category": "PLATFORM",
+  "url": "https://download.unity3d.com/download_unity/45d8eee7de74/TargetSupportInstaller/UnitySetup-Android-Support-for-Editor-6000.6.3f1.exe",
+  "type": "EXE",
+  "downloadSize": {
+    "value": 1327762424,
+    "unit": "BYTE"
+  },
+  "installedSize": {
+    "value": 5839373294,
+    "unit": "BYTE"
+  },
+  "required": false,
+  "hidden": false,
+  "preSelected": false,
+  "integrity": "md5-lJYP9Cg4VxSi7Ik7oL+k0w==",
+  "subModules": [
+    {
+      "id": "android-open-jdk-17.0.18+8",
+      "slug": "6000.6.3f1-windows-x86_64-android-open-jdk-17.0.18+8",
+      "name": "OpenJDK",
+      "description": "Android Open JDK 17.0.18+8",
+      "category": "PLATFORM",
+      "url": "https://download.unity3d.com/download_unity/open-jdk/open-jdk-win-x64/jdk17.0.18-8_15e8817d1f5db6db3571ebe7430ef37f7fa8e60e8ff6f3e18ca1cb4c29f78774.zip",
+      "type": "ZIP",
+      "downloadSize": {
+        "value": 118110508,
+        "unit": "BYTE"
+      },
+      "installedSize": {
+        "value": 239507431,
+        "unit": "BYTE"
+      },
+      "required": true,
+      "hidden": false,
+      "preSelected": false,
+      "integrity": "",
+      "subModules": [],
+      "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/OpenJDK",
+      "eula": []
+    },
+    {
+      "id": "android-sdk-ndk-tools",
+      "slug": "6000.6.3f1-windows-x86_64-android-sdk-ndk-tools",
+      "name": "Android SDK & NDK Tools",
+      "description": "android-sdk-ndk-tools",
+      "category": "PLATFORM",
+      "url": "https://download.unity3d.com/download_unity/android-sdk-tools/1_5312bb398affd0d94b90d3780976e1a162aa91944ef6bb40c8feb10ad6cc360d.zip",
+      "type": "ZIP",
+      "downloadSize": {
+        "value": 166,
+        "unit": "BYTE"
+      },
+      "installedSize": {
+        "value": 1,
+        "unit": "BYTE"
+      },
+      "required": true,
+      "hidden": false,
+      "preSelected": false,
+      "integrity": "",
+      "subModules": [
+        {
+          "id": "android-ndk-r27c",
+          "slug": "6000.6.3f1-windows-x86_64-android-ndk-r27c",
+          "name": "Android NDK",
+          "description": "Android NDK r27c",
+          "category": "PLATFORM",
+          "url": "https://dl.google.com/android/repository/android-ndk-r27c-windows.zip",
+          "type": "ZIP",
+          "downloadSize": {
+            "value": 781511249,
+            "unit": "BYTE"
+          },
+          "installedSize": {
+            "value": 2361056613,
+            "unit": "BYTE"
+          },
+          "required": true,
+          "hidden": true,
+          "preSelected": false,
+          "integrity": "",
+          "subModules": [],
+          "extractedPathRename": {
+            "from": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/NDK/android-ndk-r27c",
+            "to": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/NDK"
+          },
+          "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/NDK",
+          "eula": []
+        },
+        {
+          "id": "cmake-3.22.1",
+          "slug": "6000.6.3f1-windows-x86_64-cmake-3.22.1",
+          "name": "CMake",
+          "description": "CMake 3.22.1",
+          "category": "PLATFORM",
+          "url": "https://dl.google.com/android/repository/cmake-3.22.1-windows.zip",
+          "type": "ZIP",
+          "downloadSize": {
+            "value": 16116742,
+            "unit": "BYTE"
+          },
+          "installedSize": {
+            "value": 39348489,
+            "unit": "BYTE"
+          },
+          "required": true,
+          "hidden": true,
+          "preSelected": false,
+          "integrity": "",
+          "subModules": [],
+          "extractedPathRename": {
+            "from": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/cmake",
+            "to": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/3.22.1"
+          },
+          "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmake/cmake",
+          "eula": []
+        },
+        {
+          "id": "android-sdk-build-tools-36.0.0",
+          "slug": "6000.6.3f1-windows-x86_64-android-sdk-build-tools-36.0.0",
+          "name": "Android SDK Build Tools",
+          "description": "Android SDK Build Tools 36.0.0",
+          "category": "PLATFORM",
+          "url": "https://dl.google.com/android/repository/build-tools_r36_windows.zip",
+          "type": "ZIP",
+          "downloadSize": {
+            "value": 58699878,
+            "unit": "BYTE"
+          },
+          "installedSize": {
+            "value": 143241305,
+            "unit": "BYTE"
+          },
+          "required": true,
+          "hidden": true,
+          "preSelected": false,
+          "integrity": "",
+          "subModules": [],
+          "extractedPathRename": {
+            "from": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/build-tools/android-16",
+            "to": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/build-tools/36.0.0"
+          },
+          "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/build-tools",
+          "eula": []
+        },
+        {
+          "id": "android-sdk-platform-tools-36.0.0",
+          "slug": "6000.6.3f1-windows-x86_64-android-sdk-platform-tools-36.0.0",
+          "name": "Android SDK Platform Tools",
+          "description": "Android SDK Platform Tools 36.0.0",
+          "category": "PLATFORM",
+          "url": "https://dl.google.com/android/repository/platform-tools_r36.0.0-win.zip",
+          "type": "ZIP",
+          "downloadSize": {
+            "value": 7138784,
+            "unit": "BYTE"
+          },
+          "installedSize": {
+            "value": 15373885,
+            "unit": "BYTE"
+          },
+          "required": true,
+          "hidden": true,
+          "preSelected": false,
+          "integrity": "",
+          "subModules": [],
+          "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK",
+          "eula": []
+        },
+        {
+          "id": "android-sdk-platforms-34",
+          "slug": "6000.6.3f1-windows-x86_64-android-sdk-platforms-34",
+          "name": "Android SDK Platforms 34",
+          "description": "Android SDK Platforms 34",
+          "category": "PLATFORM",
+          "url": "https://dl.google.com/android/repository/platform-34-ext7_r02.zip",
+          "type": "ZIP",
+          "downloadSize": {
+            "value": 63180079,
+            "unit": "BYTE"
+          },
+          "installedSize": {
+            "value": 99855424,
+            "unit": "BYTE"
+          },
+          "required": true,
+          "hidden": true,
+          "preSelected": false,
+          "integrity": "",
+          "subModules": [],
+          "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/platforms",
+          "eula": []
+        },
+        {
+          "id": "android-sdk-platforms-36",
+          "slug": "6000.6.3f1-windows-x86_64-android-sdk-platforms-36",
+          "name": "Android SDK Platforms 36",
+          "description": "Android SDK Platforms 36",
+          "category": "PLATFORM",
+          "url": "https://dl.google.com/android/repository/platform-36_r02.zip",
+          "type": "ZIP",
+          "downloadSize": {
+            "value": 65878410,
+            "unit": "BYTE"
+          },
+          "installedSize": {
+            "value": 106177284,
+            "unit": "BYTE"
+          },
+          "required": true,
+          "hidden": true,
+          "preSelected": false,
+          "integrity": "",
+          "subModules": [],
+          "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/platforms",
+          "eula": []
+        },
+        {
+          "id": "android-sdk-platforms-37.0",
+          "slug": "6000.6.3f1-windows-x86_64-android-sdk-platforms-37.0",
+          "name": "Android SDK Platforms 37",
+          "description": "Android SDK Platforms 37",
+          "category": "PLATFORM",
+          "url": "https://dl.google.com/android/repository/platform-37.0_r02.zip",
+          "type": "ZIP",
+          "downloadSize": {
+            "value": 67281901,
+            "unit": "BYTE"
+          },
+          "installedSize": {
+            "value": 124986304,
+            "unit": "BYTE"
+          },
+          "required": true,
+          "hidden": true,
+          "preSelected": false,
+          "integrity": "",
+          "subModules": [],
+          "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/platforms",
+          "eula": []
+        },
+        {
+          "id": "android-sdk-command-line-tools-16.0",
+          "slug": "6000.6.3f1-windows-x86_64-android-sdk-command-line-tools-16.0",
+          "name": "Android SDK Command Line Tools",
+          "description": "Android SDK Command Line Tools 16.0",
+          "category": "PLATFORM",
+          "url": "https://dl.google.com/android/repository/commandlinetools-win-12266719_latest.zip",
+          "type": "ZIP",
+          "downloadSize": {
+            "value": 143481958,
+            "unit": "BYTE"
+          },
+          "installedSize": {
+            "value": 165583436,
+            "unit": "BYTE"
+          },
+          "required": true,
+          "hidden": true,
+          "preSelected": false,
+          "integrity": "sha384-3H6q0QmivqDyr88w9L8AsYO9yGt41w/Or/JYqclRY2ZbCh3kdguKuyAQYM6JwyWe",
+          "subModules": [],
+          "extractedPathRename": {
+            "from": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmdline-tools/cmdline-tools",
+            "to": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmdline-tools/16.0"
+          },
+          "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK/cmdline-tools",
+          "eula": []
+        }
+      ],
+      "destination": "{UNITY_PATH}/Editor/Data/PlaybackEngines/AndroidPlayer/SDK",
+      "eula": [
+        {
+          "url": "https://dl.google.com/dl/android/repository/repository2-1.xml",
+          "type": "TEXT",
+          "label": "Android SDK and NDK License Terms from Google",
+          "message": "Please review and accept the license terms before downloading and installing Android's SDK and NDK."
+        }
+      ]
+    }
+  ],
+  "destination": "{UNITY_PATH}"
+}

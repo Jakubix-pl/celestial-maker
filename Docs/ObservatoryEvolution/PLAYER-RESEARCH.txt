@@ -1,0 +1,53 @@
+Celestial Maker - second player feedback review, 2026-10-11
+
+Method: read public player/developer discussion, then choose changes appropriate
+for the existing game. No posts, questionnaires or messages were sent. This is
+qualitative secondary research, not playtesting by Celestial Maker players, a
+representative survey or proof of popularity. Dates in search previews differed
+from some opened content; conclusions below use the opened content only.
+
+1. Steam / Unnamed Space Idle / reactor screen improvement (27 December 2025)
+https://steamcommunity.com/app/2471100/discussions/0/690870825661957549/
+A player requests small-step controls to reduce repeated manual entry. Replies
+point out automation and debate whether fine tuning is worthwhile. Inference:
+retain manual control, expose useful presets, and avoid mandatory click work.
+Applied: reserve presets for 25/50 percent of current stock, an explained exact
+snapshot amount, plus one explicit confirmation to release all manual reserves.
+
+2. Reddit / incremental_games / Feedback Friday
+https://www.reddit.com/r/incremental_games/comments/1wvk154/feedback_friday/
+In the opened PCB Defense exchange, a player found it hard to inspect mechanics
+while acting, and found a boss reward surprising. The developer acknowledged
+that temporary bubbles were insufficient. Inference: explanations should remain
+available and consequences should be visible before a decision.
+Applied: persistent context guides, reset keep/lose review, complete operations
+profile review, and forecast results that state scenario and uncertainty.
+Second-pass addition: profile review now names the first priorities/research and
+exact reserves; focus preview compares remaining construction times on a copy.
+
+3. itch.io / Inceptinc comments
+https://blindsidedgames.itch.io/inceptinc
+Players praise unfolding progression. One player questioned an apparently weak
+unlock; the developer explained a speed effect that was not stated. Another
+asked whether repeating the last reset unlocked more content. Inference: show
+actual effects and make the campaign endpoint explicit.
+Applied: numeric focus tradeoffs, before/after construction durations, preserved
+campaign-complete status, earned visual styles tied to actual progression.
+No extra content is implied beyond the explicit campaign and optional challenges.
+
+Engineering findings and response
+- Automatic guided upgrades bypassed protected stock. Fixed and regression tested.
+- A short/malformed checkpoint filename could break the restore list. Fixed/tested.
+- Invalid historical numeric data is rejected on import.
+- UI at 100/200 percent is checked through private Unity renders, not screenshots
+  of the user's screen. No visible player or input automation was used.
+
+Remaining research questions
+- Six-hour check-ins are much slower than hourly decisions. 400h is a measured
+  active/hourly policy target, not a guarantee of passive unattended completion.
+- Long late-game gaps between discrete discoveries remain. Partial construction
+  is visible, but that is not evidence of new decision-making content. Optional
+  engineering experiments could be a later content pass; do not count cosmetic
+  quarter progress as gameplay unlocks merely to improve a metric.
+- Real player comprehension, enjoyment and physical UI performance require a
+  separately consented playtest. No such study was claimed or conducted here.

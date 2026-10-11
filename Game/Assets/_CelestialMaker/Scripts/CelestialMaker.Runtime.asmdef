@@ -1,0 +1,10 @@
+{
+  "name": "CelestialMaker.Runtime",
+  "rootNamespace": "CelestialMaker",
+  "references": [
+    "CelestialMaker.Core",
+    "Unity.TextMeshPro",
+    "Unity.ugui",
+    "Unity.InputSystem"
+  ]
+}

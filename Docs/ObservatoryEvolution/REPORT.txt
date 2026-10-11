@@ -1,0 +1,97 @@
+CELESTIAL MAKER 2.5.0 - OBSERVATORY EVOLUTION
+2026-10-11
+
+IMPLEMENTED - eight approved features
+1. Diagnostics identify protected inputs, insufficient supply, paused processes,
+   inactive autobuy and research needs; actions open the relevant economy/view.
+2. Return briefing lists actual offline discoveries and retained goals. Persistent
+   contextual guides explain current views and discovered systems.
+3. Complete operations profiles save queues, reserves, order, routing, construction
+   and reset rules per economy. Restore after reset is explicit; locked rules wait.
+4. Reset forecasts run the real Simulation on a serialized copy, with retained or
+   restored rules. They sample each simulated minute up to 48h and stop after a
+   four-second calculation budget. Unknown recovery is reported honestly. Up to
+   24 historical runs record actual recovery before the next reset interrupts it.
+5. Interactive flows show discovered producers, current gross/net/consumption,
+   protected stock and consumers; links trace inputs or open process details.
+6. Energy, Matter and Time focus affect construction and transport with tradeoffs.
+   They require matching branches and have a ten-minute switch cooldown. Losing
+   the prerequisite suspends the effect until it is earned again. Existing transfer
+   dates are never accelerated by switching. Imports do not award lifetime output.
+7. Native vector cosmos geometry follows chapters, megastructures and universes.
+   Partial construction and earned Orbital/Stellar/Genesis styles use actual state.
+8. Twelve local restore points retain prior progress before imports, New Game and
+   resets. Prestige snapshots are limited to one per ten simulated minutes.
+   Restoration saves the current state first and does not re-award real elapsed time.
+   Invalid points remain visible and cannot be loaded. User saves were not used
+   as mutation targets. Optional fields preserve the existing schema/version.
+
+SECOND RESEARCH PASS - APPLIED
+Public Steam, Reddit and itch.io discussion was read again. See PLAYER-RESEARCH.txt
+for exact sources, observations and inference. No players were contacted.
+Added 25/50 percent stock reserve presets, a reviewed bulk release, explicit profile
+priorities/research/reserve amounts and before/after construction durations.
+Fixed reserve bypass in guided upgrades and automatic research/expeditions; fixed
+malformed checkpoint names, invalid historical numbers and restore-time throttling.
+
+BALANCE - measured using the shared game Core
+Campaign completion requires all Ascension/Genesis nodes, three universes and all
+three megastructures at stage 6. Optional challenges/records remain endgame.
+Active: decisions every 15 minutes. Background: decisions every hour after the
+first two hours. Both use scripted informed purchases, automation and resets.
+No claim that ordinary players reproduce these exact policies or click counts.
+Acceptance target: 360-440 simulated hours (around the requested 400 hours).
+Policy       Strategy     Prestige h  Ascension h  Genesis h  Campaign h
+active       Energy           2.00         9.25      49.00      384.96
+active       Matter           2.00         9.25      49.75      367.25
+active       Time             2.00         9.25      62.25      378.33
+background   Energy           2.00        17.00      63.00      408.66
+background   Matter           2.00        17.00      91.00      436.50
+background   Time             2.00        17.00      75.00      426.19
+
+Offline background/Matter: same completion to <1e-7 hours; 18 daily JSON resumes.
+Six-hour check-ins are an additional sensitivity case, outside the 400h contract:
+  Energy: 803.14 hours
+  Matter: 821.10 hours
+  Time: 822.45 hours
+The longest interval between discrete discoveries was 55.75-77.50 hours in the
+active/hourly runs. Construction advances during this time, but content variety
+and player enjoyment across that interval are unverified. This remains a design
+limitation; the visible partial-progress arcs are not counted as new mechanics.
+
+VERIFICATION
+Core: 171/171 tests. Unity Core: 20/20. UI: 1422/1422 final release checks.
+PlayMode: 1/1 startup/game/production/offline/save smoke in batch null graphics.
+Initial PlayMode failure came from a reused test save and a stale menu callback.
+The fixture now uses a new private path per run and destroys the session before
+releasing that path. The real test still opens scenes and invokes game controls.
+Unity Test Framework overwrote its default TestResults.xml outside the project.
+That report was copied into Logs and the original restored with a SHA256 check.
+Production save JSON files were untouched. All 13 protected files match their original SHA256 hashes.
+Private render suite: 354 images generated during this task, including a final
+57-image evolution pass; nine representative images manually inspected. These
+are Unity camera/RenderTexture artifacts, not desktop screenshots.
+
+PERFORMANCE EVIDENCE
+Isolated late-game edit-mode fixture: actual Core 60 Hz, actual uGUI, URP camera to private RenderTexture, synchronous 1-pixel GPU readback. Includes readback overhead; not desktop/player FPS.
+Machine: AMD Ryzen 7 9800X3D 8-Core Processor / NVIDIA GeForce RTX 4070 Ti.
+16 late-game cases, 240 measured frames each. UI CPU mean range 0.085-0.334 ms; worst UI p95 0.525 ms.
+Worst simulation p95 0.137 ms. GPU/readback stalls affect full-frame timing.
+Per-frame presentation remains enabled. This benchmark does not certify 60 FPS
+in a physical player window. Windows DPI, real input and visible-player FPS remain
+UNVERIFIED. No desktop control or visible game/editor window was used.
+
+BUILT - Windows Release 2.5.0, Unity 6000.6.3f1, zero errors.
+Actual EXE: 54/54 null-graphics checks, including running the recovery coroutine,
+restoring an earlier checkpoint and preserving the pre-restore rollback copy.
+ZIP: C:\Users\Jakubix\Desktop\Idle\Builds\CelestialMaker-Observatory-Windows.zip
+Size: 49676181 bytes; all 193 archive entries hash-verified.
+SHA256: F94BDF17C98684331DF3A58FB03E911D18A2BF98B3F8C7CBFA60D5C0BD79CD60
+
+Evidence paths
+Logs/ObservatoryEvolution/core-tests.json, unity-core-tests.json, ui-tests.json
+Logs/ObservatoryEvolution/playmode.xml, balance-verification.json, performance.json
+Logs/ObservatoryEvolution/image-inventory.json, render-manifest.json
+Logs/Pacing400/evolution-{release,background,offline-release,checkin-release}.json
+Backup: Backups/ObservatoryEvolution-20261011-132444
+No remote Git operations, public deployment, purchase or paid service.

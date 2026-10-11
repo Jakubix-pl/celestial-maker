@@ -1,0 +1,52 @@
+Celestial Maker 2.4.2 — resource header, 2026-10-11
+
+IMPLEMENTED
+Top-bar resources have their own colored names, small vector icons, subtle
+tinted fields and left accent lines. Numeric stock values retain neutral,
+high-contrast text. Negative NET values retain their minus sign and warning color.
+Energy: amber / bolt. Particles: blue / connected particles.
+Atoms: teal / atom. Planetary mass: green / ringed planet.
+Starlight: peach / star. Gravity: rose / concentric field.
+Spacetime: cyan / hourglass. Prestige Points: violet / diamond emblem.
+
+The existing responsive meter count remains: four fields at sufficient width,
+two at narrow widths or large text scale. Names are retained alongside icons.
+The third field changes name, icon, tint and amount together as chapters change
+or reset. The selected universe controls local resources; global pages use home.
+Prestige Points read the live home balance directly, avoiding a stale satellite
+copy. All stock counters still refresh on each presentation frame. Icon geometry
+updates only when its resource identity changes; no new Update loop or assets
+loaded per frame. Resource resolution no longer allocates a LINQ enumeration.
+No balance constants, save formats or authoritative simulation logic changed.
+
+COMPILED
+Core 144/144, Unity Core 20/20,
+UI 1386/1386; actual release EXE 45 null-graphics checks.
+Targeted resource checks cover chapter/reset/universe transitions, live home
+prestige, text contrast >=4.5:1, icon contrast >=3:1, contained header geometry,
+and 1e300 values at 960, 1280, 1500, 1920 and 3840 widths in both themes.
+Existing checks verify 60 consecutive presentation updates from authoritative
+stock; these are frame-update checks, not a measured desktop frame rate.
+
+BUILT
+Windows Release 2.4.2, zero errors, Unity 6000.6.3f1.
+Build UTC: 2026-10-11T11:03:43.7388641Z
+ZIP: C:\Users\Jakubix\Desktop\Idle\Builds\CelestialMaker-Observatory-Windows.zip
+Bytes: 49657248; verified archive files: 193.
+SHA256: D2B7BA48A36353607DD9DD806ED8175493E32F7F9CC776B16E1411CD6DBBB417
+All 13 protected user files retained their initial hashes.
+
+OBSERVED
+24 private Unity URP renders; six full-resolution images and one contact sheet
+manually inspected, listed in Logs/ObservatoryResources/visual-review.json.
+The image matrix covers Night/Dawn, chapter identities, negative NET, selected
+parallel economy, 100/125/200 percent scales and 960-3840 pixel widths. Labels,
+icons and amounts remain separated in the inspected views.
+Render UTC: 2026-10-11T11:00:02.2135379Z
+No desktop control, desktop screenshots or visible game/editor windows.
+Physical input, Windows DPI and visible-player FPS remain UNVERIFIED.
+No new performance benchmark was run for this header change.
+
+Report evidence: Logs/ObservatoryResources/final-verification.json.
+Gallery: Docs/UI-Minimalist-Futuristic/VISUAL-GALLERY.html.
+Previous release, sources and evidence backup: C:\Users\Jakubix\Desktop\Idle\Backups\ObservatoryResources-20261011-125640

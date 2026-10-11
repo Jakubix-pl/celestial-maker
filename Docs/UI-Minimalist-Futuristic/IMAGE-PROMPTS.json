@@ -1,0 +1,17 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "file": "Game/Assets/_CelestialMaker/Resources/UI/PC/ObservatoryNebula.png",
+      "prompt": "Use case: stylized-concept. Asset type: high resolution 3840x2160 landscape illustration for the Celestial Maker PC idle game's minimalist futuristic Observatory menu. Original cinematic semi-realistic space art: one elegant enormous orbital observatory, a dark circular arc around a small luminous turquoise stellar seed, above the softly illuminated limb of a midnight blue planet. Concentrate the silhouette in the right half because real UI text sits separately in an opaque panel on the left. Deep navy near-black negative space, restrained teal light, tiny warm star points, subtle painterly astronomical dust, crisp metal detail. Calm, premium, contemplative scientific wonder. Strong singular composition, no crowded fleets. No text, no logos, no UI elements, no borders, no watermark. Design for downsampling from high resolution, readable shape at thumbnail size."
+    },
+    {
+      "file": "Game/Assets/_CelestialMaker/Resources/UI/PC/CelestialIcon.png",
+      "prompt": "Use case: logo-brand. Asset type: original premium Windows desktop game icon for Celestial Maker, square 1024x1024 source, genuinely transparent background. One bold, clean orbital C-shaped silver and turquoise arc embracing a bright small four-point stellar seed. Minimal futuristic astronomical identity, subtle dimensional metallic lighting, semi-realistic polished game emblem, very strong silhouette. Restrained teal-white highlights and dark navy inner metal, thick recognizable shapes with clear separation that stay legible at 32x32 and 16x16. Centered emblem within 80 percent of square with even transparent margins. No text, no letters beyond abstract orbital C, no tiny stars, no background tile, no shadow outside emblem, no extra thin rings, no watermark. Make the arc and star dominant."
+    },
+    {
+      "file": "Game/Assets/_CelestialMaker/Resources/UI/PC/ObservatoryPortrait.png",
+      "prompt": "Use case: stylized-concept. Asset type: portrait 2:3 high-resolution illustration for right side of a PC game's minimalist futuristic menu. Original Celestial Maker astronomical observatory scene. One imposing slender orbital arc encircling a small turquoise star above a dark planet crescent in the bottom quarter. Vertical composition, the tall arc nearly fills the frame with clean readable silver metal edges, softly glowing teal energy channels. Deep navy black space, sparse distant stars, restrained cinematic contrast, semi-realistic science fiction digital painting, polished and contemplative. Large calm empty dark area near the top. Dramatic scale with intricate detail visible only on close inspection. No typography, no UI, no logos, no border, no watermark. Designed to fill a tall 700 by 920 pixel menu panel by downsampling, never upsampling."
+    }
+  ]
+}

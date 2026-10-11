@@ -1,0 +1,2992 @@
+{
+  "version": "2.21",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Celestial Maker · Start panel",
+      "clip": true,
+      "width": 600,
+      "height": 400,
+      "fill": "#080F23",
+      "stroke": "#6BABB8",
+      "strokeWidth": 2,
+      "strokeAlignment": "inner",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "YsBMT",
+          "x": 0,
+          "y": 0,
+          "name": "Cosmic comic illustration",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "generated.png",
+            "mode": "cover"
+          },
+          "width": 600,
+          "height": 400
+        },
+        {
+          "type": "rectangle",
+          "id": "hnJHF",
+          "x": 0,
+          "y": 0,
+          "name": "Title contrast veil",
+          "fill": {
+            "type": "gradient",
+            "gradientType": "linear",
+            "enabled": true,
+            "rotation": 90,
+            "size": {
+              "height": 1
+            },
+            "colors": [
+              {
+                "color": "#07102200",
+                "position": 0
+              },
+              {
+                "color": "#071022AA",
+                "position": 0.58
+              },
+              {
+                "color": "#071022EC",
+                "position": 1
+              }
+            ]
+          },
+          "width": 600,
+          "height": 400
+        },
+        {
+          "type": "rectangle",
+          "id": "LZ6Dr",
+          "x": 10,
+          "y": 10,
+          "name": "Inner comic panel rim",
+          "fill": "#00000000",
+          "width": 580,
+          "height": 380,
+          "stroke": "#B9E9EF55",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner"
+        },
+        {
+          "type": "rectangle",
+          "id": "R9dK6",
+          "x": 36,
+          "y": 64,
+          "name": "Gold title accent",
+          "fill": "#F6C974",
+          "width": 46,
+          "height": 4
+        },
+        {
+          "type": "text",
+          "id": "dAqki",
+          "x": 34,
+          "y": 87,
+          "name": "Celestial Maker heading",
+          "fill": "#FFF2D5",
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#020711",
+            "offset": {
+              "x": 3,
+              "y": 4
+            }
+          },
+          "textGrowth": "fixed-width",
+          "width": 340,
+          "content": "Celestial Maker",
+          "lineHeight": 1.16,
+          "fontFamily": "Orbitron",
+          "fontSize": 42,
+          "fontWeight": "800"
+        },
+        {
+          "type": "frame",
+          "id": "Fg20N",
+          "x": 36,
+          "y": 296,
+          "name": "Start Game button",
+          "width": 224,
+          "height": 58,
+          "fill": "#F4C36B",
+          "cornerRadius": 4,
+          "stroke": "#080F23",
+          "strokeWidth": 2,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#030919",
+            "offset": {
+              "x": 4,
+              "y": 5
+            }
+          },
+          "gap": 14,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "sHAhO",
+              "name": "Start Game label",
+              "fill": "#101B2C",
+              "content": "Start Game",
+              "fontFamily": "Rajdhani",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "icon",
+              "id": "AXF3x",
+              "name": "Start arrow",
+              "width": 20,
+              "height": 20,
+              "icon": "arrow-right",
+              "library": "lucide",
+              "fill": "#101B2C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "WxN5Q",
+      "x": 700,
+      "y": 0,
+      "name": "Main Menu PC",
+      "clip": true,
+      "width": 1600,
+      "height": 900,
+      "fill": "#080E1C",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "Dutor",
+          "x": 0,
+          "y": 0,
+          "name": "Cosmic backdrop",
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "generated.png",
+            "mode": "cover"
+          },
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "type": "frame",
+          "id": "Ed4gk",
+          "x": 90,
+          "y": 170,
+          "name": "Menu content",
+          "width": 580,
+          "height": 530,
+          "fill": "#080E1CE8",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "J0REW7",
+              "name": "Eyebrow",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "A COSMOS OF YOUR OWN",
+              "fontFamily": "Rajdhani",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "iW8GZ",
+              "name": "Title",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "CELESTIAL\nMAKER",
+              "fontFamily": "Rajdhani",
+              "fontSize": 76,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "kRCHL",
+              "name": "Tagline",
+              "fill": "#A0B3C6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "From a single particle. To an infinite universe.",
+              "fontFamily": "Rajdhani",
+              "fontSize": 24,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "wjbot",
+              "name": "Continue experiment",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#E9BC70",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "zx2mJ",
+                  "name": "Continue experiment label",
+                  "fill": "#080E1C",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Continue experiment",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "RMlra",
+              "name": "New Game",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gVPWB",
+                  "name": "New Game label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "New Game",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fSeBk",
+              "name": "Settings",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "s2zAeu",
+                  "name": "Settings label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Settings",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Va1bB",
+      "x": 2400,
+      "y": 0,
+      "name": "Overview PC",
+      "clip": true,
+      "width": 1600,
+      "height": 900,
+      "fill": "#080E1C",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "cwGmu",
+          "x": 0,
+          "y": 0,
+          "name": "Cosmic backdrop",
+          "opacity": 0.25,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "generated.png",
+            "mode": "cover"
+          },
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "type": "frame",
+          "id": "hXmCb",
+          "x": 24,
+          "y": 20,
+          "name": "Resource bar",
+          "width": 1552,
+          "height": 100,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "gap": 36,
+          "padding": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "e6bM9",
+              "name": "CELESTIAL MAKER",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "E2suT",
+                  "name": "CELESTIAL MAKER caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "CELESTIAL MAKER",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "YnDNR",
+                  "name": "CELESTIAL MAKER value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "THE OBSERVATORY",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "b5eNOw",
+              "name": "ENERGY",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "P5uxAI",
+                  "name": "ENERGY caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "ENERGY",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "Scils",
+                  "name": "ENERGY value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "2.45e8  /  +4.20e4/s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "H7TI5",
+              "name": "MATTER",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wWBj8",
+                  "name": "MATTER caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "MATTER",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "N23me",
+                  "name": "MATTER value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "1.86e6  /  +810/s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "V0Kv6X",
+              "name": "STELLAR ESSENCE",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "h5Z7b",
+                  "name": "STELLAR ESSENCE caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "STELLAR ESSENCE",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "d855G6",
+                  "name": "STELLAR ESSENCE value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "128  /  PERMANENT",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "nzlnf",
+          "x": 24,
+          "y": 140,
+          "name": "Navigation",
+          "width": 220,
+          "height": 720,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 7,
+          "padding": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "E0Ozo",
+              "name": "Overview",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#274750",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "q769MF",
+                  "name": "Overview label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Overview",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "J7vcZr",
+              "name": "Production",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "O9dZqK",
+                  "name": "Production label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Production",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "U4XrJ6",
+              "name": "Research",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VJwAj",
+                  "name": "Research label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Research",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "RPhMw",
+              "name": "Prestige",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qfVLD",
+                  "name": "Prestige label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Prestige",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "w2H3Us",
+              "name": "Constellations",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "iqW30",
+                  "name": "Constellations label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Constellations",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Bihcr",
+              "name": "Challenges",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "p9y3b",
+                  "name": "Challenges label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Challenges",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "N39YZR",
+              "name": "Expeditions",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "eTIeU",
+                  "name": "Expeditions label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Expeditions",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MISWm",
+              "name": "Achievements",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Byi4c",
+                  "name": "Achievements label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Achievements",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "TOtBd",
+              "name": "Codex",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "eCClE",
+                  "name": "Codex label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Codex",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KCNux",
+              "name": "Shop",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "R6cPO",
+                  "name": "Shop label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Shop",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "H4E81m",
+              "name": "Settings",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "N0pVfd",
+                  "name": "Settings label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Settings",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BRWcJ",
+          "x": 266,
+          "y": 140,
+          "name": "Main workspace",
+          "width": 1010,
+          "height": 720,
+          "fill": "#0B1425B8",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "N0Cu6",
+              "name": "Section title",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "OVERVIEW / YOUR UNFOLDING COSMOS",
+              "fontFamily": "Rajdhani",
+              "fontSize": 34,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "eGV98",
+              "name": "Chapter panorama",
+              "width": "fill_container",
+              "height": 250,
+              "fill": [
+                {
+                  "type": "image",
+                  "enabled": true,
+                  "url": "generated.png",
+                  "mode": "cover"
+                },
+                "#080E1C44"
+              ],
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 28,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "N3PUR",
+                  "name": "Chapter",
+                  "fill": "#E9BC70",
+                  "textGrowth": "fixed-width",
+                  "width": 460,
+                  "content": "CHAPTER 01 / PARTICLES",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "qBOEc",
+                  "name": "Story heading",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "Everything begins\nwith a spark.",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 40,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "u9EqsS",
+                  "name": "Next goal",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "NEXT HORIZON  /  Discover Atoms",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 21,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "wk7eA",
+              "name": "Resource heading",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "THE FLOW OF YOUR UNIVERSE",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "Y6scI3",
+              "name": "Energy      2.45e8        +4.20e4 /s",
+              "width": "fill_container",
+              "fill": "#101D30",
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "u1YRJp",
+                  "name": "Ledger value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Energy      2.45e8        +4.20e4 /s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 26,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DqtRs",
+              "name": "Matter      1.86e6        +810 /s",
+              "width": "fill_container",
+              "fill": "#101D30",
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GjUkl",
+                  "name": "Ledger value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Matter      1.86e6        +810 /s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 26,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qIm3X",
+              "name": "Open Production",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#E9BC70",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qDZkU",
+                  "name": "Open Production label",
+                  "fill": "#080E1C",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Open Production",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "VGAck",
+          "x": 1298,
+          "y": 140,
+          "name": "Context rail",
+          "width": 278,
+          "height": 720,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "L7qTH",
+              "name": "Next horizon label",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "NEXT HORIZON",
+              "fontFamily": "Rajdhani",
+              "fontSize": 17,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "SVgew",
+              "name": "Next horizon value",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Atoms",
+              "fontFamily": "Rajdhani",
+              "fontSize": 32,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "Ty9n8",
+              "name": "Next horizon detail",
+              "fill": "#A0B3C6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Refine Matter to open the next chapter. Production continues while you explore.",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "jszon",
+              "name": "Session label",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "YOUR COSMIC RECORD",
+              "fontFamily": "Rajdhani",
+              "fontSize": 17,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "JJ0w2",
+              "name": "Session detail",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "12 discoveries\n3 completed challenges\n1 expedition in flight",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nSbiA",
+      "x": 4100,
+      "y": 0,
+      "name": "Production PC",
+      "clip": true,
+      "width": 1600,
+      "height": 900,
+      "fill": "#080E1C",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "y056qw",
+          "x": 0,
+          "y": 0,
+          "name": "Cosmic backdrop",
+          "opacity": 0.25,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "generated.png",
+            "mode": "cover"
+          },
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "type": "frame",
+          "id": "OAQx9",
+          "x": 24,
+          "y": 20,
+          "name": "Resource bar",
+          "width": 1552,
+          "height": 100,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "gap": 36,
+          "padding": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "tAhTV",
+              "name": "CELESTIAL MAKER",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "WV9Vi",
+                  "name": "CELESTIAL MAKER caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "CELESTIAL MAKER",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "voDbP",
+                  "name": "CELESTIAL MAKER value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "THE OBSERVATORY",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Rnq7i",
+              "name": "ENERGY",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "CNhZt",
+                  "name": "ENERGY caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "ENERGY",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "B5hdeG",
+                  "name": "ENERGY value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "2.45e8  /  +4.20e4/s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "VwOXz",
+              "name": "MATTER",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Tt4uY",
+                  "name": "MATTER caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "MATTER",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "gFVHi",
+                  "name": "MATTER value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "1.86e6  /  +810/s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "K9nj0",
+              "name": "STELLAR ESSENCE",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YlGuq",
+                  "name": "STELLAR ESSENCE caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "STELLAR ESSENCE",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "N7IS6s",
+                  "name": "STELLAR ESSENCE value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "128  /  PERMANENT",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dK4dx",
+          "x": 24,
+          "y": 140,
+          "name": "Navigation",
+          "width": 220,
+          "height": 720,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 7,
+          "padding": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "G0B44",
+              "name": "Overview",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HZNjm",
+                  "name": "Overview label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Overview",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rxHq2",
+              "name": "Production",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#274750",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "a9QqP",
+                  "name": "Production label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Production",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BCXg2",
+              "name": "Research",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "YWgqr",
+                  "name": "Research label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Research",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "vX7Vw",
+              "name": "Prestige",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "vmc2Z",
+                  "name": "Prestige label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Prestige",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "rpOYp",
+              "name": "Constellations",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mB0zf",
+                  "name": "Constellations label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Constellations",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "v447n",
+              "name": "Challenges",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Lr9LH",
+                  "name": "Challenges label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Challenges",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tNQt9",
+              "name": "Expeditions",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "hTGKv",
+                  "name": "Expeditions label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Expeditions",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BGu4X",
+              "name": "Achievements",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "LpiY4",
+                  "name": "Achievements label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Achievements",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mBosm",
+              "name": "Codex",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "J23C96",
+                  "name": "Codex label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Codex",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MdamJ",
+              "name": "Shop",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "PRxDq",
+                  "name": "Shop label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Shop",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aP20I",
+              "name": "Settings",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HH8tv",
+                  "name": "Settings label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Settings",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "SeugL",
+          "x": 266,
+          "y": 140,
+          "name": "Main workspace",
+          "width": 1010,
+          "height": 720,
+          "fill": "#0B1425B8",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "x6wjfk",
+              "name": "Section title",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "PRODUCTION / COSMIC ENGINE",
+              "fontFamily": "Rajdhani",
+              "fontSize": 34,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "tmMtL",
+              "name": "Purchase modes",
+              "width": "fill_container",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Fsho2",
+                  "name": "Buy 1",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#101D30",
+                  "stroke": "#2C485B",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "e2PhAX",
+                      "name": "Buy 1 label",
+                      "fill": "#EAF1F6",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Buy 1",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "c90Un7",
+                  "name": "Buy 10",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#E9BC70",
+                  "stroke": "#2C485B",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zsdtI",
+                      "name": "Buy 10 label",
+                      "fill": "#080E1C",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Buy 10",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "C2g4L",
+                  "name": "Buy 100",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#101D30",
+                  "stroke": "#2C485B",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "C77hW",
+                      "name": "Buy 100 label",
+                      "fill": "#EAF1F6",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Buy 100",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Ar6Y6",
+                  "name": "Buy Max",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#101D30",
+                  "stroke": "#2C485B",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dESah",
+                      "name": "Buy Max label",
+                      "fill": "#EAF1F6",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Buy Max",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "FCRxG",
+                  "name": "Milestone",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#101D30",
+                  "stroke": "#2C485B",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "YiPBC",
+                      "name": "Milestone label",
+                      "fill": "#EAF1F6",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Milestone",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tV51J",
+              "name": "Particle Loom",
+              "width": "fill_container",
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tF1FM",
+                  "name": "Particle Loom title",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Particle Loom                                      25 OWNED",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "opYQz",
+                  "name": "Particle Loom rate",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "+4.20e4 Energy/s       •       Multiplier × 3.50",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 21,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "y57eW",
+                  "name": "Buy 10     /     2.48e5 Energy",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#E9BC70",
+                  "stroke": "#2C485B",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "KgGyn",
+                      "name": "Buy 10     /     2.48e5 Energy label",
+                      "fill": "#080E1C",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Buy 10     /     2.48e5 Energy",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZpkPG",
+              "name": "Matter Condenser",
+              "width": "fill_container",
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pnR61",
+                  "name": "Matter Condenser title",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Matter Condenser                                      25 OWNED",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "bRhv7",
+                  "name": "Matter Condenser rate",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "+810 Matter/s       •       Multiplier × 3.50",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 21,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "B82ep",
+                  "name": "Buy 10     /     2.48e5 Energy",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#E9BC70",
+                  "stroke": "#2C485B",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "d4C2I",
+                      "name": "Buy 10     /     2.48e5 Energy label",
+                      "fill": "#080E1C",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Buy 10     /     2.48e5 Energy",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "T1NDvh",
+              "name": "Vacuum Harvester",
+              "width": "fill_container",
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Z8e7ri",
+                  "name": "Vacuum Harvester title",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Vacuum Harvester                                      25 OWNED",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "z40Pn",
+                  "name": "Vacuum Harvester rate",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "+960 Energy/s       •       Multiplier × 3.50",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 21,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "BjqSF",
+                  "name": "Buy 10     /     2.48e5 Energy",
+                  "width": "fill_container",
+                  "height": 48,
+                  "fill": "#E9BC70",
+                  "stroke": "#2C485B",
+                  "strokeWidth": 1,
+                  "padding": [
+                    10,
+                    18
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "b8aNf",
+                      "name": "Buy 10     /     2.48e5 Energy label",
+                      "fill": "#080E1C",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Buy 10     /     2.48e5 Energy",
+                      "fontFamily": "Rajdhani",
+                      "fontSize": 20,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "aNjdG",
+          "x": 1298,
+          "y": 140,
+          "name": "Context rail",
+          "width": 278,
+          "height": 720,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "n2tFew",
+              "name": "Next horizon label",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "NEXT HORIZON",
+              "fontFamily": "Rajdhani",
+              "fontSize": 17,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "NptBB",
+              "name": "Next horizon value",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Atoms",
+              "fontFamily": "Rajdhani",
+              "fontSize": 32,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "fyKRQ",
+              "name": "Next horizon detail",
+              "fill": "#A0B3C6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Refine Matter to open the next chapter. Production continues while you explore.",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "AXyRK",
+              "name": "Session label",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "YOUR COSMIC RECORD",
+              "fontFamily": "Rajdhani",
+              "fontSize": 17,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "JtbZ8",
+              "name": "Session detail",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "12 discoveries\n3 completed challenges\n1 expedition in flight",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Q0WkmA",
+      "x": 5800,
+      "y": 0,
+      "name": "Prestige confirmation PC",
+      "clip": true,
+      "width": 1600,
+      "height": 900,
+      "fill": "#080E1C",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "n1s8bj",
+          "x": 0,
+          "y": 0,
+          "name": "Cosmic backdrop",
+          "opacity": 0.25,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "generated.png",
+            "mode": "cover"
+          },
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "type": "frame",
+          "id": "y9gkQ",
+          "x": 24,
+          "y": 20,
+          "name": "Resource bar",
+          "width": 1552,
+          "height": 100,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "gap": 36,
+          "padding": 24,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "SnmUv",
+              "name": "CELESTIAL MAKER",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "v4RnO",
+                  "name": "CELESTIAL MAKER caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "CELESTIAL MAKER",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "P3irjd",
+                  "name": "CELESTIAL MAKER value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "THE OBSERVATORY",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KPBpk",
+              "name": "ENERGY",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ZWuDF",
+                  "name": "ENERGY caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "ENERGY",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "bqPyP",
+                  "name": "ENERGY value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "2.45e8  /  +4.20e4/s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Au8MA",
+              "name": "MATTER",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Id1IY",
+                  "name": "MATTER caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "MATTER",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "f7yHj",
+                  "name": "MATTER value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "1.86e6  /  +810/s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "fCgD4",
+              "name": "STELLAR ESSENCE",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "g8TaXy",
+                  "name": "STELLAR ESSENCE caption",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "STELLAR ESSENCE",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "KbWSG",
+                  "name": "STELLAR ESSENCE value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "128  /  PERMANENT",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "h5YSfs",
+          "x": 24,
+          "y": 140,
+          "name": "Navigation",
+          "width": 220,
+          "height": 720,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 7,
+          "padding": 12,
+          "children": [
+            {
+              "type": "frame",
+              "id": "g3mteG",
+              "name": "Overview",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GZFzN",
+                  "name": "Overview label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Overview",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YzMWV",
+              "name": "Production",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ZTt7I",
+                  "name": "Production label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Production",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "JQDgN",
+              "name": "Research",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "S9EOP",
+                  "name": "Research label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Research",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "pX9wa",
+              "name": "Prestige",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#274750",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "fbsxF",
+                  "name": "Prestige label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Prestige",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "k5GUT6",
+              "name": "Constellations",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "mDtJp",
+                  "name": "Constellations label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Constellations",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sRiUc",
+              "name": "Challenges",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MOuoO",
+                  "name": "Challenges label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Challenges",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uAR1w",
+              "name": "Expeditions",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "AzaCi",
+                  "name": "Expeditions label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Expeditions",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EYacQ",
+              "name": "Achievements",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ft32l",
+                  "name": "Achievements label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Achievements",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "lX15o",
+              "name": "Codex",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "XC0cq",
+                  "name": "Codex label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Codex",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "EOecJ",
+              "name": "Shop",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "X0KtT",
+                  "name": "Shop label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Shop",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "PFuJD",
+              "name": "Settings",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "usBOC",
+                  "name": "Settings label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Settings",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pBUkY",
+          "x": 266,
+          "y": 140,
+          "name": "Main workspace",
+          "width": 1010,
+          "height": 720,
+          "fill": "#0B1425B8",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "vOukP",
+              "name": "Section title",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "PRESTIGE / A NEW HORIZON",
+              "fontFamily": "Rajdhani",
+              "fontSize": 34,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "ywxsk",
+              "name": "Chapter panorama",
+              "width": "fill_container",
+              "height": 250,
+              "fill": [
+                {
+                  "type": "image",
+                  "enabled": true,
+                  "url": "generated.png",
+                  "mode": "cover"
+                },
+                "#080E1C44"
+              ],
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 28,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "a4kJ45",
+                  "name": "Chapter",
+                  "fill": "#E9BC70",
+                  "textGrowth": "fixed-width",
+                  "width": 460,
+                  "content": "CHAPTER 01 / PARTICLES",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "dUhpL",
+                  "name": "Story heading",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "Everything begins\nwith a spark.",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 40,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "jCGUY",
+                  "name": "Next goal",
+                  "fill": "#76D8DB",
+                  "textGrowth": "fixed-width",
+                  "width": 500,
+                  "content": "NEXT HORIZON  /  Discover Atoms",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 21,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "P2ca7",
+              "name": "Resource heading",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "THE FLOW OF YOUR UNIVERSE",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "G67lTB",
+              "name": "Energy      2.45e8        +4.20e4 /s",
+              "width": "fill_container",
+              "fill": "#101D30",
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "BMQC4",
+                  "name": "Ledger value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Energy      2.45e8        +4.20e4 /s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 26,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FNgf9",
+              "name": "Matter      1.86e6        +810 /s",
+              "width": "fill_container",
+              "fill": "#101D30",
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "rP5wv",
+                  "name": "Ledger value",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Matter      1.86e6        +810 /s",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 26,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "gFtLB",
+              "name": "Open Production",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#E9BC70",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "pNDtH",
+                  "name": "Open Production label",
+                  "fill": "#080E1C",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Open Production",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cGO6Z",
+          "x": 1298,
+          "y": 140,
+          "name": "Context rail",
+          "width": 278,
+          "height": 720,
+          "fill": "#0B1425F5",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "oTlwh",
+              "name": "Next horizon label",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "NEXT HORIZON",
+              "fontFamily": "Rajdhani",
+              "fontSize": 17,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "u4p8t",
+              "name": "Next horizon value",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Atoms",
+              "fontFamily": "Rajdhani",
+              "fontSize": 32,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "mMzIo",
+              "name": "Next horizon detail",
+              "fill": "#A0B3C6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Refine Matter to open the next chapter. Production continues while you explore.",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "MPJeh",
+              "name": "Session label",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "YOUR COSMIC RECORD",
+              "fontFamily": "Rajdhani",
+              "fontSize": 17,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "M2Mfcd",
+              "name": "Session detail",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "12 discoveries\n3 completed challenges\n1 expedition in flight",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "q0Gczw",
+          "x": 0,
+          "y": 0,
+          "name": "Modal scrim",
+          "fill": "#020611CD",
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "type": "frame",
+          "id": "CFpqd",
+          "x": 410,
+          "y": 210,
+          "name": "Stellar Rebirth dialog",
+          "width": 780,
+          "height": 480,
+          "fill": "#101D30",
+          "stroke": "#2C485B",
+          "strokeWidth": 1,
+          "layout": "vertical",
+          "gap": 12,
+          "padding": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "GGuR3",
+              "name": "Confirmation eyebrow",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "CROSS THE THRESHOLD",
+              "fontFamily": "Rajdhani",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "BGdPx",
+              "name": "Confirmation title",
+              "fill": "#EAF1F6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Stellar Rebirth",
+              "fontFamily": "Rajdhani",
+              "fontSize": 44,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "OGYBN",
+              "name": "Reward",
+              "fill": "#E9BC70",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "+128 Stellar Essence",
+              "fontFamily": "Rajdhani",
+              "fontSize": 30,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "PDZLC",
+              "name": "Reset warning",
+              "fill": "#E8A6A6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "RESET  /  Resources, processes, ordinary upgrades and research.",
+              "fontFamily": "Rajdhani",
+              "fontSize": 22,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "WCyjr",
+              "name": "Preserved progress",
+              "fill": "#A0B3C6",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "KEEP  /  Settings, achievements, challenge records, story discoveries and verified purchases.",
+              "fontFamily": "Rajdhani",
+              "fontSize": 21,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "qX4YK",
+              "name": "Begin Stellar Rebirth",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#E9BC70",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "retvt",
+                  "name": "Begin Stellar Rebirth label",
+                  "fill": "#080E1C",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Begin Stellar Rebirth",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "jAyvJ",
+              "name": "Keep building / Cancel",
+              "width": "fill_container",
+              "height": 48,
+              "fill": "#101D30",
+              "stroke": "#2C485B",
+              "strokeWidth": 1,
+              "padding": [
+                10,
+                18
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TC94W",
+                  "name": "Keep building / Cancel label",
+                  "fill": "#EAF1F6",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Keep building / Cancel",
+                  "fontFamily": "Rajdhani",
+                  "fontSize": 20,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fileToken": "aede431f-4392-48bc-b821-c13423aca623"
+}

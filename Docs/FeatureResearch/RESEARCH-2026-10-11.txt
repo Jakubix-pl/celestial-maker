@@ -1,0 +1,281 @@
+CELESTIAL MAKER — CO WARTO ROZWINĄĆ PO WERSJI 2.6.0
+Data przeglądu: 11 października 2026
+Status: badania i propozycje. Funkcje opisane poniżej nie zostały wdrożone.
+
+WNIOSEK
+
+Największą wartość ma zagęszczenie sensownych decyzji w środkowej i późnej
+kampanii oraz oddanie graczowi większej kontroli nad planem nieobecności.
+Obecna gra ma już wiele systemów. Ich różnorodność i wzajemne powiązania są
+lepszym kierunkiem niż kolejne waluty, warstwy resetu i powtarzalne mnożniki.
+
+METODA I OGRANICZENIA
+
+Porównano publiczne dyskusje na Steam, Reddit i itch.io z aktualnymi plikami
+Celestial Maker. Uwzględniono zarówno postulaty, jak i odpowiedzi graczy,
+którzy ich nie podzielają. To jakościowy przegląd potrzeb, nie reprezentatywna
+ankieta, ranking popularności ani test z udziałem graczy Celestial Maker.
+Nie publikowano wiadomości, nie uruchamiano gry ani Unity, nie sterowano
+pulpitem. Wyniki kampanii przytoczono z istniejącego raportu 2.6.0; podczas
+tego przeglądu nie wykonywano nowych symulacji lub pomiarów wydajności.
+
+Starsze dyskusje służą jako historyczne przykłady problemów projektowych,
+nie jako opis aktualnej wersji konkurencyjnej gry. Daty względne i indeks
+wyszukiwarki bywają niespójne; podstawą wniosków była otwarta treść stron.
+Strony, której nie udało się otworzyć (Project Chromata), nie użyto jako
+podstawy rekomendacji. Poniższe pomysły są wnioskami projektowymi autora
+analizy, a nie dosłownymi prośbami społeczności o funkcje Celestial Maker.
+
+CO JUŻ MAMY — NIE PROJEKTOWAĆ TEGO PONOWNIE
+
+- Pełny replay offline 60 Hz, zakupy, badania, odkryte resety, ekspedycje
+  i transfery. Wznawianie przerwanego przeliczania i brak limitu nieobecności.
+- Opcjonalny Development Plan: Energy/Matter/Time, profile operacji,
+  kolejki badań, rezerwy, priorytety i przywracanie ustawień po resetach.
+- Diagnostyka ograniczeń, przepływy zasobów, przypięty cel, mapa postępu,
+  podsumowanie powrotu, kontekstowa pomoc, porównania produkcji i resetów.
+- Trzy warstwy resetu, drzewka, trzy megastruktury, dziewięć praw,
+  równoległe gospodarki, wyzwania, ekspedycje, odkrycia i historie.
+- Punkty przywracania i eksport/import zapisów; zdobywane kosmetyki.
+- Angielski interfejs, kolory z ikonami, skróty, wyszukiwanie, regulacja
+  skali, ograniczenie animacji, motywy Night/Dawn i dwie notacje liczb.
+
+KONKRETNE LUKI W AKTUALNYCH PLIKACH
+
+1. Raport 2.6.0 podaje kampanie z wizytami co 6 h: Energy 421,68 h,
+   Matter 377,91 h, Time 411,45 h. W tych politykach przerwy między
+   dyskretnymi odkryciami sięgają 84 h. Dobra długość kampanii nie dowodzi
+   dobrego rytmu ciekawych decyzji. Nie oznacza to 84 h bez produkcji.
+2. Wszystkie 12 definicji wyzwań używają tej samej struktury: spowolnienie
+   jednego zasobu, próg zasobu i nagroda x1,08. Mają osobny eksperyment
+   i przywracanie gospodarki, ale ograniczoną różnorodność zasad.
+3. Osiem ekspedycji ma koszt, czas i gwarantowaną nagrodę. Brakuje w ich
+   modelu tras, wyborów podczas odkrywania i trwałych rezultatów fabularnych.
+4. Development Plan wybiera spośród trzech gotowych strategii. Istnieją
+   oddzielne priorytety, rezerwy i kolejki, lecz nie ma ogólnego edytora
+   warunków i sekwencji celów, np. „zbuduj X, potem oszczędzaj na Y”.
+5. Porównania badań/praw dotyczą bieżących wydajności. Prognoza resetu ma
+   horyzont 48 h, wyłącza kolejne resety i Development Plan. To nie jest
+   porównanie dwóch pełnych planów na kolejną sześciogodzinną nieobecność.
+   Raport 2.6.0 zaznacza ograniczenia starszej symulacji zdarzeniowej.
+6. Równoległe gospodarki są rzeczywiste i niezależne. Dostępne są dwa typy
+   satelitów, Radiant/Dense; transfery dotyczą energii i cząstek. Rozbudowa
+   powinna dodawać role i współpracę, a nie tylko więcej podobnych światów.
+7. Pomoc to głównie opisy ekranów i krótka lista pierwszych kroków.
+   Brakuje ćwiczeń na bezpiecznych kopiach stanu, sprawdzających zrozumienie.
+8. Koniec kampanii jest jawnie oznaczony; historie to 12 wpisów związanych
+   z zasobami. Rozwinięta kronika decyzji i osobne scenariusze po kampanii
+   stanowiłyby nową zawartość, a nie naprawę rzekomego braku zakończenia.
+9. Pozostały nieaktualne teksty wyzwań „without premium bonuses”, mimo
+   usuniętej monetyzacji. To drobna korekta treści do następnego wdrożenia.
+
+REKOMENDOWANA LISTA — W KOLEJNOŚCI WARTOŚCI
+
+1. PROJEKTY BADAWCZE MIĘDZY ETAPAMI MEGASTRUKTUR
+   Priorytet wysoki; zakres duży; wpływ na balans duży.
+   Dodawać w późnej kampanii wybory zmieniające istniejącą gospodarkę:
+   np. Dyson stabilizujący dopływ energii albo wspierający transfery;
+   Forge oszczędzająca wejścia albo produkująca na potrzeby konkretnej budowy.
+   Moduły mają korzyść i koszt alternatywny. Nie tworzyć nowej waluty.
+   Gracz wybiera przy wizycie, projekt pracuje offline, wybór nie wygasa.
+   Start od małego prototypu dwóch odmiennych modułów jednego projektu.
+   Hipoteza: nowa sensowna opcja co 12–18 h późnej kampanii, a nie kolejny
+   procent paska. Ten przedział jest celem do sprawdzenia, nie wynikiem.
+   Podstawa: lokalna luka 84 h; [S3], [S4].
+
+2. AUTOMATYZACJA OPARTA NA CELACH I WARUNKACH
+   Priorytet wysoki; zakres średni/duży; wpływ na balans duży.
+   Rozszerzyć istniejący plan: „uzbieraj koszt budowy i zachowaj rezerwę”,
+   „zbuduj etap 4, potem przełącz profil”, „wstrzymaj znane resety do celu”,
+   „zakończ sekwencję po celu”. Produkcja może dalej działać po zatrzymaniu
+   samego planu. Pierwsze odkrycie nowej warstwy resetu pozostaje manualne.
+   Prosty tryb Energy/Matter/Time zostaje. Reguły zaawansowane są opcjonalne.
+   UI pokazuje właściciela sterowania i powód oczekiwania, np. plan chroni
+   zasoby dla budowy. Unikać konfliktu reguł gracza z gotowym planem.
+   Akceptacja: ta sama kolejność decyzji online, offline i po wznowieniu;
+   brak obchodzenia rezerw, zakleszczeń oraz resetów sprzecznych z celem.
+   Podstawa: [S1], [S2]; odpowiedzi w [S2] przemawiają za zachowaniem prostoty.
+
+3. LABORATORIUM PLANÓW NA KOLEJNE 6 GODZIN
+   Priorytet wysoki; zakres średni; wpływ bezpośredni na balans niski.
+   Porównać bieżący plan i jeden wariant na kopiach tego samego zapisu.
+   Pokazać postęp celu, możliwe resety, wydatki, rezerwy i czas bezczynności
+   reguł. Gracz widzi przyczynę różnicy, nie tylko wynik „lepszy/gorszy”.
+   Oprzeć weryfikację na obecnym silniku ticków. Obliczenia przyrostowe,
+   możliwe do anulowania; limit pracy musi ujawniać niepełny wynik.
+   Domyślnie 6 h, później opcjonalne 1/24 h. Nie obiecywać natychmiastowej
+   ani pewnej prognozy po przyszłych ręcznych decyzjach gracza.
+   Akceptacja: prognoza zgadza się z późniejszym odtworzeniem tej samej
+   kopii i polityki; test nie modyfikuje zapisu ani nie przyznaje nagród.
+   Podstawa: [S3], [S7]; rozszerza już istniejące porównania i diagnostykę.
+
+4. WYZWANIA Z ODRĘBNYMI ZASADAMI I OCENĄ GOTOWOŚCI
+   Priorytet wysoki; zakres średni; wpływ na balans średni.
+   Wykorzystać istniejący system niezależnych eksperymentów. Prototypy:
+   ograniczona liczba aktywnych procesów, zakaz jednego rodzaju transferu,
+   budowa przy ograniczonym budżecie wejść. Powinny wymagać innych decyzji,
+   a nie tylko dłuższego czekania na wolniejszy zasób.
+   Przed wejściem: zasady, nagroda, orientacyjna gotowość i bezpieczna próba.
+   Po próbie: co ograniczało wynik. Zachować rekordy oraz możliwość wyjścia.
+   Nie wymagać ponownego ręcznego zaliczania identycznych wyzwań po resecie.
+   Podstawa: [S3], [S5]. Wyzwania budzą mieszane opinie; zacząć od kilku
+   opcjonalnych scenariuszy i sprawdzić je z ludźmi przed rozbudową.
+
+5. EKSPEDYCJE Z ODKRYWANIEM I TRWAŁYMI WYBORAMI
+   Priorytet średni; zakres średni/duży; wpływ na balans średni.
+   Rozwinąć istniejące wyprawy o kilka tras/anomalii. Przykład: zeskanować
+   obiekt dla wiedzy o nowym module albo zabezpieczyć go do badań budowy.
+   Wybory odblokowują inne zastosowania obecnych systemów i wpisy kroniki.
+   Wynik czeka na gracza; po sześciu godzinach nie ma utraconej okazji.
+   Automatyczne powtarzanie poznanej trasy pozostaje. Nowa decyzja nie
+   zatrzymuje podstawowej gospodarki. Ważnych nagród nie uzależniać od
+   nieograniczonego losowania rzadkiego przedmiotu.
+   Podstawa: [S3], [S4]; konkretna forma to propozycja dla kosmicznej tematyki.
+
+6. WIĘCEJ RÓL DLA OBECNYCH WSZECHŚWIATÓW
+   Priorytet średni; zakres duży; wpływ na balans duży.
+   Rozwinąć trzy istniejące gospodarki o specjalizacje: dostawca energii,
+   przetwórca i ośrodek konstrukcyjny. Role zmieniają zastosowanie zasobów
+   oraz opłacalność istniejących transferów. Każda ma wyraźną cenę.
+   Najpierw dwie alternatywne konfiguracje obecnego układu, bez czwartego
+   świata, nowego ekwipunku ani kolejnych kilkunastu zakładek.
+   Nie wymagać ciągłego przełączania specjalizacji co kilka minut.
+   Akceptacja: co najmniej dwie konfiguracje osiągają cel kampanii w tym
+   samym docelowym przedziale; żaden transfer nie tworzy zasobów w pętli.
+   Podstawa: [S3], [S7]; [S7] zawiera też krytykę nadmiernej specjalizacji.
+
+7. KRÓTKIE, POWTARZALNE LEKCJE PRZY NOWYCH MECHANIKACH
+   Priorytet wysoki; zakres mały/średni; wpływ na balans niski.
+   Rozwinąć istniejącą pomoc o dwuminutowe opcjonalne ćwiczenia:
+   rozpoznaj brak wejścia, ustaw rezerwę, porównaj reset, uruchom transfer.
+   Ćwiczenia na kopii stanu lub przykładzie; bez wydawania zasobów kampanii.
+   Mogą być otwierane ponownie z ekranu danej mechaniki, także na starym
+   zapisie. Pokazywać jeden cel i efekt, nie zasłaniać gry długim samouczkiem.
+   Akceptacja do sprawdzenia w małym playteście: uczestnik potrafi wyjaśnić
+   działanie i wykonać zadanie bez wiki. Testy kodu nie potwierdzają zrozumienia.
+   Podstawa: [S6], [S7], [S8].
+
+8. FINAŁ KAMPANII, KRONIKA I OSOBNE SCENARIUSZE PO JEJ UKOŃCZENIU
+   Priorytet średni; zakres średni/duży; ryzyko rozrostu zakresu duże.
+   Rozbudować istniejący komunikat ukończenia: rezultat stworzonego kosmosu,
+   najważniejsze wybory i porównanie własnych kolejnych kampanii.
+   Potem dobrowolne scenariusze o znanym ziarnie i odmiennych zasadach,
+   zapisane oddzielnie. Nie kasować ukończonej kampanii i nie dodawać
+   obowiązkowej czwartej warstwy resetu do celu około 400 h.
+   Nagrody: odmiany kosmosu, nazwy/tytuły, rekordy; bez obowiązkowych premii
+   wymuszających endgame do dokończenia podstawowej kampanii.
+   Podstawa: [S4], [S3]; kształt kroniki i scenariuszy jest hipotezą projektową.
+
+NAJBLIŻSZY SENSOWNY PAKIET
+
+A. Najpierw 2 + 3 + 7: własny cel nieobecności, możliwość porównania planu
+   i zrozumiałe wprowadzenie. Wraz z tym usunąć stare wzmianki o premium.
+B. Następnie mały pionowy wycinek 1 + 4: jeden moduł megastruktury i kilka
+   nowych zasad wyzwań. Zmierzyć wpływ na długie luki odkryć.
+C. Dopiero po sprawdzeniu użyteczności rozszerzać ekspedycje, role światów
+   i scenariusze końcowe. Nie wdrażać wszystkich nowych systemów jednocześnie.
+
+WARUNKI PRZYSZŁEJ WALIDACJI
+
+- Utrzymać orientacyjny zakres 360–440 h dla zdefiniowanych polityk
+  Energy/Matter/Time przy wizytach co 6 h. Powtórzyć także aktywne i godzinne
+  scenariusze; czas kampanii nie może być deklarowany na podstawie mnożników.
+- Mierzyć osobno czas między nowymi decyzjami/zasadami. Osiągnięcia za
+  większą liczbę zasobów lub nowy kolor paska nie są nową mechaniką.
+- Nowe systemy muszą działać po zamknięciu gry i po przerwaniu replayu,
+  z zachowaniem oszczędzania, kolejności zdarzeń, migracji i deterministyczności.
+- Testować także plan nieoptymalny, wyłączoną automatyzację i duże rezerwy;
+  target dla trzech skryptów nie jest gwarancją dla dowolnego gracza.
+- Mały playtest prototypu powinien obejmować osobę znającą gatunek i osobę
+  nową. Obserwować, czy rozumieją wybory i chcą do nich wracać. Nie wystarczy
+  sprawdzić, że przycisk działa albo kampania kończy się po określonym czasie.
+
+POMYSŁY O NIŻSZYM PRIORYTECIE
+
+Synchronizacja między urządzeniami ma sens przy przyszłym wydaniu na kolejnej
+platformie; obecna prośba dotyczy gry PC. W tej analizie nie audytowano pełnej
+integracji kont/chmury i nie klasyfikuje się jej jako potwierdzonego braku.
+Przeprowadzony przegląd daje mocniejsze uzasadnienie dla treści i kontroli
+automatyzacji niż dla multiplayera, rynku, sezonów czy obowiązkowych dailies.
+Nie dodawać wygasających nagród, które karzą przyjęty rytm wizyt co 6 h.
+Zachować już wdrożone funkcje dostępności i sprawdzić je w prawdziwym teście
+użyteczności; sam odczyt kodu nie potwierdza komfortu ani realnych FPS.
+
+ŹRÓDŁA — ODCZYTANE PUBLICZNIE 2026-10-11
+
+[S1] Steam, Melvor Idle, Action Queue QoL feature, 3–7 października 2023.
+https://steamcommunity.com/app/1267910/discussions/0/3882723164281652538/
+Gracz prosi o nocną sekwencję pozyskania konkretnych ilości składników.
+W odpowiedziach pojawia się odmienna wizja zarządzania i wskazanie modów.
+Źródło potwierdza potrzebę u części graczy, nie powszechny konsensus ani
+aktualną dostępność funkcji w dzisiejszym Melvorze.
+
+[S2] Steam, Unnamed Space Idle, Suggestion: A.I. Automation Material Queue,
+27–28 grudnia 2025.
+https://steamcommunity.com/app/2471100/discussions/0/690870825661988992/
+Autor chce kolejki materiałów, celów ilościowych i ochrony zapasu.
+Dwie odpowiedzi wolą istniejący prosty tryb Smart i kwestionują wartość
+mikrozarządzania drobnymi bonusami. Dlatego rekomendowana zaawansowana
+automatyzacja ma być opcjonalna. Nie przejmujemy propozycji płatnego unlocku.
+
+[S3] Reddit, r/incremental_games, Favorite/Hated mechanics.
+https://www.reddit.com/r/incremental_games/comments/1rx5t77/favoritehated_mechanics/
+Rozmówcy wskazują eksperymentowanie, informację zwrotną i nowe zastosowania
+starych systemów. Opinie o wyzwaniach są podzielone: cenione są zrozumiałe
+zasady i ocena gotowości, krytykowane próby bez wiedzy, czy są wykonalne.
+Są również sprzeczne preferencje dotyczące sprzętu, aktywności i resetów.
+
+[S4] itch.io, A Dark Forest, Week 18: Plan The Future (Analysis Of Feedback)
+oraz komentarze pod wpisem; historyczny etap rozwoju sprzed około dwóch lat.
+https://tinytakinteller.itch.io/the-best-game-ever/devlog/787300/interlude-week-18-plan-the-future-analysis-of-feedback
+Deweloper zbiera uwagi o kamieniach milowych, powtórzeniach i zakończeniu.
+Komentujący chce więcej odkrywania po Darkness; inny chwali szybsze kolejne
+cykle i automatyzację wcześniejszej pracy. To uzasadnienie rytmu odkryć,
+nie kopiowania konkretnej tematyki ani obecnego balansu A Dark Forest.
+
+[S5] Steam, Antimatter Dimensions, C9 - Tickspeed Autobuyer,
+grudzień 2022; historyczny przykład.
+https://steamcommunity.com/app/1399720/discussions/0/3732952742347058599/
+Spór dotyczy żmudnej ręcznej kolejności zakupów i zbyt wczesnego podejścia.
+Odpowiedzi wskazują, że zadanie staje się łatwiejsze po dalszym postępie.
+Wniosek: informować o gotowości i czasie próby, nie obiecywać, że każdemu
+graczowi odpowiada ten sam stopień złożoności.
+
+[S6] Reddit, ogłoszenie autora Unnamed Space Idle o wersji 0.81.0.0
+(tytuł wątku błędnie mówi V0.80) i odpowiedzi.
+https://www.reddit.com/r/incremental_games/comments/1uwsa5s/unnamed_space_idle_content_update_v080/
+Autor opisuje stopniowe wprowadzanie Splice. Gracz pisze, że porzucił grę,
+bo go nie rozumiał; wymiana ujawnia też potrzebę pomocy dostępnej ponownie
+na już rozwiniętym zapisie. To silny argument za powtarzalnymi lekcjami,
+nie za dodaniem kolejnego obowiązkowego samouczka przy pierwszym starcie.
+
+[S7] Reddit, Unnamed Space Idle was my favorite game of the last year,
+until it wasn't; starsza dyskusja, nie audyt aktualnego balansu gry.
+https://www.reddit.com/r/incremental_games/comments/1i9u0rq/unnamed_space_idle_was_my_favorite_game_of_the/
+Gracz opisuje ścianę postępu; autor wskazuje ograniczenia diagnostyki
+pominiętych premii. Inni przechodzą ten fragment znacznie szybciej.
+Występuje też krytyka ciągłego zmieniania wyspecjalizowanych konfiguracji.
+Wniosek: tłumaczyć przyczyny i efekty decyzji, zachować wygodny plan ogólny.
+
+[S8] Reddit, r/incremental_games, Any instant turn-offs in games?
+https://www.reddit.com/r/incremental_games/comments/1upw9uy/any_instant_turnoffs_in_games/
+Powracają skargi na utratę wygody po resecie, nadmiar kliknięć, konieczność
+trzymania gry otwartej i potrzebę korzystania z zewnętrznego poradnika.
+Są też gracze o przeciwnych oczekiwaniach, np. wobec multiplayera i buildów.
+Traktować jako granice projektowe i argument za opcjami, nie głosowanie.
+
+LOKALNA PODSTAWA AUDYTU
+
+PROJECT_STATE.md — bieżąca sekcja 2.6.0.
+Docs/OfflineCadence/REPORT.txt — pomiary, warunki i ograniczenia kampanii.
+Docs/ObservatoryEvolution/PLAYER-RESEARCH.txt — poprzednie badania i wdrożenia.
+Game/Assets/_CelestialMaker/Resources/content.json — definicje treści.
+Game/Assets/_CelestialMaker/Scripts/Core/Models.cs i ExpansionModels.cs.
+Game/Assets/_CelestialMaker/Scripts/Core/Simulation.DevelopmentPlan.cs.
+Game/Assets/_CelestialMaker/Scripts/Core/Simulation.Universes.cs.
+Game/Assets/_CelestialMaker/Scripts/Core/Simulation.Preview.cs.
+Game/Assets/_CelestialMaker/Scripts/Core/ObservatoryEvolution.cs.
+Game/Assets/_CelestialMaker/Scripts/UI/GameUI.Evolution.cs,
+GameUI.PC.cs, GameUI.PCInsights.cs, GameUI.Readability.cs i GameUI.Observatory.cs.
+
+Zmieniono tylko dokumentację tego przeglądu. Bieżący build pozostaje 2.6.0.

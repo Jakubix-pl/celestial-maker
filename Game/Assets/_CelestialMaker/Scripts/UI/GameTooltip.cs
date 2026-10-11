@@ -1,0 +1,13 @@
+using UnityEngine;using UnityEngine.UI;using UnityEngine.EventSystems;using TMPro;
+namespace CelestialMaker {
+ public sealed class GameTooltip:MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IPointerDownHandler,IPointerUpHandler {
+  public string message;public TMP_FontAsset font;public bool LongPressed,cosmic;bool hover,held;float since;Vector2 position;GameObject popup;
+  public void OnPointerEnter(PointerEventData e){hover=true;since=Time.unscaledTime;position=e.position;}
+  public void OnPointerExit(PointerEventData e){hover=false;Hide();}
+  public void OnPointerDown(PointerEventData e){held=true;LongPressed=false;since=Time.unscaledTime;position=e.position;}
+  public void OnPointerUp(PointerEventData e){held=false;Hide();}
+  void Update(){if(popup||!hover&&!held||Time.unscaledTime-since<.55f)return;if(held)LongPressed=true;var canvas=GetComponentInParent<Canvas>();if(!canvas)return;canvas=canvas.rootCanvas;var prefab=Resources.Load<GameObject>("UI/Tooltip");popup=cosmic?new GameObject("Hint",typeof(RectTransform),typeof(CosmicPanel)):prefab?Instantiate(prefab):new GameObject("Hint",typeof(RectTransform),typeof(Image));popup.transform.SetParent(canvas.transform,false);popup.GetComponent<Image>().color=cosmic?CosmicStyle.Panel:new Color(.03f,.13f,.17f,.99f);popup.GetComponent<Image>().raycastTarget=false;var rect=(RectTransform)popup.transform;var root=(RectTransform)canvas.transform;float width=Mathf.Min(cosmic?420:340,root.rect.width-32);rect.sizeDelta=new Vector2(width,105);var text=new GameObject("Explanation",typeof(RectTransform),typeof(TextMeshProUGUI));text.transform.SetParent(popup.transform,false);var t=text.GetComponent<TextMeshProUGUI>();t.font=font;t.fontSize=cosmic?18*Mathf.Clamp(GameSession.Instance?.CurrentSettings.textScale??1,.8f,2):16;t.text=message;t.textWrappingMode=TextWrappingModes.Normal;t.color=cosmic?CosmicStyle.Text:Color.white;t.raycastTarget=false;float height=Mathf.Min(root.rect.height-32,Mathf.Max(65,t.GetPreferredValues(message,width-32,0).y+32));rect.sizeDelta=new Vector2(width,height);RectTransformUtility.ScreenPointToLocalPointInRectangle(root,position,canvas.worldCamera,out var point);rect.anchoredPosition=new Vector2(Mathf.Clamp(point.x+width*.4f,-root.rect.width/2+width/2+8,root.rect.width/2-width/2-8),Mathf.Clamp(point.y-height/2-22,-root.rect.height/2+height/2+8,root.rect.height/2-height/2-8));var tr=(RectTransform)text.transform;tr.anchorMin=Vector2.zero;tr.anchorMax=Vector2.one;tr.offsetMin=new Vector2(16,12);tr.offsetMax=new Vector2(-16,-12);}
+  void Hide(){if(popup)Destroy(popup);popup=null;}void OnDestroy(){Hide();}
+ }
+}
+

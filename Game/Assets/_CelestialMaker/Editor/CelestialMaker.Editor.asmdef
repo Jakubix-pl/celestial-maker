@@ -1,0 +1,1 @@
+{"name":"CelestialMaker.Editor","rootNamespace":"CelestialMaker.EditorTools","references":["CelestialMaker.Core","CelestialMaker.Runtime","Unity.TextMeshPro","Unity.ugui","Unity.InputSystem","Unity.RenderPipelines.Universal.Runtime","Unity.RenderPipelines.Core.Runtime"],"includePlatforms":["Editor"]}

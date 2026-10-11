@@ -1,0 +1,2116 @@
+{
+  "version": 2,
+  "expansion": {
+    "prestigeEarned": {
+      "Value": {
+        "Mantissa": 3.7,
+        "Exponent": 1
+      },
+      "mantissa": 3.7,
+      "exponent": 1
+    },
+    "ascensionEarned": {
+      "Value": {
+        "Mantissa": 5,
+        "Exponent": 0
+      },
+      "mantissa": 5,
+      "exponent": 0
+    },
+    "historicEarned": [
+      {
+        "Value": {
+          "Mantissa": 1.81,
+          "Exponent": 3
+        },
+        "mantissa": 1.81,
+        "exponent": 3
+      },
+      {
+        "Value": {
+          "Mantissa": 8.3,
+          "Exponent": 1
+        },
+        "mantissa": 8.3,
+        "exponent": 1
+      },
+      {
+        "Value": {
+          "Mantissa": 6,
+          "Exponent": 0
+        },
+        "mantissa": 6,
+        "exponent": 0
+      }
+    ],
+    "historicResets": [
+      230,
+      83,
+      3
+    ],
+    "ascensionUpgrades": [
+      "a_time_1",
+      "a_time_2"
+    ],
+    "genesisUpgrades": [
+      "g_seed",
+      "g_memory",
+      "g_horizon"
+    ],
+    "laws": [
+      "time_burst",
+      "space_open"
+    ],
+    "cosmetics": [
+      "theme-1",
+      "theme-2"
+    ],
+    "records": [
+      "reset-0",
+      "reset-1",
+      "mega-0-1",
+      "mega-1-1",
+      "mega-2-1",
+      "universe-1",
+      "mega-0-2",
+      "mega-1-2",
+      "mega-2-2",
+      "mega-0-3",
+      "mega-1-3",
+      "mega-2-3",
+      "reset-2",
+      "universe-2"
+    ],
+    "megas": [
+      {
+        "level": 3,
+        "building": false,
+        "work": 0
+      },
+      {
+        "level": 2,
+        "building": true,
+        "work": 116325.00000000083
+      },
+      {
+        "level": 2,
+        "building": false,
+        "work": 0
+      }
+    ],
+    "strategies": [
+      {
+        "name": "Energy",
+        "upgrades": [],
+        "laws": [],
+        "links": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "policy": "Balanced"
+      },
+      {
+        "name": "Matter",
+        "upgrades": [],
+        "laws": [],
+        "links": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "policy": "Balanced"
+      },
+      {
+        "name": "Time",
+        "upgrades": [],
+        "laws": [],
+        "links": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "policy": "Balanced"
+      }
+    ],
+    "universes": [
+      {
+        "id": 1,
+        "kind": 1,
+        "name": "Radiant parallel",
+        "resources": [
+          {
+            "Value": {
+              "Mantissa": 9.26739029478289,
+              "Exponent": 9
+            },
+            "mantissa": 9.26739029478289,
+            "exponent": 9
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 4.149011489152,
+              "Exponent": 11
+            },
+            "mantissa": 4.149011489152,
+            "exponent": 11
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 3.28029281303937,
+              "Exponent": 16
+            },
+            "mantissa": 3.28029281303937,
+            "exponent": 16
+          }
+        ],
+        "lifetime": [
+          {
+            "Value": {
+              "Mantissa": 4.0250229901564,
+              "Exponent": 11
+            },
+            "mantissa": 4.0250229901564,
+            "exponent": 11
+          },
+          {
+            "Value": {
+              "Mantissa": 2.28261678828782,
+              "Exponent": 11
+            },
+            "mantissa": 2.28261678828782,
+            "exponent": 11
+          },
+          {
+            "Value": {
+              "Mantissa": 8.0515574662695,
+              "Exponent": 11
+            },
+            "mantissa": 8.0515574662695,
+            "exponent": 11
+          },
+          {
+            "Value": {
+              "Mantissa": 1.37655806952939,
+              "Exponent": 12
+            },
+            "mantissa": 1.37655806952939,
+            "exponent": 12
+          },
+          {
+            "Value": {
+              "Mantissa": 4.85557573025844,
+              "Exponent": 12
+            },
+            "mantissa": 4.85557573025844,
+            "exponent": 12
+          },
+          {
+            "Value": {
+              "Mantissa": 1.71271154506896,
+              "Exponent": 13
+            },
+            "mantissa": 1.71271154506896,
+            "exponent": 13
+          },
+          {
+            "Value": {
+              "Mantissa": 6.04121883409068,
+              "Exponent": 13
+            },
+            "mantissa": 6.04121883409068,
+            "exponent": 13
+          },
+          {
+            "Value": {
+              "Mantissa": 2.13080558521593,
+              "Exponent": 14
+            },
+            "mantissa": 2.13080558521593,
+            "exponent": 14
+          },
+          {
+            "Value": {
+              "Mantissa": 7.51524015950068,
+              "Exponent": 14
+            },
+            "mantissa": 7.51524015950068,
+            "exponent": 14
+          },
+          {
+            "Value": {
+              "Mantissa": 2.64952033845312,
+              "Exponent": 15
+            },
+            "mantissa": 2.64952033845312,
+            "exponent": 15
+          },
+          {
+            "Value": {
+              "Mantissa": 9.338130124952,
+              "Exponent": 15
+            },
+            "mantissa": 9.338130124952,
+            "exponent": 15
+          },
+          {
+            "Value": {
+              "Mantissa": 3.28029281303937,
+              "Exponent": 16
+            },
+            "mantissa": 3.28029281303937,
+            "exponent": 16
+          }
+        ],
+        "reserves": [
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          }
+        ],
+        "owned": [
+          142,
+          121,
+          110,
+          101,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "paused": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "purchases": [
+          "u0",
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9",
+          "u10",
+          "u11",
+          "u12",
+          "u13",
+          "u14",
+          "u15",
+          "u16",
+          "u17",
+          "u18",
+          "u19",
+          "u20",
+          "u21",
+          "u22",
+          "u23",
+          "u24",
+          "u25",
+          "u26",
+          "u27",
+          "u28",
+          "u29",
+          "u30",
+          "u31",
+          "u32",
+          "u33",
+          "u34",
+          "u35",
+          "u36",
+          "u37",
+          "u38",
+          "u39",
+          "u40",
+          "u41",
+          "u42",
+          "u43",
+          "u44",
+          "u45",
+          "u46",
+          "u47",
+          "u48",
+          "u49",
+          "u50",
+          "u51",
+          "u52",
+          "u53",
+          "u54",
+          "u55",
+          "u56",
+          "u57",
+          "u58",
+          "u59"
+        ],
+        "laws": [],
+        "achievements": [
+          "a0",
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8",
+          "a9",
+          "a12",
+          "a10",
+          "a13",
+          "a14",
+          "a11",
+          "a16",
+          "a17",
+          "a18",
+          "a19",
+          "a15",
+          "a20",
+          "a21",
+          "a22",
+          "a23",
+          "a24",
+          "a28",
+          "a25",
+          "a29",
+          "a26",
+          "a30",
+          "a27",
+          "a31",
+          "a32",
+          "a33",
+          "a34",
+          "a35",
+          "a36",
+          "a37",
+          "a38",
+          "a39",
+          "a40",
+          "a41",
+          "a42",
+          "a43",
+          "a44",
+          "a45",
+          "a46",
+          "a47"
+        ],
+        "stories": [
+          "s0",
+          "s1",
+          "s2",
+          "s3",
+          "s4",
+          "s5",
+          "s6",
+          "s7",
+          "s8",
+          "s9",
+          "s10",
+          "s11"
+        ],
+        "automation": {
+          "name": "Balanced",
+          "buy": true,
+          "expeditions": false,
+          "priority": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "reserves": [
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            }
+          ],
+          "prestigeThreshold": 2,
+          "repeatPrestige": [
+            false,
+            false,
+            false
+          ]
+        },
+        "time": 7775999.999999536,
+        "nextAutomation": 7776029.999999536,
+        "lawReadyAt": 0
+      },
+      {
+        "id": 2,
+        "kind": 1,
+        "name": "Radiant parallel",
+        "resources": [
+          {
+            "Value": {
+              "Mantissa": 9.26739029478289,
+              "Exponent": 9
+            },
+            "mantissa": 9.26739029478289,
+            "exponent": 9
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 4.149011489152,
+              "Exponent": 11
+            },
+            "mantissa": 4.149011489152,
+            "exponent": 11
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 3.28029281303937,
+              "Exponent": 16
+            },
+            "mantissa": 3.28029281303937,
+            "exponent": 16
+          }
+        ],
+        "lifetime": [
+          {
+            "Value": {
+              "Mantissa": 4.0250229901564,
+              "Exponent": 11
+            },
+            "mantissa": 4.0250229901564,
+            "exponent": 11
+          },
+          {
+            "Value": {
+              "Mantissa": 2.28261678828782,
+              "Exponent": 11
+            },
+            "mantissa": 2.28261678828782,
+            "exponent": 11
+          },
+          {
+            "Value": {
+              "Mantissa": 8.0515574662695,
+              "Exponent": 11
+            },
+            "mantissa": 8.0515574662695,
+            "exponent": 11
+          },
+          {
+            "Value": {
+              "Mantissa": 1.37655806952939,
+              "Exponent": 12
+            },
+            "mantissa": 1.37655806952939,
+            "exponent": 12
+          },
+          {
+            "Value": {
+              "Mantissa": 4.85557573025844,
+              "Exponent": 12
+            },
+            "mantissa": 4.85557573025844,
+            "exponent": 12
+          },
+          {
+            "Value": {
+              "Mantissa": 1.71271154506896,
+              "Exponent": 13
+            },
+            "mantissa": 1.71271154506896,
+            "exponent": 13
+          },
+          {
+            "Value": {
+              "Mantissa": 6.04121883409068,
+              "Exponent": 13
+            },
+            "mantissa": 6.04121883409068,
+            "exponent": 13
+          },
+          {
+            "Value": {
+              "Mantissa": 2.13080558521593,
+              "Exponent": 14
+            },
+            "mantissa": 2.13080558521593,
+            "exponent": 14
+          },
+          {
+            "Value": {
+              "Mantissa": 7.51524015950068,
+              "Exponent": 14
+            },
+            "mantissa": 7.51524015950068,
+            "exponent": 14
+          },
+          {
+            "Value": {
+              "Mantissa": 2.64952033845312,
+              "Exponent": 15
+            },
+            "mantissa": 2.64952033845312,
+            "exponent": 15
+          },
+          {
+            "Value": {
+              "Mantissa": 9.338130124952,
+              "Exponent": 15
+            },
+            "mantissa": 9.338130124952,
+            "exponent": 15
+          },
+          {
+            "Value": {
+              "Mantissa": 3.28029281303937,
+              "Exponent": 16
+            },
+            "mantissa": 3.28029281303937,
+            "exponent": 16
+          }
+        ],
+        "reserves": [
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          },
+          {
+            "Value": {
+              "Mantissa": 0,
+              "Exponent": 0
+            },
+            "mantissa": 0,
+            "exponent": 0
+          }
+        ],
+        "owned": [
+          142,
+          121,
+          110,
+          101,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "paused": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "purchases": [
+          "u0",
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9",
+          "u10",
+          "u11",
+          "u12",
+          "u13",
+          "u14",
+          "u15",
+          "u16",
+          "u17",
+          "u18",
+          "u19",
+          "u20",
+          "u21",
+          "u22",
+          "u23",
+          "u24",
+          "u25",
+          "u26",
+          "u27",
+          "u28",
+          "u29",
+          "u30",
+          "u31",
+          "u32",
+          "u33",
+          "u34",
+          "u35",
+          "u36",
+          "u37",
+          "u38",
+          "u39",
+          "u40",
+          "u41",
+          "u42",
+          "u43",
+          "u44",
+          "u45",
+          "u46",
+          "u47",
+          "u48",
+          "u49",
+          "u50",
+          "u51",
+          "u52",
+          "u53",
+          "u54",
+          "u55",
+          "u56",
+          "u57",
+          "u58",
+          "u59"
+        ],
+        "laws": [],
+        "achievements": [
+          "a0",
+          "a1",
+          "a2",
+          "a3",
+          "a4",
+          "a5",
+          "a6",
+          "a7",
+          "a8",
+          "a9",
+          "a12",
+          "a10",
+          "a13",
+          "a14",
+          "a11",
+          "a16",
+          "a17",
+          "a18",
+          "a19",
+          "a15",
+          "a20",
+          "a21",
+          "a22",
+          "a23",
+          "a24",
+          "a28",
+          "a25",
+          "a29",
+          "a26",
+          "a30",
+          "a27",
+          "a31",
+          "a32",
+          "a33",
+          "a34",
+          "a35",
+          "a36",
+          "a37",
+          "a38",
+          "a39",
+          "a40",
+          "a41",
+          "a42",
+          "a43",
+          "a44",
+          "a45",
+          "a46",
+          "a47"
+        ],
+        "stories": [
+          "s0",
+          "s1",
+          "s2",
+          "s3",
+          "s4",
+          "s5",
+          "s6",
+          "s7",
+          "s8",
+          "s9",
+          "s10",
+          "s11"
+        ],
+        "automation": {
+          "name": "Balanced",
+          "buy": true,
+          "expeditions": false,
+          "priority": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "reserves": [
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            },
+            {
+              "Value": {
+                "Mantissa": 0,
+                "Exponent": 0
+              },
+              "mantissa": 0,
+              "exponent": 0
+            }
+          ],
+          "prestigeThreshold": 2,
+          "repeatPrestige": [
+            false,
+            false,
+            false
+          ]
+        },
+        "time": 7775999.999999536,
+        "nextAutomation": 7776029.999999536,
+        "lawReadyAt": 0
+      }
+    ],
+    "transfers": [],
+    "lawReadyAt": 7740599.999999541,
+    "nextAutomation": 7776014.999999536,
+    "nextHistory": 7776059.999999536,
+    "prestigeStarted": 7739999.999999541,
+    "ascensionStarted": 7696799.999999547,
+    "genesisStarted": 7264799.999999593,
+    "activeUniverse": 0,
+    "guidedAutomation": true,
+    "autoResearch": true,
+    "autoBuild": true,
+    "policy": "Time",
+    "migration": "native-v2",
+    "legacyAccount": "",
+    "legacyBoostRecords": 0,
+    "legacySupporter": false,
+    "legacyEntitlementsConverted": false,
+    "transferred": 0,
+    "completedTransfers": 0
+  },
+  "satellite": false,
+  "universeKind": 0,
+  "profileId": "simulated-balance-Time-save",
+  "resources": [
+    {
+      "Value": {
+        "Mantissa": 2.00933582090434,
+        "Exponent": 11
+      },
+      "mantissa": 2.00933582090434,
+      "exponent": 11
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 2.47233763276191,
+        "Exponent": 12
+      },
+      "mantissa": 2.47233763276191,
+      "exponent": 12
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 2.10695714761857,
+        "Exponent": 17
+      },
+      "mantissa": 2.10695714761857,
+      "exponent": 17
+    }
+  ],
+  "lifetime": [
+    {
+      "Value": {
+        "Mantissa": 7.55077432574781,
+        "Exponent": 12
+      },
+      "mantissa": 7.55077432574781,
+      "exponent": 12
+    },
+    {
+      "Value": {
+        "Mantissa": 7.45705137811813,
+        "Exponent": 12
+      },
+      "mantissa": 7.45705137811813,
+      "exponent": 12
+    },
+    {
+      "Value": {
+        "Mantissa": 2.10428256588668,
+        "Exponent": 13
+      },
+      "mantissa": 2.10428256588668,
+      "exponent": 13
+    },
+    {
+      "Value": {
+        "Mantissa": 5.24034917732321,
+        "Exponent": 13
+      },
+      "mantissa": 5.24034917732321,
+      "exponent": 13
+    },
+    {
+      "Value": {
+        "Mantissa": 1.47875807568986,
+        "Exponent": 14
+      },
+      "mantissa": 1.47875807568986,
+      "exponent": 14
+    },
+    {
+      "Value": {
+        "Mantissa": 4.17286113943779,
+        "Exponent": 14
+      },
+      "mantissa": 4.17286113943779,
+      "exponent": 14
+    },
+    {
+      "Value": {
+        "Mantissa": 1.17752628978983,
+        "Exponent": 15
+      },
+      "mantissa": 1.17752628978983,
+      "exponent": 15
+    },
+    {
+      "Value": {
+        "Mantissa": 3.32281457605221,
+        "Exponent": 15
+      },
+      "mantissa": 3.32281457605221,
+      "exponent": 15
+    },
+    {
+      "Value": {
+        "Mantissa": 9.37647966119773,
+        "Exponent": 15
+      },
+      "mantissa": 9.37647966119773,
+      "exponent": 15
+    },
+    {
+      "Value": {
+        "Mantissa": 2.64581147575692,
+        "Exponent": 16
+      },
+      "mantissa": 2.64581147575692,
+      "exponent": 16
+    },
+    {
+      "Value": {
+        "Mantissa": 7.4667537221011,
+        "Exponent": 16
+      },
+      "mantissa": 7.4667537221011,
+      "exponent": 16
+    },
+    {
+      "Value": {
+        "Mantissa": 2.10695714761857,
+        "Exponent": 17
+      },
+      "mantissa": 2.10695714761857,
+      "exponent": 17
+    }
+  ],
+  "reserves": [
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    }
+  ],
+  "prestige": [
+    {
+      "Value": {
+        "Mantissa": 3.7,
+        "Exponent": 1
+      },
+      "mantissa": 3.7,
+      "exponent": 1
+    },
+    {
+      "Value": {
+        "Mantissa": 1,
+        "Exponent": 0
+      },
+      "mantissa": 1,
+      "exponent": 0
+    },
+    {
+      "Value": {
+        "Mantissa": 0,
+        "Exponent": 0
+      },
+      "mantissa": 0,
+      "exponent": 0
+    }
+  ],
+  "owned": [
+    160,
+    138,
+    125,
+    115,
+    5,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "paused": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "resets": [
+    1,
+    5,
+    3
+  ],
+  "links": [
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1
+  ],
+  "universeLaw": 0,
+  "purchases": [
+    "r0",
+    "r1",
+    "r2",
+    "r3",
+    "r4",
+    "r15",
+    "r16",
+    "r17",
+    "r18",
+    "r19",
+    "r25",
+    "r26",
+    "r27",
+    "r28",
+    "r29",
+    "u0",
+    "u1",
+    "u2",
+    "u3",
+    "u4",
+    "u5",
+    "u6",
+    "u7",
+    "u8",
+    "u9",
+    "u10",
+    "r5",
+    "r6",
+    "r7",
+    "r8",
+    "r9",
+    "u11",
+    "u12",
+    "u13",
+    "u14",
+    "u15",
+    "u16",
+    "u17",
+    "u18",
+    "u19",
+    "u20",
+    "r10",
+    "r11",
+    "r12",
+    "r13",
+    "r14",
+    "u21",
+    "u22",
+    "u23",
+    "u24",
+    "u25",
+    "u26",
+    "u27",
+    "u28",
+    "u29",
+    "u30",
+    "u31",
+    "u32",
+    "u33",
+    "u34",
+    "u35",
+    "u36",
+    "u37",
+    "u38",
+    "u39",
+    "u40",
+    "r20",
+    "r21",
+    "r22",
+    "r23",
+    "r24",
+    "u41",
+    "u42",
+    "u43",
+    "u44",
+    "u45",
+    "u46",
+    "u47",
+    "u48",
+    "u49",
+    "u50",
+    "u51",
+    "u52",
+    "u53",
+    "u54",
+    "u55",
+    "u56",
+    "u57",
+    "u58",
+    "u59"
+  ],
+  "talents": [],
+  "achievements": [
+    "a0",
+    "a4",
+    "a1",
+    "a5",
+    "a6",
+    "a8",
+    "a9",
+    "a2",
+    "a12",
+    "a13",
+    "a10",
+    "a7",
+    "a3",
+    "a14",
+    "a16",
+    "a17",
+    "a18",
+    "a11",
+    "a20",
+    "a21",
+    "a22",
+    "a15",
+    "a19",
+    "a23",
+    "a24",
+    "a25",
+    "a28",
+    "a29",
+    "a30",
+    "a26",
+    "a31",
+    "a27",
+    "a32",
+    "a33",
+    "a36",
+    "a34",
+    "a37",
+    "a38",
+    "a35",
+    "a39",
+    "a40",
+    "a41",
+    "a42",
+    "a44",
+    "a45",
+    "a46",
+    "a47",
+    "a43"
+  ],
+  "completedChallenges": [],
+  "discoveredStories": [
+    "s0",
+    "s1",
+    "s2",
+    "s3",
+    "s4",
+    "s5",
+    "s6",
+    "s7",
+    "s8",
+    "s9",
+    "s10",
+    "s11"
+  ],
+  "prestigePurchases": [],
+  "voyages": [],
+  "expeditionLevels": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "automation": {
+    "name": "Balanced",
+    "buy": true,
+    "expeditions": false,
+    "priority": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "reserves": [
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      },
+      {
+        "Value": {
+          "Mantissa": 0,
+          "Exponent": 0
+        },
+        "mantissa": 0,
+        "exponent": 0
+      }
+    ],
+    "prestigeThreshold": 2,
+    "repeatPrestige": [
+      true,
+      false,
+      false
+    ]
+  },
+  "profiles": [],
+  "settings": {
+    "fps": 60,
+    "quality": 1,
+    "theme": 0,
+    "music": 0.25,
+    "sound": 0.5,
+    "textScale": 1,
+    "reducedMotion": false,
+    "confirmReset": true,
+    "tutorial": true,
+    "notation": "Scientific"
+  },
+  "offlineReport": null,
+  "time": 7775999.999999536,
+  "utc": 0,
+  "offlineRemaining": 0,
+  "liveRemaining": 0,
+  "activeChallenge": "",
+  "challengeResources": null,
+  "challengeOwned": null,
+  "challengePurchases": null,
+  "challengePaused": null
+}

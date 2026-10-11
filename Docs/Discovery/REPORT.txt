@@ -1,0 +1,186 @@
+CELESTIAL MAKER 2.7.0 - DISCOVERY
+Implementation and verification report, 2026-10-11
+STATUS: IMPLEMENTED, COMPILED, BUILT; headless runtime and offscreen fixtures OBSERVED.
+Physical desktop gameplay, Windows DPI and rendered FPS remain UNVERIFIED.
+
+IMPLEMENTED
+1. Engineering modules: nine choices across Dyson Swarm, Neutron Forge and
+   Reality Loom, plus Standard. Unlock stages 1/2/4, one active module per
+   project, one-hour switching cooldown. Benefits have production, transport,
+   input or construction tradeoffs. Switching preserves accumulated work.
+   Choices survive resets; effects wait for their unlock stage to return.
+2. Goal automation: up to six ordered construction/stock goals. Hold automatic
+   resets until completion; then Save, Resume, Energy, Matter or Time. Save stops
+   automatic spending and resets and protects current Home stock. Goals and
+   current position are part of complete operations profiles. Manual resets
+   remain available. Locked construction goals explain Ascension/Endless horizon.
+3. Six-hour laboratory: current configuration versus an Energy/Matter/Time plan
+   or saved Home operations profile. Separate serialized copies, literal 60 Hz
+   replay, construction work, stock, spending by resource, resets and sampled
+   blocking reasons. Live economy keeps running. A separate worker publishes immutable progress snapshots; 30-second runs,
+   cancellation and explicit continuation. Worker copies never write saves.
+4. Challenges: three additional rule families distributed over the existing
+   twelve challenges: 25 units per process; no resonance/expeditions; double
+   input consumption. Existing resource handicaps/rewards remain. Isolated
+   six-hour readiness trials use guided purchases and report measured outcomes,
+   actual targets and diagnostics. Cancelled real attempts record their result.
+5. Expedition discovery: eight persistent anomaly signals; once revealed, pick
+   Survey (15% shorter, 15% lower reward) or Recovery (20% longer, 20% higher
+   reward). Permanent route choice applies to future launches, including offline
+   automation. Existing voyages retain their launch terms. Signals never expire.
+6. Parallel roles: Balanced, Energy supplier, Refinery and Construction support.
+   Production/input/export tradeoffs; actual Energy deliveries to Home activate
+   a temporary 2% construction bonus per support world, maximum 4%. Imported
+   stock does not become lifetime production. Roles persist; major resets clear
+   active delivery support and retain the existing transfer reactivation rule.
+7. Repeatable practice: reserves, input bottlenecks and Prestige resets. Each
+   lesson runs the real engine on a separate economy, available on existing saves
+   and before progression. Only completion/history flags reach the campaign.
+8. Finale and chronicle: completion time, projects, modules, routes, roles,
+   focus, historical resets and a bounded decision history. Three optional
+   post-campaign scenarios use separate save and checkpoint slots. Start/resume,
+   return to campaign, deterministic seed/goal and completion records. Corrupt
+   scenario slots are preserved; imports cannot cross campaign/scenario slots.
+
+ACCESS
+Automation: Goal sequence, Six-hour laboratory, Practice mechanics.
+Cosmos > Megastructures: Engineering modules.
+Cosmos > Expeditions: Signals and route discoveries.
+Cosmos > Parallel universes: Specialization.
+Development > Challenges: Run readiness trial and per-challenge rules.
+Overview / Journal: Cosmic chronicle. Scenarios appear after campaign completion.
+All authored game UI remains English and uses existing adaptive Observatory UI.
+
+COMPATIBILITY AND NUMERICS
+New choices default to inactive/Standard/Balanced in existing saves. Existing
+points, unlocks and purchased research are preserved. No user save is migrated
+on disk by this development work. Preserve original Unity metadata.
+The tests exposed minimum-quantum reserve depletion and floating-point dust
+in a parallel economy. Sub-quantum input allocation now respects available
+stock; protected stock is clamped at depletion; stock below one minimum incoming
+flow quantum is treated as supply-limited. Both live and offline use this logic.
+A fixed reproduction fixture lives in Tools/Expansion/Fixtures/depletion.json.
+
+VERIFICATION LIMITS
+Plan experiments exclude future manual choices. Blocked durations are samples,
+not exact idle-duration accounting. Partial readiness results are labeled.
+No deadline or expiring reward was introduced. No cloud/paid integration added.
+The optional scenario seed sets a repeatable target tier, not a generated map.
+Physical frame rate, Windows DPI and human mouse/keyboard play remain unverified.
+Offscreen UI renders show real Unity widgets, not screenshots of the desktop.
+No visible game/editor window and no desktop input or capture were used.
+
+Backup: Backups/Discovery-20261011-150009.
+Evidence: Logs/Discovery; Logs/Pacing400/discovery*; Logs/ObservatoryVisual/after.
+VERIFICATION RESULTS
+COMPILED / TESTED
+- .NET Core regression: 261/261. Final direct execution of the compiled DLL,
+  including background comparison cancellation and continuation.
+- Unity custom Core validation: 20/20.
+- Unity EditMode: 17/17; PlayMode: 1/1, Bootstrap -> Menu -> Game, production,
+  save/reload and offline catch-up, with isolated save paths.
+- Full Observatory layout/callback regression: 1479/1479. Early and late saves,
+  Night/Dawn themes, 100/125/150/200% text, 1280x720, 1920x1080, 2560x1440
+  and 3440x1440. This checks geometry and callbacks, not physical frame rate.
+- Extended system audit: 63/63. Nine engineering benefit/cost pairs, all twelve
+  challenges completed by real production from a measured endgame fixture,
+  restored owned economies, and nine fresh scenario/target combinations.
+- Six-hour Discovery audit: 4/4. 1,296,000 literal ticks, online/offline/reloaded
+  agreement, fourteen transfers, eight signals and resource accounting.
+- Final Windows EXE: 94/94 runtime checks, null graphics, isolated saves.
+  Includes comparisons of two six-hour copies, lessons, goals, modules, routes,
+  roles, scenario save separation, return/resume, corrupt slot preservation,
+  cross-slot import rejection, normal save recovery and English culture.
+
+BUILT
+Windows x64 Release 2.7.0, Unity 6000.6.3f1, zero build errors.
+The final game is also tested after installation, from its installed directory.
+
+OBSERVED / BALANCE
+Actual tick engine, strict visits every six hours, persisted Development Plan,
+manual first reset of each layer and subsequent discovered automatic resets;
+serialize/reload after each absence. Selected modules and parallel roles are
+recorded in Logs/Pacing400/discovery.json. No injected completion or currency.
+- Energy: 415.625284 h, 70 visits, 71 reloads; all three projects level 6, 90 research records.
+- Matter: 371.800284 h, 62 visits, 63 reloads; all three projects level 6, 90 research records.
+- Time: 407.082663 h, 68 visits, 69 reloads; all three projects level 6, 90 research records.
+These policies pass the 360-440h campaign target. They are not a guarantee for
+all manual strategies. The legacy unlock counter still has 60-78h gaps; it
+counts research/trees/records, excluding new route decisions and module choices.
+
+The optional scenarios were completed from fresh economies, not by assigning
+lifetime totals. Seeds 0/1/2 cover all three target tiers; other seeds repeat
+these target tiers. Results: Logs/Discovery/system-audit.json. Ordinary guided
+routing works for the first two scenarios. Hungry cosmos requires upstream
+investment: the measured player policy alternates five-minute Energy, Particle,
+Atom saving and full-chain phases. A naive always-feeding policy failed to
+reach its upper targets within 48h. That failed probe is retained, not reported
+as passing. The adapted policy completes its tiers in 1.93/4.93/17.27h.
+These are scripted policies; no human gameplay or usability trial is claimed.
+
+BUG FIXES FOUND DURING VALIDATION
+- Sub-quantum resource depletion and parallel floating-point dust could stall
+  progress at a numerical boundary. Fixed input allocation, protected stock,
+  accounting and the stored-stock threshold; the saved reproduction and full
+  campaign runs now advance normally.
+- Running both laboratory copies on the UI thread was too slow. A cancellable
+  background worker now publishes immutable snapshots, with pause/continuation.
+- Discovery actions initially pushed the late-game progress card below the
+  visible overview. They now follow the campaign card.
+- The transfer interval tooltip now describes its actual -20% interval, and
+  the laboratory reports all unlocked stocks and current stock-goal progress.
+
+WINDOWS INSTALLER
+Builds/CelestialMaker-Setup-2.7.0.exe; English only, current user, no admin
+requirement, Start menu entry, optional desktop shortcut with the game icon.
+No automatic game launch, forced application close or reboot. Existing saves
+remain in Unity's LocalLow profile; optional scenarios retain separate slots.
+Uninstall deletes only registered installed files; no recursive save deletion.
+No production code-signing key was used: the game installer is unsigned.
+
+Tools/build-installer.ps1 compiles Tools/Installer/CelestialMaker.iss with the
+project-local portable Inno Setup 6.7.3. The official tool download was verified
+with a valid Authenticode signature from Pyrsys B.V. and its SHA256 recorded in
+Logs/Discovery/installer-tool.json. No global compiler installation was used.
+Official references:
+https://jrsoftware.org/isdl.php
+https://jrsoftware.org/isdl-verify.php
+https://jrsoftware.org/ishelp/topic_setupcmdline.htm
+https://github.com/jrsoftware/issrc/blob/is-6_7_3/license.txt
+
+Installer tests use a fresh Logs/Discovery/Installer-* folder and no shortcuts:
+silent install -> hash comparison of 193 files -> reinstall/upgrade -> installed
+EXE regression -> silent uninstall. Verify Windows registration version/path,
+retention of an untracked user file, removal of the registration and executable,
+and unchanged user save hashes. See Logs/Discovery/installer-tests.json.
+
+REPRODUCTION
+Use the pinned editor's DotNetSdk/dotnet.exe. Build Tools/Expansion -c Release
+-o Tools/Expansion/bin/Final, then execute that exact Expansion.dll with the
+repository path and optionally --system-audit or --discovery-audit. The explicit
+DLL path avoids dotnet run resolving a stale default output during custom-path
+builds. Core evidence here is from direct execution of the current compiled DLL.
+For the campaign use --pacing --discovery --offline-resume --style=check-in
+--tag=discovery --verify-target --hours=480. Run Unity jobs sequentially via
+Tools/common.ps1; use Tools/test-observatory-player.ps1 for the release.
+Build installer, test installer, then run Tools/package-observatory.ps1.
+
+DELIVERY AND INTEGRITY
+Final installer regression: 26/26 installation/file/save checks, plus 94/94
+checks in the installed game. Silent reinstall/upgrade and uninstall passed.
+Final ZIP: all 193 entries compared against loose build SHA256 hashes.
+All 13 protected user files are byte-identical to the pre-task baseline. The
+Unity Test Framework's overwritten TestResults.xml alone was restored after
+verifying it matched this task's result; no production save JSON was restored
+or rewritten. The installed test registration was removed by its uninstaller.
+56 private URP renders generated; representative screens and populated lab
+results inspected at 100% Night and 200% Dawn. The render-only comparison fixture
+uses a one-minute horizon for layout review; actual release tests replay six
+hours per comparison. Render files are not proof of physical desktop FPS.
+
+Installer: 36132319 bytes
+SHA256: 9882BA70A98C89F49E2D94A66C2BC40909DE208105E547537BD757ECECCEDAE6
+ZIP: 49707545 bytes
+SHA256: EE6AFD7D5F908273749310C5A25396B293401B5A279BD2A2AAB6B47C03A48265
+
+Evidence manifest: Logs/Discovery/final-verification.json.

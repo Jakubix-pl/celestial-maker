@@ -1,0 +1,1 @@
+{"name":"celestial-maker-website","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"node server.mjs","build":"node build.mjs"},"devDependencies":{"typescript":"7.0.2"}}

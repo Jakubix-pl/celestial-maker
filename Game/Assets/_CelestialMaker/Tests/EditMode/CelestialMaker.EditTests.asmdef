@@ -1,0 +1,1 @@
+{"name":"CelestialMaker.EditTests","references":["CelestialMaker.Core","CelestialMaker.Runtime"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"]}

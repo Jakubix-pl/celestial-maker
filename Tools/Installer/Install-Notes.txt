@@ -1,0 +1,16 @@
+CELESTIAL MAKER 2.7.0
+
+An English-language, offline PC game about building a universe.
+
+This installer installs the game for your Windows account. Administrator
+access is not required. Choose an optional desktop shortcut on the next pages.
+The game will not start automatically when installation finishes.
+
+Existing Celestial Maker saves remain in your local user profile and are
+loaded by the game. Installing, upgrading and uninstalling preserve them.
+Optional endgame scenarios use separate save slots.
+
+Close Celestial Maker before updating its installed files.
+
+Windows 10 or later, 64-bit, and a graphics device supported by Unity are
+required. This package includes the game runtime; Unity Editor is not needed.

@@ -1,0 +1,54 @@
+Celestial Maker 2.4.3 — progressive currency visibility, 2026-10-11
+
+IMPLEMENTED
+Prestige, Ascension and Genesis currency details become visible when the first
+corresponding reset can award a point, or persisted progression already records
+the currency (balance, current/higher reset, historical earned points or resets).
+Spending a balance to zero, a higher reset and loading a save do not erase known
+currencies. No new save field or migration was needed; authoritative progression
+and balance rules remain unchanged.
+
+Fresh top bars show Energy and Particles. The chapter-resource meter stays hidden
+until that resource's chapter is open or its stock/run lifetime is nonzero; the
+Prestige meter follows currency discovery. Hidden fields leave no empty slots.
+Visibility follows the selected economy; reset currency belongs to home.
+Stock counters still refresh per rendered frame; header visibility is checked
+in the existing 250 ms derived-refresh path, without an extra Update loop.
+
+Locked reset cards keep a name, Locked state and relevant unlock requirements,
+without a currency balance or reward preview. Review becomes available on unlock.
+Requirements mentioning an unknown lower currency use an introductory goal until
+that currency is known. Roadmap, Genesis horizon and specialization views follow
+the same rule. The legacy reset/specialization presentation uses the shared guard.
+Existing offline report discovery filtering is retained.
+
+COMPILED
+Core 144/144, Unity Core 20/20,
+UI 1389/1389; actual EXE 45 null-graphics checks.
+New fixtures cover fresh screens without unknown currency labels, collapsed
+meter gaps, first available Prestige/Ascension/Genesis, earning and spending the
+first Prestige point, JSON reload, actual Ascension clearing the lower balance,
+historical metadata, imported balances and selected parallel economies.
+Existing layout, contrast and consecutive-frame counter checks also pass.
+
+BUILT
+Windows Release 2.4.3, zero errors, Unity 6000.6.3f1.
+Build UTC: 2026-10-11T11:14:46.5027065Z
+ZIP: C:\Users\Jakubix\Desktop\Idle\Builds\CelestialMaker-Observatory-Windows.zip
+Bytes: 49657862; verified files: 193.
+SHA256: AF844255C817A559D35CCD053D12D1AF1A7CC90C7CCDC92A4F88412B5699D693
+All 13 protected user files retained their initial hashes.
+
+OBSERVED
+14 private Unity URP renders in Night/Dawn. Six representative images inspected:
+fresh production/reset views, ready Prestige, spent Prestige, ready Ascension,
+and fresh 200-percent text. The newly hidden fields collapse correctly; discovered
+zero balances remain shown. The legacy presentation was compiled, not rendered.
+Render UTC: 2026-10-11T11:10:51.9816287Z
+No desktop control, desktop screenshots or visible game/editor windows.
+Physical input, Windows DPI and visible-player FPS remain UNVERIFIED.
+No new FPS benchmark was run for this UI visibility change.
+
+Evidence: Logs/ObservatoryUnlocks/final-verification.json.
+Gallery: Docs/UI-Minimalist-Futuristic/VISUAL-GALLERY.html.
+Previous release, sources and evidence: C:\Users\Jakubix\Desktop\Idle\Backups\ObservatoryUnlocks-20261011-130735

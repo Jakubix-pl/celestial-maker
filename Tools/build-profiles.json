@@ -1,0 +1,54 @@
+{
+  "WindowsDevelopment": {
+    "target": "StandaloneWindows64",
+    "development": true,
+    "backend": "Mono",
+    "quality": "Desktop"
+  },
+  "WindowsRelease": {
+    "target": "StandaloneWindows64",
+    "development": false,
+    "backend": "Mono",
+    "quality": "Desktop"
+  },
+  "AndroidAPKDevelopment": {
+    "target": "Android",
+    "development": true,
+    "backend": "IL2CPP",
+    "architecture": "ARM64",
+    "container": "APK",
+    "quality": "Mobile"
+  },
+  "AndroidAABRelease": {
+    "target": "Android",
+    "development": false,
+    "backend": "IL2CPP",
+    "architecture": "ARM64",
+    "container": "AAB",
+    "requiresProductionSigning": true,
+    "quality": "Mobile"
+  },
+  "WebDevelopment": {
+    "target": "WebGL",
+    "development": true,
+    "backend": "IL2CPP",
+    "quality": "Mobile",
+    "compression": "Disabled"
+  },
+  "WebRelease": {
+    "target": "WebGL",
+    "development": false,
+    "backend": "IL2CPP",
+    "quality": "Mobile",
+    "compression": "Disabled"
+  },
+  "AndroidAABTest": {
+    "target": "Android",
+    "development": true,
+    "backend": "IL2CPP",
+    "architecture": "ARM64",
+    "container": "AAB",
+    "requiresProductionSigning": false,
+    "quality": "Mobile"
+  }
+}
