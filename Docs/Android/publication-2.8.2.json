@@ -1,0 +1,95 @@
+{
+  "version": "2.8.2",
+  "url": "https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.2",
+  "draft": false,
+  "releaseTagSourceCommit": "73435521acc9550603c2f3a731f2ec3cfffc126a",
+  "verifiedMainCommit": "73435521acc9550603c2f3a731f2ec3cfffc126a",
+  "publicAssets": [
+    {
+      "name": "CelestialMaker-2.8.2-Android-arm64.apk",
+      "url": "https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-2.8.2-Android-arm64.apk",
+      "bytes": 40856911,
+      "sha256": "B1B990016D88372F2308BD1F31595984A8309A59C23DF25F761BDF394FD86F5B",
+      "anonymousReadback": true
+    },
+    {
+      "name": "CelestialMaker-2.8.2-Android-SHA256.txt",
+      "url": "https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-2.8.2-Android-SHA256.txt",
+      "bytes": 106,
+      "sha256": "97416825FEFE856635FAF574B7CD6692E97BBE67CCBA03C85E493DC1C7488418",
+      "anonymousReadback": true
+    },
+    {
+      "name": "CelestialMaker-2.8.2-SHA256.txt",
+      "url": "https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-2.8.2-SHA256.txt",
+      "bytes": 204,
+      "sha256": "AFC6E494D61D2B467B34763430BC6D685C6D2E4B974096ABF39C87033D9EE0AD",
+      "anonymousReadback": true
+    },
+    {
+      "name": "CelestialMaker-Observatory-Windows.zip",
+      "url": "https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-Observatory-Windows.zip",
+      "bytes": 49717057,
+      "sha256": "6D0C633D6770A7C23075C2425E364EAD15088151B5995376C322E43079C46E30",
+      "anonymousReadback": true
+    },
+    {
+      "name": "CelestialMaker-Setup-2.8.2.exe",
+      "url": "https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-Setup-2.8.2.exe",
+      "bytes": 36139761,
+      "sha256": "A7250F3AB604020B368D06FBBFDEA08A43275BF0EF27651E43F0D97EB6426F6A",
+      "anonymousReadback": true
+    }
+  ],
+  "publicReadmeVerified": true,
+  "verifiedPurchaseImages": [
+    {
+      "path": "Docs/images/purchase-production.png",
+      "sha256": "508BFE058C648C34F017E0759B7B6D08F9FBDC2FC3BE77BDA11A49AE633247AE"
+    },
+    {
+      "path": "Docs/images/purchase-research.png",
+      "sha256": "7E0701799134D8A2440074656CC6854ABBDE03B09337E1EE9E3501540A28B484"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-purchase-production.png",
+      "sha256": "BB47FAAD0795D30760FD55A492A6B40CD4745F83C6A906284F01F4ECCB79CE94"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-purchase-research.png",
+      "sha256": "DC13F98563374F51BB1753AA1E7D10D745875760A8DCAC6E470A98023D270891"
+    }
+  ],
+  "desktopControlled": false,
+  "visibleGameWindow": false,
+  "localDelivery": {
+    "folder": "Desktop / Calestial Maker",
+    "hashVerified": true,
+    "previousVersionsPreserved": true,
+    "files": [
+      {
+        "name": "CelestialMaker-Setup-2.8.2.exe",
+        "bytes": 36139761,
+        "sha256": "A7250F3AB604020B368D06FBBFDEA08A43275BF0EF27651E43F0D97EB6426F6A"
+      },
+      {
+        "name": "CelestialMaker-2.8.2-Windows.zip",
+        "bytes": 49717057,
+        "sha256": "6D0C633D6770A7C23075C2425E364EAD15088151B5995376C322E43079C46E30"
+      },
+      {
+        "name": "CelestialMaker-2.8.2-Android-arm64.apk",
+        "bytes": 40856911,
+        "sha256": "B1B990016D88372F2308BD1F31595984A8309A59C23DF25F761BDF394FD86F5B"
+      },
+      {
+        "name": "CelestialMaker-2.8.2-Android-SHA256.txt",
+        "bytes": 106,
+        "sha256": "97416825FEFE856635FAF574B7CD6692E97BBE67CCBA03C85E493DC1C7488418"
+      }
+    ]
+  },
+  "buildGameplaySourceCommit": "4fd67fc",
+  "publicationVerifiedUtc": "2026-10-11T19:31:05.851328+00:00",
+  "finalDocumentationCommit": "Later than immutable release tag; identical runtime and content definitions."
+}
