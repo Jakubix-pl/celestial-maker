@@ -1,5 +1,5 @@
 {
-  "release": "2.8.1",
+  "release": "2.8.2",
   "gameplaySourcesMatchBuiltRelease": true,
   "baselineFiles": 19,
   "protectedFilesUnchanged": 18,
@@ -7,41 +7,23 @@
   "nonSaveEditorAnalyticsCacheUpdates": 1,
   "artifacts": [
     {
-      "name": "CelestialMaker-Setup-2.8.1.exe",
-      "bytes": 36137033,
-      "sha256": "2B1FF7DCB0430086614BF03ACFD8184702A12B0BE4FD3149EB309930BA6E9611"
+      "name": "CelestialMaker-Setup-2.8.2.exe",
+      "bytes": 36139761,
+      "sha256": "A7250F3AB604020B368D06FBBFDEA08A43275BF0EF27651E43F0D97EB6426F6A"
     },
     {
       "name": "CelestialMaker-Observatory-Windows.zip",
-      "bytes": 49714422,
-      "sha256": "BB5C3B8CEDD866D3B51419F3640A81DFB6153E11676271206F0056A0F3C559F0"
+      "bytes": 49717057,
+      "sha256": "6D0C633D6770A7C23075C2425E364EAD15088151B5995376C322E43079C46E30"
     },
     {
-      "name": "CelestialMaker-2.8.1-SHA256.txt",
-      "bytes": 204,
-      "sha256": "16F51B72B4A9A6EBEC7465B3D82BD7F4C89E5F390643227B6937F8C6365024C9"
+      "name": "CelestialMaker-2.8.2-Android-arm64.apk",
+      "bytes": 40856911,
+      "sha256": "B1B990016D88372F2308BD1F31595984A8309A59C23DF25F761BDF394FD86F5B"
     }
   ],
-  "performanceBefore": {
-    "cases": 22,
-    "frames": 5280,
-    "overBudget": 6,
-    "worstP95Ms": 10.1947,
-    "maxMs": 26.7653,
-    "worstUiP95Ms": 1.1498,
-    "worstCoreP95Ms": 1.5208
-  },
-  "performanceAfter": {
-    "cases": 22,
-    "frames": 5280,
-    "overBudget": 3,
-    "worstP95Ms": 10.5222,
-    "maxMs": 23.0798,
-    "worstUiP95Ms": 1.0068,
-    "worstCoreP95Ms": 1.4143
-  },
   "physicalFPS": "UNVERIFIED",
-  "humanUsability": "UNVERIFIED",
+  "physicalAndroid": "UNVERIFIED",
   "desktopControlled": false,
   "visibleGameWindow": false
 }

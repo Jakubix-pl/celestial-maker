@@ -1,29 +1,41 @@
-# Release validation — 2.8.1
+# Release validation — 2.8.2
 
-Evidence collected 2026-10-11. Historical 2.8.0 results remain in Git and [its report](../PrestigeAutomation/REPORT.md).
+Evidence collected 2026-10-11. [Implementation and design references](CASUAL-2.8.2.md). Earlier evidence remains in Git and versioned Android reports.
 
-**IMPLEMENTED:** adjusted Prestige recovery and campaign pacing, cached Observatory work and optional five-step autobuyer lesson. English-only game and installer. [Implementation, migration, measurements and limits](../Observatory281/REPORT.md).
+**IMPLEMENTED:** revised chapter costs and upgrade targets, thin purchase funding feedback, research suggestion, strategy introductions and modal binding cleanup. Save IDs and owned progress retained. English only.
 
 **COMPILED / TESTED:**
 
 | Check | Passed | Scope |
 | --- | --- | --- |
-| Shared Core | 297/297 | Also from clean published-source copy |
-| Extended systems | 63/63 | Also from clean source |
-| Unity Core | 20/20 | Shared economy integration |
-| Desktop UI | 1484/1484 | Early/late, Night/Dawn, HD–ultrawide, 100–200% text, actual callbacks |
-| Phone geometry | 432/432 | Logical layout only; no APK or device |
-| Packaged / installed EXE | 108/108 each | Actual Windows binary, isolated saves, null graphics |
-| Installer lifecycle | 32/32 | Install, 193 payload hashes, upgrade, installed EXE, uninstall, preservation |
+| Shared Core | 318/318 | Actual economy, also from clean source |
+| Extended systems | 63/63 | Challenges/scenarios, also from clean source |
+| Unity Core | 20/20 | Economy integration and serialization |
+| Desktop UI | 1488/1488 | Early/late, Night/Dawn, resolutions, text sizes, callbacks and bars |
+| Phone UI | 452/452 | Logical portrait/landscape layouts and purchase bars |
+| Packaged EXE | 107/107 | Hidden null-graphics runtime |
+| Installed EXE | 107/107 | Isolated installed payload |
+| Installer | 32/32 | Install/upgrade/uninstall and file hashes |
+| APK inspection | 34/34 | Signature, version, ARM64, manifest, icons, CRC/alignment |
 
-**BUILT:** Windows x64 Release, Unity 6000.6.3f1, zero errors. Installer/ZIP contain the tested executable. Per-user unsigned installer, optional icon shortcut, no automatic launch, saves preserved. [Sizes and SHA-256 hashes](artifacts.json).
+The player's optional `Continue calculation` action is timing-dependent: the shortened replay completed before that action was sampled here, explaining one fewer runtime action than the older release. Literal offline campaigns independently replay every tick and save/reload at each visit.
 
-**OBSERVED:** three fresh six-hour offline campaigns replayed all ticks and completed in 417.011 / 407.344 / 395.945 hours. Nine event-stepped online policies also meet 360–440 hours. [Raw pacing](pacing.json). Actual private Unity UI renders, lesson steps and 20 distinct animation phases were inspected. [Manifest](screenshots.json). Late-game UI CPU and whole-workload timing measured before/after; synchronous GPU readback and spikes remain in the data. [Report](../Observatory281/REPORT.md).
+**BUILT:** Windows Release and ARM64 IL2CPP APK, zero errors; installer and ZIP verified. Android target API 37 / minimum 26, version/code 2.8.2/28201, development signing, non-debuggable package. No billing/shop integration.
 
-**UNVERIFIED:** physical FPS, human usability, Windows DPI, clean-machine install, other hardware, physical Android runtime and refreshed WebGL. Mono allocation counter unsupported; no zero-allocation claim. Hosted CI remains inactive because the credential lacks workflow permission. No signing/store/service deployment claimed.
+**OBSERVED:** actual uGUI/TMP private URP renders inspected for desktop and phone purchase examples. Twenty distinct Overview animation phases and 24 phone renders retained. UI callbacks and authoritative funding transitions pass, including prerequisites, reserves, catch-up, acquired items and modal cleanup. This does not establish physical touch behavior.
 
-No desktop control/capture or visible game/editor. All campaign saves/exports/backups unchanged; 18 of 19 baseline files match. Unity's Editor analytics cache updated during rendering. Installer preservation checks passed before that rendering. Private paths, backups and detailed save evidence remain in ignored local Logs.
+Literal offline campaign completion:
 
-## Android addition
+| Strategy | Completion |
+| --- | --- |
+| Energy | 416.936 h |
+| Matter | 407.152 h |
+| Time | 395.249 h |
 
-The separate ARM64 2.8.1 APK is now built and package-validated. It does not change the Windows results above. Physical phone runtime remains unverified. See [Android validation](../Android/STATUS.md).
+Nine event-stepped policies complete in 370.554–416.936 hours. Active policies first Prestige at 1.25 h. Six-hour-only policies first Prestige at 12 h because purchases/first confirmations wait for visits. All scripted policies select opt-in plans/modules/roles; actual choices can change these times.
+
+Performance: 22 late-game cases / 5,280 frames after warm-up, actual Core, UI and private GPU renders with synchronous readback. Worst workload p95 4.028 ms; worst UI p95 0.750 ms; 0 samples above 16.67 ms. Allocation counters are unsupported where reported as -1. This is a scoped host benchmark, not phone or physical-display FPS. [Raw results](performance.json).
+
+All gameplay saves, exports and backups remain byte-identical. 18/19 protected files match; 1 non-save Editor Analytics cache file(s) changed during rendering. Clean-source publication audit excludes local saves, credentials, SDK/JDK, Library and release binaries.
+
+**UNVERIFIED:** installation and interaction on the S26 Ultra, Android lifecycle on that device, physical Windows/phone FPS, human usability and a clean-machine installer test. No OS input, desktop capture, visible editor or visible player was used.

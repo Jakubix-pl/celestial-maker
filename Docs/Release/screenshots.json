@@ -1,66 +1,119 @@
 {
   "files": [
-    {
-      "path": "Docs/images/30second-discovery.png",
-      "sha256": "33B655E8FC43D44C03627363F50E698FEBCE93CA850F463760F14950BC0E5305"
-    },
-    {
-      "path": "Docs/images/autobuyer-guide.png",
-      "sha256": "C5EBA5CCD37697B887558DF55D6C20B024E6AC384C6493656FB5914EBFAE0B4B"
-    },
-    {
-      "path": "Docs/images/autobuyer-purchase.png",
-      "sha256": "3558986E5B06AE1607504A52DC652C59F4F358389774A2021AEA4686F1EEF81A"
-    },
-    {
-      "path": "Docs/images/automation.png",
-      "sha256": "F93052885E84B33B137CEBCE88464D5BD64AA4EE9E1352CE9A40CCFD2C7DD076"
-    },
-    {
-      "path": "Docs/images/challenges.png",
-      "sha256": "E1D1BDE16F115881496949E82D3F06EF12C4E0473021BFB34AA4CB869BE68CD5"
-    },
-    {
-      "path": "Docs/images/dawn.png",
-      "sha256": "B70F8B1AD4187B68D6BD29395C614960ED6DB50D0FFFB108DA0C698846283A46"
-    },
-    {
-      "path": "Docs/images/engineering.png",
-      "sha256": "A52AB4A1324C55186F0118D91EA887842345027898E1D181EB94966AD50C4FCD"
-    },
-    {
-      "path": "Docs/images/fresh-production.png",
-      "sha256": "C40BAB3CE055B64F52A1F71203A16777562990A2B2836E2EF9962B034F76F27C"
-    },
-    {
-      "path": "Docs/images/menu.png",
-      "sha256": "9F9B7E9BBB090A71782524D7D592AA8CF7F84256B20F59C90BA719FACB6A5D98"
-    },
-    {
-      "path": "Docs/images/overview.png",
-      "sha256": "B36E286CBDD7FA9CAD173579AFDAD53025AD83C2D9C2354766067A53D2D9BDD1"
-    },
-    {
-      "path": "Docs/images/parallel-universes.png",
-      "sha256": "67BA58C745A69956F58E5684CD3BA88A1CA3CA3652E7949D7839731ECAD86020"
-    },
-    {
-      "path": "Docs/images/production.png",
-      "sha256": "121EEACE87A52B78578636D2A8E0C7C149066A2F9560E89F9A41E58C2303D80F"
-    },
-    {
-      "path": "Docs/images/research.png",
-      "sha256": "4F2BA204A4E5D3291D6112245D04C33E257CC22B3698315B79C4C00250B86280"
-    }
+    "publication-purchase-production.png",
+    "publication-purchase-research.png",
+    "prestige-fresh-production.png",
+    "prestige-30second-discovery.png",
+    "prestige-revealed-production.png",
+    "prestige-autobuyer-purchase.png",
+    "autobuyer-guide-start.png",
+    "autobuyer-guide-step-1.png",
+    "autobuyer-guide-step-2.png",
+    "autobuyer-guide-step-3.png",
+    "autobuyer-guide-step-4.png",
+    "autobuyer-guide-step-5.png",
+    "publication-menu.png",
+    "publication-overview.png",
+    "prestige-motion-00.png",
+    "prestige-motion-01.png",
+    "prestige-motion-02.png",
+    "prestige-motion-03.png",
+    "prestige-motion-04.png",
+    "prestige-motion-05.png",
+    "prestige-motion-06.png",
+    "prestige-motion-07.png",
+    "prestige-motion-08.png",
+    "prestige-motion-09.png",
+    "prestige-motion-10.png",
+    "prestige-motion-11.png",
+    "prestige-motion-12.png",
+    "prestige-motion-13.png",
+    "prestige-motion-14.png",
+    "prestige-motion-15.png",
+    "prestige-motion-16.png",
+    "prestige-motion-17.png",
+    "prestige-motion-18.png",
+    "prestige-motion-19.png",
+    "publication-production.png",
+    "publication-research.png",
+    "publication-automation.png",
+    "publication-megastructures.png",
+    "publication-parallel-universes.png",
+    "publication-challenges.png",
+    "publication-engineering.png",
+    "publication-goals.png",
+    "publication-chronicle.png",
+    "publication-dawn.png"
   ],
-  "utc": "2026-10-11T18:08:23.6597217Z",
+  "utc": "2026-10-11T19:16:58.6495375Z",
   "device": "NVIDIA GeForce RTX 4070 Ti",
   "pipeline": "UniversalRenderPipelineAsset / Desktop / PC",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "desktopControlled": false,
   "desktopCaptured": false,
   "visibleGameWindow": false,
   "method": "Edit-mode uGUI / TMP fixture rendered directly to RenderTexture",
-  "fixture": "Fresh game/first reset plus the 2.8.1 Energy six-hour event-stepped completed synthetic campaign in Tools/Expansion/Fixtures/Presentation-2.8.1.json. Completion label belongs to this fixture; literal offline measurements are separate.",
-  "distinctAnimationPhaseRenders": 20
+  "fixture": "Fresh purchase examples, safe practice and synthetic 2.8.2 Energy event-stepped campaign. Actual private Unity renders; physical display unverified.",
+  "publicImages": [
+    {
+      "path": "Docs/images/30second-discovery.png",
+      "sha256": "A211BD6AAE206782755B8AE3CB5594379B3CF6B54188FDB548D9E5F6233D16EB"
+    },
+    {
+      "path": "Docs/images/autobuyer-guide.png",
+      "sha256": "FD9F644E23FEF7F6E5CF830E4FC9F0D1135AEBEBB8F03558EA5A58F741C5F0ED"
+    },
+    {
+      "path": "Docs/images/autobuyer-purchase.png",
+      "sha256": "5EFC5E3C23BDCE36469A20C3CC093DD5E1C329D25B6E2555775CB14F149225AC"
+    },
+    {
+      "path": "Docs/images/automation.png",
+      "sha256": "4BAFE88B91AC9802FC6122DCF3009E43202451F56BEA37BDD87C703259BCAC53"
+    },
+    {
+      "path": "Docs/images/challenges.png",
+      "sha256": "2FC7960DE300F359125E68801ACEAA9E369B19874E087AD565A7310891757B22"
+    },
+    {
+      "path": "Docs/images/dawn.png",
+      "sha256": "A9135BB3EFD7A8AF14B819EEE42C806B0A01CB20FC990E617E7DBBC281640D9A"
+    },
+    {
+      "path": "Docs/images/engineering.png",
+      "sha256": "280D114D0D0C0B6A67E7A32FB7AB0B9EFB70DAFC349A4DB7DB5B832657A057F6"
+    },
+    {
+      "path": "Docs/images/fresh-production.png",
+      "sha256": "8B1E89E2F05F5EB1ACA5F11FAC084F3218EB1A3BF1DA4B4A5AC85D89308884B2"
+    },
+    {
+      "path": "Docs/images/menu.png",
+      "sha256": "D96AABAB68A05A98F6AB3412EEC9969CED0861A2676876066CB580D63F7536BA"
+    },
+    {
+      "path": "Docs/images/overview.png",
+      "sha256": "B848C6D20476C88FF109E503907B60E4BB9FE2A364BBFE084388582BFC17A735"
+    },
+    {
+      "path": "Docs/images/parallel-universes.png",
+      "sha256": "B901791402E357E07E9BEA962819FBAD9DD272239111AB831C0817FF643E5B6A"
+    },
+    {
+      "path": "Docs/images/production.png",
+      "sha256": "BD4DA4313342D38B3E0D524503A67E1922DB89368B89358D7984CFFD26518880"
+    },
+    {
+      "path": "Docs/images/purchase-production.png",
+      "sha256": "508BFE058C648C34F017E0759B7B6D08F9FBDC2FC3BE77BDA11A49AE633247AE"
+    },
+    {
+      "path": "Docs/images/purchase-research.png",
+      "sha256": "7E0701799134D8A2440074656CC6854ABBDE03B09337E1EE9E3501540A28B484"
+    },
+    {
+      "path": "Docs/images/research.png",
+      "sha256": "D71509AEDECEE472E1609238B6FCFC0FDFBC3570C490717E225DD059785A810B"
+    }
+  ]
 }

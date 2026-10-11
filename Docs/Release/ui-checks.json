@@ -1,5 +1,5 @@
 {
-  "pass": 1484,
+  "pass": 1488,
   "fail": 0,
   "checks": [
     "early/night/1280x720/1/Overview",
@@ -1370,6 +1370,10 @@
     "Reveal animation completes and reduced motion is immediate",
     "Default and Windows build icons are assigned",
     "Late-game autosave uses isolated file and preserves a valid reload",
+    "Purchase bars follow real funding and prerequisites / 1920x1080",
+    "Modal purchase bars update and release bindings / 1920x1080",
+    "Purchase bars follow real funding and prerequisites / 960x720",
+    "Modal purchase bars update and release bindings / 960x720",
     "Research rows are compact and explain exact missing resource",
     "Research filter has selected fill and preserves independent upgrade choice",
     "Research search and favorite result filtering",
@@ -1488,7 +1492,7 @@
     "Stock input clips safely True / 2 / 1920"
   ],
   "failures": [],
-  "utc": "2026-10-11T18:01:45.4095519Z",
+  "utc": "2026-10-11T19:14:27.0911339Z",
   "desktopControlled": false,
   "screenCaptured": false,
   "playerLaunched": false,

@@ -1,7 +1,7 @@
 {
   "pass": true,
-  "version": "2.8.1",
-  "utc": "2026-10-11T18:04:26.8199643Z",
+  "version": "2.8.2",
+  "utc": "2026-10-11T19:19:20.1065589Z",
   "checks": [
     "Actual main menu builds Observatory",
     "Runtime language and number culture are English",
@@ -99,7 +99,6 @@
     "Enabled action: Assign role",
     "Release universe specialization reaches Core",
     "Enabled action: Compare next 6 hours",
-    "Enabled action: Continue calculation",
     "Release laboratory finishes both literal six-hour copies: 1296000 / 1296000",
     "Laboratory grants no simulated time or reset to live campaign",
     "Readiness trial reports an outcome without entering live challenge",

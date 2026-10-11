@@ -1,0 +1,28 @@
+{
+  "pass": 20,
+  "fail": 0,
+  "checks": [
+    "PASS CampaignCompletionSurvivesUnitySerialization",
+    "PASS ExistingV2SaveWithoutCompletionTimestampLoads",
+    "PASS LiveRemainderSurvivesSave",
+    "PASS HugeNumberSaveRange",
+    "PASS DevelopmentMigration",
+    "PASS CurrencyCanNeverBeNegative",
+    "PASS LifetimeRecordsGrossProduction",
+    "PASS FreeTalentRespecCannotCreateCores",
+    "PASS PremiumExcludedFromChallenge",
+    "PASS StoryPersistsAcrossPrestige",
+    "PASS UniverseLawsChangeRules",
+    "PASS NullReportCannotInventZeroBeforeBalances",
+    "PASS OfflineReportSurvivesUnitySerialization",
+    "PASS ResonanceRequiresActiveSourceBranch",
+    "PASS ResonanceDivertsActualInputLimitedOutput",
+    "PASS TalentDefinitionsDriveAllSpecializations",
+    "PASS PremiumRestoreUsesAbsoluteIntervals",
+    "PASS Unity JSON expansion and parallel save roundtrip",
+    "PASS PC expansion routes and fonts present",
+    "PASS No billing dependency"
+  ],
+  "visual": "UNVERIFIED - no graphical player or Play Mode",
+  "utc": "2026-10-11T19:12:11.5037633Z"
+}

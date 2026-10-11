@@ -6,9 +6,9 @@
 
 A patient cosmos. An unfolding experiment. Build production chains, automate your next six hours, and turn a single spark into a network of universes.
 
-**Windows x64 · English · Single player · Free to play · No account required**
+**Windows x64 / Android ARM64 · English · Single player · Free to play · No account required**
 
-[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-Setup-2.8.1.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md) · [Android APK](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-Android-arm64.apk)
+[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-Setup-2.8.2.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md) · [Android APK](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-2.8.2-Android-arm64.apk)
 
 ![Celestial Maker title screen and orbital artwork](Docs/images/menu.png)
 
@@ -33,6 +33,15 @@ Your choices continue between visits. Offline progress replays the shared simula
 | Practice and chronicle | Revisit safe lessons, including the five-step autobuyer introduction, review your decisions, then try optional scenarios in separate saves. |
 
 There is no shop, checkout or paid production boost. Cosmetics are earned in the game.
+
+## Purchases at a glance
+
+Research prices rise clearly from 200 to 600, 1,800, 5,400 and 16,200 Energy. Process upgrades strengthen their own chapter. Thin bars fill yellow while you save and turn green when you can buy; prerequisites and reserves still matter. Research offers one next-discovery suggestion, while optional details and strategic systems remain available.
+
+![Funding progresses from yellow to green inside purchase buttons](Docs/images/purchase-production.png)
+![A suggested next discovery and distinct research prices](Docs/images/purchase-research.png)
+
+[What changed in 2.8.2](Docs/Release/CASUAL-2.8.2.md).
 
 ## The Observatory
 
@@ -65,35 +74,35 @@ Learn point spending, automatic buying and reset retention in five safe practice
 
 </details>
 
-These images show the actual 2.8.1 Unity interface, rendered offscreen from a fresh game and a simulated late-campaign state. The late-game fixture is a completed 2.8.1 simulated Energy campaign; its displayed time belongs to the event-stepped policy. Literal offline measurements are separate. These are not concept mockups or desktop captures. Late-game screens contain progression spoilers. [Capture method and manifest](Docs/Release/screenshots.json).
+These images show the actual 2.8.2 Unity interface, rendered offscreen from fresh purchase examples and a simulated late-campaign state. The late-game fixture is a completed 2.8.2 simulated Energy campaign; its displayed time belongs to the event-stepped policy. Literal offline measurements are separate. Late-game screens contain progression spoilers. [Capture method and manifest](Docs/Release/screenshots.json).
 
 ## Play at your pace
 
 The campaign targets roughly **400 hours of elapsed progression**, with active play, background play or offline simulation. It does not require 400 hours of clicking.
 
-Three measured policies that revisit the game every six hours completed the campaign in **395.9–417.0 hours** with every offline tick replayed. Nine additional active/background/check-in simulations completed in **376.5–417.0 hours**. All tested policies fall within the 360–440-hour target band. These are simulation results using the game's real tick engine, not a guarantee for every player. The Development Plan is optional; the first reset of each type requires your confirmation. Choices, strategy and automation affect the pace.
+Three measured policies that revisit the game every six hours completed the campaign in **395.2–416.9 hours** with every offline tick replayed. Nine additional active/background/check-in simulations completed in **370.6–416.9 hours**. All tested policies fall within the 360–440-hour target band. These are simulation results using the game's real tick engine, not a guarantee for every player. The Development Plan is optional; the first reset of each type requires your confirmation. Choices, strategy and automation affect the pace.
 
 ## Install and start
 
-1. Download **CelestialMaker-Setup-2.8.1.exe** from [Releases](https://github.com/Jakubix-pl/celestial-maker/releases/latest), or extract the entire portable ZIP.
+1. Download **CelestialMaker-Setup-2.8.2.exe** from [Releases](https://github.com/Jakubix-pl/celestial-maker/releases/latest), or extract the entire portable ZIP.
 2. Install for your Windows user, or run **CelestialMaker.exe** in the extracted folder. Keep its data folder alongside it.
 3. Choose **New Game**. Existing supported saves are migrated when loaded; a new game is not required for an upgrade.
 
-The installer offers a desktop shortcut with the game's icon. It does not launch the game automatically. Uninstalling preserves player saves. Local profiles and export/import work without an account or backend. The current installer is unsigned; published [SHA-256 checksums](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-SHA256.txt) identify these exact files.
+The installer offers a desktop shortcut with the game's icon. It does not launch the game automatically. Uninstalling preserves player saves. Local profiles and export/import work without an account or backend. The current installer is unsigned; published [SHA-256 checksums](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-2.8.2-SHA256.txt) identify these exact files.
 
 ## Android build
 
-An English ARM64 APK is available for Android 17 / One UI 9, intended for S26 Ultra. Portrait and landscape touch layouts share the complete 2.8.1 game. Package checks passed; physical device installation, touch, lifecycle and FPS remain unverified. The APK uses development signing for sideloading, not a store release. [Android evidence and installation](Docs/Android/STATUS.md).
+An English ARM64 APK is available for Android 17 / One UI 9, intended for S26 Ultra. Portrait and landscape touch layouts share the complete 2.8.2 game. Package checks passed; physical device installation, touch, lifecycle and FPS remain unverified. The APK uses development signing for sideloading, not a store release. [Android evidence and installation](Docs/Android/STATUS.md).
 
 ![Portrait autobuyer introduction](Docs/Android/Images/portrait-autobuyer-guide.png)
 
 ## Release verification
 
-The release has a built Windows player, automated core/UI checks, installed-player tests, silent installation/upgrade/removal checks, and measured campaigns. The portable source suite contains **297 checks** and the extended system audit contains **63 checks**. A GitHub Actions template is included in `Tools/CI/github-core.yml`; these tests were verified locally from a clean source copy. Hosted CI is not active because the publication credential cannot write workflow files.
+The release has a built Windows player, automated core/UI checks, installed-player tests, silent installation/upgrade/removal checks, and measured campaigns. The portable source suite contains **318 checks** and the extended system audit contains **63 checks**. A GitHub Actions template is included in `Tools/CI/github-core.yml`; these tests were verified locally from a clean source copy. Hosted CI is not active because the publication credential cannot write workflow files.
 
-The late-game offscreen benchmark covered **22 cases and 5,280 measured frames**, including 4K, large text, dialogs and forced automation decision boundaries. Before/after runs on the RTX 4070 Ti / Ryzen 7 9800X3D retained 6 and 3 samples above 16.67 ms respectively. The data separates UI work, render submission and synchronous GPU readback; spikes remain recorded. **This is an offscreen workload measurement, not a verified desktop FPS claim.** Human playtesting, Windows DPI behavior and a clean-machine install remain open acceptance checks.
+The late-game offscreen benchmark covered **22 cases and 5,280 measured frames**, including 4K, large text, dialogs and forced automation decision boundaries. This run on the RTX 4070 Ti / Ryzen 7 9800X3D had no samples above 16.67 ms. It separates UI work, render submission and synchronous GPU readback. **This is an offscreen workload measurement, not a verified desktop or phone FPS claim.** Human playtesting, physical device behavior, Windows DPI and a clean-machine install remain open acceptance checks.
 
-[Detailed validation and limitations](Docs/Release/VALIDATION.md) · [Measured performance data](Docs/Release/performance.json) · [2.8.1 implementation and performance](Docs/Observatory281/REPORT.md)
+[Detailed validation and limitations](Docs/Release/VALIDATION.md) · [Measured performance data](Docs/Release/performance.json) · [2.8.2 implementation](Docs/Release/CASUAL-2.8.2.md)
 
 ## Explore the source
 

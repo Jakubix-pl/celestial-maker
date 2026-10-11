@@ -1,0 +1,10 @@
+{
+  "version": "2.8.2",
+  "name": "CelestialMaker-2.8.2-Android-arm64.apk",
+  "bytes": 40856911,
+  "sha256": "B1B990016D88372F2308BD1F31595984A8309A59C23DF25F761BDF394FD86F5B",
+  "apkChecks": 34,
+  "phoneUiChecks": 452,
+  "signature": "Unity development signing identity; not production-signed",
+  "physicalDevice": "UNVERIFIED"
+}

@@ -2,7 +2,7 @@
   "pass": true,
   "checks": [
     "Expected application identifier",
-    "Version 2.8.1 / 28101",
+    "Version 2.8.2 / 28201",
     "Minimum Android API 26",
     "Target Android API 37",
     "ARM64 application",
@@ -36,16 +36,16 @@
     "Valid launcher PNG: ic_launcher_foreground",
     "Valid launcher PNG: ic_launcher_foreground"
   ],
-  "version": "2.8.1",
-  "versionCode": 28101,
+  "version": "2.8.2",
+  "versionCode": 28201,
   "package": "com.celestialmaker.game",
   "minSdk": 26,
   "targetSdk": 37,
   "abi": [
     "arm64-v8a"
   ],
-  "bytes": 40846935,
-  "sha256": "2603E4D02E2FED05FBC8C6B16EFF8CF2AEC01C322D162964B4917F8AD3AC516F",
+  "bytes": 40856911,
+  "sha256": "B1B990016D88372F2308BD1F31595984A8309A59C23DF25F761BDF394FD86F5B",
   "permissions": [
     "android.permission.INTERNET",
     "com.celestialmaker.game.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -132,8 +132,8 @@
     },
     {
       "path": "lib/arm64-v8a/libil2cpp.so",
-      "bytes": 50508912,
-      "sha256": "bea0d1575ff45513e2b9983a6e80959a18a9d9849c243983c1dd4a8a10102f91",
+      "bytes": 50528584,
+      "sha256": "e1afd796a5aa319b966587f2ac7505281e1e3b32285135be38e90999a87c6c0e",
       "storedUncompressed": false,
       "loadSegments": [
         {
@@ -142,18 +142,18 @@
           "alignment": 16384
         },
         {
-          "offset": 18220960,
-          "virtualAddress": 18237344,
+          "offset": 18226640,
+          "virtualAddress": 18243024,
           "alignment": 16384
         },
         {
-          "offset": 46815056,
-          "virtualAddress": 46847824,
+          "offset": 46833200,
+          "virtualAddress": 46865968,
           "alignment": 16384
         },
         {
-          "offset": 48943864,
-          "virtualAddress": 48993016,
+          "offset": 48962616,
+          "virtualAddress": 49011768,
           "alignment": 16384
         }
       ]

@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "matchingPreviousSigningCertificate": true,
+  "certificateSha256": "117466d7ee05e256a8fd5f15db89d35b7e2e82dba9f9707a29b87e333b4f16df",
+  "unchangedAndroidPngResources": 178,
+  "oldVersion": "2.8.1",
+  "newVersion": "2.8.2",
+  "physicalInstallation": "UNVERIFIED"
+}

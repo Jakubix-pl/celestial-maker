@@ -2,20 +2,25 @@
 
 Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
-Public Windows v2.8.1 is published and its local delivery is verified.
+Windows and Android 2.8.2 are built and validated; delivery/publication follows below.
 
-## Purchase clarity and casual progression — 2.8.2 in validation
+## Purchase clarity and casual progression — 2.8.2 validated
 
-IMPLEMENTED: distinct chapter cost curves, corrected chapter-local upgrade targets,
-thin yellow/green purchase bars, one next-research suggestion and plain-language
-strategy introductions. Currency/owned IDs/save schema retained. English only.
-COMPILED: Core 318/318, systems 63/63, Unity Core 20/20, desktop UI 1488/1488,
-phone UI 452/452. Nine event-stepped campaigns completed in 370.554–416.936 hours.
-OBSERVED: new desktop and phone purchase examples rendered through private Unity
-textures and inspected. No screen capture, OS input or visible game was used.
-PENDING: literal offline campaigns, performance, Windows/installer and APK builds,
-delivery and public release. Physical device/display/FPS remain unverified.
-Evidence: Logs/Release282; design changes: Docs/Release/CASUAL-2.8.2.md.
+IMPLEMENTED: chapter cost curves, corrected upgrade targets, thin yellow/green bars,
+one next-research suggestion, strategy introductions and modal binding cleanup.
+COMPILED: Core 318/318 and systems 63/63 also from clean source; Unity Core 20/20,
+desktop UI 1488/1488, phone UI 452/452, packaged/installed EXE
+107/107 checks, installer 32/32, APK 34/34.
+BUILT: Windows Release, installer/ZIP and ARM64 IL2CPP APK, zero errors.
+OBSERVED: private desktop/phone renders; 22-case/5280-frame late UI benchmark.
+Literal six-hour offline completion: Energy 416.936 h,
+Matter 407.152 h, Time 395.249 h.
+All gameplay saves retained; 18/19 protected files unchanged;
+1 non-save Editor Analytics cache file(s) updated during rendering.
+PENDING: hash-verified desktop delivery and GitHub 2.8.2 publication.
+UNVERIFIED: physical S26 Ultra installation/touch/lifecycle and display FPS.
+No desktop control/capture or visible game/editor. English only.
+Evidence: Docs/Release/VALIDATION.md, Docs/Android/STATUS.md, Logs/Release282.
 
 ## Observatory refinement — 2.8.1
 

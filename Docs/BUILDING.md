@@ -42,14 +42,14 @@ The release used **Inno Setup 6.7.3**. Its compiler is not vendored. Obtain Inno
 ./Tools/build-installer.ps1 -Compiler 'C:/Program Files (x86)/Inno Setup 6/ISCC.exe'
 ```
 
-The default fallback path is `Tools/.tools/InnoSetup-6.7.3/ISCC.exe`. Build the Windows player first. The output is `Builds/CelestialMaker-Setup-2.8.1.exe`, with SHA-256 checksums in `Builds`.
+The default fallback path is `Tools/.tools/InnoSetup-6.7.3/ISCC.exe`. Build the Windows player first. The output is `Builds/CelestialMaker-Setup-2.8.2.exe`, with SHA-256 checksums in `Builds`.
 
 The per-user installer is English, offers an optional desktop shortcut, preserves saves on removal, and does not automatically launch the game. Code signing is not configured. `Tools/test-installer.ps1` performs a silent install, upgrade, installed-player checks and uninstall; it refuses an existing normal installation and should be run in an isolated test environment.
 
 ## Offscreen UI evidence
 
 ```powershell
-./Tools/render-observatory.ps1 -After -Publication -LateFixture Tools/Expansion/Fixtures/Presentation-2.8.1.json
+./Tools/render-observatory.ps1 -After -Publication -LateFixture Tools/Expansion/Fixtures/Presentation-2.8.2.json
 ./Tools/render-observatory.ps1 -After -DiscoveryOnly
 ./Tools/benchmark-observatory.ps1 -After
 ```
@@ -63,7 +63,7 @@ After explicitly accepting Google's SDK terms, install the project-local tools a
 ```powershell
 ./Tools/setup-android-sdk.ps1 -AcceptGoogleSdkLicense
 ./Tools/build-android.ps1 -Sideload
-python Tools/verify-android-apk.py --apk Builds/Android/CelestialMaker-2.8.1-Android-arm64.apk --sdk Tools/AndroidSetup/SDK --jdk Tools/AndroidSetup/OpenJDK --output Logs/AndroidVerification
+python Tools/verify-android-apk.py --apk Builds/Android/CelestialMaker-2.8.2-Android-arm64.apk --sdk Tools/AndroidSetup/SDK --jdk Tools/AndroidSetup/OpenJDK --output Logs/AndroidVerification
 ```
 
 Use JDK 17, NDK r27c, SDK platform `platforms;android-37.0`, build tools 36.0.0 and the pinned editor. The setup script expects the pinned JDK under `Tools/AndroidSetup/OpenJDK` or `CM_ANDROID_JDK`. SDK/NDK paths can be overridden through `CM_ANDROID_SDK` / `CM_ANDROID_NDK`. The APK uses Unity's development signing identity, targets API 37 and contains ARM64 libraries only. The validation checks package/signature/16 KB compatibility without installing or launching it. Device testing remains separate. [Android results](Android/STATUS.md).
@@ -77,4 +77,4 @@ node --test Backend/test/*.test.ts
 node Website/build.mjs
 ```
 
-The website build can succeed without a WebGL export; that does not create a playable WebGL game. Account integrations require separately configured services. WebGL is not refreshed in 2.8.1. The Android addition has separate package evidence and open device tests described above.
+The website build can succeed without a WebGL export; that does not create a playable WebGL game. Account integrations require separately configured services. WebGL is not refreshed in 2.8.2. The Android addition has separate package evidence and open device tests described above.

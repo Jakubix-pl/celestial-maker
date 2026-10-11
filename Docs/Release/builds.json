@@ -1,0 +1,20 @@
+{
+  "windows": {
+    "result": "Succeeded",
+    "unity": "6000.6.3f1",
+    "utc": "2026-10-11T19:18:26.5530251Z",
+    "errors": 0,
+    "seconds": 12.394574299999999
+  },
+  "android": {
+    "result": "Succeeded",
+    "profile": "AndroidAPKSideload",
+    "target": "Android",
+    "unity": "6000.6.3f1",
+    "utc": "2026-10-11T19:22:00.5096404Z",
+    "sourceHash": "744a351253b88649eb1c1452f59909bd0062144f6256f1fdd57e6a54001387b9",
+    "errors": 0,
+    "size": 693187272,
+    "seconds": 71.5067827
+  }
+}

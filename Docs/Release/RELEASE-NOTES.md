@@ -1,44 +1,29 @@
-# Celestial Maker 2.8.1 — Observatory Refinement
+# Celestial Maker 2.8.2 — Clearer Purchases
 
-A smoother Observatory, an optional autobuyer lesson and measured pacing closer to 400 hours. Windows x64, English only.
+An easier everyday loop with the same deeper cosmic systems. English-only Windows x64 and Android ARM64.
 
-## Changes
-
-- The first Prestige, and the first recovery Prestige after Ascension/Genesis, earns one point at 2.52e5 lifetime Energy (or 7.18e5 Particles). Later runs keep the normal threshold. Buyers still cost earned Prestige Points; there are no free buyer unlocks.
-- Stronger reset starting production, shorter first megastructure stages, adjusted later construction duration and improved Matter preparation remove automation recovery stalls. Conserved matter no longer penalizes primary production.
-- Five optional practice steps explain spending a point, automatic purchases, Prestige retention and Ascension clearing. The practice economy is isolated; the campaign is unchanged. Reopen it from Automation or Practice mechanics.
-- Cached static orbital scenery and visibility checks reduce repeated UI work. Snapshot refresh no longer presents twice. Pinned goals keep a stable status area. Live counters and animated Overview remain refreshed every frame; Reduced Motion remains available.
+- Distinct, smoothly increasing prices for research, process upgrades and buildings. Research now begins at 200 / 600 / 1,800 / 5,400 / 16,200 rather than pairs of identical prices.
+- Process upgrades affect buildings in their own chapter. Existing purchased IDs and progress are retained; their effects use the corrected targets.
+- Thin purchase bars fill yellow with available currency and turn green when prerequisites and actual spending rules permit purchase. Reserves, multi-resource construction, reset currencies and phone layouts are supported.
+- Research suggests one next discovery. Energy, Matter and Time plans have short introductions; automation remains optional and first-time resets remain explicit.
+- Modal purchase feedback continues updating every frame and releases temporary bindings on close. Construction buttons now account for goal reserves.
 
 ## Measured campaign pace
 
-Literal offline tick replay, checking in every six hours:
+Literal 60 Hz offline replay, save/reload every six-hour visit:
 
-| Strategy | Completion |
+| Strategy | Campaign completion |
 | --- | --- |
-| Energy | 417.011 h |
-| Matter | 407.344 h |
-| Time | 395.945 h |
+| Energy | 416.936 h |
+| Matter | 407.152 h |
+| Time | 395.249 h |
 
-Nine event-stepped active/background/check-in policies completed in 376.5–417.0 hours. All tested policies are within 360–440 hours. These are scripted policies using the shared Core, with the optional Development Plan and explicit choices, not a promise for every player. The first reset of each type still requires confirmation.
+Nine separately labeled event-stepped active/hourly/six-hour policies: 370.554–416.936 hours. Policies enable Development Plans, confirm first resets and select modules/roles; times are not a promise for every player.
 
-## Downloads and saves
+## Validation and downloads
 
-- **CelestialMaker-Setup-2.8.1.exe** — per-user English installer, optional icon shortcut, no automatic game launch.
-- **CelestialMaker-Observatory-Windows.zip** — extract the entire folder.
-- **CelestialMaker-2.8.1-SHA256.txt** — hashes for both downloads.
+Core 318/318; extended systems 63/63; Unity Core 20/20; desktop UI 1488/1488; phone UI 452/452. Windows packaged/installed players pass 107/107 runtime checks; installer 32/32; APK 34/34. Both builds have zero errors. Screenshots are private Unity renders. Physical phone installation, touch/lifecycle and actual display FPS remain unverified. No desktop control or visible game launch was used.
 
-Existing supported saves retain progress. The new first-stage duration applies to current construction work; a project may complete sooner on its next simulation tick. Reset starting production changes apply on future resets. No new campaign is required. The installer is unsigned and uninstalling preserves saves.
+Use the Windows installer or extract the entire portable ZIP. On Android, install `CelestialMaker-2.8.2-Android-arm64.apk` (target Android 17 / API 37, minimum API 26, ARM64). The APK uses the existing Unity development signing identity; it is a sideload build. Keep a save export before updating; no uninstall is needed when upgrading a matching signed package.
 
-## Verification
-
-Core 297/297, systems 63/63, Unity Core 20/20, desktop UI 1484/1484, phone geometry 432/432. Windows Release built with zero errors. Packaged and installed EXE each passed 108 checks; installer/upgrade/uninstall checks passed 32/32. Protected saves remained unchanged.
-
-Private UI renders and a late-game offscreen benchmark were inspected. Physical display FPS, human playtesting and a clean machine remain unverified. No desktop control/capture or visible game/editor was used. Android has separate verification below.
-
-See [validation](https://github.com/Jakubix-pl/celestial-maker/blob/main/Docs/Release/VALIDATION.md) and [screenshots](https://github.com/Jakubix-pl/celestial-maker).
-
-## Android addition — S26 Ultra
-
-**CelestialMaker-2.8.1-Android-arm64.apk** is a single English ARM64 sideload package targeting Android API 37, intended for S26 Ultra / Android 17 / One UI 9. **40.85 MB**, zero Unity build errors, phone UI **448/448** and package **34/34** checks. Six native libraries pass 16 KB alignment checks. Includes portrait/landscape UI and custom adaptive/legacy launcher icons.
-
-The APK uses Unity's development signing identity; it is not a production/store release. Physical installation, touch, lifecycle, thermal behavior and FPS on the phone remain **UNVERIFIED**. The Windows artifacts above are retained unchanged. **CelestialMaker-2.8.1-Android-SHA256.txt** identifies the Android download. [Android validation and installation](https://github.com/Jakubix-pl/celestial-maker/blob/main/Docs/Android/STATUS.md).
+SHA-256 files are included. [Detailed changes](CASUAL-2.8.2.md), [validation](VALIDATION.md), [Android evidence](../Android/STATUS.md).

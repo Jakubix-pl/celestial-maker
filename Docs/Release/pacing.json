@@ -1,122 +1,8 @@
 {
-  "method": "Fresh synthetic campaigns, real shared Core; optional Development Plan, modules and roles; no resource injection. Three six-hour offline policies replay every 60 Hz tick with serialized reloads. Nine event-stepped online policies are separately labeled. First reset decisions are scripted at visits, not automatically confirmed by the game.",
-  "acceptanceHours": [
-    360,
-    440
-  ],
-  "offlineTickResults": [
+  "version": "2.8.2",
+  "eventStepped": [
     {
-      "version": "2.8.1",
-      "discovery": true,
-      "modules": [
-        1,
-        1,
-        1
-      ],
-      "roles": [
-        3,
-        1
-      ],
-      "style": "check-in",
-      "strategy": "Energy",
-      "firstPrestigeHours": 11.999999999999998,
-      "firstAscensionHours": 23.999999999999996,
-      "firstGenesisHours": 65.99999999998138,
-      "horizonHours": 95.99999999993541,
-      "allTreesHours": 107.99999999992346,
-      "completionHours": 417.01072940073226,
-      "elapsedHours": 420,
-      "megaLevels": [
-        6,
-        6,
-        6
-      ],
-      "research": 90,
-      "visits": 70,
-      "genesisResets": 3,
-      "resumes": 71,
-      "offline": true,
-      "longestDiscoveryGapHours": 84.00000000029887,
-      "manualActions": 235,
-      "resetRecoverySamples": 5,
-      "cpuSeconds": 539.7386593
-    },
-    {
-      "version": "2.8.1",
-      "discovery": true,
-      "modules": [
-        2,
-        2,
-        1
-      ],
-      "roles": [
-        3,
-        1
-      ],
-      "style": "check-in",
-      "strategy": "Matter",
-      "firstPrestigeHours": 11.999999999999998,
-      "firstAscensionHours": 23.999999999999996,
-      "firstGenesisHours": 59.99999999999357,
-      "horizonHours": 89.99999999996538,
-      "allTreesHours": 95.99999999995916,
-      "completionHours": 407.34406273408786,
-      "elapsedHours": 408,
-      "megaLevels": [
-        6,
-        6,
-        6
-      ],
-      "research": 90,
-      "visits": 68,
-      "genesisResets": 3,
-      "resumes": 69,
-      "offline": true,
-      "longestDiscoveryGapHours": 78.00000000024977,
-      "manualActions": 216,
-      "resetRecoverySamples": 3,
-      "cpuSeconds": 546.9389157
-    },
-    {
-      "version": "2.8.1",
-      "discovery": true,
-      "modules": [
-        2,
-        2,
-        2
-      ],
-      "roles": [
-        3,
-        1
-      ],
-      "style": "check-in",
-      "strategy": "Time",
-      "firstPrestigeHours": 11.999999999999998,
-      "firstAscensionHours": 23.999999999999996,
-      "firstGenesisHours": 53.99999999998113,
-      "horizonHours": 71.99999999994,
-      "allTreesHours": 77.9999999999197,
-      "completionHours": 395.9452992159527,
-      "elapsedHours": 396,
-      "megaLevels": [
-        6,
-        6,
-        6
-      ],
-      "research": 90,
-      "visits": 66,
-      "genesisResets": 3,
-      "resumes": 67,
-      "offline": true,
-      "longestDiscoveryGapHours": 60.000000000146066,
-      "manualActions": 149,
-      "resetRecoverySamples": 3,
-      "cpuSeconds": 569.1737135
-    }
-  ],
-  "eventSteppedResults": [
-    {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         1,
@@ -130,29 +16,29 @@
       "style": "active",
       "strategy": "Energy",
       "firstPrestigeHours": 1.25,
-      "firstAscensionHours": 7,
-      "firstGenesisHours": 43,
-      "horizonHours": 69.99999999999999,
-      "allTreesHours": 79.99999999999999,
-      "completionHours": 393.61072934152816,
-      "elapsedHours": 393.75,
+      "firstAscensionHours": 6.75,
+      "firstGenesisHours": 39,
+      "horizonHours": 65.49999999999999,
+      "allTreesHours": 75.49999999999999,
+      "completionHours": 389.11072934152816,
+      "elapsedHours": 389.25,
       "megaLevels": [
         6,
         6,
         6
       ],
       "research": 90,
-      "visits": 1575,
+      "visits": 1557,
       "genesisResets": 3,
       "resumes": 0,
       "offline": false,
       "longestDiscoveryGapHours": 81.25,
-      "manualActions": 3102,
+      "manualActions": 3048,
       "resetRecoverySamples": 7,
-      "cpuSeconds": 17.4721381
+      "cpuSeconds": 10.8393971
     },
     {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         2,
@@ -166,29 +52,29 @@
       "style": "active",
       "strategy": "Matter",
       "firstPrestigeHours": 1.25,
-      "firstAscensionHours": 7,
-      "firstGenesisHours": 30.499999999999996,
-      "horizonHours": 57.499999999999986,
-      "allTreesHours": 62.999999999999986,
-      "completionHours": 376.54406267486155,
-      "elapsedHours": 376.74999999999994,
+      "firstAscensionHours": 6.75,
+      "firstGenesisHours": 28.499999999999996,
+      "horizonHours": 54.999999999999986,
+      "allTreesHours": 60.499999999999986,
+      "completionHours": 373.96072934152824,
+      "elapsedHours": 374,
       "megaLevels": [
         6,
         6,
         6
       ],
       "research": 90,
-      "visits": 1507,
+      "visits": 1496,
       "genesisResets": 3,
       "resumes": 0,
       "offline": false,
-      "longestDiscoveryGapHours": 81.24999999999993,
-      "manualActions": 3279,
+      "longestDiscoveryGapHours": 81.25,
+      "manualActions": 3049,
       "resetRecoverySamples": 4,
-      "cpuSeconds": 15.0990639
+      "cpuSeconds": 9.3543793
     },
     {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         2,
@@ -202,29 +88,29 @@
       "style": "active",
       "strategy": "Time",
       "firstPrestigeHours": 1.25,
-      "firstAscensionHours": 7,
-      "firstGenesisHours": 35.74999999999999,
-      "horizonHours": 53,
-      "allTreesHours": 55.99999999999999,
-      "completionHours": 377.36196599151447,
-      "elapsedHours": 377.5,
+      "firstAscensionHours": 6.75,
+      "firstGenesisHours": 30,
+      "horizonHours": 45.99999999999999,
+      "allTreesHours": 48.99999999999999,
+      "completionHours": 370.5536326581812,
+      "elapsedHours": 370.75,
       "megaLevels": [
         6,
         6,
         6
       ],
       "research": 90,
-      "visits": 1510,
+      "visits": 1483,
       "genesisResets": 3,
       "resumes": 0,
       "offline": false,
-      "longestDiscoveryGapHours": 61.750000000000036,
-      "manualActions": 2033,
-      "resetRecoverySamples": 3,
-      "cpuSeconds": 19.2212653
+      "longestDiscoveryGapHours": 61.75,
+      "manualActions": 1962,
+      "resetRecoverySamples": 4,
+      "cpuSeconds": 11.8043957
     },
     {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         1,
@@ -238,12 +124,12 @@
       "style": "background",
       "strategy": "Energy",
       "firstPrestigeHours": 1.25,
-      "firstAscensionHours": 7.999999999999999,
-      "firstGenesisHours": 45,
+      "firstAscensionHours": 8,
+      "firstGenesisHours": 44.99999999999999,
       "horizonHours": 72.99999999999996,
-      "allTreesHours": 81.99999999999993,
-      "completionHours": 395.5857293415281,
-      "elapsedHours": 395.9999999999999,
+      "allTreesHours": 82.99999999999991,
+      "completionHours": 395.98572934152804,
+      "elapsedHours": 395.99999999999983,
       "megaLevels": [
         6,
         6,
@@ -255,12 +141,12 @@
       "resumes": 0,
       "offline": false,
       "longestDiscoveryGapHours": 81,
-      "manualActions": 1102,
+      "manualActions": 965,
       "resetRecoverySamples": 5,
-      "cpuSeconds": 12.5459317
+      "cpuSeconds": 8.6911413
     },
     {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         2,
@@ -274,29 +160,29 @@
       "style": "background",
       "strategy": "Matter",
       "firstPrestigeHours": 1.25,
-      "firstAscensionHours": 7.999999999999999,
-      "firstGenesisHours": 38.999999999999986,
-      "horizonHours": 66.99999999999996,
-      "allTreesHours": 72.99999999999996,
-      "completionHours": 386.11072934152804,
-      "elapsedHours": 386.99999999999983,
+      "firstAscensionHours": 8,
+      "firstGenesisHours": 36.999999999999986,
+      "horizonHours": 64.99999999999996,
+      "allTreesHours": 69.99999999999994,
+      "completionHours": 383.4857293415281,
+      "elapsedHours": 383.99999999999983,
       "megaLevels": [
         6,
         6,
         6
       ],
       "research": 90,
-      "visits": 393,
+      "visits": 390,
       "genesisResets": 3,
       "resumes": 0,
       "offline": false,
-      "longestDiscoveryGapHours": 82,
-      "manualActions": 1053,
+      "longestDiscoveryGapHours": 81,
+      "manualActions": 999,
       "resetRecoverySamples": 3,
-      "cpuSeconds": 16.000865
+      "cpuSeconds": 9.6478127
     },
     {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         2,
@@ -310,29 +196,29 @@
       "style": "background",
       "strategy": "Time",
       "firstPrestigeHours": 1.25,
-      "firstAscensionHours": 7.999999999999999,
-      "firstGenesisHours": 36.999999999999986,
-      "horizonHours": 52.999999999999964,
-      "allTreesHours": 55.999999999999964,
-      "completionHours": 377.37029932484774,
-      "elapsedHours": 377.9999999999999,
+      "firstAscensionHours": 8,
+      "firstGenesisHours": 36.99999999999999,
+      "horizonHours": 53.99999999999998,
+      "allTreesHours": 56.99999999999998,
+      "completionHours": 378.0952993248478,
+      "elapsedHours": 378.99999999999994,
       "megaLevels": [
         6,
         6,
         6
       ],
       "research": 90,
-      "visits": 384,
+      "visits": 385,
       "genesisResets": 3,
       "resumes": 0,
       "offline": false,
-      "longestDiscoveryGapHours": 61.999999999999964,
-      "manualActions": 745,
+      "longestDiscoveryGapHours": 61,
+      "manualActions": 653,
       "resetRecoverySamples": 3,
-      "cpuSeconds": 18.0664844
+      "cpuSeconds": 12.3202192
     },
     {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         1,
@@ -348,10 +234,10 @@
       "firstPrestigeHours": 12,
       "firstAscensionHours": 24,
       "firstGenesisHours": 65.99999999999999,
-      "horizonHours": 95.99999999999989,
+      "horizonHours": 95.9999999999999,
       "allTreesHours": 107.99999999999987,
-      "completionHours": 417.01072934152796,
-      "elapsedHours": 417.9999999999996,
+      "completionHours": 416.93572934152803,
+      "elapsedHours": 416.9999999999997,
       "megaLevels": [
         6,
         6,
@@ -362,13 +248,13 @@
       "genesisResets": 3,
       "resumes": 0,
       "offline": false,
-      "longestDiscoveryGapHours": 81.99999999999993,
-      "manualActions": 239,
-      "resetRecoverySamples": 6,
-      "cpuSeconds": 11.5398512
+      "longestDiscoveryGapHours": 80.99999999999993,
+      "manualActions": 272,
+      "resetRecoverySamples": 5,
+      "cpuSeconds": 8.6358027
     },
     {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         2,
@@ -385,9 +271,9 @@
       "firstAscensionHours": 24,
       "firstGenesisHours": 59.999999999999964,
       "horizonHours": 89.9999999999999,
-      "allTreesHours": 95.99999999999987,
-      "completionHours": 407.3440626748614,
-      "elapsedHours": 407.9999999999997,
+      "allTreesHours": 95.99999999999989,
+      "completionHours": 407.1523960081947,
+      "elapsedHours": 407.99999999999983,
       "megaLevels": [
         6,
         6,
@@ -398,13 +284,13 @@
       "genesisResets": 3,
       "resumes": 0,
       "offline": false,
-      "longestDiscoveryGapHours": 81,
-      "manualActions": 205,
+      "longestDiscoveryGapHours": 82,
+      "manualActions": 200,
       "resetRecoverySamples": 3,
-      "cpuSeconds": 15.3146174
+      "cpuSeconds": 9.4038169
     },
     {
-      "version": "2.8.1",
+      "version": "2.8.2",
       "discovery": true,
       "modules": [
         2,
@@ -419,11 +305,11 @@
       "strategy": "Time",
       "firstPrestigeHours": 12,
       "firstAscensionHours": 24,
-      "firstGenesisHours": 53.99999999999999,
+      "firstGenesisHours": 54,
       "horizonHours": 71.99999999999999,
-      "allTreesHours": 77.99999999999999,
-      "completionHours": 395.94529932484784,
-      "elapsedHours": 395.99999999999994,
+      "allTreesHours": 77.99999999999997,
+      "completionHours": 395.2494659915143,
+      "elapsedHours": 395.99999999999983,
       "megaLevels": [
         6,
         6,
@@ -434,10 +320,121 @@
       "genesisResets": 3,
       "resumes": 0,
       "offline": false,
-      "longestDiscoveryGapHours": 61.999999999999964,
-      "manualActions": 148,
+      "longestDiscoveryGapHours": 61,
+      "manualActions": 171,
       "resetRecoverySamples": 3,
-      "cpuSeconds": 26.2014834
+      "cpuSeconds": 12.3278015
     }
-  ]
+  ],
+  "literalOffline": [
+    {
+      "version": "2.8.2",
+      "discovery": true,
+      "modules": [
+        1,
+        1,
+        1
+      ],
+      "roles": [
+        3,
+        1
+      ],
+      "style": "check-in",
+      "strategy": "Energy",
+      "firstPrestigeHours": 11.999999999999998,
+      "firstAscensionHours": 23.999999999999996,
+      "firstGenesisHours": 65.9999999999813,
+      "horizonHours": 95.9999999999353,
+      "allTreesHours": 107.99999999992325,
+      "completionHours": 416.93572940073216,
+      "elapsedHours": 420,
+      "megaLevels": [
+        6,
+        6,
+        6
+      ],
+      "research": 90,
+      "visits": 70,
+      "genesisResets": 3,
+      "resumes": 71,
+      "offline": true,
+      "longestDiscoveryGapHours": 84.000000000299,
+      "manualActions": 263,
+      "resetRecoverySamples": 5,
+      "cpuSeconds": 323.6817306
+    },
+    {
+      "version": "2.8.2",
+      "discovery": true,
+      "modules": [
+        2,
+        2,
+        1
+      ],
+      "roles": [
+        3,
+        1
+      ],
+      "style": "check-in",
+      "strategy": "Matter",
+      "firstPrestigeHours": 11.999999999999998,
+      "firstAscensionHours": 23.999999999999996,
+      "firstGenesisHours": 59.999999999993534,
+      "horizonHours": 89.9999999999816,
+      "allTreesHours": 95.99999999997536,
+      "completionHours": 407.15239606743756,
+      "elapsedHours": 408,
+      "megaLevels": [
+        6,
+        6,
+        6
+      ],
+      "research": 90,
+      "visits": 68,
+      "genesisResets": 3,
+      "resumes": 69,
+      "offline": true,
+      "longestDiscoveryGapHours": 78.00000000023367,
+      "manualActions": 210,
+      "resetRecoverySamples": 3,
+      "cpuSeconds": 320.5779131
+    },
+    {
+      "version": "2.8.2",
+      "discovery": true,
+      "modules": [
+        2,
+        2,
+        2
+      ],
+      "roles": [
+        3,
+        1
+      ],
+      "style": "check-in",
+      "strategy": "Time",
+      "firstPrestigeHours": 11.999999999999998,
+      "firstAscensionHours": 23.999999999999996,
+      "firstGenesisHours": 53.99999999998104,
+      "horizonHours": 71.99999999993989,
+      "allTreesHours": 77.99999999991948,
+      "completionHours": 395.24946588261884,
+      "elapsedHours": 396,
+      "megaLevels": [
+        6,
+        6,
+        6
+      ],
+      "research": 90,
+      "visits": 66,
+      "genesisResets": 3,
+      "resumes": 67,
+      "offline": true,
+      "longestDiscoveryGapHours": 60.000000000146294,
+      "manualActions": 166,
+      "resetRecoverySamples": 3,
+      "cpuSeconds": 344.0498826
+    }
+  ],
+  "policy": "Optional Development Plan, first resets manually confirmed, engineering modules and universe roles chosen; no resource injection."
 }

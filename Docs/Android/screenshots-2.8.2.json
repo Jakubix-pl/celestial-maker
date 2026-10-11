@@ -1,0 +1,79 @@
+{
+  "files": [
+    "phone-portrait-purchase-production.png",
+    "phone-portrait-purchase-research.png",
+    "phone-portrait-overview.png",
+    "phone-portrait-production.png",
+    "phone-portrait-research.png",
+    "phone-portrait-automation.png",
+    "phone-portrait-megastructures.png",
+    "phone-portrait-settings.png",
+    "phone-portrait-goals.png",
+    "phone-portrait-autobuyer-guide.png",
+    "phone-portrait-autobuyer-complete.png",
+    "phone-portrait-menu.png",
+    "phone-landscape-purchase-production.png",
+    "phone-landscape-purchase-research.png",
+    "phone-landscape-overview.png",
+    "phone-landscape-production.png",
+    "phone-landscape-research.png",
+    "phone-landscape-automation.png",
+    "phone-landscape-megastructures.png",
+    "phone-landscape-settings.png",
+    "phone-landscape-goals.png",
+    "phone-landscape-autobuyer-guide.png",
+    "phone-landscape-autobuyer-complete.png",
+    "phone-landscape-menu.png"
+  ],
+  "utc": "2026-10-11T19:17:09.3132953Z",
+  "device": "NVIDIA GeForce RTX 4070 Ti",
+  "pipeline": "UniversalRenderPipelineAsset / Desktop / PC",
+  "version": "2.8.2",
+  "desktopControlled": false,
+  "desktopCaptured": false,
+  "visibleGameWindow": false,
+  "method": "Edit-mode uGUI / TMP fixture rendered directly to RenderTexture",
+  "fixture": "Phone logical layouts rendered by Unity on the desktop GPU; no physical phone or screen capture.",
+  "publicImages": [
+    {
+      "path": "Docs/Android/Images/portrait-overview.png",
+      "sha256": "A193FCE6D7A64BC597EDBD572D839B39AEED590FEAF97208342D27E492E0BC7A"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-production.png",
+      "sha256": "31077589B4C03CACCD47B3BD32BBF7449B098A9A8FE6C8B2AB7736698B9B7824"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-research.png",
+      "sha256": "46EB7DBA0188CBB8558BFFF0DE995E7A2DE45CF4E8CF0A3D4CBEE2DA1DA81F2C"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-automation.png",
+      "sha256": "6EE6B4F2217D68EC4C4B7478964FACFA0B296AEB3EAC8FC2ACBAA2A0F1F1A702"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-menu.png",
+      "sha256": "A46E9CB10A402767D492B043AE665D2D7EFECA883A778434B4D02A6164E2DA60"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-autobuyer-guide.png",
+      "sha256": "CEBB323C65394E8EC873F29A7C5058F1299A0D4822D8BD2A5C0DFBF5F8711BA2"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-autobuyer-complete.png",
+      "sha256": "E11A1F95A33B0AEA9A2F2556A6E2CBF07CA6507967BA1A59142F2004B36F2BE5"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-purchase-production.png",
+      "sha256": "BB47FAAD0795D30760FD55A492A6B40CD4745F83C6A906284F01F4ECCB79CE94"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-purchase-research.png",
+      "sha256": "DC13F98563374F51BB1753AA1E7D10D745875760A8DCAC6E470A98023D270891"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-purchase-research.png",
+      "sha256": "822D91737947AD5A1BE5225CB4773840DA1687EA433E9A1F5756B281F585AA72"
+    }
+  ]
+}
