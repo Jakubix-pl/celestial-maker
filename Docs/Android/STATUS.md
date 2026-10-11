@@ -1,18 +1,19 @@
-# Android 2.8.2 — S26 Ultra
+# Android 2.8.3 — S26 Ultra
 
-English-only ARM64 sideload APK for Android 17 / One UI 9. [Download APK](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-2.8.2-Android-arm64.apk) · [SHA-256](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.2/CelestialMaker-2.8.2-Android-SHA256.txt).
+English-only ARM64 sideload APK for Android 17 / One UI 9. [APK](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.3/CelestialMaker-2.8.3-Android-arm64.apk) · [SHA-256](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.3/CelestialMaker-2.8.3-Android-SHA256.txt).
 
-**IMPLEMENTED:** complete 2.8.2 economy, corrected costs/targets, purchase bars and next-research guidance. Portrait/landscape Observatory, safe areas, 52-unit touch targets, 60 FPS default limit, Prestige-funded autobuyers and full offline replay. Old purchased IDs and saves are retained. [Change details](../Release/CASUAL-2.8.2.md).
+**IMPLEMENTED:** complete game with adaptive First steps, genuine first-run supply buffer and purchased/maxed-last ordering. Continuous production, paid Prestige autobuyers, yellow/green funding bars, full offline tick replay, portrait/landscape layouts and safe areas. Existing saves retained.
 
-**COMPILED / TESTED:** 452/452 phone UI fixture checks and 34/34 APK checks. Shared Core 318/318 and systems 63/63 also pass from clean source. Unity 6000.6.3f1, JDK 17, NDK r27c, target/compile API 37, minimum API 26, version code 28201. ARM64 native libraries meet the verifier's 16 KB ELF/ZIP checks. No billing permission.
+**COMPILED / TESTED:** phone geometry/actions 464/464, Core 332/332, systems 63/63, APK 34/34. Unity 6000.6.3f1, JDK 17, NDK r27c, target/compile API 37, minimum 26, version code 28301. Native ARM64 ELF/ZIP 16 KB alignment checks pass. No billing permission.
 
-**BUILT:** single APK, 40,856,911 bytes, zero build errors, non-debuggable. Unity development signing identity; physical installation remains unverified. The signing certificate matches the previous 2.8.1 APK, and all 178 Android PNG resources are unchanged. A matching previous installation can be updated without uninstalling. [Update compatibility](update-compatibility-2.8.2.json).
+**BUILT:** 40,867,295-byte non-debuggable APK, zero errors, Unity development signing for sideloading. Certificate matches the previous 2.8.2 package; launcher payload continuity is separately verified. No production signing.
 
-**OBSERVED:** 24 actual private Unity phone-layout renders, including new purchase states. These were rendered on the desktop GPU, not captured from a phone. Physical installation, touch, suspend/resume and FPS on the S26 Ultra remain unverified. No desktop input/capture or visible game was used.
+**OBSERVED:** 36 private Unity phone-layout renders on the desktop GPU. Physical S26 Ultra installation, touch, rotation, lifecycle and FPS remain unverified. The 60 FPS default is a target/limit rather than measured device performance. No desktop input/capture or visible game launch.
 
-To install: copy the APK to your phone, open it, and allow installation from that chosen file source when Android requests it. Keep an exported save before updating. If Android reports a signature mismatch with a differently signed installation, do not uninstall blindly; preserve/export that save first. Earlier versioned artifacts remain available.
+Copy the APK to the phone and open it; allow installation from that selected file source when Android requests it. Keep an exported save. A matching signed installation can be updated without uninstalling. Do not uninstall a differently signed installation before preserving its save. Earlier versioned APKs remain available.
 
-![Purchase bars in portrait](Images/portrait-purchase-production.png)
-![Research progression](Images/portrait-purchase-research.png)
+![First steps](Images/portrait-first-steps.png)
+![Two-hour guided run](Images/portrait-two-hour-overview.png)
+![Pending research first](Images/portrait-pending-research.png)
 
-[Package verification](apk-verification.json) · [UI checks](ui-checks-2.8.2.json) · [Screenshots](screenshots-2.8.2.json) · [Release validation](../Release/VALIDATION.md).
+[Audit](../Release/FIRST-STEPS-2.8.3.md) · [APK checks](apk-verification.json) · [Phone checks](ui-checks-2.8.3.json) · [Renders](screenshots-2.8.3.json)

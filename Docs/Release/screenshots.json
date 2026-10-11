@@ -1,5 +1,11 @@
 {
   "files": [
+    "publication-first-steps.png",
+    "publication-first-production.png",
+    "publication-first-steps-help.png",
+    "publication-two-hour-overview.png",
+    "publication-pending-research.png",
+    "publication-purchased-research.png",
     "publication-purchase-production.png",
     "publication-purchase-research.png",
     "prestige-fresh-production.png",
@@ -45,23 +51,23 @@
     "publication-chronicle.png",
     "publication-dawn.png"
   ],
-  "utc": "2026-10-11T19:16:58.6495375Z",
+  "utc": "2026-10-11T20:15:40.4874533Z",
   "device": "NVIDIA GeForce RTX 4070 Ti",
   "pipeline": "UniversalRenderPipelineAsset / Desktop / PC",
-  "version": "2.8.2",
+  "version": "2.8.3",
   "desktopControlled": false,
   "desktopCaptured": false,
   "visibleGameWindow": false,
   "method": "Edit-mode uGUI / TMP fixture rendered directly to RenderTexture",
-  "fixture": "Fresh purchase examples, safe practice and synthetic 2.8.2 Energy event-stepped campaign. Actual private Unity renders; physical display unverified.",
+  "fixture": "Fresh first-run guide, real two-hour guided run, purchase examples, safe practice and synthetic 2.8.3 Energy event-stepped campaign. Actual private Unity renders; physical display unverified.",
   "publicImages": [
     {
       "path": "Docs/images/30second-discovery.png",
-      "sha256": "A211BD6AAE206782755B8AE3CB5594379B3CF6B54188FDB548D9E5F6233D16EB"
+      "sha256": "9218109FFCD07D85A0937FB60F9F363294231843D217A6C54F5B09E48E87B910"
     },
     {
       "path": "Docs/images/autobuyer-guide.png",
-      "sha256": "FD9F644E23FEF7F6E5CF830E4FC9F0D1135AEBEBB8F03558EA5A58F741C5F0ED"
+      "sha256": "B1978D54DC0DA637F111B2F51633632B3D1094D18CE096289F29F1BADEDE3C47"
     },
     {
       "path": "Docs/images/autobuyer-purchase.png",
@@ -73,47 +79,67 @@
     },
     {
       "path": "Docs/images/challenges.png",
-      "sha256": "2FC7960DE300F359125E68801ACEAA9E369B19874E087AD565A7310891757B22"
+      "sha256": "F8857F639378E00C18D4F9511063AEAAC984B17D2A1E18AA880D541AB71753DF"
     },
     {
       "path": "Docs/images/dawn.png",
-      "sha256": "A9135BB3EFD7A8AF14B819EEE42C806B0A01CB20FC990E617E7DBBC281640D9A"
+      "sha256": "73D11AD34B155D70C3E713F2D32F947C73678285ABC995B8AFF5FD1856EBE9F3"
     },
     {
       "path": "Docs/images/engineering.png",
-      "sha256": "280D114D0D0C0B6A67E7A32FB7AB0B9EFB70DAFC349A4DB7DB5B832657A057F6"
+      "sha256": "B59431DF60EF5F5E661C098EAAD6177B2E45D69DC4F8FB5D1CBEF9E2811F79C5"
+    },
+    {
+      "path": "Docs/images/first-production.png",
+      "sha256": "0563F6E0CC2537A6E64C04D0FBB8531704F4BC67DEA19D48FFBF02C7849B9256"
+    },
+    {
+      "path": "Docs/images/first-steps.png",
+      "sha256": "A7370A4CE027CC4DBC878A0FCABF3699C324A1C90E7022569FA532929E04BCA7"
     },
     {
       "path": "Docs/images/fresh-production.png",
-      "sha256": "8B1E89E2F05F5EB1ACA5F11FAC084F3218EB1A3BF1DA4B4A5AC85D89308884B2"
+      "sha256": "9CC5A6867D13C6B5AE71961DBBAD142996D5F3E341D305FFC7B9BC351AFBD153"
     },
     {
       "path": "Docs/images/menu.png",
-      "sha256": "D96AABAB68A05A98F6AB3412EEC9969CED0861A2676876066CB580D63F7536BA"
+      "sha256": "6634ED5D5BE9552B928720D073C48C9AE14EC39737DFE40C3743C47D5141D783"
     },
     {
       "path": "Docs/images/overview.png",
-      "sha256": "B848C6D20476C88FF109E503907B60E4BB9FE2A364BBFE084388582BFC17A735"
+      "sha256": "519270B475090D7BD3B3A378A15E8AAD2635C96DDFC3CD1A1328435A5BBDE12E"
     },
     {
       "path": "Docs/images/parallel-universes.png",
-      "sha256": "B901791402E357E07E9BEA962819FBAD9DD272239111AB831C0817FF643E5B6A"
+      "sha256": "D77880CE2CC833BDEA39884B4352F0626C1EAC53910D337063BB5B5BEA2BDBA6"
+    },
+    {
+      "path": "Docs/images/pending-research.png",
+      "sha256": "D60E72F321CDDD33A5CA9633E2F72D7A81C7C5CEDC20CCD4AD19195904599184"
     },
     {
       "path": "Docs/images/production.png",
-      "sha256": "BD4DA4313342D38B3E0D524503A67E1922DB89368B89358D7984CFFD26518880"
+      "sha256": "1D5D2BB420909B033392FC23E5FAF85D16F72CC9DB6C274EA3B4B8F7597BE13B"
     },
     {
       "path": "Docs/images/purchase-production.png",
-      "sha256": "508BFE058C648C34F017E0759B7B6D08F9FBDC2FC3BE77BDA11A49AE633247AE"
+      "sha256": "1C7DFB4829735C1E1B81C889D2811513BEC1080C088246EB450CBD2A81E5A035"
     },
     {
       "path": "Docs/images/purchase-research.png",
-      "sha256": "7E0701799134D8A2440074656CC6854ABBDE03B09337E1EE9E3501540A28B484"
+      "sha256": "261C616C334C77E124A5F5D3425AF813DFD50BBC96A0AA874A67D9B701325117"
+    },
+    {
+      "path": "Docs/images/purchased-research.png",
+      "sha256": "36D51819B8C1CA22492A15D56C86B5D2106F75BCF5C7F960C35C2E798C5B9577"
     },
     {
       "path": "Docs/images/research.png",
       "sha256": "D71509AEDECEE472E1609238B6FCFC0FDFBC3570C490717E225DD059785A810B"
+    },
+    {
+      "path": "Docs/images/two-hour-overview.png",
+      "sha256": "732283E2F33ADC498B41383739F3EA33F93328FD6775206FA08A4BE5893AE85E"
     }
   ]
 }

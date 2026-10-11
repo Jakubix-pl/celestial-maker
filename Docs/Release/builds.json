@@ -2,19 +2,19 @@
   "windows": {
     "result": "Succeeded",
     "unity": "6000.6.3f1",
-    "utc": "2026-10-11T19:18:26.5530251Z",
+    "utc": "2026-10-11T20:16:57.8612868Z",
     "errors": 0,
-    "seconds": 12.394574299999999
+    "seconds": 9.6913454
   },
   "android": {
     "result": "Succeeded",
     "profile": "AndroidAPKSideload",
     "target": "Android",
     "unity": "6000.6.3f1",
-    "utc": "2026-10-11T19:22:00.5096404Z",
-    "sourceHash": "744a351253b88649eb1c1452f59909bd0062144f6256f1fdd57e6a54001387b9",
+    "utc": "2026-10-11T20:20:37.7295036Z",
+    "sourceHash": "5fc5f1503c9391b0c36ebf228b6d4b83ab28ce0666695196bb749937fafc60bc",
     "errors": 0,
-    "size": 693187272,
-    "seconds": 71.5067827
+    "size": 693468899,
+    "seconds": 75.2108655
   }
 }

@@ -2,20 +2,24 @@
 
 Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
-Public Windows and Android v2.8.2 are published; local delivery and public downloads are hash-verified.
+Windows and Android 2.8.3 are built and validated; delivery/publication follows below.
 
-## First two hours — 2.8.3 in validation
+## First two hours — 2.8.3 validated
 
-IMPLEMENTED: adaptive optional First steps guide, first-run supply buffer,
-purchased/maxed-last ordering including automatic purchases; old saves retained.
-COMPILED: shared Core 332/332, Unity Core 20/20, desktop UI 1500/1500,
-phone UI 464/464 and system audit 63/63. Final campaign/offline regression running.
-OBSERVED: guided literal 60 Hz two-hour simulations; first Prestige at
-35 min with five-minute visits, 60 min with fifteen-minute visits.
-PENDING: private visual inspection, late UI benchmark, clean-source verification,
-Windows/Android builds, delivery and public GitHub 2.8.3 release.
-UNVERIFIED: physical phone and actual display FPS. No desktop control.
-Evidence: Logs/Release283 and Logs/Onboarding/283-validated.json.
+IMPLEMENTED: adaptive guide, genuine first-run supply buffer, completed-last lists.
+COMPILED: clean-source Core 332/332 and systems 63/63; Unity Core 20/20;
+desktop UI 1500/1500, phone UI 464/464; packaged/installed players
+107/107, installer 32, APK 34 checks.
+BUILT: Windows Release, installer/ZIP and ARM64 IL2CPP APK; zero errors.
+OBSERVED: private new guide and sorted-list renders; guided first Prestige
+35/60 min at five-/fifteen-minute visits. 22-case/5280-frame late benchmark.
+Literal six-hour campaigns: Energy 416.936 h,
+Matter 407.152 h, Time 395.249 h.
+Gameplay saves unchanged; 18/19 protected files match;
+1 non-save Editor Analytics cache updates. English only.
+PENDING: hash-verified desktop delivery and GitHub 2.8.3 publication.
+UNVERIFIED: physical S26 Ultra interaction and display FPS. No desktop control.
+Evidence: Docs/Release/VALIDATION.md, FIRST-STEPS-2.8.3.md, Logs/Release283.
 
 ## Purchase clarity and casual progression — 2.8.2 validated
 

@@ -1,0 +1,115 @@
+{
+  "files": [
+    "phone-portrait-first-steps.png",
+    "phone-portrait-first-production.png",
+    "phone-portrait-first-steps-help.png",
+    "phone-portrait-two-hour-overview.png",
+    "phone-portrait-pending-research.png",
+    "phone-portrait-purchased-research.png",
+    "phone-portrait-purchase-production.png",
+    "phone-portrait-purchase-research.png",
+    "phone-portrait-overview.png",
+    "phone-portrait-production.png",
+    "phone-portrait-research.png",
+    "phone-portrait-automation.png",
+    "phone-portrait-megastructures.png",
+    "phone-portrait-settings.png",
+    "phone-portrait-goals.png",
+    "phone-portrait-autobuyer-guide.png",
+    "phone-portrait-autobuyer-complete.png",
+    "phone-portrait-menu.png",
+    "phone-landscape-first-steps.png",
+    "phone-landscape-first-production.png",
+    "phone-landscape-first-steps-help.png",
+    "phone-landscape-two-hour-overview.png",
+    "phone-landscape-pending-research.png",
+    "phone-landscape-purchased-research.png",
+    "phone-landscape-purchase-production.png",
+    "phone-landscape-purchase-research.png",
+    "phone-landscape-overview.png",
+    "phone-landscape-production.png",
+    "phone-landscape-research.png",
+    "phone-landscape-automation.png",
+    "phone-landscape-megastructures.png",
+    "phone-landscape-settings.png",
+    "phone-landscape-goals.png",
+    "phone-landscape-autobuyer-guide.png",
+    "phone-landscape-autobuyer-complete.png",
+    "phone-landscape-menu.png"
+  ],
+  "utc": "2026-10-11T20:15:52.1066872Z",
+  "device": "NVIDIA GeForce RTX 4070 Ti",
+  "pipeline": "UniversalRenderPipelineAsset / Desktop / PC",
+  "version": "2.8.3",
+  "desktopControlled": false,
+  "desktopCaptured": false,
+  "visibleGameWindow": false,
+  "method": "Edit-mode uGUI / TMP fixture rendered directly to RenderTexture",
+  "fixture": "Phone logical layouts rendered by Unity on the desktop GPU; no physical phone or screen capture.",
+  "publicImages": [
+    {
+      "path": "Docs/Android/Images/portrait-first-steps.png",
+      "sha256": "9B62F8A98553D75E0C8ADE3A20D061B47EA470B590589743AF94302926E1B286"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-first-production.png",
+      "sha256": "C84397698D3766D5AAE7074F3B273561E7C47933B12D847D42EBD1F70C05AD80"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-two-hour-overview.png",
+      "sha256": "8828EA6138E1DE23750D8F1BB5FD55D6A9F10A21D68EA6572DC4CE5D9876E887"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-pending-research.png",
+      "sha256": "71A1F4978DAC71AE8EF5B8F194CE18E10C86831B88F580C5A167B8848643EBD5"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-purchased-research.png",
+      "sha256": "C0B6D6B34110AEF98E7FC200A539135F4CCB20EB1086E9E5F06D8C572B38D626"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-first-steps.png",
+      "sha256": "D025FF02553C987256DEE7BF95FD9D6DBE56255AF22C074BD2E8412E9E09CD31"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-overview.png",
+      "sha256": "A193FCE6D7A64BC597EDBD572D839B39AEED590FEAF97208342D27E492E0BC7A"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-production.png",
+      "sha256": "D138908661919C73E64D85FF3D1F86BEA5BF99EB3506A3EBD5D4F4FD0CAA9048"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-research.png",
+      "sha256": "2C6668A26D41C1F590138F9608DC0B44EC5140192FF560423EBD602766A4A082"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-automation.png",
+      "sha256": "08DBCCCA6E1613403088F70164529CEBB2EFC41B5F3C60748565A3FD43AD2F21"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-menu.png",
+      "sha256": "9E1D97179FDBF3A41EECCE9B5BB0EC387F63449EAC0D388D9C590D66181A6E8D"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-autobuyer-guide.png",
+      "sha256": "5AB8924DFA53837B44ADBD723156655C0D14C4FF1EDFBB3822D33B19F6689246"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-autobuyer-complete.png",
+      "sha256": "B396AB29B014A7F6A97AB71FDE496F5BE24C5E8B21D5585DD35B8560A1BB94BB"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-purchase-production.png",
+      "sha256": "099BECCD009BE5D0C9B9D9AAF4BD7D0C79034CD975343FB45DCEC07CA673B7EC"
+    },
+    {
+      "path": "Docs/Android/Images/portrait-purchase-research.png",
+      "sha256": "2AF100D03F822A7A21E500BBB4AFA541BDA46357BC527C4A1E5A7DBC8DD05877"
+    },
+    {
+      "path": "Docs/Android/Images/landscape-purchase-research.png",
+      "sha256": "822D91737947AD5A1BE5225CB4773840DA1687EA433E9A1F5756B281F585AA72"
+    }
+  ]
+}

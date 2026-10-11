@@ -1,7 +1,7 @@
 {
   "pass": true,
-  "version": "2.8.2",
-  "utc": "2026-10-11T19:19:20.1065589Z",
+  "version": "2.8.3",
+  "utc": "2026-10-11T20:17:49.8248934Z",
   "checks": [
     "Actual main menu builds Observatory",
     "Runtime language and number culture are English",

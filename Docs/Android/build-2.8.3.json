@@ -1,0 +1,11 @@
+{
+  "result": "Succeeded",
+  "profile": "AndroidAPKSideload",
+  "target": "Android",
+  "unity": "6000.6.3f1",
+  "utc": "2026-10-11T20:20:37.7295036Z",
+  "sourceHash": "5fc5f1503c9391b0c36ebf228b6d4b83ab28ce0666695196bb749937fafc60bc",
+  "errors": 0,
+  "size": 693468899,
+  "seconds": 75.2108655
+}

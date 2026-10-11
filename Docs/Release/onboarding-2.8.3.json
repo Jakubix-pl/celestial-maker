@@ -1,0 +1,2585 @@
+{
+  "version": "2.8.3",
+  "method": "Actual shared Core, literal 60 Hz for two hours, fresh save, no injected resources; at most eight guide actions per visit. First resets are manually confirmed.",
+  "before": [
+    {
+      "policy": "legacy-tip",
+      "version": "2.8.2",
+      "firstLoomMinutes": 1.0002777777777778,
+      "firstResearchMinutes": 42.000277777777775,
+      "firstPrestigeMinutes": -1,
+      "longestActionGapMinutes": 78,
+      "actions": 3,
+      "owned": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "research": 1,
+      "metrics": [
+        {
+          "minutes": 0.0002777777777777778,
+          "energy": "10.01",
+          "energyNet": "0.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 5,
+          "energy": "28.53",
+          "energyNet": "0.08",
+          "particleNet": "1.66",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 10,
+          "energy": "53.51",
+          "energyNet": "0.08",
+          "particleNet": "1.66",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 15,
+          "energy": "78.68",
+          "energyNet": "0.08",
+          "particleNet": "1.68",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 20,
+          "energy": "103.9",
+          "energyNet": "0.08",
+          "particleNet": "1.68",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 25,
+          "energy": "129.13",
+          "energyNet": "0.08",
+          "particleNet": "1.7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 30,
+          "energy": "154.61",
+          "energyNet": "0.08",
+          "particleNet": "1.7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 35,
+          "energy": "180.08",
+          "energyNet": "0.08",
+          "particleNet": "1.7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 40,
+          "energy": "205.56",
+          "energyNet": "0.08",
+          "particleNet": "1.7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 45,
+          "energy": "32.87",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 50,
+          "energy": "61.4",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 55,
+          "energy": "89.94",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 60,
+          "energy": "118.47",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 65,
+          "energy": "147",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 70,
+          "energy": "175.54",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 75,
+          "energy": "204.07",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 80,
+          "energy": "232.61",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 85,
+          "energy": "261.14",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 90,
+          "energy": "289.67",
+          "energyNet": "0.1",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 95,
+          "energy": "318.3",
+          "energyNet": "0.1",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 100,
+          "energy": "347.12",
+          "energyNet": "0.1",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 105,
+          "energy": "375.94",
+          "energyNet": "0.1",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 110,
+          "energy": "404.76",
+          "energyNet": "0.1",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 115,
+          "energy": "433.58",
+          "energyNet": "0.1",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 120,
+          "energy": "462.4",
+          "energyNet": "0.1",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        }
+      ],
+      "events": [
+        {
+          "minutes": 1,
+          "owned": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 41,
+          "owned": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 42,
+          "owned": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "research": 1
+        }
+      ]
+    },
+    {
+      "policy": "balanced-5m",
+      "version": "2.8.2",
+      "firstLoomMinutes": 5.000277777777778,
+      "firstResearchMinutes": 10.000277777777777,
+      "firstPrestigeMinutes": 40.000277777777775,
+      "longestActionGapMinutes": 25,
+      "actions": 126,
+      "owned": [
+        52,
+        39,
+        30,
+        25,
+        3,
+        2,
+        1,
+        0
+      ],
+      "research": 33,
+      "metrics": [
+        {
+          "minutes": 0.0002777777777777778,
+          "energy": "10.01",
+          "energyNet": "0.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 5,
+          "energy": "204.76",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 10,
+          "energy": "1089.88",
+          "energyNet": "3.53",
+          "particleNet": "1.68",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 15,
+          "energy": "2882.59",
+          "energyNet": "9.57",
+          "particleNet": "12.27",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 20,
+          "energy": "8107.87",
+          "energyNet": "26.41",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 25,
+          "energy": "2.13e4",
+          "energyNet": "66.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 30,
+          "energy": "4.09e4",
+          "energyNet": "97.53",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 35,
+          "energy": "6.92e4",
+          "energyNet": "173.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 40,
+          "energy": "1.24e5",
+          "energyNet": "231.5",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 45,
+          "energy": "218.74",
+          "energyNet": "3.64",
+          "particleNet": "5.82",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 50,
+          "energy": "940.85",
+          "energyNet": "14.34",
+          "particleNet": "13.34",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 55,
+          "energy": "3428.3",
+          "energyNet": "73.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 60,
+          "energy": "1952.3",
+          "energyNet": "309",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 65,
+          "energy": "3.94e4",
+          "energyNet": "342.95",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 70,
+          "energy": "4468.55",
+          "energyNet": "455.85",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 75,
+          "energy": "1224.12",
+          "energyNet": "583.28",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 80,
+          "energy": "880.11",
+          "energyNet": "617.28",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 85,
+          "energy": "3894.71",
+          "energyNet": "585.34",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 90,
+          "energy": "6222.8",
+          "energyNet": "613.3",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 95,
+          "energy": "404.59",
+          "energyNet": "4.33",
+          "particleNet": "6.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 100,
+          "energy": "300.06",
+          "energyNet": "20.52",
+          "particleNet": "20.97",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 105,
+          "energy": "1658.52",
+          "energyNet": "106.44",
+          "particleNet": "0",
+          "matterFlow": "1563.77"
+        },
+        {
+          "minutes": 110,
+          "energy": "2.23e4",
+          "energyNet": "405.96",
+          "particleNet": "0",
+          "matterFlow": "6686.62"
+        },
+        {
+          "minutes": 115,
+          "energy": "7.15e4",
+          "energyNet": "772.01",
+          "particleNet": "390.01",
+          "matterFlow": "1.13e4"
+        },
+        {
+          "minutes": 120,
+          "energy": "8.34e4",
+          "energyNet": "1078.22",
+          "particleNet": "0",
+          "matterFlow": "2.11e4"
+        }
+      ],
+      "events": [
+        {
+          "minutes": 5,
+          "owned": [
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 10,
+          "owned": [
+            7,
+            3,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 5
+        },
+        {
+          "minutes": 15,
+          "owned": [
+            11,
+            6,
+            4,
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 9
+        },
+        {
+          "minutes": 20,
+          "owned": [
+            16,
+            10,
+            6,
+            4,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 18
+        },
+        {
+          "minutes": 25,
+          "owned": [
+            21,
+            14,
+            9,
+            7,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 23
+        },
+        {
+          "minutes": 30,
+          "owned": [
+            26,
+            18,
+            12,
+            10,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 27
+        },
+        {
+          "minutes": 35,
+          "owned": [
+            31,
+            22,
+            15,
+            13,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 29
+        },
+        {
+          "minutes": 40,
+          "owned": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 45,
+          "owned": [
+            4,
+            2,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 3
+        },
+        {
+          "minutes": 50,
+          "owned": [
+            7,
+            4,
+            3,
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 9
+        },
+        {
+          "minutes": 55,
+          "owned": [
+            18,
+            11,
+            7,
+            5,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 19
+        },
+        {
+          "minutes": 60,
+          "owned": [
+            34,
+            21,
+            16,
+            11,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 24
+        },
+        {
+          "minutes": 65,
+          "owned": [
+            42,
+            30,
+            22,
+            17,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 30
+        },
+        {
+          "minutes": 90,
+          "owned": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 95,
+          "owned": [
+            5,
+            2,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 4
+        },
+        {
+          "minutes": 100,
+          "owned": [
+            7,
+            3,
+            3,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "research": 11
+        },
+        {
+          "minutes": 105,
+          "owned": [
+            22,
+            13,
+            10,
+            7,
+            1,
+            1,
+            0,
+            0
+          ],
+          "research": 14
+        },
+        {
+          "minutes": 110,
+          "owned": [
+            36,
+            25,
+            19,
+            14,
+            1,
+            1,
+            0,
+            0
+          ],
+          "research": 21
+        },
+        {
+          "minutes": 115,
+          "owned": [
+            47,
+            34,
+            25,
+            20,
+            3,
+            2,
+            1,
+            0
+          ],
+          "research": 33
+        }
+      ]
+    },
+    {
+      "policy": "balanced-15m",
+      "version": "2.8.2",
+      "firstLoomMinutes": 15.000277777777777,
+      "firstResearchMinutes": 30.00027777777778,
+      "firstPrestigeMinutes": 75.00027777777777,
+      "longestActionGapMinutes": 15,
+      "actions": 61,
+      "owned": [
+        53,
+        39,
+        28,
+        22,
+        1,
+        1,
+        0,
+        0
+      ],
+      "research": 19,
+      "metrics": [
+        {
+          "minutes": 0.0002777777777777778,
+          "energy": "10.01",
+          "energyNet": "0.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 5,
+          "energy": "204.76",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 10,
+          "energy": "400.62",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 15,
+          "energy": "596.48",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 20,
+          "energy": "1462.63",
+          "energyNet": "4.92",
+          "particleNet": "4.89",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 25,
+          "energy": "2938.74",
+          "energyNet": "4.92",
+          "particleNet": "4.89",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 30,
+          "energy": "4414.85",
+          "energyNet": "4.92",
+          "particleNet": "4.89",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 35,
+          "energy": "8442.47",
+          "energyNet": "27.69",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 40,
+          "energy": "1.67e4",
+          "energyNet": "27.69",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 45,
+          "energy": "2.51e4",
+          "energyNet": "27.96",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 50,
+          "energy": "3.53e4",
+          "energyNet": "76.2",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 55,
+          "energy": "5.82e4",
+          "energyNet": "76.2",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 60,
+          "energy": "8.10e4",
+          "energyNet": "76.2",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 65,
+          "energy": "1.04e5",
+          "energyNet": "161.29",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 70,
+          "energy": "1.53e5",
+          "energyNet": "161.29",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 75,
+          "energy": "2.01e5",
+          "energyNet": "161.29",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 80,
+          "energy": "218.74",
+          "energyNet": "3.64",
+          "particleNet": "5.82",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 85,
+          "energy": "397.78",
+          "energyNet": "7.29",
+          "particleNet": "8.29",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 90,
+          "energy": "228.13",
+          "energyNet": "10.41",
+          "particleNet": "11.68",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 95,
+          "energy": "1945.65",
+          "energyNet": "54.74",
+          "particleNet": "0",
+          "matterFlow": "906.55"
+        },
+        {
+          "minutes": 100,
+          "energy": "8955.19",
+          "energyNet": "134.61",
+          "particleNet": "0",
+          "matterFlow": "2041.79"
+        },
+        {
+          "minutes": 105,
+          "energy": "2966.63",
+          "energyNet": "198.46",
+          "particleNet": "0",
+          "matterFlow": "3703.14"
+        },
+        {
+          "minutes": 110,
+          "energy": "8087.69",
+          "energyNet": "318.84",
+          "particleNet": "139.27",
+          "matterFlow": "5030.11"
+        },
+        {
+          "minutes": 115,
+          "energy": "3792.99",
+          "energyNet": "467.09",
+          "particleNet": "288.13",
+          "matterFlow": "5633.72"
+        },
+        {
+          "minutes": 120,
+          "energy": "3821.43",
+          "energyNet": "557.11",
+          "particleNet": "363.62",
+          "matterFlow": "5633.72"
+        }
+      ],
+      "events": [
+        {
+          "minutes": 15,
+          "owned": [
+            4,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 3
+        },
+        {
+          "minutes": 30,
+          "owned": [
+            10,
+            5,
+            3,
+            3,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 10
+        },
+        {
+          "minutes": 45,
+          "owned": [
+            17,
+            11,
+            7,
+            6,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 22
+        },
+        {
+          "minutes": 60,
+          "owned": [
+            24,
+            17,
+            12,
+            10,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 29
+        },
+        {
+          "minutes": 75,
+          "owned": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 90,
+          "owned": [
+            5,
+            2,
+            2,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "research": 11
+        },
+        {
+          "minutes": 105,
+          "owned": [
+            38,
+            26,
+            18,
+            14,
+            1,
+            1,
+            0,
+            0
+          ],
+          "research": 16
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "policy": "legacy-tip",
+      "version": "2.8.3",
+      "firstLoomMinutes": 1.0002777777777778,
+      "firstResearchMinutes": 46.000277777777775,
+      "firstPrestigeMinutes": -1,
+      "longestActionGapMinutes": 47,
+      "longestPrePrestigeActionGapMinutes": 47,
+      "actions": 4,
+      "owned": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "research": 2,
+      "metrics": [
+        {
+          "minutes": 0.0002777777777777778,
+          "energy": "10.01",
+          "energyNet": "0.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 5,
+          "energy": "40.43",
+          "energyNet": "0.13",
+          "particleNet": "1.52",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 10,
+          "energy": "80.39",
+          "energyNet": "0.13",
+          "particleNet": "1.52",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 15,
+          "energy": "120.59",
+          "energyNet": "0.13",
+          "particleNet": "1.54",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 20,
+          "energy": "160.95",
+          "energyNet": "0.13",
+          "particleNet": "1.54",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 25,
+          "energy": "201.31",
+          "energyNet": "0.14",
+          "particleNet": "1.55",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 30,
+          "energy": "242.08",
+          "energyNet": "0.14",
+          "particleNet": "1.55",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 35,
+          "energy": "282.84",
+          "energyNet": "0.14",
+          "particleNet": "1.55",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 40,
+          "energy": "323.6",
+          "energyNet": "0.14",
+          "particleNet": "1.55",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 45,
+          "energy": "364.36",
+          "energyNet": "0.14",
+          "particleNet": "1.55",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 50,
+          "energy": "209.04",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 55,
+          "energy": "254.69",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 60,
+          "energy": "300.35",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 65,
+          "energy": "346",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 70,
+          "energy": "391.65",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 75,
+          "energy": "437.31",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 80,
+          "energy": "482.96",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 85,
+          "energy": "528.61",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 90,
+          "energy": "574.27",
+          "energyNet": "0.15",
+          "particleNet": "1.74",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 95,
+          "energy": "22.11",
+          "energyNet": "0.17",
+          "particleNet": "1.95",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 100,
+          "energy": "73.25",
+          "energyNet": "0.17",
+          "particleNet": "1.95",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 105,
+          "energy": "124.79",
+          "energyNet": "0.17",
+          "particleNet": "1.97",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 110,
+          "energy": "176.43",
+          "energyNet": "0.17",
+          "particleNet": "1.97",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 115,
+          "energy": "228.07",
+          "energyNet": "0.17",
+          "particleNet": "1.97",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 120,
+          "energy": "279.72",
+          "energyNet": "0.17",
+          "particleNet": "1.97",
+          "matterFlow": "0"
+        }
+      ],
+      "events": [
+        {
+          "minutes": 1,
+          "owned": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 45,
+          "owned": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 46,
+          "owned": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "research": 1
+        },
+        {
+          "minutes": 93,
+          "owned": [
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "research": 2
+        }
+      ]
+    },
+    {
+      "policy": "balanced-5m",
+      "version": "2.8.3",
+      "firstLoomMinutes": 5.000277777777778,
+      "firstResearchMinutes": 10.000277777777777,
+      "firstPrestigeMinutes": 40.000277777777775,
+      "longestActionGapMinutes": 25,
+      "longestPrePrestigeActionGapMinutes": 5,
+      "actions": 148,
+      "owned": [
+        51,
+        38,
+        30,
+        24,
+        1,
+        0,
+        0,
+        0
+      ],
+      "research": 30,
+      "metrics": [
+        {
+          "minutes": 0.0002777777777777778,
+          "energy": "10.01",
+          "energyNet": "0.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 5,
+          "energy": "204.76",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 10,
+          "energy": "1089.88",
+          "energyNet": "3.53",
+          "particleNet": "1.68",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 15,
+          "energy": "2882.59",
+          "energyNet": "9.57",
+          "particleNet": "12.27",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 20,
+          "energy": "8074.22",
+          "energyNet": "26.41",
+          "particleNet": "7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 25,
+          "energy": "1.75e4",
+          "energyNet": "54.19",
+          "particleNet": "21.99",
+          "matterFlow": "574.45"
+        },
+        {
+          "minutes": 30,
+          "energy": "4.08e4",
+          "energyNet": "107.99",
+          "particleNet": "46.03",
+          "matterFlow": "1202.38"
+        },
+        {
+          "minutes": 35,
+          "energy": "9.85e4",
+          "energyNet": "272.18",
+          "particleNet": "112.28",
+          "matterFlow": "2933.05"
+        },
+        {
+          "minutes": 40,
+          "energy": "1.86e5",
+          "energyNet": "339.57",
+          "particleNet": "141.81",
+          "matterFlow": "3704.5"
+        },
+        {
+          "minutes": 45,
+          "energy": "289.48",
+          "energyNet": "3.94",
+          "particleNet": "6.3",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 50,
+          "energy": "1686.61",
+          "energyNet": "17.6",
+          "particleNet": "14.44",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 55,
+          "energy": "1281.75",
+          "energyNet": "130.93",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 60,
+          "energy": "1.89e4",
+          "energyNet": "335.15",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 65,
+          "energy": "4.25e4",
+          "energyNet": "391.44",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 70,
+          "energy": "1.03e4",
+          "energyNet": "515.02",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 75,
+          "energy": "1.23e4",
+          "energyNet": "613.09",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 80,
+          "energy": "3898.6",
+          "energyNet": "630.71",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 85,
+          "energy": "1.70e4",
+          "energyNet": "637.22",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 90,
+          "energy": "1.66e4",
+          "energyNet": "693.04",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 95,
+          "energy": "490.72",
+          "energyNet": "4.69",
+          "particleNet": "7.49",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 100,
+          "energy": "1333.95",
+          "energyNet": "29.54",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 105,
+          "energy": "6605.8",
+          "energyNet": "158.21",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 110,
+          "energy": "3.03e4",
+          "energyNet": "396.1",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 115,
+          "energy": "4.91e4",
+          "energyNet": "557.54",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 120,
+          "energy": "8209.37",
+          "energyNet": "721.93",
+          "particleNet": "0",
+          "matterFlow": "0"
+        }
+      ],
+      "events": [
+        {
+          "minutes": 5,
+          "owned": [
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 10,
+          "owned": [
+            7,
+            3,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 5
+        },
+        {
+          "minutes": 15,
+          "owned": [
+            11,
+            6,
+            4,
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 9
+        },
+        {
+          "minutes": 20,
+          "owned": [
+            16,
+            10,
+            6,
+            4,
+            2,
+            1,
+            0,
+            0
+          ],
+          "research": 16
+        },
+        {
+          "minutes": 25,
+          "owned": [
+            21,
+            14,
+            9,
+            6,
+            3,
+            2,
+            0,
+            0
+          ],
+          "research": 19
+        },
+        {
+          "minutes": 30,
+          "owned": [
+            26,
+            18,
+            12,
+            9,
+            4,
+            3,
+            0,
+            0
+          ],
+          "research": 26
+        },
+        {
+          "minutes": 35,
+          "owned": [
+            31,
+            22,
+            16,
+            12,
+            6,
+            4,
+            1,
+            1
+          ],
+          "research": 30
+        },
+        {
+          "minutes": 40,
+          "owned": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 45,
+          "owned": [
+            5,
+            2,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 3
+        },
+        {
+          "minutes": 50,
+          "owned": [
+            9,
+            4,
+            3,
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 10
+        },
+        {
+          "minutes": 55,
+          "owned": [
+            22,
+            14,
+            9,
+            6,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 18
+        },
+        {
+          "minutes": 60,
+          "owned": [
+            36,
+            25,
+            18,
+            14,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 28
+        },
+        {
+          "minutes": 65,
+          "owned": [
+            44,
+            31,
+            24,
+            20,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 30
+        },
+        {
+          "minutes": 90,
+          "owned": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 95,
+          "owned": [
+            6,
+            2,
+            2,
+            2,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 3
+        },
+        {
+          "minutes": 100,
+          "owned": [
+            9,
+            4,
+            3,
+            3,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 14
+        },
+        {
+          "minutes": 105,
+          "owned": [
+            24,
+            16,
+            10,
+            9,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 23
+        },
+        {
+          "minutes": 110,
+          "owned": [
+            38,
+            27,
+            20,
+            16,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 30
+        },
+        {
+          "minutes": 115,
+          "owned": [
+            46,
+            33,
+            26,
+            22,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 30
+        }
+      ]
+    },
+    {
+      "policy": "balanced-15m",
+      "version": "2.8.3",
+      "firstLoomMinutes": 15.000277777777777,
+      "firstResearchMinutes": 30.00027777777778,
+      "firstPrestigeMinutes": 75.00027777777777,
+      "longestActionGapMinutes": 15,
+      "longestPrePrestigeActionGapMinutes": 15,
+      "actions": 77,
+      "owned": [
+        55,
+        39,
+        29,
+        23,
+        1,
+        1,
+        0,
+        0
+      ],
+      "research": 21,
+      "metrics": [
+        {
+          "minutes": 0.0002777777777777778,
+          "energy": "10.01",
+          "energyNet": "0.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 5,
+          "energy": "204.76",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 10,
+          "energy": "400.62",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 15,
+          "energy": "596.48",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 20,
+          "energy": "1462.63",
+          "energyNet": "4.92",
+          "particleNet": "4.89",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 25,
+          "energy": "2938.74",
+          "energyNet": "4.92",
+          "particleNet": "4.89",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 30,
+          "energy": "4414.85",
+          "energyNet": "4.92",
+          "particleNet": "4.89",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 35,
+          "energy": "8410.5",
+          "energyNet": "27.69",
+          "particleNet": "7.63",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 40,
+          "energy": "1.67e4",
+          "energyNet": "27.69",
+          "particleNet": "7.63",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 45,
+          "energy": "2.50e4",
+          "energyNet": "27.69",
+          "particleNet": "7.63",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 50,
+          "energy": "3.58e4",
+          "energyNet": "78.51",
+          "particleNet": "38.28",
+          "matterFlow": "1000"
+        },
+        {
+          "minutes": 55,
+          "energy": "5.94e4",
+          "energyNet": "78.51",
+          "particleNet": "38.28",
+          "matterFlow": "1000"
+        },
+        {
+          "minutes": 60,
+          "energy": "8.29e4",
+          "energyNet": "78.51",
+          "particleNet": "38.28",
+          "matterFlow": "1000"
+        },
+        {
+          "minutes": 65,
+          "energy": "1.00e5",
+          "energyNet": "143.45",
+          "particleNet": "73.93",
+          "matterFlow": "1931.32"
+        },
+        {
+          "minutes": 70,
+          "energy": "1.43e5",
+          "energyNet": "143.45",
+          "particleNet": "73.93",
+          "matterFlow": "1931.32"
+        },
+        {
+          "minutes": 75,
+          "energy": "1.86e5",
+          "energyNet": "143.45",
+          "particleNet": "73.93",
+          "matterFlow": "1931.32"
+        },
+        {
+          "minutes": 80,
+          "energy": "317.49",
+          "energyNet": "4.06",
+          "particleNet": "6.49",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 85,
+          "energy": "199.09",
+          "energyNet": "9.11",
+          "particleNet": "10.36",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 90,
+          "energy": "29.15",
+          "energyNet": "10.63",
+          "particleNet": "15.84",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 95,
+          "energy": "3304.65",
+          "energyNet": "71.51",
+          "particleNet": "0",
+          "matterFlow": "1204.31"
+        },
+        {
+          "minutes": 100,
+          "energy": "1.28e4",
+          "energyNet": "153.99",
+          "particleNet": "0",
+          "matterFlow": "2535.43"
+        },
+        {
+          "minutes": 105,
+          "energy": "6681.6",
+          "energyNet": "247.08",
+          "particleNet": "18.68",
+          "matterFlow": "4446.7"
+        },
+        {
+          "minutes": 110,
+          "energy": "950.72",
+          "energyNet": "368.27",
+          "particleNet": "0",
+          "matterFlow": "5633.72"
+        },
+        {
+          "minutes": 115,
+          "energy": "6151.65",
+          "energyNet": "570.32",
+          "particleNet": "99.88",
+          "matterFlow": "6309.76"
+        },
+        {
+          "minutes": 120,
+          "energy": "724.43",
+          "energyNet": "656.08",
+          "particleNet": "163.53",
+          "matterFlow": "6309.76"
+        }
+      ],
+      "events": [
+        {
+          "minutes": 15,
+          "owned": [
+            4,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 3
+        },
+        {
+          "minutes": 30,
+          "owned": [
+            10,
+            5,
+            3,
+            3,
+            1,
+            0,
+            0,
+            0
+          ],
+          "research": 10
+        },
+        {
+          "minutes": 45,
+          "owned": [
+            17,
+            11,
+            7,
+            6,
+            2,
+            1,
+            0,
+            0
+          ],
+          "research": 21
+        },
+        {
+          "minutes": 60,
+          "owned": [
+            24,
+            17,
+            12,
+            10,
+            4,
+            2,
+            1,
+            1
+          ],
+          "research": 24
+        },
+        {
+          "minutes": 75,
+          "owned": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 90,
+          "owned": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "research": 12
+        },
+        {
+          "minutes": 105,
+          "owned": [
+            40,
+            28,
+            19,
+            16,
+            1,
+            1,
+            0,
+            0
+          ],
+          "research": 18
+        }
+      ]
+    },
+    {
+      "policy": "guided-5m",
+      "version": "2.8.3",
+      "firstLoomMinutes": 5.000277777777778,
+      "firstResearchMinutes": 10.000277777777777,
+      "firstPrestigeMinutes": 35.000277777777775,
+      "longestActionGapMinutes": 85,
+      "longestPrePrestigeActionGapMinutes": 5,
+      "actions": 22,
+      "owned": [
+        57,
+        43,
+        33,
+        27,
+        0,
+        0,
+        0,
+        0
+      ],
+      "research": 15,
+      "metrics": [
+        {
+          "minutes": 0.0002777777777777778,
+          "energy": "10.01",
+          "energyNet": "0.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 5,
+          "energy": "204.76",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 10,
+          "energy": "1089.88",
+          "energyNet": "3.53",
+          "particleNet": "1.68",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 15,
+          "energy": "5837.35",
+          "energyNet": "19.52",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 20,
+          "energy": "2.34e4",
+          "energyNet": "77.55",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 25,
+          "energy": "6.19e4",
+          "energyNet": "200.32",
+          "particleNet": "2.15",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 30,
+          "energy": "1.13e5",
+          "energyNet": "367.19",
+          "particleNet": "2.7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 35,
+          "energy": "1.52e5",
+          "energyNet": "499.03",
+          "particleNet": "3.02",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 40,
+          "energy": "177.3",
+          "energyNet": "3.46",
+          "particleNet": "5.53",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 45,
+          "energy": "284.32",
+          "energyNet": "6.93",
+          "particleNet": "7.88",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 50,
+          "energy": "12.73",
+          "energyNet": "9.9",
+          "particleNet": "11.12",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 55,
+          "energy": "755.88",
+          "energyNet": "23.05",
+          "particleNet": "53.57",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 60,
+          "energy": "3971.9",
+          "energyNet": "64.02",
+          "particleNet": "164.71",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 65,
+          "energy": "7158.98",
+          "energyNet": "126.21",
+          "particleNet": "285.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 70,
+          "energy": "7430.08",
+          "energyNet": "140.1",
+          "particleNet": "402.4",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 75,
+          "energy": "2480.77",
+          "energyNet": "161.87",
+          "particleNet": "457.16",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 80,
+          "energy": "3329",
+          "energyNet": "192.75",
+          "particleNet": "466.27",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 85,
+          "energy": "596",
+          "energyNet": "265.5",
+          "particleNet": "475.38",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 90,
+          "energy": "4364.03",
+          "energyNet": "262.02",
+          "particleNet": "521.02",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 95,
+          "energy": "8000.82",
+          "energyNet": "276.11",
+          "particleNet": "548.44",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 100,
+          "energy": "2531.33",
+          "energyNet": "297.88",
+          "particleNet": "557.63",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 105,
+          "energy": "7951.32",
+          "energyNet": "280.86",
+          "particleNet": "628.81",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 110,
+          "energy": "8351.12",
+          "energyNet": "311.43",
+          "particleNet": "727.95",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 115,
+          "energy": "418.47",
+          "energyNet": "318.16",
+          "particleNet": "738.16",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 120,
+          "energy": "5406.64",
+          "energyNet": "319.86",
+          "particleNet": "758.57",
+          "matterFlow": "0"
+        }
+      ],
+      "events": [
+        {
+          "minutes": 5,
+          "owned": [
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        },
+        {
+          "minutes": 10,
+          "owned": [
+            18,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 2
+        },
+        {
+          "minutes": 15,
+          "owned": [
+            18,
+            1,
+            14,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 4
+        },
+        {
+          "minutes": 20,
+          "owned": [
+            39,
+            1,
+            14,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 7
+        },
+        {
+          "minutes": 25,
+          "owned": [
+            39,
+            1,
+            27,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 9
+        },
+        {
+          "minutes": 30,
+          "owned": [
+            50,
+            1,
+            28,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 10
+        },
+        {
+          "minutes": 35,
+          "owned": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        }
+      ]
+    },
+    {
+      "policy": "guided-15m",
+      "version": "2.8.3",
+      "firstLoomMinutes": 15.000277777777777,
+      "firstResearchMinutes": 15.000277777777777,
+      "firstPrestigeMinutes": 60.000277777777775,
+      "longestActionGapMinutes": 60,
+      "longestPrePrestigeActionGapMinutes": 15,
+      "actions": 18,
+      "owned": [
+        52,
+        39,
+        29,
+        21,
+        0,
+        0,
+        0,
+        0
+      ],
+      "research": 14,
+      "metrics": [
+        {
+          "minutes": 0.0002777777777777778,
+          "energy": "10.01",
+          "energyNet": "0.64",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 5,
+          "energy": "204.76",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 10,
+          "energy": "400.62",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 15,
+          "energy": "596.48",
+          "energyNet": "0.65",
+          "particleNet": "0",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 20,
+          "energy": "2994.01",
+          "energyNet": "9.98",
+          "particleNet": "1.88",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 25,
+          "energy": "5995.43",
+          "energyNet": "10.08",
+          "particleNet": "1.9",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 30,
+          "energy": "9021.8",
+          "energyNet": "10.18",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 35,
+          "energy": "1.96e4",
+          "energyNet": "63.15",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 40,
+          "energy": "3.86e4",
+          "energyNet": "63.15",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 45,
+          "energy": "5.75e4",
+          "energyNet": "63.15",
+          "particleNet": "1.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 50,
+          "energy": "1.01e5",
+          "energyNet": "335.21",
+          "particleNet": "2.7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 55,
+          "energy": "2.01e5",
+          "energyNet": "335.21",
+          "particleNet": "2.7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 60,
+          "energy": "3.02e5",
+          "energyNet": "335.21",
+          "particleNet": "2.7",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 65,
+          "energy": "177.3",
+          "energyNet": "3.46",
+          "particleNet": "5.53",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 70,
+          "energy": "284.32",
+          "energyNet": "6.93",
+          "particleNet": "7.88",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 75,
+          "energy": "12.73",
+          "energyNet": "9.9",
+          "particleNet": "11.12",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 80,
+          "energy": "755.88",
+          "energyNet": "23.05",
+          "particleNet": "53.57",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 85,
+          "energy": "3971.9",
+          "energyNet": "64.02",
+          "particleNet": "164.71",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 90,
+          "energy": "7158.98",
+          "energyNet": "126.21",
+          "particleNet": "285.92",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 95,
+          "energy": "7430.08",
+          "energyNet": "140.1",
+          "particleNet": "402.4",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 100,
+          "energy": "2480.77",
+          "energyNet": "161.87",
+          "particleNet": "457.16",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 105,
+          "energy": "3329",
+          "energyNet": "192.75",
+          "particleNet": "466.27",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 110,
+          "energy": "596",
+          "energyNet": "265.5",
+          "particleNet": "475.38",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 115,
+          "energy": "4364.03",
+          "energyNet": "262.02",
+          "particleNet": "521.02",
+          "matterFlow": "0"
+        },
+        {
+          "minutes": 120,
+          "energy": "8000.82",
+          "energyNet": "276.11",
+          "particleNet": "548.44",
+          "matterFlow": "0"
+        }
+      ],
+      "events": [
+        {
+          "minutes": 15,
+          "owned": [
+            11,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 1
+        },
+        {
+          "minutes": 30,
+          "owned": [
+            33,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 3
+        },
+        {
+          "minutes": 45,
+          "owned": [
+            33,
+            1,
+            26,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 9
+        },
+        {
+          "minutes": 60,
+          "owned": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "research": 0
+        }
+      ]
+    }
+  ]
+}

@@ -63,7 +63,7 @@ After explicitly accepting Google's SDK terms, install the project-local tools a
 ```powershell
 ./Tools/setup-android-sdk.ps1 -AcceptGoogleSdkLicense
 ./Tools/build-android.ps1 -Sideload
-python Tools/verify-android-apk.py --apk Builds/Android/CelestialMaker-2.8.2-Android-arm64.apk --sdk Tools/AndroidSetup/SDK --jdk Tools/AndroidSetup/OpenJDK --output Logs/AndroidVerification
+python Tools/verify-android-apk.py --apk Builds/Android/CelestialMaker-2.8.3-Android-arm64.apk --sdk Tools/AndroidSetup/SDK --jdk Tools/AndroidSetup/OpenJDK --output Logs/AndroidVerification
 ```
 
 Use JDK 17, NDK r27c, SDK platform `platforms;android-37.0`, build tools 36.0.0 and the pinned editor. The setup script expects the pinned JDK under `Tools/AndroidSetup/OpenJDK` or `CM_ANDROID_JDK`. SDK/NDK paths can be overridden through `CM_ANDROID_SDK` / `CM_ANDROID_NDK`. The APK uses Unity's development signing identity, targets API 37 and contains ARM64 libraries only. The validation checks package/signature/16 KB compatibility without installing or launching it. Device testing remains separate. [Android results](Android/STATUS.md).

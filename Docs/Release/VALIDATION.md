@@ -1,43 +1,41 @@
-# Release validation — 2.8.2
+# Release validation — 2.8.3
 
-Evidence collected 2026-10-11. [Implementation and design references](CASUAL-2.8.2.md). Earlier evidence remains in Git and versioned Android reports.
+Evidence collected 2026-10-11. [First two hours and implementation](FIRST-STEPS-2.8.3.md). Earlier evidence remains in Git and versioned reports.
 
-**IMPLEMENTED:** revised chapter costs and upgrade targets, thin purchase funding feedback, research suggestion, strategy introductions and modal binding cleanup. Save IDs and owned progress retained. English only.
+**IMPLEMENTED:** optional adaptive guide, genuine first-run supply buffer, purchased/maxed-last ordering and automatic completion refresh. English only; existing saves and owned IDs retained.
 
 **COMPILED / TESTED:**
 
 | Check | Passed | Scope |
 | --- | --- | --- |
-| Shared Core | 318/318 | Actual economy, also from clean source |
-| Extended systems | 63/63 | Challenges/scenarios, also from clean source |
-| Unity Core | 20/20 | Economy integration and serialization |
-| Desktop UI | 1488/1488 | Early/late, Night/Dawn, resolutions, text sizes, callbacks and bars |
-| Phone UI | 452/452 | Logical portrait/landscape layouts and purchase bars |
+| Shared Core | 332/332 | Real economy, migration and starter rules; also clean source |
+| Extended systems | 63/63 | Challenges/scenarios; also clean source |
+| Unity Core | 20/20 | Integration/serialization |
+| Desktop UI | 1500/1500 | Early/late geometry, themes, text scales, guide/actions, sorting |
+| Phone UI | 464/464 | Portrait/landscape geometry, guide/actions, sorting |
 | Packaged EXE | 107/107 | Hidden null-graphics runtime |
 | Installed EXE | 107/107 | Isolated installed payload |
-| Installer | 32/32 | Install/upgrade/uninstall and file hashes |
-| APK inspection | 34/34 | Signature, version, ARM64, manifest, icons, CRC/alignment |
+| Installer | 32/32 | Silent install/upgrade/uninstall and hashes |
+| APK | 34/34 | Manifest, ARM64/16 KB, signature, icons, archive |
 
-The player's optional `Continue calculation` action is timing-dependent: the shortened replay completed before that action was sampled here, explaining one fewer runtime action than the older release. Literal offline campaigns independently replay every tick and save/reload at each visit.
+The optional Continue calculation action may disappear before a runtime sample when its catch-up finishes quickly. The literal campaigns independently replay all offline ticks and persist/reload at each visit.
 
-**BUILT:** Windows Release and ARM64 IL2CPP APK, zero errors; installer and ZIP verified. Android target API 37 / minimum 26, version/code 2.8.2/28201, development signing, non-debuggable package. No billing/shop integration.
+**BUILT:** Windows Release, installer/ZIP and ARM64 IL2CPP APK, zero errors. Android version/code 2.8.3/28301, target API 37, minimum 26, non-debuggable development-signed sideload package. Certificate continuity with 2.8.2 is checked before delivery. No billing integration.
 
-**OBSERVED:** actual uGUI/TMP private URP renders inspected for desktop and phone purchase examples. Twenty distinct Overview animation phases and 24 phone renders retained. UI callbacks and authoritative funding transitions pass, including prerequisites, reserves, catch-up, acquired items and modal cleanup. This does not establish physical touch behavior.
+**OBSERVED:** private actual uGUI/TMP/URP renders from fresh first steps, a real two-hour guided checkpoint and a simulated late campaign. 36 phone logical renders. The guide advances through actual actions and supports hide/reopen. Pending research appears before purchased research. Twenty Overview motion phases are rendered. These are not phone captures or human usability observations.
 
-Literal offline campaign completion:
+Two-hour guided first Prestige: 35.0/60.0 minutes with five-/fifteen-minute visits; corresponding maximum pre-Prestige manual purchase intervals 5.0/15.0 minutes. The obsolete static policy remains a failing control, with missing Atomic Forge and no first Prestige.
 
-| Strategy | Completion |
+| Literal six-hour policy | Campaign completion |
 | --- | --- |
 | Energy | 416.936 h |
 | Matter | 407.152 h |
 | Time | 395.249 h |
 
-Nine event-stepped policies complete in 370.554–416.936 hours. Active policies first Prestige at 1.25 h. Six-hour-only policies first Prestige at 12 h because purchases/first confirmations wait for visits. All scripted policies select opt-in plans/modules/roles; actual choices can change these times.
+Nine event-stepped active/hourly/six-hour policies: 370.554–416.936 hours. Plans/modules/roles and first reset confirmations are specified policy choices. Six-hour profiles first Prestige at 12 h because purchases and confirmations await visits; this differs from the guided introductory profiles.
 
-Performance: 22 late-game cases / 5,280 frames after warm-up, actual Core, UI and private GPU renders with synchronous readback. Worst workload p95 4.028 ms; worst UI p95 0.750 ms; 0 samples above 16.67 ms. Allocation counters are unsupported where reported as -1. This is a scoped host benchmark, not phone or physical-display FPS. [Raw results](performance.json).
+Earlier completed late-performance run (no further measurements after the user requested skipping them): 22 cases / 5,280 measured frames after warm-up. Worst workload p95 4.279 ms; worst UI p95 0.754 ms; 1 samples above 16.67 ms. Actual Core/UI plus private GPU submission/readback; this host result does not establish phone/display FPS. Allocation counters are unsupported where marked -1. [Raw measurements](performance.json).
 
-All gameplay saves, exports and backups remain byte-identical. 18/19 protected files match; 1 non-save Editor Analytics cache file(s) changed during rendering. Clean-source publication audit excludes local saves, credentials, SDK/JDK, Library and release binaries.
+Gameplay saves/exports/backups remain byte-identical. 18/19 protected files unchanged; 1 non-save Editor Analytics cache updates. Clean-source publication audit excludes credentials, personal saves, SDK/JDK, Library and binary output.
 
-**UNVERIFIED:** installation and interaction on the S26 Ultra, Android lifecycle on that device, physical Windows/phone FPS, human usability and a clean-machine installer test. No OS input, desktop capture, visible editor or visible player was used.
-
-**PUBLISHED / DELIVERED:** [Public 2.8.2 release](https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.2), five assets anonymously downloaded and SHA-256 matched, README and four purchase images verified. Installer/ZIP/APK and checksums copied to Desktop / Calestial Maker with hash verification; previous versions retained. [Publication record](publication.json).
+**UNVERIFIED:** physical S26 Ultra install/touch/lifecycle/FPS, physical Windows FPS/DPI, human usability and clean-machine installer behavior. No OS input, desktop capture, visible editor or visible game was used. No further performance measurements were started after the user requested skipping them.
