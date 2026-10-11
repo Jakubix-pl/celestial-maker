@@ -4,7 +4,7 @@ using BreakInfinity;
 
 namespace CelestialMaker.Core {
  public static class ProgressionBalance {
-  public const string Version="2.8.1";
+  public const string Version="2.8.2";
   public const double PrestigeEnergyLog=6.2;
   public const double FirstPrestigeEnergyLog=5.4;
   public const int PrestigeForAscension=8;

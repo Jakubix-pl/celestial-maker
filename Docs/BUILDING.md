@@ -12,7 +12,7 @@ dotnet Tools/Expansion/bin/Release/net8.0/Expansion.dll "$PWD"
 dotnet Tools/Expansion/bin/Release/net8.0/Expansion.dll "$PWD" --system-audit
 ```
 
-The default suite has 297 checks. The separate system audit has 63. These compile the actual game Core sources, not a duplicate economy model. Output is written under `Logs`, which is ignored by Git. Synthetic fixtures in `Tools/Expansion/Fixtures` make these checks portable. The historical `--local-legacy` option additionally reads private task-local backup fixtures; those files are intentionally not published and that option is not required for the portable suite.
+The default suite has 318 checks. The separate system audit has 63. These compile the actual game Core sources, not a duplicate economy model. Output is written under `Logs`, which is ignored by Git. Synthetic fixtures in `Tools/Expansion/Fixtures` make these checks portable. The historical `--local-legacy` option additionally reads private task-local backup fixtures; those files are intentionally not published and that option is not required for the portable suite.
 
 `Tools/CI/github-core.yml` contains a Linux GitHub Actions template. To enable hosted CI, place it at `.github/workflows/core.yml` using an account credential with workflow permission. The publication credential lacked that scope, so hosted execution is not claimed. Unity's bundled .NET SDK is also usable locally: `Editor/Data/DotNetSdk/dotnet.exe`.
 

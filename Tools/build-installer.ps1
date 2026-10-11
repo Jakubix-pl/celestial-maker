@@ -6,5 +6,5 @@ if(!$Compiler){$Compiler=Join-Path $PSScriptRoot '.tools/InnoSetup-6.7.3/ISCC.ex
 if(!(Test-Path -LiteralPath $Compiler)){throw 'Inno Setup compiler missing. Pass -Compiler with the path to ISCC.exe. See Docs/BUILDING.md.'}
 & $compiler ('/DProjectRoot='+$script:Root) (Join-Path $PSScriptRoot 'Installer/CelestialMaker.iss') *> (Join-Path $script:Root 'Logs/Discovery/installer-compile.log')
 if($LASTEXITCODE -ne 0){throw 'Installer compilation failed; see Logs/Discovery/installer-compile.log'}
-$installer=Join-Path $script:Root 'Builds/CelestialMaker-Setup-2.8.1.exe'
+$installer=Join-Path $script:Root 'Builds/CelestialMaker-Setup-2.8.2.exe'
 Get-Item -LiteralPath $installer | Select-Object FullName,Length

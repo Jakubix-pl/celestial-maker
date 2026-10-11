@@ -5,6 +5,15 @@ using CelestialMaker.Core;
 using BreakInfinity;
 partial class Program {
  static void ReadabilityTests(){
+  Check("funding fraction stays finite at astronomical balances",Math.Abs(Simulation.PurchaseFunding(BigDouble.Parse("5e10000"),BigDouble.Parse("1e10001"))-.5)<1e-12);
+  Check("funding clamps missing excess and invalid prices",Simulation.PurchaseFunding(-1,200)==0&&Simulation.PurchaseFunding(300,200)==1&&Simulation.PurchaseFunding(20,0)==0);
+  foreach(int stage in Enumerable.Range(0,6)){
+   var research=data.research.Where(x=>x.stage==stage).ToArray();var upgrades=data.upgrades.Where(x=>x.stage==stage).ToArray();var buildings=data.generators.Where(x=>x.stage==stage).ToArray();
+   Check("chapter "+stage+" has strictly increasing research prices",research.Zip(research.Skip(1),(a,b)=>BigDouble.Parse(a.cost)<BigDouble.Parse(b.cost)).All(x=>x));
+   Check("chapter "+stage+" has strictly increasing upgrade and building prices",upgrades.Zip(upgrades.Skip(1),(a,b)=>BigDouble.Parse(a.cost)<BigDouble.Parse(b.cost)).All(x=>x)&&buildings.Zip(buildings.Skip(1),(a,b)=>BigDouble.Parse(a.cost)<BigDouble.Parse(b.cost)).All(x=>x));
+   Check("chapter "+stage+" upgrades affect its own processes",upgrades.All(u=>data.generators[u.target].stage==stage));
+  }
+  var previous=new State();previous.purchases.AddRange(new[]{"u4","u8","r0"});previous.owned[1]=7;previous.resources[0]=new BigDouble(123);var previousLoaded=new Simulation(data,Clone(previous));Check("repricing preserves paid IDs stock and owned buildings",previousLoaded.S.purchases.Contains("u4")&&previousLoaded.S.purchases.Contains("u8")&&previousLoaded.S.owned[1]==7&&previousLoaded.S.resources[0].Value==123);
   var u=data.research[0];var second=data.research.First(x=>x.requires==u.id);
   var early=new Simulation(data);early.RefreshRates();Check("research ETA measures missing stock over current net",Math.Abs(early.PurchaseEta(u)-(BigDouble.Parse(u.cost)-early.S.resources[u.costResource].Value).ToDouble()/early.CachedRate(u.costResource).ToDouble())<.001);
   early.S.owned[0]=0;early.RefreshRates();Check("zero production has no finite ETA",double.IsPositiveInfinity(early.PurchaseEta(u)));Check("missing prerequisite has no finite ETA",double.IsPositiveInfinity(early.PurchaseEta(second)));

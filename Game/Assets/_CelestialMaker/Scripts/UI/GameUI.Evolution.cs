@@ -11,7 +11,7 @@ namespace CelestialMaker {
  public sealed partial class GameUI {
   int pcFlowResource,pcForecastGeneration;
   void DevelopmentPlanPc(){
-   var card=PCard(list,"Development plan");Caption("DEVELOPMENT PLAN / SIX-HOUR VISITS",card);
+   var card=PCard(list,"Development plan");Caption("PLAY AT YOUR PACE",card);Label("Energy: recommended for a first cosmos. Matter: efficient supply chains. Time: construction and automation.",card,18);
    Label("Develop your chosen strategy between visits. The plan first buys discovered chapter autobuyers for 1 Prestige Point each, then development upgrades and cosmic systems. Reserves and research queue priorities stay in effect.",card,18,0,CosmicStyle.Muted);
    var state=Label("",card,20);Bind(()=>state.text="Plan: "+(S.evolution.developmentPlan==""?"Off":S.evolution.developmentPlan)+" / "+(Sim.CampaignComplete?"Campaign complete":S.evolution.developmentPlan!=""?"Active / next decision in "+OfflineReport.Duration(Math.Max(0,Sim.Meta.nextAutomation-S.time)):Sim.HasLayer(0)?"Ready to configure":"Complete your first Prestige"));
    Label("Runs online and offline. Each reset type needs your first manual confirmation; later resets run automatically. Stop the plan to take manual control.",card,18,0,CosmicStyle.Warning);

@@ -99,9 +99,13 @@ namespace CelestialMaker.Core {
   public BigDouble MegaCost(int project,int slot)=>BigDouble.Pow10(4+ExpansionContent.MegaResources[project][slot]*.65+Meta.megas[project].level*1.2);
   public double MegaWork(int project)=>(Meta.megas[project].level==0?ProgressionBalance.ConstructionFirstStageSeconds:ProgressionBalance.ConstructionBaseSeconds)*Math.Pow(ProgressionBalance.ConstructionGrowth,Meta.megas[project].level);
   double MegaSpeed(int project)=>DiscoveryWork(project)*FocusWork(project)*(HasA("a_time_2")?1.5:1)*(project==0&&HasA("a_energy_2")||project==1&&HasA("a_matter_2")?1.5:1);
-  public bool StartMega(int project){
+  public BigDouble MegaAvailable(int resource)=>BigDouble.Max(0,S.resources[resource].Value-BigDouble.Max(S.reserves[resource].Value,GoalReserve(resource)));
+  public bool CanStartMega(int project){
    if(S.satellite||project<0||project>=3||!HasLayer(1))return false;var m=Meta.megas[project];if(m.building||m.level>=(HasG("g_horizon")?6:3))return false;
-   var resources=ExpansionContent.MegaResources[project];for(int i=0;i<3;i++)if(!Meets(S.resources[resources[i]].Value-BigDouble.Max(S.reserves[resources[i]].Value,GoalReserve(resources[i])),MegaCost(project,i)))return false;
+   var resources=ExpansionContent.MegaResources[project];for(int i=0;i<3;i++)if(!Meets(MegaAvailable(resources[i]),MegaCost(project,i)))return false;return true;
+  }
+  public bool StartMega(int project){
+   if(!CanStartMega(project))return false;var m=Meta.megas[project];var resources=ExpansionContent.MegaResources[project];
    for(int i=0;i<3;i++){var cost=MegaCost(project,i);Spend(resources[i],cost);S.resources[resources[i]]=BigDouble.Max(0,S.resources[resources[i]].Value-cost);}
    m.building=true;m.work=0;Revision++;return true;
   }

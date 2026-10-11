@@ -4,6 +4,19 @@ Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
 Public Windows v2.8.1 is published and its local delivery is verified.
 
+## Purchase clarity and casual progression — 2.8.2 in validation
+
+IMPLEMENTED: distinct chapter cost curves, corrected chapter-local upgrade targets,
+thin yellow/green purchase bars, one next-research suggestion and plain-language
+strategy introductions. Currency/owned IDs/save schema retained. English only.
+COMPILED: Core 318/318, systems 63/63, Unity Core 20/20, desktop UI 1488/1488,
+phone UI 452/452. Nine event-stepped campaigns completed in 370.554–416.936 hours.
+OBSERVED: new desktop and phone purchase examples rendered through private Unity
+textures and inspected. No screen capture, OS input or visible game was used.
+PENDING: literal offline campaigns, performance, Windows/installer and APK builds,
+delivery and public release. Physical device/display/FPS remain unverified.
+Evidence: Logs/Release282; design changes: Docs/Release/CASUAL-2.8.2.md.
+
 ## Observatory refinement — 2.8.1
 
 IMPLEMENTED: first/recovery Prestige threshold, stronger reset starts, measured

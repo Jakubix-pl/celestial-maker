@@ -13,6 +13,25 @@ namespace CelestialMaker {
   bool pcCompactNav,pcSearchFavorites;string pcExpandedResearch="",pcPaletteQuery="",pcGoalNotice="";
   TMP_InputField pcListSearch,pcPaletteInput;RectTransform pcPaletteResults;
   float pcSearchDue=-1,pcPaletteDue=-1;
+  // The track lives inside the button and never participates in layout or hit testing.
+  // Yellow measures funding; green also requires the real purchase prerequisites.
+  void PurchaseBarPc(Button button,Func<double> funding,Func<bool> eligible,Func<bool> completed=null,Func<bool> show=null){
+   RectTransform Make(string name,Transform parent,Color color){var go=new GameObject(name,typeof(RectTransform),typeof(Image),typeof(LayoutElement));go.transform.SetParent(parent,false);go.GetComponent<LayoutElement>().ignoreLayout=true;var image=go.GetComponent<Image>();image.color=color;image.raycastTarget=false;return (RectTransform)go.transform;}
+   var track=Make("Purchase progress",button.transform,new Color(.32f,.35f,.4f,.35f));track.anchorMin=new Vector2(0,0);track.anchorMax=new Vector2(1,0);track.offsetMin=new Vector2(10,2);track.offsetMax=new Vector2(-10,5);
+   var fill=Make("Purchase funding",track,new Color(1f,.76f,.18f));Stretch(fill,Vector2.zero,Vector2.one,Vector2.zero,Vector2.zero);var ink=fill.GetComponent<Image>();
+   Action update=()=>{bool done=completed!=null&&completed(),visible=!done&&(show==null||show());if(track.gameObject.activeSelf!=visible)track.gameObject.SetActive(visible);bool ready=!done&&S.offlineRemaining<=0&&eligible();button.interactable=ready;if(!visible)return;float fraction=(float)Math.Max(0,Math.Min(1,funding()));var anchor=new Vector2(fraction,1);if(fill.anchorMax!=anchor)fill.anchorMax=anchor;var color=ready?new Color(.18f,.87f,.44f):new Color(1f,.76f,.18f);if(ink.color!=color)ink.color=color;};
+   var target=button.GetComponentInChildren<TMP_Text>();BindVisible(target,update);BindLive(target,update);
+  }
+  void ResearchBarPc(Button button,Upgrade u){var price=BigDouble.Parse(u.cost);PurchaseBarPc(button,()=>Simulation.PurchaseFunding(EconomyPc.S.resources[u.costResource].Value,price),()=>EconomyPc.CanResearch(u),()=>EconomyPc.S.purchases.Contains(u.id));}
+  void ProcessBarPc(Button button,Func<Simulation> economy,int id){var g=GameSession.Content.generators[id];PurchaseBarPc(button,()=>{var e=economy();return Simulation.PurchaseFunding(e.ResearchAvailable(g.costResource),e.Cost(id));},()=>{var e=economy();return e.Open(g)&&e.MaxBuy(id)>0;});}
+  void PurchaseGuidePc(){
+   Label("Yellow: saving resources · Green: ready to buy. Expand a row for details.",list,16,0,CosmicStyle.Muted);
+   if(page!="Research"||PrefsPc.researchFilter==2)return;
+   var next=EconomyPc.Data.research.FirstOrDefault(u=>EconomyPc.StageOpen(u.stage)&&!EconomyPc.S.purchases.Contains(u.id)&&(string.IsNullOrEmpty(u.requires)||EconomyPc.S.purchases.Contains(u.requires)));
+   if(next==null)return;var card=PCard(list,"Suggested research");VerticalPaddingPc(card,12,4);Caption("ONE STEP AT A TIME",card);var row=HRow(card,"Suggested research actions",0,8);
+   var status=Label("",row,18);BindVisible(status,()=>status.text="Next discovery: "+next.name+" · "+UpgradeStatusPc(EconomyPc,next));
+   PcButton("Show next discovery",row,()=>OpenUpgradePc(next.id));
+  }
   ObservatoryPreferences PrefsPc=>GameSession.Instance.CurrentSettings.observatory??(GameSession.Instance.CurrentSettings.observatory=new ObservatoryPreferences());
   void LoadReadabilityPreferencesPc(){var p=PrefsPc;pcProductionStage=p.productionStage;pcAvailability=p.availability;}
   void VerticalPaddingPc(RectTransform rect,int padding,int gap){var l=rect.GetComponent<VerticalLayoutGroup>();l.padding=new RectOffset(padding,padding,padding,padding);l.spacing=gap;}
@@ -48,7 +67,7 @@ namespace CelestialMaker {
   static string EtaPc(double seconds){if(double.IsNaN(seconds)||double.IsInfinity(seconds)||seconds<0)return "No ETA at current net rate";if(seconds<1)return "< 1s";if(seconds>315360000)return "> 10 years";long t=(long)Math.Ceiling(seconds);return "~"+(t<60?t+"s":t<3600?t/60+"m "+t%60+"s":t<86400?t/3600+"h "+t%3600/60+"m":t/86400+"d "+t%86400/3600+"h");}
   string UpgradeEffectPc(Upgrade u)=>(u.target<0?"All processes":GameSession.Content.generators[u.target].name)+" · capacity +"+((u.effect-1)*100).ToString("0.#")+"%";
   void ReadableResearchPc(Upgrade[] defs){
-   bool research=page=="Research";var p=PrefsPc;int filter=research?p.researchFilter:p.upgradeFilter;pcResearchFilter=filter;
+   PurchaseGuidePc();bool research=page=="Research";var p=PrefsPc;int filter=research?p.researchFilter:p.upgradeFilter;pcResearchFilter=filter;
    string query=research?p.researchSearch:p.upgradeSearch;bool favorites=research?p.researchFavorites:p.upgradeFavorites;
    if(pcCompactNav){PcButton(new[]{"All","Available","Purchased"}[filter]+(favorites?" / Favorites":"")+(query!=""?" / Search active":"")+" · Search & filters",list,()=>ResearchFilterDialogPc(research));}
    else{var toolbar=HRow(list,"Research tools",0,8);pcListSearch=SearchFieldPc(toolbar,query,"Search research…",value=>{if(research)p.researchSearch=value;else p.upgradeSearch=value;pcSearchDue=Time.unscaledTime+.18f;});
@@ -62,7 +81,7 @@ namespace CelestialMaker {
     var card=PCard(list,"Research row "+u.id);VerticalPaddingPc(card,12,5);var panel=card.GetComponent<CosmicPanel>();panel.color=CosmicStyle.Tint(CosmicStyle.Section(1),.025f);panel.edgeColor=expanded?CosmicStyle.Section(1):CosmicStyle.Edge;
     var columns=HRow(card,"Research columns",0,12);columns.GetComponent<ObservatoryFlow>().cellWidth=280*PcScale;
     var identity=PcBox("Research identity",columns,Color.clear);Vertical(identity,0,3);var name=PcButton((expanded?"− ":"+ ")+d.name+(FavoritePc(d.id)?" *":""),identity,()=>{pcExpandedResearch=expanded?"":d.id;ShowPc();});name.name="Expand research "+d.id;Hint(name,"Expand details, compare actual production, favorite or pin this goal.");Label(UpgradeEffectPc(u),identity,18,0,CosmicStyle.Muted);
-    var buying=PcBox("Research purchase",columns,Color.clear);Vertical(buying,0,3);var button=Primary("Acquire",buying,()=>AcquireResearchPc(d));button.name="Acquire "+d.id;var cost=Label("",buying,18,0,CosmicStyle.Muted);
+    var buying=PcBox("Research purchase",columns,Color.clear);Vertical(buying,0,3);var button=Primary("Acquire",buying,()=>AcquireResearchPc(d));button.name="Acquire "+d.id;var cost=Label("",buying,18,0,CosmicStyle.Muted);ResearchBarPc(button,d);
     var status=Label("",card,18);BindVisible(status,()=>{var e=EconomyPc;bool owned=e.S.purchases.Contains(d.id),ready=e.CanResearch(d);status.text=UpgradeStatusPc(e,d);status.color=ready?CosmicStyle.Section(1):CosmicStyle.Muted;cost.text="Cost "+new Number(BigDouble.Parse(d.cost))+" "+GameSession.Content.resources[d.costResource];button.interactable=ready;button.GetComponentInChildren<TMP_Text>().text=owned?"Purchased":ready?"Acquire · "+new Number(BigDouble.Parse(d.cost))+" "+GameSession.Content.resources[d.costResource]:"Acquire";});
     if(expanded)ResearchDetailsContentPc(card,d,research);
    }
@@ -90,7 +109,7 @@ namespace CelestialMaker {
    var e=EconomyPc;e.RefreshRates();var after=e.PreviewRates(e.Meta.laws,e.Meta.ascensionUpgrades,purchase:u);var dialog=ModalPc("Production comparison / "+u.name,1040,800);
    Label("Snapshot for "+WorldNamePc+". Estimated net rates after paying the cost. Current inputs and reserves are included; future purchases and resets can change these results.",dialog,18,0,CosmicStyle.Muted);
    if(after==null)Label("Requirements changed. Gather the missing resources before comparing.",dialog,18);
-   else{bool changed=false;for(int i=0;i<12;i++){if(!e.StageOpen(i/2))continue;var before=e.CachedRate(i);if(before==after[i].Value)continue;changed=true;var card=PCard(dialog,"Comparison "+i);Label(GameSession.Content.resources[i]+" / net per second",card,20);Label(new Number(before)+" → "+after[i]+"   ("+(after[i].Value>=before?"+":"")+new Number(after[i].Value-before)+")",card,20);}if(!changed)Label("No immediate net-rate change. Check input limits and protected resources; installed capacity still increases.",dialog,18);var acquire=Primary("Acquire research",dialog,()=>AcquireResearchPc(u));acquire.interactable=e.CanResearch(u);}
+   else{bool changed=false;for(int i=0;i<12;i++){if(!e.StageOpen(i/2))continue;var before=e.CachedRate(i);if(before==after[i].Value)continue;changed=true;var card=PCard(dialog,"Comparison "+i);Label(GameSession.Content.resources[i]+" / net per second",card,20);Label(new Number(before)+" → "+after[i]+"   ("+(after[i].Value>=before?"+":"")+new Number(after[i].Value-before)+")",card,20);}if(!changed)Label("No immediate net-rate change. Check input limits and protected resources; installed capacity still increases.",dialog,18);var acquire=Primary("Acquire research",dialog,()=>AcquireResearchPc(u));ResearchBarPc(acquire,u);}
    PcButton("Close",dialog,ClosePcModal);FocusModalPc();
   }
   void PinnedGoalPc(Transform parent){
@@ -111,7 +130,7 @@ namespace CelestialMaker {
    Label(!e.HasA("a_time_2")?"Manual plan available. Automatic execution requires Temporal workshop in the Time tree.":"Automatic execution runs at simulation decisions, including offline time. It respects reserves and the construction planner. The queue has priority over general autobuy and automatic research; a blocked first item waits. Resets pause execution.",dialog,18,0,CosmicStyle.Muted);
    if(plan.queue.Count==0)Label("Your plan is empty. Expand a research row and choose Queue with prerequisites.",dialog,18);
    for(int i=0;i<plan.queue.Count;i++){string id=plan.queue[i];var u=e.FindUpgrade(id);var c=PCard(dialog,"Queued "+id);VerticalPaddingPc(c,12,5);Label((i+1)+". "+u.name,c,22);var status=Label("",c,18,0,CosmicStyle.Muted);Bind(()=>{var current=EconomyPc;status.text=UpgradeStatusPc(current,u)+(current.ResearchAvailable(u.costResource)<BigDouble.Parse(u.cost)&&current.CanResearch(u)?" · Automatic queue is waiting for unreserved stock":"");});
-    var actions=HRow(c,"Queue actions",0,8);PcButton("Open",actions,()=>OpenUpgradePc(id));var acquire=PcButton("Acquire now",actions,()=>{bool ok=false;EditEconomyPc(s=>ok=s.Purchase(u));if(ok)ToastPc("Acquired / "+u.name);ResearchPlanPc();});Bind(()=>acquire.interactable=EconomyPc.CanResearch(u));
+    var actions=HRow(c,"Queue actions",0,8);PcButton("Open",actions,()=>OpenUpgradePc(id));var acquire=PcButton("Acquire now",actions,()=>{bool ok=false;EditEconomyPc(s=>ok=s.Purchase(u));if(ok)ToastPc("Acquired / "+u.name);ResearchPlanPc();});ResearchBarPc(acquire,u);
     var up=PcButton("Move earlier",actions,()=>{bool moved=false;EditEconomyPc(s=>moved=s.MoveQueuedResearch(id,-1));if(!moved)ToastPc("Prerequisites must stay before dependent research.");ResearchPlanPc();});up.interactable=i>0;
     var down=PcButton("Move later",actions,()=>{bool moved=false;EditEconomyPc(s=>moved=s.MoveQueuedResearch(id,1));if(!moved)ToastPc("Prerequisites must stay before dependent research.");ResearchPlanPc();});down.interactable=i+1<plan.queue.Count;
     PcButton("Remove",actions,()=>{EditEconomyPc(s=>s.RemoveQueuedResearch(id));ResearchPlanPc();});

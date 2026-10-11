@@ -10,11 +10,11 @@ using CelestialMaker.Core;
 
 namespace CelestialMaker {
  public sealed partial class GameUI {
-  public const string ObservatoryVersion="2.8.1";
+  public const string ObservatoryVersion="2.8.2";
   static readonly string[] ObservatorySections={"Overview","Production","Development","Automation","Cosmos","Journal"};
   static readonly string[][] ObservatoryRoutes={new[]{"Overview"},new[]{"Production","Research","Upgrades","Analytics"},new[]{"Prestige","Trees","Roadmap","Challenges"},new[]{"Automation"},new[]{"Megastructures","Reality laws","Parallel universes","Constellations","Expeditions"},new[]{"Achievements","Codex","Offline summary"}};
   static readonly string[][] ObservatoryLabels={new[]{"Overview"},new[]{"Processes","Research","Upgrades","Flows"},new[]{"Resets","Trees & profiles","Milestones","Challenges"},new[]{"Automation"},new[]{"Megastructures","Reality laws","Universes","Connections","Expeditions"},new[]{"Achievements","Codex","Last absence"}};
-  int pcSelectedProcess=-1,pcAvailability,pcWorld,pcModalBindingStart,pcDiscoveryMask=-1;
+  int pcSelectedProcess=-1,pcAvailability,pcWorld,pcModalBindingStart,pcModalLiveStart,pcDiscoveryMask=-1;
   readonly List<Action> pcInspectorBindings=new List<Action>();
   GameObject pcReturnFocus;
   float PcScale=>Mathf.Clamp(GameSession.Instance?.CurrentSettings.textScale??1,.8f,2);
@@ -108,7 +108,7 @@ namespace CelestialMaker {
   string ProcessStatePc(Simulation sim,int id){var g=GameSession.Content.generators[id];if(sim.S.owned[id]==0)return "Not owned";var capacity=sim.CachedProductionMultiplier(id)*g.rate*sim.S.owned[id];return g.input>=0&&capacity>0&&sim.CachedFlow(id)<capacity*.999?"Input limited":"Running";}
   bool ProcessMatchesPc(Simulation sim,int id){var g=GameSession.Content.generators[id];return sim.ProcessDiscovered(id)&&(pcProductionStage<0||g.stage==pcProductionStage)&&(pcAvailability==0||pcAvailability==1&&sim.MaxBuy(id)>0||pcAvailability==2&&ProcessStatePc(sim,id)=="Input limited");}
   void ObservatoryProductionPc(){
-   var sim=EconomyPc;sim.DiscoverProcesses();var modes=HRow(list,"Purchase mode",0,8);foreach(long n in new long[]{1,10,0,-1}){long q=n;var b=PcButton(n==0?"Max":n==-1?"Next milestone":"Buy "+n,modes,()=>{quantity=q;ShowPc();});EmphasizePc(b,quantity==q);}
+   Label("Purchase bars show funding for one unit. Bulk modes buy as many as you can afford.",list,16,0,CosmicStyle.Muted);var sim=EconomyPc;sim.DiscoverProcesses();var modes=HRow(list,"Purchase mode",0,8);foreach(long n in new long[]{1,10,0,-1}){long q=n;var b=PcButton(n==0?"Max":n==-1?"Next milestone":"Buy "+n,modes,()=>{quantity=q;ShowPc();});EmphasizePc(b,quantity==q);}
    var filters=HRow(list,"Production filters",0,8);PcButton("Chapter: "+(pcProductionStage<0?"All":CosmicStyle.Chapters[pcProductionStage]),filters,()=>{var stages=Enumerable.Range(0,6).Where(s=>sim.AllProcessesDiscovered||sim.StageOpen(s)).Prepend(-1).ToArray();pcProductionStage=stages[(Array.IndexOf(stages,pcProductionStage)+1)%stages.Length];PrefsPc.productionStage=pcProductionStage;ShowPc();});PcButton("Show: "+new[]{"All processes","Affordable","Input limited"}[pcAvailability],filters,()=>{pcAvailability=(pcAvailability+1)%3;PrefsPc.availability=pcAvailability;ShowPc();});PcButton("Process upgrades",filters,()=>NavigatePc("Upgrades"));
    if(pcAvailability>0)Label("Filtered when you open this view. Refresh to update membership; rows never reorder during production.",list,18,0,CosmicStyle.Muted);
    var ids=Enumerable.Range(0,24).Where(i=>ProcessMatchesPc(sim,i)).ToArray();if(ids.Length==0){Label("No processes match these filters.",list,18);PcButton("Clear filters",list,()=>{pcAvailability=0;pcProductionStage=-1;PrefsPc.availability=0;PrefsPc.productionStage=-1;ShowPc();});}
@@ -119,7 +119,7 @@ namespace CelestialMaker {
     var production=PcBox("Output",cells,Color.clear);Vertical(production,0,2);var output=Label("",production,18);var stock=Label("",production,18,0,CosmicStyle.Muted);
     var action=PcBox("Purchase",cells,Color.clear);Vertical(action,0,2);var buy=Primary("Buy",action,()=>{long count=Math.Min(RequestedPc(EconomyPc,id),EconomyPc.MaxBuy(id));EditEconomyPc(e=>e.Buy(id,count));RefreshPc();});buy.name="Buy process "+id;var cost=Label("",action,18,0,CosmicStyle.Muted);
     BindVisible(state,()=>{var economy=EconomyPc;string condition=ProcessStatePc(economy,id);state.text="×"+economy.S.owned[id]+" · "+condition;state.color=condition=="Input limited"?CosmicStyle.Warning:CosmicStyle.Muted;output.text=new Number(economy.CachedFlow(id))+" "+GameSession.Content.resources[g.output]+" /s";long actual=Math.Min(RequestedPc(economy,id),economy.MaxBuy(id));long priced=Math.Max(1,actual);var price=economy.Cost(id,priced);var missing=BigDouble.Max(0,price-economy.ResearchAvailable(g.costResource));cost.text=actual>0?"Cost "+new Number(price)+" "+GameSession.Content.resources[g.costResource]:"Need "+new Number(missing)+" unreserved "+GameSession.Content.resources[g.costResource]+" · "+EtaPc(economy.CachedRate(g.costResource)>0?(missing/economy.CachedRate(g.costResource)).ToDouble():double.PositiveInfinity);buy.GetComponentInChildren<TMP_Text>().text="Buy "+priced;buy.interactable=actual>0&&economy.Open(g);if(!economy.Open(g))cost.text="Reach "+g.unlock+" lifetime "+GameSession.Content.resources[Math.Max(0,g.stage*2-1)]+" to build.";Hint(buy,cost.text+". Purchases respect reserves and the construction planner.");row.GetComponent<CosmicPanel>().edgeColor=pcSelectedProcess==id?CosmicStyle.Cyan:CosmicStyle.Edge;});
-    BindLive(stock,()=>{var economy=EconomyPc;stock.text="Stock "+economy.S.resources[g.output]+" · Net "+new Number(economy.CachedRate(g.output))+" /s";});
+    ProcessBarPc(buy,()=>EconomyPc,id);BindLive(stock,()=>{var economy=EconomyPc;stock.text="Stock "+economy.S.resources[g.output]+" · Net "+new Number(economy.CachedRate(g.output))+" /s";});
    }
    if(pcSelectedProcess<0&&ids.Length>0)pcSelectedProcess=ids[0];
   }
@@ -159,7 +159,7 @@ namespace CelestialMaker {
     var requirement=Label("",c,18,0,CosmicStyle.Muted);Bind(()=>requirement.text=VisibleResetRequirement(layer));
     var b=Primary("Review "+ResetRules.Names[i],c,()=>ResetPreviewPc(layer,false));Gate(b,()=>ResetCurrencyVisible(layer));Hint(b,"Meet the requirements to unlock this reset, then review its consequences before confirming.");
    }
-   if(Sim.HasLayer(0)){Caption("PRESTIGE BRANCHES",list);for(int n=0;n<4;n++){int node=n;var b=PcButton("Branch "+(n+1)+" · "+Math.Pow(4,n)+" Prestige Points",list,()=>{Sim.PrestigeUpgrade(0,node);ShowPc();});Gate(b,()=>!S.prestigePurchases.Contains("p0_"+node)&&S.prestige[0].Value>=BigDouble.Pow(4,node));}}
+   if(Sim.HasLayer(0)){Caption("PRESTIGE BRANCHES",list);for(int n=0;n<4;n++){int node=n;var b=PcButton("Branch "+(n+1)+" · "+Math.Pow(4,n)+" Prestige Points",list,()=>{Sim.PrestigeUpgrade(0,node);ShowPc();});PurchaseBarPc(b,()=>Simulation.PurchaseFunding(S.prestige[0].Value,BigDouble.Pow(4,node)),()=>S.prestige[0].Value>=BigDouble.Pow(4,node),()=>S.prestigePurchases.Contains("p0_"+node));}}
   }
   void ResetPreviewPc(int layer,bool automatic){
    if(!ResetCurrencyVisible(layer)){var locked=ModalPc(ResetRules.Names[layer]+" locked",880,620);Label(VisibleResetRequirement(layer),locked,18);PcButton("Close",locked,ClosePcModal);FocusModalPc();return;}
@@ -170,11 +170,11 @@ namespace CelestialMaker {
    if(automatic)Label("The rule can perform this reset repeatedly once its reward threshold is met. Turn it off in Automation. Higher layers clear lower automation according to this contract.",d,18);
    var actions=HRow(d,"Reset confirmation",0);PcButton("Cancel",actions,ClosePcModal);var confirm=Primary(automatic?"Enable automatic "+ResetRules.Names[layer]:"Confirm "+ResetRules.Names[layer],actions,()=>{ClosePcModal();if(automatic)S.automation.repeatPrestige[layer]=true;else Sim.Rebirth(layer);BuildPc();});confirm.name="Confirm reset "+layer;confirm.interactable=automatic?Sim.AdvancedAutomation&&S.resets[layer]>0:Sim.PrestigeReward(layer)>=1&&S.activeChallenge=="";FocusModalPc();
   }
-  void SpecializationsPc(){Caption("SPECIALIZATIONS",list);foreach(var u in GameSession.Content.talents){var d=u;var c=PCard(list,u.name);Label(u.name,c,24);Label(u.description,c,18);var b=PcButton(S.talents.Contains(u.id)?"Assigned":u.cost+" Ascension Points",c,()=>{Sim.Talent(d);ShowPc();});Gate(b,()=>!S.talents.Contains(d.id)&&S.prestige[1].Value>=BigDouble.Parse(d.cost)&&(d.requires==""||S.talents.Contains(d.requires)));}PcButton("Refund specialization points",list,()=>{Sim.Respec();ShowPc();});}
+  void SpecializationsPc(){Caption("SPECIALIZATIONS",list);foreach(var u in GameSession.Content.talents){var d=u;var c=PCard(list,u.name);Label(u.name,c,24);Label(u.description,c,18);var b=PcButton(S.talents.Contains(u.id)?"Assigned":u.cost+" Ascension Points",c,()=>{Sim.Talent(d);ShowPc();});PurchaseBarPc(b,()=>Simulation.PurchaseFunding(S.prestige[1].Value,BigDouble.Parse(d.cost)),()=>Sim.HasLayer(1)&&S.prestige[1].Value>=BigDouble.Parse(d.cost)&&(d.requires==""||S.talents.Contains(d.requires)),()=>S.talents.Contains(d.id));}PcButton("Refund specialization points",list,()=>{Sim.Respec();ShowPc();});}
 
   string MegaBlockPc(int project){
    var m=Sim.Meta.megas[project];if(!Sim.HasLayer(1))return "Requires Ascension";if(m.building)return "Construction in progress";if(m.level>=6)return "All stages complete";if(m.level>=3&&!Sim.HasG("g_horizon"))return "Requires Endless horizon";
-   var missing=new List<string>();for(int slot=0;slot<3;slot++){int r=ExpansionContent.MegaResources[project][slot];if(!Simulation.Meets(S.resources[r].Value-S.reserves[r].Value,Sim.MegaCost(project,slot)))missing.Add(GameSession.Content.resources[r]);}
+   var missing=new List<string>();for(int slot=0;slot<3;slot++){int r=ExpansionContent.MegaResources[project][slot];if(!Simulation.Meets(Sim.MegaAvailable(r),Sim.MegaCost(project,slot)))missing.Add(GameSession.Content.resources[r]);}
    return missing.Count==0?"":"Need unreserved "+string.Join(", ",missing);
   }
 
@@ -206,12 +206,12 @@ namespace CelestialMaker {
     Label(CosmicStyle.Chapters[stage]+" autobuyer",card,23,0,CosmicStyle.Section(stage));
     Label(string.Join(" / ",GameSession.Content.generators.Where(g=>g.stage==stage).Select(g=>g.name)),card,17,0,CosmicStyle.Muted);
     var buy=Primary(S.autobuyers[stage]?"Unlocked":"Unlock / 1 Prestige Point",card,()=>{if(Sim.UnlockAutobuyer(stage)){S.automation.buy=true;ShowPc();}});buy.name="Unlock autobuyer "+stage;
-    Gate(buy,()=>!S.autobuyers[stage]&&Sim.HasLayer(0)&&S.prestige[0].Value>=Sim.AutobuyerCost(stage));
+    PurchaseBarPc(buy,()=>Simulation.PurchaseFunding(S.prestige[0].Value,Sim.AutobuyerCost(stage)),()=>Sim.HasLayer(0)&&S.prestige[0].Value>=Sim.AutobuyerCost(stage),()=>S.autobuyers[stage]);
    }
   }
 
   RectTransform ObservatoryModalPc(string title,float width,float height){
-   var selected=EventSystem.current?EventSystem.current.currentSelectedGameObject:null;ClosePcModal();pcReturnFocus=selected;pcModalBindingStart=pcBindings.Count;
+   var selected=EventSystem.current?EventSystem.current.currentSelectedGameObject:null;ClosePcModal();pcReturnFocus=selected;pcModalBindingStart=pcBindings.Count;pcModalLiveStart=pcLive.Count;
    pcModal=PcBox("Modal backdrop",root,new Color(.015f,.025f,.04f,.96f));Stretch(pcModal,Vector2.zero,Vector2.one,Vector2.zero,Vector2.zero);
    var panel=PcBox("Dialog",pcModal,CosmicStyle.Panel);panel.anchorMin=panel.anchorMax=panel.pivot=new Vector2(.5f,.5f);float margin=PhoneObservatory?8:48;panel.sizeDelta=new Vector2(Mathf.Min(width,root.rect.width-margin),Mathf.Min(height,root.rect.height-margin));panel.anchoredPosition=Vector2.zero;
    var content=ScrollContent(panel,out var scroll,PhoneObservatory?12:24);Caption("CELESTIAL MAKER",content);Label(title,content,28);Hairline(content,CosmicStyle.Edge);RevealPc(panel);return content;

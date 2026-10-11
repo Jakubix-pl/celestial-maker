@@ -1,5 +1,5 @@
 . "$PSScriptRoot/common.ps1"
-$installer=Join-Path $script:Root 'Builds/CelestialMaker-Setup-2.8.1.exe'
+$installer=Join-Path $script:Root 'Builds/CelestialMaker-Setup-2.8.2.exe'
 $source=Join-Path $script:Root 'Builds/Windows/Observatory-Release'
 $rootOutput=Join-Path $script:Root ('Logs/Discovery/Installer-'+(Get-Date -Format 'yyyyMMdd-HHmmss'))
 $destination=[IO.Path]::GetFullPath((Join-Path $rootOutput 'Installed Game'))
@@ -25,7 +25,7 @@ function Verify-Payload([string]$phase){
 try {
  Install-Test 'install';Verify-Payload 'install'
  $entry=Get-ItemProperty -LiteralPath $registration
- Assert-Installer ($entry.DisplayVersion -eq '2.8.1' -and $entry.DisplayName -eq 'Celestial Maker') 'Windows uninstall registration has the correct version'
+ Assert-Installer ($entry.DisplayVersion -eq '2.8.2' -and $entry.DisplayName -eq 'Celestial Maker') 'Windows uninstall registration has the correct version'
  Assert-Installer ($entry.InstallLocation.TrimEnd('\') -eq $destination) 'Windows uninstall registration points only to the isolated test folder'
  Assert-Installer (Test-Path -LiteralPath (Join-Path $destination 'CelestialMaker.ico')) 'Game icon is installed'
  $sentinel=Join-Path $destination 'user-notes.txt';Set-Content -LiteralPath $sentinel -Value 'Untracked user files must survive upgrades and uninstall.'
@@ -37,7 +37,7 @@ try {
  $player=Start-Process -FilePath (Join-Path $destination 'CelestialMaker.exe') -ArgumentList $arguments -WindowStyle Hidden -PassThru -Wait
  Assert-Installer ($player.ExitCode -eq 0) 'Installed game exits its headless regression successfully'
  $result=Get-Content -LiteralPath (Join-Path $playerArtifacts 'result.json') -Raw | ConvertFrom-Json
- Assert-Installer ($result.pass -and $result.version -eq '2.8.1' -and @($result.errors).Count -eq 0) ('Installed game passes '+$result.checks.Count+' runtime checks')
+ Assert-Installer ($result.pass -and $result.version -eq '2.8.2' -and @($result.errors).Count -eq 0) ('Installed game passes '+$result.checks.Count+' runtime checks')
 } finally {
  $uninstaller=Join-Path $destination 'unins000.exe'
  if(Test-Path -LiteralPath $uninstaller){

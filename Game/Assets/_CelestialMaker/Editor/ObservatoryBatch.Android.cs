@@ -9,6 +9,7 @@ namespace CelestialMaker.EditorTools {
   static void PhoneChecks(){
    Set("phoneReview",true);
    try{
+    PurchaseChecks(480,1040);PurchaseChecks(1040,480);
     string[] routes={"Overview","Production","Research","Upgrades","Prestige","Trees","Challenges","Automation","Analytics","Megastructures","Reality laws","Parallel universes","Constellations","Expeditions","Achievements","Codex","Settings","Offline summary","Roadmap"};
     int[,] sizes={{480,1040},{1040,480},{360,800},{800,360}};
     foreach(bool late in new[]{false,true})foreach(float scale in new[]{1f,1.25f})for(int size=0;size<4;size++){
@@ -26,6 +27,7 @@ namespace CelestialMaker.EditorTools {
    Set("phoneReview",true);
    try{
     foreach(bool landscape in new[]{false,true}){
+     RenderPurchases(landscape?1040:480,landscape?480:1040,"phone-"+(landscape?"landscape-":"portrait-"));
      Fixture(true,1,false,landscape?1040:480,landscape?480:1040);
      foreach(string page in new[]{"Overview","Production","Research","Automation","Megastructures","Settings"}){Set("page",page);Call("ShowPc");Shot("phone-"+(landscape?"landscape-":"portrait-")+page.ToLowerInvariant());}
      Call("GoalSequencePc");Shot("phone-"+(landscape?"landscape-":"portrait-")+"goals");Call("ClosePcModal");

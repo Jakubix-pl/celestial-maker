@@ -15,6 +15,12 @@ namespace CelestialMaker.Core {
   public bool automatic;
  }
  public sealed partial class Simulation {
+  // Divide before converting: balances can exceed the range of a double.
+  public static double PurchaseFunding(BigDouble available,BigDouble cost){
+   if(BigDouble.IsNaN(available)||BigDouble.IsNaN(cost)||cost<=0||available<=0)return 0;
+   if(available>=cost)return 1;
+   return Math.Max(0,Math.Min(1,(available/cost).ToDouble()));
+  }
   public BigDouble ResearchAvailable(int resource)=>BigDouble.Max(0,S.resources[resource].Value-EffectiveReserve(resource));
   public bool CanResearch(Upgrade u)=>u!=null&&StageOpen(u.stage)&&!S.purchases.Contains(u.id)&&(string.IsNullOrEmpty(u.requires)||S.purchases.Contains(u.requires))&&S.resources[u.costResource].Value>=BigDouble.Parse(u.cost);
   // Estimates use the current net rate, with no assumed future purchases or resets.

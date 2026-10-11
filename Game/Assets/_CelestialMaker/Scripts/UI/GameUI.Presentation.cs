@@ -29,7 +29,7 @@ namespace CelestialMaker {
   void PresentPc(){
    if(menu||S==null)return;
    for(int i=0;i<pcLiveShell.Count;i++)if(LiveVisible(pcLiveShell[i]))pcLiveShell[i].update();
-   if(pcModal)return;
+   if(pcModal){for(int i=0;i<pcLive.Count;i++)if(pcLive[i].target&&pcLive[i].target.transform.IsChildOf(pcModal)&&LiveVisible(pcLive[i]))pcLive[i].update();return;}
    for(int i=0;i<pcLive.Count;i++)if(LiveVisible(pcLive[i]))pcLive[i].update();
   }
   static void RefreshBindings(List<Action> bindings){for(int i=0;i<bindings.Count;i++)bindings[i]();}

@@ -44,6 +44,7 @@ namespace CelestialMaker.EditorTools {
    File.WriteAllText(Path.Combine(renderDir,"render-manifest.json"),JsonUtility.ToJson(new RenderEvidence{files=rendered.ToArray(),utc=DateTime.UtcNow.ToString("o"),device=SystemInfo.graphicsDeviceName,pipeline=renderedPipeline},true));
   }
   static void RenderPublication(){
+   RenderPurchases(1920,1080,"publication-");
    Fixture(false,1,false,1920,1080);Set("page","Production");Call("ShowPc");Shot("prestige-fresh-production");
    session.Sim.S.resources[0]=session.Sim.Cost(1)-session.Sim.Rate(0)*30;Call("ShowPc");Shot("prestige-30second-discovery");
    session.Sim.S.lifetime[0]=BreakInfinity.BigDouble.Pow10(ProgressionBalance.PrestigeEnergyLog);session.Sim.Rebirth(0);Call("BuildPc");Set("page","Production");Call("ShowPc");Shot("prestige-revealed-production");
@@ -56,6 +57,10 @@ namespace CelestialMaker.EditorTools {
    Set("page","Automation");Call("ShowPc");Call("GoalSequencePc");Shot("publication-goals");Call("ClosePcModal");
    Call("ChroniclePc");Shot("publication-chronicle");Call("ClosePcModal");
    Fixture(true,1,true,1920,1080);Set("page","Overview");Call("ShowPc");Shot("publication-dawn");
+  }
+  static void RenderPurchases(int width,int height,string prefix){
+   Fixture(false,1,false,width,height);session.Sim.S.resources[0]=new BreakInfinity.BigDouble(90);Set("page","Production");Call("ShowPc");Shot(prefix+"purchase-production");
+   session.Sim.S.resources[0]=new BreakInfinity.BigDouble(200);session.Sim.Purchase(GameSession.Content.research[0]);session.Sim.S.resources[0]=new BreakInfinity.BigDouble(600);Set("page","Research");Call("ShowPc");Shot(prefix+"purchase-research");
   }
   static void RenderTabs(){
    foreach(bool light in new[]{false,true})foreach(float scale in new[]{1f,2f}){
