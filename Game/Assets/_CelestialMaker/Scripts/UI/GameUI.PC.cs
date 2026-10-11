@@ -140,7 +140,8 @@ namespace CelestialMaker {
   }
   void RefreshInspectorPc()=>ObservatoryInspectorPc();
   void ToastPc(string text){pcToastText=text;pcToastUntil=Time.unscaledTime+4;if(pcToast){pcToast.text=text;pcToastPanel.gameObject.SetActive(true);RevealPc(pcToastPanel);}}
-  void RefreshPc(){if(S!=null){Sim.RefreshRates();if(pcWorld>0){pcEconomy=Sim.Universe(pcWorld);pcEconomyHome=Sim;pcEconomyWorld=pcWorld;if(LocalPagePc)EconomyPc.RefreshRates();}}RefreshBindings(pcShellBindings);RefreshBindings(pcBindings);RefreshBindings(pcInspectorBindings);PresentPc();}
+  void RefreshSnapshotPc(){pcVisibilityEpoch++;if(S!=null){Sim.RefreshRates();if(pcWorld>0){pcEconomy=Sim.Universe(pcWorld);pcEconomyHome=Sim;pcEconomyWorld=pcWorld;if(LocalPagePc)EconomyPc.RefreshRates();}}RefreshBindings(pcShellBindings);RefreshBindings(pcBindings);RefreshBindings(pcInspectorBindings);}
+  void RefreshPc(){RefreshSnapshotPc();PresentPc();}
   void UpdatePc(){
    KeyboardObservatoryPc();
    ReadabilitySearchTickPc();
@@ -155,7 +156,7 @@ namespace CelestialMaker {
    int discovery=EconomyPc.DiscoverProcesses();if(discovery!=pcDiscoveryMask&&!pcModal){pcDiscoveryMask=discovery;if(page=="Production")ShowPc();}
    int stage=HighestStage();if(pcStage!=stage&&!pcModal){pcStage=stage;if(page!="Settings")ShowPc();}
    if(pcAchievements>=0&&S.achievements.Count>pcAchievements){ToastPc("Discovery unlocked / "+S.achievements.Count+" of 48");if(page=="Achievements")ShowPc();}pcAchievements=S.achievements.Count;
-   CheckPinnedGoalPc();RefreshPc();
+   CheckPinnedGoalPc();RefreshSnapshotPc();
   }
  }
 }

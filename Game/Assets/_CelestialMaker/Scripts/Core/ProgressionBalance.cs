@@ -4,13 +4,16 @@ using BreakInfinity;
 
 namespace CelestialMaker.Core {
  public static class ProgressionBalance {
-  public const string Version="2.8.0";
+  public const string Version="2.8.1";
   public const double PrestigeEnergyLog=6.2;
+  public const double FirstPrestigeEnergyLog=5.4;
   public const int PrestigeForAscension=8;
   public const int AscensionForGenesis=12;
   public const double ParticleEnergyEquivalent=.35;
-  public const double ConstructionBaseSeconds=21600;
+  public const double ConstructionFirstStageSeconds=14400;
+  public const double ConstructionBaseSeconds=24400;
   public const double ConstructionGrowth=2.06;
+  public const int PrestigeStarterDynamos=3,AscensionStarterDynamos=12,CosmicSeedDynamos=24;
  }
  public sealed partial class Simulation {
   public BigDouble PrestigeProduction=>BigDouble.Max(S.lifetime[0].Value,S.lifetime[1].Value*ProgressionBalance.ParticleEnergyEquivalent);

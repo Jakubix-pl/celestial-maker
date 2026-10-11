@@ -1,5 +1,5 @@
 {
-  "pass": 1481,
+  "pass": 1484,
   "fail": 0,
   "checks": [
     "early/night/1280x720/1/Overview",
@@ -1390,6 +1390,9 @@
     "Resource header retains contrast, large numbers and contained geometry",
     "Prestige paid buyers and progressive navigation",
     "Overview geometry moves and reduced motion freezes it",
+    "Autobuyer practice uses a separate economy and retains dismissal",
+    "Static orbital geometry is reused during animation",
+    "Live visibility cache refreshes on scroll without repeating idle geometry work",
     "Fresh UI hides unknown balances and currencies without leaving meter gaps",
     "First reset availability reveals points; spend, higher reset and reload retain discovery",
     "Header discovery follows selected economy, imported balance and historical metadata",
@@ -1485,7 +1488,7 @@
     "Stock input clips safely True / 2 / 1920"
   ],
   "failures": [],
-  "utc": "2026-10-11T16:25:16.5232932Z",
+  "utc": "2026-10-11T18:01:45.4095519Z",
   "desktopControlled": false,
   "screenCaptured": false,
   "playerLaunched": false,

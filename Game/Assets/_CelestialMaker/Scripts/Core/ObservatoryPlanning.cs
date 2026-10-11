@@ -6,7 +6,7 @@ using BreakInfinity;
 namespace CelestialMaker.Core {
  [Serializable] public sealed class ObservatoryPreferences {
   public int researchFilter,upgradeFilter,productionStage=-1,availability,goalWorld;
-  public bool researchFavorites,upgradeFavorites,readyNotifications=true;
+  public bool researchFavorites,upgradeFavorites,autobuyerGuideSeen,readyNotifications=true;
   public string researchSearch="",upgradeSearch="",goal="";
   public List<string> favorites=new List<string>();
  }

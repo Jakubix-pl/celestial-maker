@@ -41,6 +41,9 @@ namespace CelestialMaker {
    sim.S.lifetime[0]=BigDouble.Parse("1e9");Call("ResetPreviewPc",0,false);yield return null;int resets=sim.S.resets[0];Click("Cancel");Check(sim.S.resets[0]==resets,"Reset cancellation preserves progression");
    Call("ResetPreviewPc",0,false);yield return null;Click("Confirm reset 0");yield return null;Check(sim.S.resets[0]==resets+1,"Confirmed reset reaches Core in release player");
    Check(!sim.AnyAutobuyer,"First reset does not grant free autobuyers");Page("Automation");yield return null;var beforeUnlock=sim.S.prestige[0].Value;Click("Unlock autobuyer 0");yield return null;Check(sim.S.autobuyers[0]&&sim.S.prestige[0].Value==beforeUnlock-1,"Release autobuyer purchase spends one Prestige Point");sim.S.automation.buy=false;
+   var practicePoints=sim.S.prestige[0].Value;var practiceUnits=(long[])sim.S.owned.Clone();var practiceResets=(int[])sim.S.resets.Clone();Click("Learn about autobuyers");yield return null;
+   for(int step=0;step<5;step++){Click("Perform practice step");yield return null;}
+   Check(sim.S.prestige[0].Value==practicePoints&&sim.S.owned.SequenceEqual(practiceUnits)&&sim.S.resets.SequenceEqual(practiceResets),"Autobuyer practice changes no live ownership points or resets");Check(sim.S.settings.observatory.autobuyerGuideSeen,"Autobuyer practice completion retained in actual player");Call("ClosePcModal");
    Page("Overview");sim.S.settings.reducedMotion=false;yield return null;
    // Unlocks may rebuild the view on the next UI tick. Observe the live graphic,
    // rather than holding a destroyed instance from the previous view.

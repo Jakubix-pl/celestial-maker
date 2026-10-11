@@ -96,7 +96,8 @@ namespace CelestialMaker {
   void PinnedGoalPc(Transform parent){
    var p=PrefsPc;if(string.IsNullOrEmpty(p.goal))return;var e=Sim.Universe(p.goalWorld);var u=e?.FindUpgrade(p.goal);if(u==null)return;
    if(pcCompactNav){var b=PcButton("Goal / "+u.name,parent,()=>{pcWorld=p.goalWorld;OpenUpgradePc(u.id);});Hint(b,"Pinned goal. Expand its details to unpin.");return;}
-   var card=PCard(parent,"Pinned goal");VerticalPaddingPc(card,10,4);Caption("PINNED / "+(p.goalWorld==0?"HOME":"UNIVERSE "+p.goalWorld),card);var row=HRow(card,"Pinned goal actions",0,8);var text=Label(u.name,row,20);BindVisible(text,()=>{e.RefreshRates();text.text=u.name+" · "+UpgradeStatusPc(e,u);});PcButton("Open goal",row,()=>{pcWorld=p.goalWorld;OpenUpgradePc(u.id);});PcButton("Unpin",row,()=>{p.goal="";ShowPc();});
+   var card=PCard(parent,"Pinned goal");VerticalPaddingPc(card,10,4);Caption("PINNED / "+(p.goalWorld==0?"HOME":"UNIVERSE "+p.goalWorld),card);var row=HRow(card,"Pinned goal actions",0,8);Label(u.name,row,20);PcButton("Open goal",row,()=>{pcWorld=p.goalWorld;OpenUpgradePc(u.id);});PcButton("Unpin",row,()=>{p.goal="";ShowPc();});
+   var text=Label("",card,18,48,CosmicStyle.Muted);BindVisible(text,()=>{if(e!=Sim&&(!LocalPagePc||e!=EconomyPc))e.RefreshRates();text.text=UpgradeStatusPc(e,u);});
   }
   void CheckPinnedGoalPc(){
    if(S==null||S.offlineRemaining>0||!PrefsPc.readyNotifications||string.IsNullOrEmpty(PrefsPc.goal))return;var e=Sim.Universe(PrefsPc.goalWorld);var u=e?.FindUpgrade(PrefsPc.goal);if(u==null)return;

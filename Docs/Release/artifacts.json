@@ -1,41 +1,44 @@
 {
-  "release": "2.8.0",
+  "release": "2.8.1",
   "gameplaySourcesMatchBuiltRelease": true,
-  "protectedFilesUnchanged": 19,
+  "baselineFiles": 19,
+  "protectedFilesUnchanged": 18,
+  "campaignSavesUnchanged": true,
+  "nonSaveEditorAnalyticsCacheUpdates": 1,
   "artifacts": [
     {
-      "name": "CelestialMaker-Setup-2.8.0.exe",
-      "bytes": 36133371,
-      "sha256": "63E12F1A20B3E000AE8A7F85CAD4B26349484E05AFBA4199A993527E99C701C5"
+      "name": "CelestialMaker-Setup-2.8.1.exe",
+      "bytes": 36137033,
+      "sha256": "2B1FF7DCB0430086614BF03ACFD8184702A12B0BE4FD3149EB309930BA6E9611"
     },
     {
       "name": "CelestialMaker-Observatory-Windows.zip",
-      "bytes": 49711654,
-      "sha256": "AECA96A07532639BA450530E4B5893A4F2D08BC5EA7F8E8D7F1F8FC383F6A014"
+      "bytes": 49714422,
+      "sha256": "BB5C3B8CEDD866D3B51419F3640A81DFB6153E11676271206F0056A0F3C559F0"
     },
     {
-      "name": "CelestialMaker-2.8.0-SHA256.txt",
+      "name": "CelestialMaker-2.8.1-SHA256.txt",
       "bytes": 204,
-      "sha256": "94C6C616C55A57A2A5EA5C9C2BC8A7EC516F8C2DE6D757B293675CAE4BFBC8FA"
+      "sha256": "16F51B72B4A9A6EBEC7465B3D82BD7F4C89E5F390643227B6937F8C6365024C9"
     }
   ],
-  "performanceRepeat": {
+  "performanceBefore": {
     "cases": 22,
     "frames": 5280,
-    "overBudget": 39,
-    "worstP95Ms": 38.2127,
-    "maxMs": 43.7146,
-    "worstUiP95Ms": 1.4285,
-    "worstSimulationP95Ms": 2.0072
+    "overBudget": 6,
+    "worstP95Ms": 10.1947,
+    "maxMs": 26.7653,
+    "worstUiP95Ms": 1.1498,
+    "worstCoreP95Ms": 1.5208
   },
-  "performanceFirst": {
+  "performanceAfter": {
     "cases": 22,
     "frames": 5280,
-    "overBudget": 198,
-    "worstP95Ms": 20.0517,
-    "maxMs": 41.763,
-    "worstUiP95Ms": 1.2979,
-    "worstSimulationP95Ms": 1.7251
+    "overBudget": 3,
+    "worstP95Ms": 10.5222,
+    "maxMs": 23.0798,
+    "worstUiP95Ms": 1.0068,
+    "worstCoreP95Ms": 1.4143
   },
   "physicalFPS": "UNVERIFIED",
   "humanUsability": "UNVERIFIED",

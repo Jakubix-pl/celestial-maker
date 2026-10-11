@@ -26,8 +26,9 @@ namespace CelestialMaker.EditorTools {
   static void Check(string name,Action action){try{action();checks.Add(name);}catch(Exception e){failures.Add(name+": "+(e.InnerException??e).Message);Debug.LogWarning(failures.Last()+"\n"+(e.InnerException??e).StackTrace);}}
   static void Require(bool value,string message){if(!value)throw new Exception(message);}
   static void Settle(){for(int n=0;n<4;n++){Canvas.ForceUpdateCanvases();LayoutRebuilder.ForceRebuildLayoutImmediate(canvas);foreach(var sc in ui.GetComponentsInChildren<ScrollRect>())if(sc.content)LayoutRebuilder.ForceRebuildLayoutImmediate(sc.content);}Canvas.ForceUpdateCanvases();}
+  static string renderLateFixture;
   static void Fixture(bool late,float scale,bool light,int width,int height){
-   State state;if(late){state=JsonUtility.FromJson<State>(File.ReadAllText(Path.Combine(ProjectBootstrap.Root,"Tools/Expansion/Fixtures/late-campaign.json")));state.offlineRemaining=state.liveRemaining=0;state.offlineReport=null;}else state=new State();
+   State state;if(late){state=JsonUtility.FromJson<State>(File.ReadAllText(renderLateFixture??Path.Combine(ProjectBootstrap.Root,"Tools/Expansion/Fixtures/late-campaign.json")));state.offlineRemaining=state.liveRemaining=0;state.offlineReport=null;}else state=new State();
    state.settings.textScale=scale;state.settings.lightUI=light;state.settings.tutorial=false;state.automation.buy=false;state.automation.expeditions=false;state.automation.repeatPrestige=new bool[3];state.expansion.guidedAutomation=false;
    session.Sim=new Simulation(GameSession.Content,state);session.Saved=null;session.SaveFailed=false;session.LastSavedUtc=0;
    canvas.sizeDelta=new Vector2(width,height);ui.menu=false;Set("pcWorld",0);Set("pcSelectedProcess",-1);Set("pcProductionStage",-1);Set("pcAvailability",0);Set("pcResearchFilter",0);Set("pcExpandedResearch","");Set("page","Production");Call("BuildPc");Settle();

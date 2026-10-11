@@ -8,7 +8,7 @@ A patient cosmos. An unfolding experiment. Build production chains, automate you
 
 **Windows x64 · English · Single player · Free to play · No account required**
 
-[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.0/CelestialMaker-Setup-2.8.0.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.0/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md)
+[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-Setup-2.8.1.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md)
 
 ![Celestial Maker title screen and orbital artwork](Docs/images/menu.png)
 
@@ -30,7 +30,7 @@ Your choices continue between visits. Offline progress replays the shared simula
 | Six-hour laboratory | Compare two plans on isolated copies of your state before committing. |
 | Twelve challenges | Adapt to different constraints, run readiness trials and review why an attempt stalled. |
 | Expedition discoveries | Resolve signals into permanent route choices; discoveries wait for you. |
-| Practice and chronicle | Revisit three safe lessons, review your decisions, then try optional scenarios in separate saves. |
+| Practice and chronicle | Revisit safe lessons, including the five-step autobuyer introduction, review your decisions, then try optional scenarios in separate saves. |
 
 There is no shop, checkout or paid production boost. Cosmetics are earned in the game.
 
@@ -44,7 +44,11 @@ An interface built around readable numbers and clear decisions: category colors 
 
 ![Prestige-funded chapter autobuyers](Docs/images/autobuyer-purchase.png)
 
-Each chapter autobuyer costs **1 Prestige Point** and covers four processes. Unlocks survive Prestige; Ascension and Genesis clear them. Production runs continuously, subject to inputs and reserves. Old saves keep their progress but must purchase the new buyer unlocks.
+Each chapter autobuyer costs **1 Prestige Point** and covers four processes. Unlocks survive Prestige; Ascension and Genesis clear them. Production runs continuously, subject to inputs and reserves. Old saves keep their progress but must purchase the new buyer unlocks. A lower first/recovery Prestige threshold helps earn the point needed to restore automation.
+
+![Optional autobuyer practice on a separate economy](Docs/images/autobuyer-guide.png)
+
+Learn point spending, automatic buying and reset retention in five safe practice steps; your campaign is unchanged.
 
 **Make engineering tradeoffs.** Tune megastructures for production or transport and see each choice's cost.
 
@@ -61,29 +65,29 @@ Each chapter autobuyer costs **1 Prestige Point** and covers four processes. Unl
 
 </details>
 
-These images show the actual 2.8.0 Unity interface, rendered offscreen from a fresh game and a simulated late-campaign state. The late-game fixture retains its historical completion time, which is not the current pacing measurement. These are not concept mockups or desktop captures. Late-game screens contain progression spoilers. [Capture method and manifest](Docs/Release/screenshots.json).
+These images show the actual 2.8.1 Unity interface, rendered offscreen from a fresh game and a simulated late-campaign state. The late-game fixture is a completed 2.8.1 simulated Energy campaign; its displayed time belongs to the event-stepped policy. Literal offline measurements are separate. These are not concept mockups or desktop captures. Late-game screens contain progression spoilers. [Capture method and manifest](Docs/Release/screenshots.json).
 
 ## Play at your pace
 
 The campaign targets roughly **400 hours of elapsed progression**, with active play, background play or offline simulation. It does not require 400 hours of clicking.
 
-Three measured policies that revisit the game every six hours completed the campaign in **430.9–450.8 hours**. Matter exceeds the earlier 360–440-hour acceptance band; further balancing may be needed for that policy. These are simulation results using the game's real tick engine, not a guarantee for every player. The Development Plan is optional; the first reset of each type requires your confirmation. Choices, strategy and automation affect the pace.
+Three measured policies that revisit the game every six hours completed the campaign in **395.9–417.0 hours** with every offline tick replayed. Nine additional active/background/check-in simulations completed in **376.5–417.0 hours**. All tested policies fall within the 360–440-hour target band. These are simulation results using the game's real tick engine, not a guarantee for every player. The Development Plan is optional; the first reset of each type requires your confirmation. Choices, strategy and automation affect the pace.
 
 ## Install and start
 
-1. Download **CelestialMaker-Setup-2.8.0.exe** from [Releases](https://github.com/Jakubix-pl/celestial-maker/releases/latest), or extract the entire portable ZIP.
+1. Download **CelestialMaker-Setup-2.8.1.exe** from [Releases](https://github.com/Jakubix-pl/celestial-maker/releases/latest), or extract the entire portable ZIP.
 2. Install for your Windows user, or run **CelestialMaker.exe** in the extracted folder. Keep its data folder alongside it.
 3. Choose **New Game**. Existing supported saves are migrated when loaded; a new game is not required for an upgrade.
 
-The installer offers a desktop shortcut with the game's icon. It does not launch the game automatically. Uninstalling preserves player saves. Local profiles and export/import work without an account or backend. The current installer is unsigned; published [SHA-256 checksums](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.0/CelestialMaker-2.8.0-SHA256.txt) identify these exact files.
+The installer offers a desktop shortcut with the game's icon. It does not launch the game automatically. Uninstalling preserves player saves. Local profiles and export/import work without an account or backend. The current installer is unsigned; published [SHA-256 checksums](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.1/CelestialMaker-2.8.1-SHA256.txt) identify these exact files.
 
 ## Release verification
 
-The release has a built Windows player, automated core/UI checks, installed-player tests, silent installation/upgrade/removal checks, and measured campaigns. The portable source suite contains **276 checks** and the extended system audit contains **63 checks**. A GitHub Actions template is included in `Tools/CI/github-core.yml`; these tests were verified locally from a clean source copy. Hosted CI is not active because the publication credential cannot write workflow files.
+The release has a built Windows player, automated core/UI checks, installed-player tests, silent installation/upgrade/removal checks, and measured campaigns. The portable source suite contains **297 checks** and the extended system audit contains **63 checks**. A GitHub Actions template is included in `Tools/CI/github-core.yml`; these tests were verified locally from a clean source copy. Hosted CI is not active because the publication credential cannot write workflow files.
 
-The late-game offscreen benchmark covered **22 cases and 5,280 measured frames**, including 4K, large text, dialogs and forced automation decision boundaries. Two runs on the RTX 4070 Ti / Ryzen 7 9800X3D system retained 198 and 39 samples above 16.67 ms respectively; the report records the spikes and both runs. **This is an offscreen workload measurement, not a verified desktop FPS claim.** Human playtesting, Windows DPI behavior and a clean-machine install remain open acceptance checks.
+The late-game offscreen benchmark covered **22 cases and 5,280 measured frames**, including 4K, large text, dialogs and forced automation decision boundaries. Before/after runs on the RTX 4070 Ti / Ryzen 7 9800X3D retained 6 and 3 samples above 16.67 ms respectively. The data separates UI work, render submission and synchronous GPU readback; spikes remain recorded. **This is an offscreen workload measurement, not a verified desktop FPS claim.** Human playtesting, Windows DPI behavior and a clean-machine install remain open acceptance checks.
 
-[Detailed validation and limitations](Docs/Release/VALIDATION.md) · [Measured performance data](Docs/Release/performance.json) · [Prestige automation report](Docs/PrestigeAutomation/REPORT.md)
+[Detailed validation and limitations](Docs/Release/VALIDATION.md) · [Measured performance data](Docs/Release/performance.json) · [2.8.1 implementation and performance](Docs/Observatory281/REPORT.md)
 
 ## Explore the source
 

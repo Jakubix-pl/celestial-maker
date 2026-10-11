@@ -5,24 +5,28 @@
       "sha256": "33B655E8FC43D44C03627363F50E698FEBCE93CA850F463760F14950BC0E5305"
     },
     {
+      "path": "Docs/images/autobuyer-guide.png",
+      "sha256": "C5EBA5CCD37697B887558DF55D6C20B024E6AC384C6493656FB5914EBFAE0B4B"
+    },
+    {
       "path": "Docs/images/autobuyer-purchase.png",
-      "sha256": "48B29628AB319527642B472A2DFBA743653448A0DB79B1DB12B2120118AC7DC6"
+      "sha256": "3558986E5B06AE1607504A52DC652C59F4F358389774A2021AEA4686F1EEF81A"
     },
     {
       "path": "Docs/images/automation.png",
-      "sha256": "E092044E1F47C302107AD40E63543C7062AA4CEDF4CAA263C1DB54658BD46B27"
+      "sha256": "F93052885E84B33B137CEBCE88464D5BD64AA4EE9E1352CE9A40CCFD2C7DD076"
     },
     {
       "path": "Docs/images/challenges.png",
-      "sha256": "0E22C1703530F675D2A5DA3FE6450337AB0EC1FE158FDE0D259AC6E68BE16777"
+      "sha256": "E1D1BDE16F115881496949E82D3F06EF12C4E0473021BFB34AA4CB869BE68CD5"
     },
     {
       "path": "Docs/images/dawn.png",
-      "sha256": "21F69AF4952B143F11C6AA797ED81FAB2E7EB59C00E40A536381C00C96AFE32D"
+      "sha256": "B70F8B1AD4187B68D6BD29395C614960ED6DB50D0FFFB108DA0C698846283A46"
     },
     {
       "path": "Docs/images/engineering.png",
-      "sha256": "B714497B99AF6A32FF05BB9CC7B3A5C805A6D0ADDE0CAF95C225B0D227D80EBA"
+      "sha256": "A52AB4A1324C55186F0118D91EA887842345027898E1D181EB94966AD50C4FCD"
     },
     {
       "path": "Docs/images/fresh-production.png",
@@ -30,33 +34,33 @@
     },
     {
       "path": "Docs/images/menu.png",
-      "sha256": "EF548B656ECBFD5CBC79025B0052F344BF00DEFA2A7C55E6913A56714CDAEFA8"
+      "sha256": "9F9B7E9BBB090A71782524D7D592AA8CF7F84256B20F59C90BA719FACB6A5D98"
     },
     {
       "path": "Docs/images/overview.png",
-      "sha256": "2167EA36A2A2768E44CD8F6CF69B1EF7CC1CFB0C8FDF097676662B8FC96C3D04"
+      "sha256": "B36E286CBDD7FA9CAD173579AFDAD53025AD83C2D9C2354766067A53D2D9BDD1"
     },
     {
       "path": "Docs/images/parallel-universes.png",
-      "sha256": "BCF8E283B2658A866167EB123A58785B89212B225C73DB03AFCAE83451DFC9FE"
+      "sha256": "67BA58C745A69956F58E5684CD3BA88A1CA3CA3652E7949D7839731ECAD86020"
     },
     {
       "path": "Docs/images/production.png",
-      "sha256": "BF414865BBD5C84142005D76D2583D797EF61F89556D420BCD201B9B37B59B4F"
+      "sha256": "121EEACE87A52B78578636D2A8E0C7C149066A2F9560E89F9A41E58C2303D80F"
     },
     {
       "path": "Docs/images/research.png",
-      "sha256": "05EF7C18618C514D28E4FFA531BE0F85C7EF8A242FCBB32793AD9E2539C22530"
+      "sha256": "4F2BA204A4E5D3291D6112245D04C33E257CC22B3698315B79C4C00250B86280"
     }
   ],
-  "utc": "2026-10-11T16:08:41.2177137Z",
+  "utc": "2026-10-11T18:08:23.6597217Z",
   "device": "NVIDIA GeForce RTX 4070 Ti",
   "pipeline": "UniversalRenderPipelineAsset / Desktop / PC",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "desktopControlled": false,
   "desktopCaptured": false,
   "visibleGameWindow": false,
   "method": "Edit-mode uGUI / TMP fixture rendered directly to RenderTexture",
-  "fixture": "Historical synthetic late-campaign fixture rendered in 2.8.0, plus fresh game/first reset. Displayed historical completion time is not the 2.8 pacing measurement.",
+  "fixture": "Fresh game/first reset plus the 2.8.1 Energy six-hour event-stepped completed synthetic campaign in Tools/Expansion/Fixtures/Presentation-2.8.1.json. Completion label belongs to this fixture; literal offline measurements are separate.",
   "distinctAnimationPhaseRenders": 20
 }

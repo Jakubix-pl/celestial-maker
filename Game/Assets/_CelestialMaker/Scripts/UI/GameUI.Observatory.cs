@@ -10,7 +10,7 @@ using CelestialMaker.Core;
 
 namespace CelestialMaker {
  public sealed partial class GameUI {
-  public const string ObservatoryVersion="2.8.0";
+  public const string ObservatoryVersion="2.8.1";
   static readonly string[] ObservatorySections={"Overview","Production","Development","Automation","Cosmos","Journal"};
   static readonly string[][] ObservatoryRoutes={new[]{"Overview"},new[]{"Production","Research","Upgrades","Analytics"},new[]{"Prestige","Trees","Roadmap","Challenges"},new[]{"Automation"},new[]{"Megastructures","Reality laws","Parallel universes","Constellations","Expeditions"},new[]{"Achievements","Codex","Offline summary"}};
   static readonly string[][] ObservatoryLabels={new[]{"Overview"},new[]{"Processes","Research","Upgrades","Flows"},new[]{"Resets","Trees & profiles","Milestones","Challenges"},new[]{"Automation"},new[]{"Megastructures","Reality laws","Universes","Connections","Expeditions"},new[]{"Achievements","Codex","Last absence"}};
@@ -140,6 +140,7 @@ namespace CelestialMaker {
   void ObservatoryOverviewPc(){
 
    var next=PCard(list,"Next decision");Caption("YOUR NEXT DECISION",next);Label(NextDecisionPc(),next,24);var row=HRow(next,"Next actions",0);Primary("Open production",row,()=>NavigatePc("Production"));if(RouteUnlockedPc("Prestige"))PcButton("Review development",row,()=>NavigatePc("Prestige"));PcButton("What needs attention?",row,()=>{var dialog=ModalPc("Your next decisions",940,800);AdvicePc(dialog,Sim);PcButton("Close",dialog,ClosePcModal);FocusModalPc();});
+   if(Sim.HasLayer(0)&&!Sim.AnyAutobuyer&&!PrefsPc.autobuyerGuideSeen){var intro=PCard(list,"First autobuyer introduction");Caption("YOUR FIRST AUTOBUYER",intro);Label("One Prestige Point unlocks four automatic buyers.",intro,22);Label("Start with the Particles package in Automation. Spending a point reduces its unspent production bonus; bought packages survive Prestige and reset at Ascension or Genesis.",intro,18);var help=HRow(intro,"Autobuyer introduction actions",0);PcButton("Learn on a safe copy",help,AutobuyerGuidePc);PcButton("Open Automation",help,()=>NavigatePc("Automation"));PcButton("Dismiss this tip",help,()=>{PrefsPc.autobuyerGuideSeen=true;ShowPc();});}
    if(S.offlineReport!=null&&S.offlineReport.processedSeconds>=60)ReturnBriefPc(list);LivingCosmosPc();
    Sim.RefreshRates();int bottleneck=Enumerable.Range(0,24).Where(i=>ProcessStatePc(Sim,i)=="Input limited").DefaultIfEmpty(-1).First();
    if(bottleneck>=0){var c=PCard(list,"Production bottleneck");Caption("INPUT LIMITED",c).color=CosmicStyle.Warning;Label(GameSession.Content.generators[bottleneck].name+" is below installed capacity.",c,20);PcButton("Inspect this process",c,()=>{pcWorld=0;pcSelectedProcess=bottleneck;pcProductionStage=-1;pcAvailability=0;NavigatePc("Production");ProcessDetailsPc(bottleneck);});}
@@ -198,6 +199,8 @@ namespace CelestialMaker {
   void AutobuyersPc(){
    var info=PCard(list,"Prestige autobuyers");Caption("PRESTIGE AUTOMATION",info);Label("Unlock your autobuyers",info,28);
    Label("Each chapter costs 1 Prestige Point and automates its four processes in every universe. Bought unlocks survive Prestige; Ascension and Genesis reset them. Saved profiles cannot unlock an unpurchased buyer.",info,18);
+   Label("Spending points lowers their passive production bonus. Buy a package, then keep Automatic purchases enabled. An enabled Development Plan spends points for you and restores buyers after higher resets.",info,18,0,CosmicStyle.Muted);
+   PcButton("Learn about autobuyers",info,AutobuyerGuidePc);
    var points=Label("",info,22,0,CosmicStyle.Violet);BindLive(points,()=>points.text=S.prestige[0]+" Prestige Points available");
    for(int chapter=0;chapter<6;chapter++){int stage=chapter;var card=PCard(list,"Autobuyer "+stage);card.GetComponent<CosmicPanel>().edgeColor=CosmicStyle.Section(stage);
     Label(CosmicStyle.Chapters[stage]+" autobuyer",card,23,0,CosmicStyle.Section(stage));

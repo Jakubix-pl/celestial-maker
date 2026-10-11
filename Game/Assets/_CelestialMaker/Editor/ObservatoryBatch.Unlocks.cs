@@ -20,6 +20,16 @@ namespace CelestialMaker.EditorTools {
    Check("Overview geometry moves and reduced motion freezes it",()=>{
     Fixture(true,1,false,1920,1080);Set("page","Overview");Call("ShowPc");Settle();var art=ui.GetComponentInChildren<ObservatoryCosmos>();Require(art,"Missing living artwork");float phase=art.Phase;art.AdvanceMotion(1,false);Require(art.Phase!=phase,"Static artwork");phase=art.Phase;art.AdvanceMotion(1,true);Require(art.Phase==phase,"Reduced motion ignored");
    });
+   Check("Autobuyer practice uses a separate economy and retains dismissal",()=>{
+    Fixture(true,1,false,1920,1080);var live=session.Sim;live.S.offlineReport=new OfflineReport{id="guide-fixture",active=false,dismissed=true};Set("page","Automation");Call("ShowPc");string before=JsonUtility.ToJson(live.S);Click("Learn about autobuyers");Require(ui.GetComponentsInChildren<TMP_Text>().Any(t=>t.text.Contains("PRACTICE ECONOMY / step 1 of 5")),"Missing five-step guide");Require(before==JsonUtility.ToJson(live.S),"Opening the guide changed the campaign");
+    for(int step=0;step<4;step++)Click("Perform practice step");Require(before==JsonUtility.ToJson(live.S),"Practice changed live points or ownership");Click("Perform practice step");Require(live.S.settings.observatory.autobuyerGuideSeen,"Completion not retained");live.S.settings.observatory.autobuyerGuideSeen=false;Require(before==JsonUtility.ToJson(live.S),"Guide changed more than its completion preference");Call("ClosePcModal");
+   });
+   Check("Static orbital geometry is reused during animation",()=>{
+    Fixture(true,1,false,1920,1080);Set("page","Overview");Call("ShowPc");Settle();var art=ui.GetComponentInChildren<ObservatoryCosmos>();Require(art&&art.SceneryBuilds>0,"Scenery was not built");int builds=art.SceneryBuilds;for(int frame=0;frame<60;frame++){art.AdvanceMotion(1f/60,false);Canvas.ForceUpdateCanvases();}Require(art.SceneryBuilds==builds,"Static scenery rebuilt while only phase changed");
+   });
+   Check("Live visibility cache refreshes on scroll without repeating idle geometry work",()=>{
+    Fixture(true,1,false,1920,1080);Set("page","Production");Call("ShowPc");Settle();Call("RefreshPc");int count=Get<int>("pcVisibilityCalculations");for(int frame=0;frame<60;frame++)Call("PresentPc");Require(Get<int>("pcVisibilityCalculations")==count,"Idle presentation repeats viewport geometry checks");var scroll=Get<UnityEngine.UI.ScrollRect>("pcScroll");scroll.verticalNormalizedPosition=.5f;Canvas.ForceUpdateCanvases();Call("PresentPc");Require(Get<int>("pcVisibilityCalculations")>count,"Scrolling did not refresh visibility");
+   });
    Check("Fresh UI hides unknown balances and currencies without leaving meter gaps",()=>{
     foreach(bool light in new[]{false,true}){
      Fixture(false,1,light,1920,1080);

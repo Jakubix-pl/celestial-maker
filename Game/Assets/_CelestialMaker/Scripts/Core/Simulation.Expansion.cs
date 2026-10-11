@@ -83,7 +83,7 @@ namespace CelestialMaker.Core {
    bool primary=Data.generators[generator].output%2==0;double m=1;
    if(HasLayer(1))m*=4;if(HasLayer(2))m*=6;
    if(HasA("a_energy_1"))m*=primary?1.8:.9;if(HasA("a_energy_2")&&primary)m*=1.7;if(HasA("a_energy_3")&&primary)m*=2;
-   if(HasA("a_matter_1")&&primary)m*=.9;if(HasA("a_matter_2")&&!primary)m*=1.8;if(HasA("a_matter_3")&&!primary)m*=2;
+   if(HasA("a_matter_2")&&!primary)m*=1.8;if(HasA("a_matter_3")&&!primary)m*=2;
    if(HasA("a_time_1"))m*=.95;if(HasA("a_time_3"))m*=1.5;
    if(HasG("g_seed"))m*=2;if(HasG("g_memory"))m*=3;if(HasG("g_horizon"))m*=3;
    m*=primary?1+.25*Meta.megas[0].level:1+.2*Meta.megas[2].level;
@@ -97,7 +97,7 @@ namespace CelestialMaker.Core {
   public double AutomationInterval=>Math.Max(5,60*(HasA("a_time_1")?.5:1)*LawFactor(3));
   double ExpeditionFactor=>(HasA("a_time_1")?.7:1)*(HasA("a_time_3")?.5:1)*(Meta.megas[0].level>0?.8:1)*LawFactor(4)*(Module(0)==3?.8:1);
   public BigDouble MegaCost(int project,int slot)=>BigDouble.Pow10(4+ExpansionContent.MegaResources[project][slot]*.65+Meta.megas[project].level*1.2);
-  public double MegaWork(int project)=>ProgressionBalance.ConstructionBaseSeconds*Math.Pow(ProgressionBalance.ConstructionGrowth,Meta.megas[project].level);
+  public double MegaWork(int project)=>(Meta.megas[project].level==0?ProgressionBalance.ConstructionFirstStageSeconds:ProgressionBalance.ConstructionBaseSeconds)*Math.Pow(ProgressionBalance.ConstructionGrowth,Meta.megas[project].level);
   double MegaSpeed(int project)=>DiscoveryWork(project)*FocusWork(project)*(HasA("a_time_2")?1.5:1)*(project==0&&HasA("a_energy_2")||project==1&&HasA("a_matter_2")?1.5:1);
   public bool StartMega(int project){
    if(S.satellite||project<0||project>=3||!HasLayer(1))return false;var m=Meta.megas[project];if(m.building||m.level>=(HasG("g_horizon")?6:3))return false;

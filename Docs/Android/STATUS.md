@@ -10,7 +10,7 @@ Updated 2026-10-11. Intended device: Samsung Galaxy S26 Ultra.
 
 ## Build configuration
 
-The new `AndroidAPKSideload` profile uses ARM64 IL2CPP, Android target API 37, minimum API 26, Mobile quality, package `com.celestialmaker.game`, version 2.8.0/code 28001 and a single APK. It disables development-build instrumentation and uses Unity's development signing identity; production signing is not requested. Default backend configuration is empty. No Google Play account or billing setup is required for a local APK.
+The new `AndroidAPKSideload` profile uses ARM64 IL2CPP, Android target API 37, minimum API 26, Mobile quality, package `com.celestialmaker.game`, version 2.8.1/code 28101 and a single APK. It disables development-build instrumentation and uses Unity's development signing identity; production signing is not requested. Default backend configuration is empty. No Google Play account or billing setup is required for a local APK.
 
 `Tools/setup-android-sdk.ps1` prepares project-local tools only after explicit license acceptance. It validates the official command-line archive's size and SHA-384, then uses sdkmanager's actual license prompts for the selected packages. It does not fabricate license hashes. Required tools: SDK platform 37, build-tools 36.0.0, NDK 27.2.12479018/r27c, CMake 3.22.1, platform-tools, CLI 16 and OpenJDK 17. The SDK installer script is prepared and parsed, but has not been executed.
 
@@ -21,7 +21,7 @@ After acceptance:
 ./Tools/build-android.ps1 -Sideload
 ```
 
-Planned output: `Builds/Android/CelestialMaker-2.8.0-Android-arm64.apk`.
+Planned output: `Builds/Android/CelestialMaker-2.8.1-Android-arm64.apk`.
 This path is a target, not an existing deliverable.
 
 ## Remaining acceptance

@@ -17,7 +17,7 @@ namespace CelestialMaker.Core {
    foreach(var node in ExpansionContent.Genesis)BuyMeta(node.id,true);
    if(AllGenesisNodes)foreach(var node in ExpansionContent.Ascension)BuyMeta(node.id);
    if(Evolution.focus!=branch&&FocusUnlocked(branch)&&S.time>=Evolution.focusReadyAt)SelectFocus(branch);
-   string[] laws=branch=="Energy"?new[]{"flux_radiance","time_patience"}:branch=="Matter"?new[]{"flux_balance","space_fold"}:new[]{"time_burst","space_open"};
+   string[] laws=branch=="Energy"?new[]{"flux_radiance","time_patience"}:branch=="Matter"?new[]{"flux_balance",PreparingGenesis?"space_open":"space_fold"}:new[]{"time_burst","space_open"};
    if(HasLayer(1)&&S.time>=Meta.lawReadyAt&&!Meta.laws.SequenceEqual(laws))SetLaws(laws);
    while(CreateUniverse(branch=="Matter"?2:1)){}
    Meta.autoResearch=HasA("a_time_2");

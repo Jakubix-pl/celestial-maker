@@ -3,14 +3,16 @@ using System.Linq;
 using BreakInfinity;
 namespace CelestialMaker.Core {
  public sealed partial class Simulation {
+  public bool FirstPrestige=>!HasLayer(0)&&Meta.historicResets.All(n=>n==0);
+  public bool BootstrapPrestige=>S.resets[0]==0&&!AnyAutobuyer&&S.prestige[0].Value==0;
   public BigDouble PrestigeReward(int layer){
    if(layer<0||layer>2||S.satellite)return BigDouble.Zero;
-   if(layer==0){double log=BigDouble.Log10(PrestigeProduction);return log<ProgressionBalance.PrestigeEnergyLog?BigDouble.Zero:BigDouble.Floor(BigDouble.Pow10((log-ProgressionBalance.PrestigeEnergyLog)/3)+1e-10);}
+   if(layer==0){double log=BigDouble.Log10(PrestigeProduction);if(BootstrapPrestige&&log>=ProgressionBalance.FirstPrestigeEnergyLog&&log<ProgressionBalance.PrestigeEnergyLog)return BigDouble.One;return log<ProgressionBalance.PrestigeEnergyLog?BigDouble.Zero:BigDouble.Floor(BigDouble.Pow10((log-ProgressionBalance.PrestigeEnergyLog)/3)+1e-10);}
    if(layer==1){if(!StageOpen(3))return BigDouble.Zero;return BigDouble.Floor(BigDouble.Sqrt(Meta.prestigeEarned.Value/ProgressionBalance.PrestigeForAscension)+1e-10);}
    if(!StageOpen(5)||Meta.megas.Any(m=>m.level<1))return BigDouble.Zero;
    return BigDouble.Floor(BigDouble.Pow(Meta.ascensionEarned.Value/ProgressionBalance.AscensionForGenesis,1d/3)+1e-10)*(1+S.resets[2]);
   }
-  public string ResetRequirement(int layer)=>layer==0?"Produce 1.59e6 Energy or 4.53e6 Particles in this run. Prestige uses the larger of Energy and 0.35 × Particles, never their sum. Reward follows a cube-root curve.":layer==1?$"Reach Stars and earn {ProgressionBalance.PrestigeForAscension} Prestige Points since Ascension, including spent points. Reward = floor(sqrt(earned / {ProgressionBalance.PrestigeForAscension})).":$"Reach Universes, finish a stage of each megastructure and earn {ProgressionBalance.AscensionForGenesis} Ascension Points since Genesis. Reward = floor(cuberoot(earned / {ProgressionBalance.AscensionForGenesis})) × (1 + completed Genesis resets).";
+  public string ResetRequirement(int layer)=>layer==0?(BootstrapPrestige?(FirstPrestige?"Your first Prestige":"Your recovery Prestige")+" awards one point at 2.52e5 lifetime Energy or 7.18e5 Particles. Use it to fund an autobuyer. This lower threshold applies once before your first Prestige and once after each Ascension/Genesis. Later runs start at 1.59e6 Energy or 4.53e6 Particles. ":"Produce 1.59e6 Energy or 4.53e6 Particles in this run. ")+"Prestige uses the larger of Energy and 0.35 × Particles, never their sum. Larger rewards follow a cube-root curve.":layer==1?$"Reach Stars and earn {ProgressionBalance.PrestigeForAscension} Prestige Points since Ascension, including spent points. Reward = floor(sqrt(earned / {ProgressionBalance.PrestigeForAscension})).":$"Reach Universes, finish a stage of each megastructure and earn {ProgressionBalance.AscensionForGenesis} Ascension Points since Genesis. Reward = floor(cuberoot(earned / {ProgressionBalance.AscensionForGenesis})) × (1 + completed Genesis resets).";
   public double RecoveryEstimate(int layer)=>layer==0?Math.Pow((S.prestige[0].Value+PrestigeReward(0)+1).ToDouble()/(S.prestige[0].Value+1).ToDouble(),.25):layer==1?4:6;
   public bool Rebirth(int layer){
    if(S.activeChallenge!=""||S.satellite||layer<0||layer>2)return false;var reward=PrestigeReward(layer);if(reward<1)return false;
@@ -19,7 +21,7 @@ namespace CelestialMaker.Core {
    if(Report!=null){Report.resets[layer]++;Report.Capture(this);for(int r=0;r<12;r++)Report.Add(Report.resetLoss,r,S.resources[r].Value);for(int i=0;i<layer;i++)Report.Add(Report.resetLoss,12+i,S.prestige[i].Value);}
    for(int i=0;i<layer;i++){S.prestige[i]=BigDouble.Zero;S.resets[i]=0;int lower=i;S.prestigePurchases.RemoveAll(x=>x.StartsWith("p"+lower+"_"));}
    Array.Fill(S.discoveredProcesses,true);
-   S.resources=new Number[12];S.lifetime=new Number[12];S.reserves=new Number[12];S.owned=new long[24];S.owned[0]=HasG("g_seed")?8:HasLayer(1)?6:1;S.resources[0]=new BigDouble(10);Grant(0,10);S.paused=new bool[24];S.purchases.Clear();
+   S.resources=new Number[12];S.lifetime=new Number[12];S.reserves=new Number[12];S.owned=new long[24];S.owned[0]=HasG("g_seed")?ProgressionBalance.CosmicSeedDynamos:HasLayer(1)?ProgressionBalance.AscensionStarterDynamos:ProgressionBalance.PrestigeStarterDynamos;S.resources[0]=new BigDouble(10);Grant(0,10);S.paused=new bool[24];S.purchases.Clear();
    RestoreResearchPrerequisites();
    S.voyages.Clear();S.expeditionLevels=new int[8];Meta.prestigeStarted=S.time;
    if(layer>0){

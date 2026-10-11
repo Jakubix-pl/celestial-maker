@@ -39,7 +39,7 @@ namespace CelestialMaker.Core {
    new MetaUpgrade("a_energy_1","Radiant foundation","Energy",1,1,"","Primary output ×1.8; refined output ×0.9."),
    new MetaUpgrade("a_energy_2","Stellar network","Energy",2,3,"a_energy_1","Primary output ×1.7. Dyson construction ×1.5."),
    new MetaUpgrade("a_energy_3","Sustained ignition","Energy",3,8,"a_energy_2","Primary output ×2; inputs ×1.15. Extra law slot."),
-   new MetaUpgrade("a_matter_1","Conserved matter","Matter",1,1,"","Input consumption ×0.65; primary output ×0.9."),
+   new MetaUpgrade("a_matter_1","Conserved matter","Matter",1,1,"","Input consumption ×0.65."),
    new MetaUpgrade("a_matter_2","Catalytic lattice","Matter",2,3,"a_matter_1","Refined output ×1.8. Forge construction ×1.5."),
    new MetaUpgrade("a_matter_3","Perfect conversion","Matter",3,8,"a_matter_2","Refined output ×2; input consumption ×0.8."),
    new MetaUpgrade("a_time_1","Patient orchestration","Time",1,1,"","Automation interval ×0.5; expedition duration ×0.7; output ×0.95."),
@@ -47,7 +47,7 @@ namespace CelestialMaker.Core {
    new MetaUpgrade("a_time_3","Causal routing","Time",3,8,"a_time_2","Expeditions ×0.5 duration; all production output ×1.5."),
   };
   public static readonly MetaUpgrade[] Genesis={
-   new MetaUpgrade("g_seed","Persistent seed","Genesis",1,1,"","Start with 8 dynamos after every reset; production ×2."),
+   new MetaUpgrade("g_seed","Persistent seed","Genesis",1,1,"","Start with 24 dynamos after every reset; production ×2."),
    new MetaUpgrade("g_memory","Cosmic memory","Genesis",2,3,"g_seed","Ascension recovery output ×3. Preserve a level in each completed megastructure."),
    new MetaUpgrade("g_horizon","Endless horizon","Genesis",3,2,"g_memory","Production ×3; megastructures can reach level 6."),
   };

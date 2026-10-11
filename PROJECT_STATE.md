@@ -4,6 +4,22 @@ Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
 Public Windows v2.8.0 is published and its local delivery is verified.
 
+## Observatory refinement — 2.8.1
+
+IMPLEMENTED: first/recovery Prestige threshold, stronger reset starts, measured
+construction curve and Matter plan; cached orbital/visibility work, stable goals,
+optional five-step safe autobuyer practice. English only.
+COMPILED: clean-source Core 297/297 and systems 63/63; Unity Core 20/20,
+desktop UI 1484/1484, phone geometry 432/432.
+BUILT: Windows Release zero errors; packaged/installed EXE 108/108 each;
+installer lifecycle 32/32, 193 payload entries, 18 protected files unchanged.
+OBSERVED: literal six-hour ticks Energy 417.011, Matter 407.344, Time 395.945 h.
+Nine event-stepped policies 376.544–417.011 h; all within 360–440 h.
+Private UI/guide renders and 20 distinct animation phases inspected; final
+offscreen benchmark 22 cases/5,280 frames. Physical FPS/human play unverified.
+Report: Docs/Observatory281/REPORT.md; raw public evidence: Docs/Release.
+GitHub publication and local delivery pending final hash verification.
+
 ## Prestige automation and discovery — 2.8.0
 
 IMPLEMENTED: six 1-PP chapter buyers, continuous production, 30-second building
