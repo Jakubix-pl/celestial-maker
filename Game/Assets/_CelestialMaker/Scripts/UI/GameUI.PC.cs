@@ -10,7 +10,10 @@ using CelestialMaker.Core;
 
 namespace CelestialMaker {
  public sealed partial class GameUI {
-  bool PcActive=>!Application.isMobilePlatform&&Application.platform!=RuntimePlatform.WebGLPlayer&&Screen.width>=Screen.height;
+  bool phoneReview;
+  bool PhoneObservatory=>phoneReview||Application.platform==RuntimePlatform.Android;
+  bool PcActive=>PhoneObservatory||!Application.isMobilePlatform&&Application.platform!=RuntimePlatform.WebGLPlayer&&Screen.width>=Screen.height;
+  Rect pcLastSafeArea;
   TMP_FontAsset pcDisplay,pcBody;
   RectTransform pcInspector,pcModal,pcToastPanel,pcNav;
   ScrollRect pcScroll;
@@ -41,7 +44,7 @@ namespace CelestialMaker {
   Button PcButton(string label,Transform parent,Action action,float height=42){
    var r=PcBox(label,parent,CosmicStyle.Raised,Mathf.Max(42,height));var b=r.gameObject.AddComponent<ObservatoryButton>();b.targetGraphic=r.GetComponent<Image>();
    var t=PcText(label,r,18);t.name="Label";t.alignment=TextAlignmentOptions.MidlineLeft;t.enableAutoSizing=false;
-   var fit=r.gameObject.AddComponent<ObservatoryButtonSize>();fit.label=t;fit.baseline=Mathf.Max(44,height)*PcScale;
+   var fit=r.gameObject.AddComponent<ObservatoryButtonSize>();fit.label=t;fit.baseline=Mathf.Max(PhoneObservatory?52:44,height)*PcScale;
    Stretch((RectTransform)t.transform,Vector2.zero,Vector2.one,new Vector2(16,7),new Vector2(-16,-7));
    b.Configure(t);if(SectionPc(page)>=0)b.Accent(CosmicStyle.Section(SectionPc(page)));
    var hint=r.gameObject.AddComponent<GameTooltip>();hint.font=pcBody?pcBody:font;hint.message=label;hint.cosmic=true;
@@ -62,7 +65,7 @@ namespace CelestialMaker {
   void BuildPc()=>BuildObservatoryPc();
   void BuildMenuPc()=>ObservatoryMenuPc();
   void ShowMenuPc(){
-   ClosePcModal();Clear(list);pcBindings.Clear();pcLive.Clear();page="Start";pcLastPage="Start";Caption("FROM A SINGLE PARTICLE",list);var title=Label("CELESTIAL\nMAKER",list,48);title.font=pcDisplay;title.characterSpacing=3;Hairline(list,CosmicStyle.Gold);Label("Make room for a universe.",list,29,45);Label("A patient cosmos. An unfolding experiment.\nBuild the connections that turn a spark into infinity.",list,18,65,CosmicStyle.Muted);
+   ClosePcModal();Clear(list);pcBindings.Clear();pcLive.Clear();page="Start";pcLastPage="Start";Caption("FROM A SINGLE PARTICLE",list);var title=Label("CELESTIAL\nMAKER",list,PhoneObservatory?38:48);title.font=pcDisplay;title.characterSpacing=3;Hairline(list,CosmicStyle.Gold);Label("Make room for a universe.",list,29,PhoneObservatory?0:45);Label("A patient cosmos. An unfolding experiment.\nBuild the connections that turn a spark into infinity.",list,18,PhoneObservatory?0:65,CosmicStyle.Muted);
    var saved=GameSession.Instance.Saved;
    if(saved!=null){var c=PCard(list,"Continue presentation");Caption("YOUR EXPERIMENT IS WAITING",c);Label("Time in cosmos  "+OfflineReport.Duration(saved.time),c,17,26);Primary("Continue",list,()=>GameSession.Instance.StartGame(false),55);}
    var fresh=saved==null?Primary("New Game",list,()=>GameSession.Instance.StartGame(true),55):PcButton("New Game",list,()=>ConfirmPc("Start a new cosmos?","A local restore point of your current experiment will be created before a fresh universe begins.\n\nYou can recover that progress from Settings / Restore points.",()=>GameSession.Instance.ConfirmNew(),"Begin new cosmos"),48);
@@ -142,7 +145,7 @@ namespace CelestialMaker {
    KeyboardObservatoryPc();
    ReadabilitySearchTickPc();
    if(back!=null&&back.WasPressedThisFrame()){if(pcModal){if(offlineDialog&&S?.offlineReport!=null){S.offlineReport.dismissed=true;GameSession.Instance.Save();}ClosePcModal();}else if(menu)ShowMenuPc();else{page="Overview";ShowPc();}}
-   if(Screen.width!=previousWidth||Screen.height!=previousHeight){Build();return;}
+   if(Screen.width!=previousWidth||Screen.height!=previousHeight||PhoneObservatory&&pcLastSafeArea!=Screen.safeArea){Build();return;}
    if(pcToastPanel&&pcToastPanel.gameObject.activeSelf&&Time.unscaledTime>pcToastUntil)pcToastPanel.gameObject.SetActive(false);
    PresentPc();
    if(Time.unscaledTime<pcTick)return;pcTick=Time.unscaledTime+.25f;var gs=GameSession.Instance;if(gs==null)return;

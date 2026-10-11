@@ -34,21 +34,23 @@ namespace CelestialMaker {
    pcBody=Resources.Load<TMP_FontAsset>("UI/PC/BodyFontHD");pcDisplay=Resources.Load<TMP_FontAsset>("UI/PC/DisplayFontHD");
    Clear(transform);pcBindings.Clear();pcShellBindings.Clear();pcLive.Clear();pcLiveShell.Clear();pcInspectorBindings.Clear();pcTabs.Clear();processText.Clear();ledgerText.Clear();pcModal=null;offlineDialog=null;pcToast=null;pcInspector=null;pcStage=-1;
    previousWidth=Screen.width;previousHeight=Screen.height;portrait=false;
-   var scaler=GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ConstantPixelSize;scaler.scaleFactor=1;
+   var scaler=GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ConstantPixelSize;scaler.scaleFactor=PhoneObservatory&&Application.isPlaying?Mathf.Max(1,Mathf.Min(Screen.width,Screen.height)/480f):1;
+   if(PhoneObservatory&&Application.isPlaying)GetComponent<Canvas>().scaleFactor=scaler.scaleFactor;Canvas.ForceUpdateCanvases();pcLastSafeArea=Screen.safeArea;
    var background=PcBox("Observatory background",transform,CosmicStyle.Background);Stretch(background,Vector2.zero,Vector2.one,Vector2.zero,Vector2.zero);
    float inset=Mathf.Max(0,(((RectTransform)transform).rect.width-2560*Mathf.Max(1,PcScale*.75f))/2);
-   root=PcBox("PC Observatory",background,CosmicStyle.Background);root.GetComponent<CosmicPanel>().edge=0;Stretch(root,Vector2.zero,Vector2.one,new Vector2(inset,0),new Vector2(-inset,0));Canvas.ForceUpdateCanvases();
+   root=PcBox("PC Observatory",background,CosmicStyle.Background);root.GetComponent<CosmicPanel>().edge=0;Stretch(root,Vector2.zero,Vector2.one,new Vector2(inset,0),new Vector2(-inset,0));
+   if(PhoneObservatory&&Application.isPlaying){var safe=Screen.safeArea;Stretch(root,new Vector2(safe.x/Screen.width,safe.y/Screen.height),new Vector2(safe.xMax/Screen.width,safe.yMax/Screen.height),Vector2.zero,Vector2.zero);}Canvas.ForceUpdateCanvases();
    if(menu){BuildMenuPc();return;}
    if(pcWorld>0&&!Sim.Meta.universes.Any(u=>u.id==pcWorld))pcWorld=0;
-   pcCompactNav=root.rect.width<1100*PcScale;
-   float pad=16,rail=pcCompactNav?0:Mathf.Max(236,164*PcScale+24),brandWidth=pcCompactNav?160*PcScale:rail,top=88*PcScale,foot=36*PcScale,inspector=root.rect.width>=1750*PcScale?336:0;
+   pcCompactNav=PhoneObservatory||root.rect.width<1100*PcScale;
+   float pad=PhoneObservatory?8:16,rail=pcCompactNav?0:Mathf.Max(236,164*PcScale+24),brandWidth=PhoneObservatory?104:pcCompactNav?160*PcScale:rail,top=88*PcScale,foot=36*PcScale,inspector=!PhoneObservatory&&root.rect.width>=1750*PcScale?336:0;
    var header=PcBox("Top resource bar",root,CosmicStyle.Panel);Stretch(header,new Vector2(0,1),Vector2.one,new Vector2(pad,-top-pad),new Vector2(-pad,-pad));
    var brand=PcBox("Brand",header,Color.clear);Stretch(brand,Vector2.zero,new Vector2(0,1),new Vector2(16,8),new Vector2(brandWidth-8,-8));Vertical(brand,0,0);
-   if(pcCompactNav)PcButton("Menu / Find",brand,NavigationDrawerPc);
-   var wordmark=Label("CELESTIAL\nMAKER",brand,22);wordmark.font=pcDisplay?pcDisplay:pcBody;wordmark.characterSpacing=2;if(pcCompactNav){wordmark.text="CELESTIAL MAKER";wordmark.fontSize=14*PcScale;}
+   if(pcCompactNav)PcButton(PhoneObservatory?"Menu":"Menu / Find",brand,NavigationDrawerPc);
+   if(!PhoneObservatory){var wordmark=Label("CELESTIAL\nMAKER",brand,22);wordmark.font=pcDisplay?pcDisplay:pcBody;wordmark.characterSpacing=2;if(pcCompactNav){wordmark.text="CELESTIAL MAKER";wordmark.fontSize=14*PcScale;}}
    var meters=PcBox("Live resource meters",header,Color.clear);Stretch(meters,Vector2.zero,Vector2.one,new Vector2(brandWidth+16,8),new Vector2(-12,-8));var flow=meters.gameObject.AddComponent<HorizontalLayoutGroup>();flow.spacing=20;flow.childControlWidth=flow.childForceExpandWidth=flow.childControlHeight=flow.childForceExpandHeight=true;
    PresentationCanvas(meters,false);
-   int meterCount=root.rect.width<1500*PcScale?2:4;
+   int meterCount=PhoneObservatory&&root.rect.width<600*PcScale?1:root.rect.width<1500*PcScale?2:4;
    for(int slot=0;slot<meterCount;slot++)ResourceMeterPc(meters,slot);
    if(!pcCompactNav){nav=PcBox("Navigation rail",root,CosmicStyle.Panel);Stretch(nav,Vector2.zero,new Vector2(0,1),new Vector2(pad,foot+pad*2),new Vector2(pad+rail,-top-pad*2));pcNav=ScrollContent(nav,out var ns,12);
    Caption("OBSERVATORY",pcNav);
@@ -63,6 +65,7 @@ namespace CelestialMaker {
   }
 
   void ObservatoryMenuPc(){
+   if(PhoneObservatory){var phonePane=PcBox("Menu panel",root,CosmicStyle.Panel);Stretch(phonePane,Vector2.zero,Vector2.one,new Vector2(8,44*PcScale),new Vector2(-8,-8));list=ScrollContent(phonePane,out pcScroll,20);nav=null;body=phonePane;status=Label(ObservatoryVersion+" / ENGLISH",root,18);Stretch((RectTransform)status.transform,Vector2.zero,new Vector2(1,0),new Vector2(12,4),new Vector2(-12,40*PcScale));ShowMenuPc();return;}
    var pane=PcBox("Menu panel",root,CosmicStyle.Panel);Stretch(pane,new Vector2(0,0),new Vector2(1,1),new Vector2(48,40+36*PcScale),new Vector2(-Mathf.Max(48,root.rect.width*.4f),-48));list=ScrollContent(pane,out pcScroll,32);nav=null;body=pane;
    var artHost=PcBox("Observatory artwork",root,CosmicStyle.Background);artHost.GetComponent<CosmicPanel>().edge=0;Stretch(artHost,new Vector2(.62f,.06f),new Vector2(.98f,.96f),Vector2.zero,Vector2.zero);ObservatoryArt(artHost,"ObservatoryPortrait");
    var sigil=PcBox("Celestial emblem",root,Color.clear);Stretch(sigil,new Vector2(.88f,.06f),new Vector2(.96f,.18f),Vector2.zero,Vector2.zero);ObservatoryArt(sigil,"CelestialIcon");
@@ -188,8 +191,8 @@ namespace CelestialMaker {
   RectTransform ObservatoryModalPc(string title,float width,float height){
    var selected=EventSystem.current?EventSystem.current.currentSelectedGameObject:null;ClosePcModal();pcReturnFocus=selected;pcModalBindingStart=pcBindings.Count;
    pcModal=PcBox("Modal backdrop",root,new Color(.015f,.025f,.04f,.96f));Stretch(pcModal,Vector2.zero,Vector2.one,Vector2.zero,Vector2.zero);
-   var panel=PcBox("Dialog",pcModal,CosmicStyle.Panel);panel.anchorMin=panel.anchorMax=panel.pivot=new Vector2(.5f,.5f);panel.sizeDelta=new Vector2(Mathf.Min(width,root.rect.width-48),Mathf.Min(height,root.rect.height-48));panel.anchoredPosition=Vector2.zero;
-   var content=ScrollContent(panel,out var scroll,24);Caption("CELESTIAL MAKER",content);Label(title,content,28);Hairline(content,CosmicStyle.Edge);RevealPc(panel);return content;
+   var panel=PcBox("Dialog",pcModal,CosmicStyle.Panel);panel.anchorMin=panel.anchorMax=panel.pivot=new Vector2(.5f,.5f);float margin=PhoneObservatory?8:48;panel.sizeDelta=new Vector2(Mathf.Min(width,root.rect.width-margin),Mathf.Min(height,root.rect.height-margin));panel.anchoredPosition=Vector2.zero;
+   var content=ScrollContent(panel,out var scroll,PhoneObservatory?12:24);Caption("CELESTIAL MAKER",content);Label(title,content,28);Hairline(content,CosmicStyle.Edge);RevealPc(panel);return content;
   }
   void FocusModalPc(){Canvas.ForceUpdateCanvases();if(!pcModal||!EventSystem.current)return;var first=pcModal.GetComponentsInChildren<Selectable>().FirstOrDefault(s=>s.IsInteractable()&&!(s is Scrollbar));if(first)EventSystem.current.SetSelectedGameObject(first.gameObject);}
   void KeyboardObservatoryPc(){

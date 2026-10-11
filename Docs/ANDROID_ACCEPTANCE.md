@@ -45,3 +45,10 @@ session. Their hidden idle wizards can be closed by the user with appropriate
 rights; no unrelated application or installer was stopped.
 
 User decision, 2026-10-10: mobile is deferred. SDK/NDK license acceptance was declined for now. Do not install SDK/NDK or build Android until newly authorized.
+
+New request, 2026-10-11: prepare an installable APK for Galaxy S26 Ultra on
+Android 17 / One UI 9. This reopens Android work. A specific SDK/NDK license
+acceptance question is pending; the earlier deferral has not been silently
+converted into license acceptance. Mobile UI and build-profile preparation
+can proceed independently. Current results and remaining steps are in
+Docs/Android/STATUS.md. No APK or device compatibility pass is claimed yet.

@@ -19,6 +19,15 @@
     "container": "APK",
     "quality": "Mobile"
   },
+  "AndroidAPKSideload": {
+    "target": "Android",
+    "development": false,
+    "backend": "IL2CPP",
+    "architecture": "ARM64",
+    "container": "APK",
+    "quality": "Mobile",
+    "requiresProductionSigning": false
+  },
   "AndroidAABRelease": {
     "target": "Android",
     "development": false,

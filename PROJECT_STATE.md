@@ -4,6 +4,16 @@ Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
 Public Windows v2.7.0 is published and its local delivery is verified.
 
+## Android phone preparation - 2026-10-11
+
+Branch: codex/android-s26. Full Observatory adapted for Android, portrait and
+landscape touch controls, safe-area scaling, resource overview and ARM64/API 37
+sideload profile. Phone geometry/callback checks 432/432; desktop regression
+1479/1479. Editor compilation and private render fixtures OBSERVED.
+APK NOT BUILT: missing SDK/NDK; explicit Google SDK terms acceptance is pending.
+No phone runtime, touch, 16 KB native binary or physical FPS pass is claimed.
+Continuation: Docs/Android/STATUS.md. Windows release remains available below.
+
 ## Public Windows delivery - 2026-10-11
 
 Public repository: https://github.com/Jakubix-pl/celestial-maker.

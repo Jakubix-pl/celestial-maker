@@ -1,4 +1,4 @@
-param([switch]$Probe,[switch]$After,[switch]$ReadabilityOnly,[switch]$TabsOnly,[switch]$ResourcesOnly,[switch]$UnlocksOnly,[switch]$EvolutionOnly,[switch]$CadenceOnly,[switch]$DiscoveryOnly,[switch]$Publication)
+param([switch]$Probe,[switch]$After,[switch]$ReadabilityOnly,[switch]$TabsOnly,[switch]$ResourcesOnly,[switch]$UnlocksOnly,[switch]$EvolutionOnly,[switch]$CadenceOnly,[switch]$DiscoveryOnly,[switch]$Publication,[switch]$Phone)
 . "$PSScriptRoot/common.ps1"
 $lockPath=Join-Path $script:Game 'Temp/UnityLockfile'
 if(Test-Path -LiteralPath $lockPath){try{$handle=[IO.File]::Open($lockPath,'Open','ReadWrite','None');$handle.Dispose()}catch{throw 'Project open: use an isolated copy; do not close an editor.'}}
@@ -12,6 +12,7 @@ if($ResourcesOnly){$arguments+="-cmResourcesOnly"}
 if($EvolutionOnly){$arguments+="-cmEvolutionOnly"}
 if($DiscoveryOnly){$arguments+="-cmDiscoveryOnly"}
 if($Publication){$arguments+='-cmPublication'}
+if($Phone){$arguments+='-cmPhoneUi'}
 if($CadenceOnly){$arguments+="-cmCadenceOnly"}
 if($UnlocksOnly){$arguments+="-cmUnlocksOnly"}
 if($Probe){$arguments+='-cmRenderProbe'}

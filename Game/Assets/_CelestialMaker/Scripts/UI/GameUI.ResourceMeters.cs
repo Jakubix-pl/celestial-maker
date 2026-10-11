@@ -21,7 +21,8 @@ namespace CelestialMaker {
    var icon=mark.GetComponent<ObservatoryResourceIcon>();icon.raycastTarget=false;
    var rule=new GameObject("Resource accent",typeof(RectTransform),typeof(Image),typeof(LayoutElement));rule.transform.SetParent(cell,false);rule.GetComponent<LayoutElement>().ignoreLayout=true;
    var ruleRect=(RectTransform)rule.transform;Stretch(ruleRect,Vector2.zero,new Vector2(0,1),new Vector2(0,4),new Vector2(2,-4));var stripe=rule.GetComponent<Image>();stripe.raycastTarget=false;
-   var panel=cell.GetComponent<CosmicPanel>();panel.edge=0;panel.raycastTarget=false;
+   var panel=cell.GetComponent<CosmicPanel>();panel.edge=0;panel.raycastTarget=PhoneObservatory;
+   if(PhoneObservatory){var touch=cell.gameObject.AddComponent<Button>();touch.targetGraphic=panel;touch.transition=Selectable.Transition.None;touch.onClick.AddListener(PhoneResourcesPc);}
    void Rate(Simulation sim,int resource){
     rate.text=resource<0?"Home currency":"NET "+new Number(sim.CachedRate(resource))+" /s";
     rate.color=resource>=0&&sim.CachedRate(resource)<0?CosmicStyle.Warning:CosmicStyle.Muted;
@@ -40,6 +41,12 @@ namespace CelestialMaker {
     var sim=LocalPagePc?EconomyPc:Sim;int resource=HeaderResourcePc(sim,slot);Identity(sim,resource);
     amount.text=resource<0?Sim.S.prestige[0].ToString():sim.S.resources[resource].ToString();
    },true);
+  }
+  void PhoneResourcesPc(){
+   var sim=LocalPagePc?EconomyPc:Sim;var d=ModalPc("Resources / "+WorldNamePc,780,850);PcButton("Close",d,ClosePcModal);
+   for(int i=0;i<12;i++){if(!ResourceVisible(sim,i))continue;int resource=i;var card=PCard(d,GameSession.Content.resources[i]);Label(GameSession.Content.resources[i],card,22,0,ObservatoryResourceIcon.AccentFor(i));var value=Label("",card,22);var rate=Label("",card,18,0,CosmicStyle.Muted);Bind(()=>{value.text=sim.S.resources[resource].ToString();rate.text="NET "+new Number(sim.CachedRate(resource))+" /s";});}
+   for(int i=0;i<3;i++){if(!ResetCurrencyVisible(i))continue;int layer=i;var value=Label("",d,22);Bind(()=>value.text=ResetRules.Currencies[layer]+" / "+Sim.S.prestige[layer]);}
+   FocusModalPc();
   }
  }
 }
