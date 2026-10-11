@@ -14,6 +14,8 @@ function Invoke-Unity([string]$Method,[string]$Log,[string]$Target='', [switch]$
  $args=@('-batchmode','-nographics','-projectPath',('"'+$script:Game+'"'),'-logFile',('"'+(Join-Path $script:Root "Logs\$Log")+'"'))
  if(!$NoQuit){$args+='-quit'};if($Method){$args+=@('-executeMethod',$Method)};if($Target){$args+=@('-buildTarget',$Target)};if($Release){$args+='-cmRelease'}
  if($Extra.Count){$args+=$Extra}
- $p=Start-Process -FilePath (Get-Unity) -ArgumentList $args -WindowStyle Hidden -PassThru -Wait
+ $p=Start-Process -FilePath (Get-Unity) -ArgumentList $args -WindowStyle Hidden -PassThru
+ # Wait for this editor only; its Roslyn build server can outlive a completed batch.
+ $p.WaitForExit()
  if($p.ExitCode -ne 0){throw "Unity failed ($($p.ExitCode)); see Logs/$Log"}
 }

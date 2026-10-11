@@ -4,12 +4,12 @@ using BreakInfinity;
 
 namespace CelestialMaker.Core {
  public static class ProgressionBalance {
-  public const string Version="2.7.0";
+  public const string Version="2.8.0";
   public const double PrestigeEnergyLog=6.2;
   public const int PrestigeForAscension=8;
   public const int AscensionForGenesis=12;
   public const double ParticleEnergyEquivalent=.35;
-  public const double ConstructionBaseSeconds=23760;
+  public const double ConstructionBaseSeconds=21600;
   public const double ConstructionGrowth=2.06;
  }
  public sealed partial class Simulation {

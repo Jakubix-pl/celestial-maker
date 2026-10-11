@@ -17,7 +17,7 @@ namespace CelestialMaker.Core {
    }
    // Meta benefits are shared, while stocks, installed processes, purchases,
    // automation, laws and local discoveries are separate economies.
-   sim.S.prestige=(Number[])S.prestige.Clone();sim.S.resets=(int[])S.resets.Clone();sim.Meta.ascensionUpgrades=Meta.ascensionUpgrades;sim.Meta.genesisUpgrades=Meta.genesisUpgrades;
+   sim.S.autobuyers=S.autobuyers;sim.S.discoveredProcesses=S.discoveredProcesses;sim.S.prestige=(Number[])S.prestige.Clone();sim.S.resets=(int[])S.resets.Clone();sim.Meta.ascensionUpgrades=Meta.ascensionUpgrades;sim.Meta.genesisUpgrades=Meta.genesisUpgrades;
    sim.Meta.megas=Meta.megas.Select(m=>new MegaProject{level=m.level}).ToArray();return sim;
   }
   void SaveUniverse(int id,Simulation sim){

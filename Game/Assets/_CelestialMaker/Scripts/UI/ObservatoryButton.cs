@@ -16,7 +16,7 @@ namespace CelestialMaker {
    bool disabled=state==SelectionState.Disabled,focused=state==SelectionState.Selected||state==SelectionState.Highlighted,pressed=state==SelectionState.Pressed;
    var highlight=accent??CosmicStyle.Cyan;
    var next=disabled?CosmicStyle.Raised:primary?(pressed?CosmicStyle.PrimaryPressed:focused?CosmicStyle.PrimaryFocus:CosmicStyle.Cyan):focused||pressed?CosmicStyle.Focus:emphasized?Color.Lerp(CosmicStyle.Raised,highlight,.14f):CosmicStyle.Raised;
-   if(sectionTab&&!disabled)next=Color.Lerp(CosmicStyle.Raised,highlight,CosmicStyle.Light?(focused||pressed?.14f:emphasized?.10f:.045f):(focused||pressed?.24f:emphasized?.19f:.075f));
+   if(sectionTab&&!disabled)next=Color.Lerp(CosmicStyle.Raised,highlight,CosmicStyle.Light?(focused||pressed?.18f:emphasized?.14f:.07f):(focused||pressed?.24f:emphasized?.22f:.12f));
    if(fade!=null){StopCoroutine(fade);fade=null;}
    if(instant||disabled||!Application.isPlaying||!isActiveAndEnabled||(GameSession.Instance?.CurrentSettings.reducedMotion??true))panel.color=next;
    else fade=StartCoroutine(Fade(panel,next));

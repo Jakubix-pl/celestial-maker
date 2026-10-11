@@ -21,11 +21,11 @@ namespace CelestialMaker {
    var label=button.GetComponentInChildren<TMP_Text>().rectTransform;label.offsetMin=new Vector2(34,7);button.GetComponent<ObservatoryButtonSize>().horizontalPadding=50;
   }
   void NavigationDrawerPc(){
-   var dialog=ModalPc("Observatory navigation",820,850);for(int i=0;i<ObservatorySections.Length;i++){int group=i;var b=PcButton(ObservatorySections[i],dialog,()=>NavigatePc(ObservatoryRoutes[group][0]));((ObservatoryButton)b).Accent(CosmicStyle.Section(i));CategoryMarkPc(b,i);EmphasizePc(b,SectionPc(page)==i);}
+   var dialog=ModalPc("Observatory navigation",820,850);for(int i=0;i<ObservatorySections.Length;i++){int group=i;if(!Sim.SectionUnlocked(i))continue;var b=PcButton(ObservatorySections[i],dialog,()=>NavigatePc(SectionEntryPc(group)));((ObservatoryButton)b).Accent(CosmicStyle.Section(i));CategoryMarkPc(b,i);EmphasizePc(b,SectionPc(page)==i);}
    var actions=HRow(dialog,"Navigation tools",0);PcButton("Find",actions,()=>SearchPalettePc(false));PcButton("Favorites",actions,()=>SearchPalettePc(true));PcButton("Research plan",actions,ResearchPlanPc);PcButton("Economy: "+WorldNamePc,actions,ChooseWorldPc);PcButton("Settings",actions,()=>NavigatePc("Settings"));PcButton("Save now",actions,()=>{GameSession.Instance.Save();ToastPc(GameSession.Instance.SaveFailed?"Save failed. Check Settings.":"Your cosmos has been saved.");});PcButton("Close",dialog,ClosePcModal);FocusModalPc();
   }
   void SectionViewsPc(){
-   int group=SectionPc(page);var dialog=ModalPc(group<0?"Views":ObservatorySections[group]+" views",900,760);if(group>=0)for(int i=0;i<ObservatoryRoutes[group].Length;i++){string route=ObservatoryRoutes[group][i];var b=PcButton(ObservatoryLabels[group][i],dialog,()=>NavigatePc(route));SectionTabPc(b,route,route==page);}
+   int group=SectionPc(page);var dialog=ModalPc(group<0?"Views":ObservatorySections[group]+" views",900,760);if(group>=0)for(int i=0;i<ObservatoryRoutes[group].Length;i++){string route=ObservatoryRoutes[group][i];if(!RouteUnlockedPc(route))continue;var b=PcButton(ObservatoryLabels[group][i],dialog,()=>NavigatePc(route));SectionTabPc(b,route,route==page);}
    PcButton("Economy: "+WorldNamePc,dialog,ChooseWorldPc);PcButton("All categories",dialog,NavigationDrawerPc);PcButton("Close",dialog,ClosePcModal);FocusModalPc();
   }
   TMP_InputField SearchFieldPc(Transform parent,string value,string hint,Action<string> changed){
@@ -123,11 +123,11 @@ namespace CelestialMaker {
    pcPaletteResults=PcBox("Search results",dialog,Color.clear);Vertical(pcPaletteResults,0,6);PopulatePalettePc();FocusModalPc();if(Application.isPlaying)pcPaletteInput.ActivateInputField();
   }
   void PopulatePalettePc(){
-   Clear(pcPaletteResults);int count=0,total=0;bool Match(string key,string words)=> (!pcSearchFavorites||FavoritePc(key))&&(string.IsNullOrWhiteSpace(pcPaletteQuery)||words.IndexOf(pcPaletteQuery.Trim(),StringComparison.OrdinalIgnoreCase)>=0);
+   EconomyPc.DiscoverProcesses();Clear(pcPaletteResults);int count=0,total=0;bool Match(string key,string words)=> (!pcSearchFavorites||FavoritePc(key))&&(string.IsNullOrWhiteSpace(pcPaletteQuery)||words.IndexOf(pcPaletteQuery.Trim(),StringComparison.OrdinalIgnoreCase)>=0);
    void Result(string key,string title,Action open){total++;if(count++>=30)return;var row=HRow(pcPaletteResults,"Search result",0,8);row.GetComponent<ObservatoryFlow>().cellWidth=300*PcScale;PcButton(title,row,open);PcButton(FavoritePc(key)?"Remove favorite":"Add favorite",row,()=>{ToggleFavoritePc(key);PopulatePalettePc();});}
-   for(int i=0;i<ObservatoryRoutes.Length;i++)for(int j=0;j<ObservatoryRoutes[i].Length;j++){string route=ObservatoryRoutes[i][j],label=ObservatorySections[i]+" / "+ObservatoryLabels[i][j];if(Match("page:"+route,label))Result("page:"+route,label,()=>NavigatePc(route));}
+   for(int i=0;i<ObservatoryRoutes.Length;i++)for(int j=0;j<ObservatoryRoutes[i].Length;j++){string route=ObservatoryRoutes[i][j],label=ObservatorySections[i]+" / "+ObservatoryLabels[i][j];if(RouteUnlockedPc(route)&&Match("page:"+route,label))Result("page:"+route,label,()=>NavigatePc(route));}
    foreach(string route in new[]{"Settings","Credits"})if(Match("page:"+route,route))Result("page:"+route,route,()=>NavigatePc(route));
-   for(int i=0;i<GameSession.Content.generators.Length;i++){int id=i;var g=GameSession.Content.generators[i];if(!EconomyPc.Open(g)||!Match("process:"+i,g.name+" "+GameSession.Content.resources[g.output]))continue;Result("process:"+i,"Process / "+g.name,()=>{PrefsPc.productionStage=pcProductionStage=-1;PrefsPc.availability=pcAvailability=0;NavigatePc("Production");ProcessDetailsPc(id);});}
+   for(int i=0;i<GameSession.Content.generators.Length;i++){int id=i;var g=GameSession.Content.generators[i];if(!EconomyPc.ProcessDiscovered(i)||!Match("process:"+i,g.name+" "+GameSession.Content.resources[g.output]))continue;Result("process:"+i,"Process / "+g.name,()=>{PrefsPc.productionStage=pcProductionStage=-1;PrefsPc.availability=pcAvailability=0;NavigatePc("Production");ProcessDetailsPc(id);});}
    foreach(var u in GameSession.Content.research.Concat(GameSession.Content.upgrades)){string id=u.id;if(!EconomyPc.StageOpen(u.stage)||!Match(id,u.name+" "+UpgradeEffectPc(u)+" "+GameSession.Content.resources[u.costResource]))continue;Result(id,(GameSession.Content.research.Contains(u)?"Research / ":"Upgrade / ")+u.name,()=>OpenUpgradePc(id));}
    if(total==0)Label(pcSearchFavorites?"No matching favorites. Add them from search results or expanded research.":"No matches. Try a resource or screen name.",pcPaletteResults,18);else if(total>30)Label("Showing 30 of "+total+" matches. Refine your search.",pcPaletteResults,18,0,CosmicStyle.Muted);
   }

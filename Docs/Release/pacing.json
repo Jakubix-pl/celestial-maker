@@ -1,0 +1,113 @@
+{
+  "method": "Real 60 Hz offline engine, six-hour visits, serialized reloads, earned Prestige unlocks, optional Development Plan and module/role choices. Synthetic campaigns; no injected resources.",
+  "results": [
+    {
+      "version": "2.8.0",
+      "discovery": true,
+      "modules": [
+        1,
+        1,
+        1
+      ],
+      "roles": [
+        3,
+        1
+      ],
+      "style": "check-in",
+      "strategy": "Energy",
+      "firstPrestigeHours": 17.999999999999996,
+      "firstAscensionHours": 29.999999999999996,
+      "firstGenesisHours": 95.99999999999922,
+      "horizonHours": 143.99999999997465,
+      "allTreesHours": 155.99999999994444,
+      "completionHours": 430.8775309435003,
+      "elapsedHours": 432,
+      "megaLevels": [
+        6,
+        6,
+        6
+      ],
+      "research": 90,
+      "visits": 72,
+      "genesisResets": 3,
+      "resumes": 73,
+      "offline": true,
+      "longestDiscoveryGapHours": 72,
+      "manualActions": 404,
+      "resetRecoverySamples": 3,
+      "cpuSeconds": 445.9444208
+    },
+    {
+      "version": "2.8.0",
+      "discovery": true,
+      "modules": [
+        2,
+        2,
+        1
+      ],
+      "roles": [
+        3,
+        1
+      ],
+      "style": "check-in",
+      "strategy": "Matter",
+      "firstPrestigeHours": 17.999999999999996,
+      "firstAscensionHours": 29.999999999999996,
+      "firstGenesisHours": 107.99999999997632,
+      "horizonHours": 161.99999999994697,
+      "allTreesHours": 173.99999999993935,
+      "completionHours": 450.75253094344225,
+      "elapsedHours": 456,
+      "megaLevels": [
+        6,
+        6,
+        6
+      ],
+      "research": 90,
+      "visits": 76,
+      "genesisResets": 3,
+      "resumes": 77,
+      "offline": true,
+      "longestDiscoveryGapHours": 78,
+      "manualActions": 491,
+      "resetRecoverySamples": 9,
+      "cpuSeconds": 475.6442847
+    },
+    {
+      "version": "2.8.0",
+      "discovery": true,
+      "modules": [
+        2,
+        2,
+        2
+      ],
+      "roles": [
+        3,
+        1
+      ],
+      "style": "check-in",
+      "strategy": "Time",
+      "firstPrestigeHours": 17.999999999999996,
+      "firstAscensionHours": 29.999999999999996,
+      "firstGenesisHours": 113.99999999996959,
+      "horizonHours": 149.9999999998943,
+      "allTreesHours": 155.99999999989245,
+      "completionHours": 438.0118905689616,
+      "elapsedHours": 444,
+      "megaLevels": [
+        6,
+        6,
+        6
+      ],
+      "research": 90,
+      "visits": 74,
+      "genesisResets": 3,
+      "resumes": 75,
+      "offline": true,
+      "longestDiscoveryGapHours": 60.00000000025831,
+      "manualActions": 373,
+      "resetRecoverySamples": 9,
+      "cpuSeconds": 489.6043027
+    }
+  ]
+}

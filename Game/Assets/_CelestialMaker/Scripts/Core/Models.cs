@@ -21,12 +21,13 @@ namespace CelestialMaker.Core {
  [Serializable] public class Content { public string[] resources; public Generator[] generators; public Upgrade[] upgrades,research,talents; public Challenge[] challenges; public Achievement[] achievements; public Expedition[] expeditions; public Story[] stories; }
  [Serializable] public class Voyage { public int definition,level,route; public double finish; public bool claimed; }
  [Serializable] public class BoostWindow {public double start,end;}
- [Serializable] public class AutomationProfile { public string name="Balanced"; public bool buy=true,expeditions; public int[] priority=new int[24]; public Number[] reserves=new Number[12]; public double prestigeThreshold=2; public bool[] repeatPrestige=new bool[3]; }
+ [Serializable] public class AutomationProfile { public string name="Balanced"; public bool buy,expeditions; public int[] priority=new int[24]; public Number[] reserves=new Number[12]; public double prestigeThreshold=2; public bool[] repeatPrestige=new bool[3]; }
  [Serializable] public class Settings { public ObservatoryPreferences observatory=new ObservatoryPreferences(); public int fps=60,quality=1,theme; public float music=.25f,sound=.5f,textScale=1; public bool lightUI,reducedMotion,confirmReset=true,tutorial=true; public string notation="Scientific"; }
  [Serializable] public class State {
   public DiscoveryState discovery=new DiscoveryState(); public EvolutionState evolution=new EvolutionState(); public ResearchPlan researchPlan=new ResearchPlan(); public int version=2; public ExpansionState expansion=new ExpansionState(); public bool satellite; public int universeKind; public string profileId=Guid.NewGuid().ToString("N");
   public Number[] resources=new Number[12],lifetime=new Number[12],reserves=new Number[12],prestige=new Number[3];
-  public long[] owned=new long[24]; public bool[] paused=new bool[24];
+  public long[] owned=new long[24]; public bool[] paused=new bool[24]; // Legacy field retained for save compatibility; production never reads it.
+  public bool[] autobuyers=new bool[6], discoveredProcesses=new bool[24];
   public int[] resets=new int[3],links=new int[6]; public int universeLaw;
   public List<string> purchases=new List<string>(),talents=new List<string>(),achievements=new List<string>(),completedChallenges=new List<string>();
   public List<string> discoveredStories=new List<string>(),prestigePurchases=new List<string>();
@@ -41,7 +42,7 @@ namespace CelestialMaker.Core {
   public static readonly string[] Names={"Prestige","Ascension","Genesis"};
   public static readonly string[] Currencies={"Prestige Points","Ascension Points","Genesis Points"};
   public static readonly string[] Reset={"Resources, processes, ordinary upgrades and research","Run economy, unspent Prestige Points, ALL Prestige upgrades, links, active challenges and advanced automation","Run economy, Prestige and Ascension currencies/upgrades, talents, laws and megastructure progress; all parallel economies restart"};
-  public const string Kept="Settings, achievements, challenge records, stories, earned cosmetics, history, strategy presets and free basic autobuy; same/higher tier upgrades";
+  public const string Kept="Settings, achievements, challenge records, stories, earned cosmetics, history, discovered processes and strategy presets; same/higher tier upgrades. Purchased autobuyers survive Prestige, but reset on Ascension and Genesis.";
  }
 }
 

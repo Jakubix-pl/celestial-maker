@@ -27,7 +27,7 @@ partial class Program {
   }
   var campaign=JsonSerializer.Deserialize<State>(File.ReadAllText(Path.Combine(root,"Tools/Expansion/Fixtures/late-campaign.json")),J);
   for(int id=0;id<12&&!arguments.Contains("--scenarios-only");id++){
-   var s=new Simulation(data,Clone(campaign));s.StopAllAutomation();Array.Clear(s.S.reserves,0,12);
+   var s=new Simulation(data,Clone(campaign));s.StopAllAutomation();Array.Clear(s.S.reserves,0,12);s.S.lifetime[0]=BigDouble.Parse("1e12");s.Rebirth(0);for(int stage=0;stage<6;stage++)s.UnlockAutobuyer(stage);for(int resource=0;resource<12;resource++)s.S.lifetime[resource]=campaign.lifetime[resource];
    Check("challenge available on measured completed campaign "+id,s.EnterChallenge(id));
    var originalResources=(Number[])s.S.challengeResources.Clone();var originalOwned=(long[])s.S.challengeOwned.Clone();
    s.S.automation.buy=true;s.Meta.guidedAutomation=true;double started=s.S.time;
@@ -49,14 +49,14 @@ partial class Program {
     // Scripted player purchases research and resets through public game operations.
     foreach(var u in data.research)s.Purchase(u);
     foreach(var u in data.upgrades)s.Purchase(u);
-    for(int i=0;i<4;i++)s.PrestigeUpgrade(0,i);
-    if(s.S.resets[0]==0&&s.PrestigeReward(0)>=1)s.Rebirth(0);
-    if(scenario==3){
-     // Hungry cosmos needs upstream investment. A player cycles five-minute
-     // Energy, Particle, Atom savings and full-chain phases using process pauses.
-     s.Meta.guidedAutomation=false;s.S.automation.buy=false;
-     for(int i=0;i<8;i++)s.Buy(i,Math.Max(1,s.MaxBuy(i)/4));
-     for(int i=0;i<24;i++)s.S.paused[i]=data.generators[i].output>3||(turn%4<3&&data.generators[i].input==turn%4);
+    for(int stage=0;stage<2;stage++)s.UnlockAutobuyer(stage);s.S.automation.buy=s.AnyAutobuyer;s.Meta.guidedAutomation=true;
+    if(s.S.autobuyers[1])for(int i=0;i<4;i++)s.PrestigeUpgrade(0,i);
+    if(!s.S.autobuyers[1]&&s.PrestigeReward(0)>=1)s.Rebirth(0);
+    if(!s.AnyAutobuyer||scenario==3){
+     // Manual five-minute visits buy upstream capacity first and limit new
+     // consumers to the available ongoing supply. No stopped production.
+     s.Meta.guidedAutomation=true;s.S.automation.buy=s.AnyAutobuyer;
+     foreach(int i in new[]{0,2,1,3,4,6,5,7}){var g=data.generators[i];long count=Math.Max(1,s.MaxBuy(i)/4);if(g.input>=0){double unit=(s.ProductionMultiplier(i)*g.rate*g.consume*2).ToDouble();count=Math.Min(count,(long)Math.Max(s.S.owned[i]==0?1:0,Math.Min(1000000,s.Rate(g.input).ToDouble()/Math.Max(1e-9,unit))));}s.Buy(i,count);}
      s.InvalidateTickCache();turn++;
     }
     Replay(s,300);

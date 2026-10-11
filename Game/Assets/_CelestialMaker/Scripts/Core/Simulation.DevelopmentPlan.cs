@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace CelestialMaker.Core {
  public sealed partial class Simulation {
+  public bool NeedsAutobuyerFunding=>!S.satellite&&Evolution.developmentPlan!=""&&S.autobuyers.Count(x=>!x)>S.prestige[0].Value;
   public bool ConfigureDevelopmentPlan(string branch){
    if(S.satellite||branch!=""&&(!HasLayer(0)||!new[]{"Energy","Matter","Time"}.Contains(branch)))return false;
    Evolution.developmentPlan=branch;Revision++;return true;
@@ -10,7 +11,8 @@ namespace CelestialMaker.Core {
   void RunDevelopmentPurchases(){
    string branch=Evolution.developmentPlan;if(S.satellite||branch==""||S.activeChallenge!="")return;
    S.automation.buy=true;Meta.guidedAutomation=true;Meta.autoBuild=HasLayer(1);
-   for(int i=0;i<4;i++)PrestigeUpgrade(0,i);
+   for(int stage=0;stage<6;stage++)UnlockAutobuyer(stage);
+   if(S.autobuyers.All(x=>x))for(int i=0;i<4;i++)PrestigeUpgrade(0,i);
    foreach(var node in ExpansionContent.Ascension)if(node.branch==branch)BuyMeta(node.id);
    foreach(var node in ExpansionContent.Genesis)BuyMeta(node.id,true);
    if(AllGenesisNodes)foreach(var node in ExpansionContent.Ascension)BuyMeta(node.id);
@@ -21,11 +23,12 @@ namespace CelestialMaker.Core {
    Meta.autoResearch=HasA("a_time_2");
   }
   void RunDevelopmentReset(){
-   if(GoalHoldsResets||S.activeChallenge!=""||AllGenesisNodes&&AllAscensionNodes)return;
+   if(GoalHoldsResets||S.activeChallenge!=""||AllGenesisNodes&&AllAscensionNodes&&!NeedsAutobuyerFunding)return;
    // First discovery of a reset stays a manual decision. The persistent plan
    // restores only previously discovered reset actions after higher resets.
    for(int layer=2;layer>=0;layer--){
-    if(Meta.historicResets[layer]<=0||layer==2&&AllGenesisNodes||layer<2&&PreparingGenesis||layer==0&&Meta.prestigeEarned.Value>=ProgressionBalance.PrestigeForAscension)continue;
+    bool funding=layer==0&&NeedsAutobuyerFunding;
+    if(Meta.historicResets[layer]<=0||layer==2&&AllGenesisNodes||layer==1&&AllGenesisNodes&&AllAscensionNodes||layer<2&&PreparingGenesis&&!funding||layer==0&&Meta.prestigeEarned.Value>=ProgressionBalance.PrestigeForAscension&&!funding)continue;
     if(PrestigeReward(layer)>=1&&Rebirth(layer))break;
    }
   }

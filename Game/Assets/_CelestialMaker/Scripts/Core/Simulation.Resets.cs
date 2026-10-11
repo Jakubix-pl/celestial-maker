@@ -18,12 +18,13 @@ namespace CelestialMaker.Core {
    if(layer==0)Meta.prestigeEarned=Meta.prestigeEarned.Value+reward;if(layer==1)Meta.ascensionEarned=Meta.ascensionEarned.Value+reward;
    if(Report!=null){Report.resets[layer]++;Report.Capture(this);for(int r=0;r<12;r++)Report.Add(Report.resetLoss,r,S.resources[r].Value);for(int i=0;i<layer;i++)Report.Add(Report.resetLoss,12+i,S.prestige[i].Value);}
    for(int i=0;i<layer;i++){S.prestige[i]=BigDouble.Zero;S.resets[i]=0;int lower=i;S.prestigePurchases.RemoveAll(x=>x.StartsWith("p"+lower+"_"));}
-   S.resources=new Number[12];S.lifetime=new Number[12];S.reserves=new Number[12];S.owned=new long[24];S.owned[0]=HasG("g_seed")?8:1;S.resources[0]=new BigDouble(10);Grant(0,10);S.paused=new bool[24];S.purchases.Clear();
+   Array.Fill(S.discoveredProcesses,true);
+   S.resources=new Number[12];S.lifetime=new Number[12];S.reserves=new Number[12];S.owned=new long[24];S.owned[0]=HasG("g_seed")?8:HasLayer(1)?6:1;S.resources[0]=new BigDouble(10);Grant(0,10);S.paused=new bool[24];S.purchases.Clear();
    RestoreResearchPrerequisites();
    S.voyages.Clear();S.expeditionLevels=new int[8];Meta.prestigeStarted=S.time;
    if(layer>0){
     Meta.prestigeEarned=BigDouble.Zero;Meta.ascensionStarted=S.time;for(int i=0;i<6;i++)S.links[i]=-1;
-    bool basic=S.automation.buy;S.automation=new AutomationProfile{buy=basic};for(int i=0;i<24;i++)S.automation.priority[i]=i;Meta.autoResearch=false;
+    Array.Clear(S.autobuyers,0,6);S.automation=new AutomationProfile();for(int i=0;i<24;i++)S.automation.priority[i]=i;Meta.autoResearch=false;
     S.challengeResources=null;S.challengeOwned=null;S.challengePurchases=null;S.challengePaused=null;
     ResetUniverses();
    }

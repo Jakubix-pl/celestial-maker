@@ -6,11 +6,11 @@ Updated 2026-10-11. Intended device: Samsung Galaxy S26 Ultra.
 
 **COMPILED / OBSERVED:** Unity 6000.6.3f1 compiled the changes for the Windows editor. 432/432 phone layout/target checks passed at 480x1040, 1040x480, 360x800 and 800x360 logical sizes, early/late state and 100/125% text. The existing desktop regression also passed 1479/1479. Sixteen actual uGUI/URP offscreen phone fixtures were rendered, with representative screens inspected. These do not emulate Android lifecycle, a soft keyboard, physical touch or the Samsung display.
 
-**NOT BUILT:** no APK has been produced in this pass. The Android Unity module and OpenJDK exist, but SDK/NDK are absent. Earlier records explicitly deferred acceptance of Google's SDK terms. The user has now requested APK work; a specific question about SDK/NDK license acceptance is pending. No package was downloaded or license accepted while that answer is pending.
+**NOT BUILT:** no APK has been produced in this pass. The Android Unity module and OpenJDK exist, but SDK/NDK are absent. Earlier records explicitly deferred acceptance of Google's SDK terms. The user redirected the task to Prestige automation and Observatory changes. APK work is deferred. No package was downloaded or license accepted.
 
 ## Build configuration
 
-The new `AndroidAPKSideload` profile uses ARM64 IL2CPP, Android target API 37, minimum API 26, Mobile quality, package `com.celestialmaker.game`, version 2.7.0/code 27001 and a single APK. It disables development-build instrumentation and uses Unity's development signing identity; production signing is not requested. Default backend configuration is empty. No Google Play account or billing setup is required for a local APK.
+The new `AndroidAPKSideload` profile uses ARM64 IL2CPP, Android target API 37, minimum API 26, Mobile quality, package `com.celestialmaker.game`, version 2.8.0/code 28001 and a single APK. It disables development-build instrumentation and uses Unity's development signing identity; production signing is not requested. Default backend configuration is empty. No Google Play account or billing setup is required for a local APK.
 
 `Tools/setup-android-sdk.ps1` prepares project-local tools only after explicit license acceptance. It validates the official command-line archive's size and SHA-384, then uses sdkmanager's actual license prompts for the selected packages. It does not fabricate license hashes. Required tools: SDK platform 37, build-tools 36.0.0, NDK 27.2.12479018/r27c, CMake 3.22.1, platform-tools, CLI 16 and OpenJDK 17. The SDK installer script is prepared and parsed, but has not been executed.
 
@@ -21,7 +21,7 @@ After acceptance:
 ./Tools/build-android.ps1 -Sideload
 ```
 
-Planned output: `Builds/Android/CelestialMaker-2.7.0-Android-arm64.apk`.
+Planned output: `Builds/Android/CelestialMaker-2.8.0-Android-arm64.apk`.
 This path is a target, not an existing deliverable.
 
 ## Remaining acceptance

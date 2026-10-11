@@ -29,6 +29,10 @@ namespace CelestialMaker.Core {
    }
    if(state.offlineReport!=null&&state.offlineReport.requestedSeconds<=0&&state.offlineReport.processedSeconds<=0)state.offlineReport=null;
    state.evolution??=new EvolutionState(); state.discovery??=new DiscoveryState();
+   // New unlocks are never retroactively charged or granted by an old enabled rule.
+   state.autobuyers??=new bool[6];state.discoveredProcesses??=new bool[24];
+   if(state.paused!=null)Array.Clear(state.paused,0,state.paused.Length);
+   if(state.challengePaused!=null)Array.Clear(state.challengePaused,0,state.challengePaused.Length);
    if(state.expansion?.strategies!=null)foreach(var profile in state.expansion.strategies)if(profile!=null)profile.focus??="Balanced";
    state.researchPlan??=new ResearchPlan();
    if(state.evolution.operations!=null)foreach(var p in state.evolution.operations)if(p!=null)p.goals??=new List<GoalOrder>();

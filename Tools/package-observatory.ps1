@@ -5,10 +5,10 @@ Copy-Item -LiteralPath (Join-Path $script:Root 'Design/CelestialMaker.ico') -Des
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ObservatoryPerformance/Create Desktop Shortcut.ps1') -Destination $release
 $build=Get-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/build-release.json') -Raw | ConvertFrom-Json
 $player=Get-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/player-headless.json') -Raw | ConvertFrom-Json
-if(!$player.pass -or $player.version -ne '2.7.0'){throw 'A passing headless release check is required'}
+if(!$player.pass -or $player.version -ne '2.8.0'){throw 'A passing headless release check is required'}
 if($build.result -ne 'Succeeded' -or $build.errors -ne 0 -or !(Test-Path -LiteralPath (Join-Path $release 'CelestialMaker.exe'))){throw 'Successful Observatory build required'}
 @'
-Celestial Maker 2.7.0 - Observatory
+Celestial Maker 2.8.0 - Observatory
 
 Extract this entire folder and run CelestialMaker.exe.
 Create Desktop Shortcut.ps1 creates a shortcut with the original Celestial icon.
@@ -16,7 +16,12 @@ The executable also contains the icon. Keep the ICO beside the executable.
 The game interface and number formatting use English.
 Your existing Celestial Maker saves are loaded from the same local profile.
 
-New in 2.7: engineering modules, goal sequences, six-hour plan comparisons,
+New in 2.8: chapter autobuyers purchased with Prestige Points, brighter UI,
+animated Overview, continuous production and progressive building/navigation
+discovery. Each chapter buyer costs 1 point, survives Prestige and resets on
+Ascension/Genesis. Older free buy flags no longer grant automation.
+
+Also included: engineering modules, goal sequences, six-hour plan comparisons,
 varied challenge rules and readiness trials, expedition discoveries, universe
 specializations, repeatable practice lessons and a cosmic chronicle. Optional
 endgame scenarios use separate local save slots. See Automation and Cosmos.
@@ -55,7 +60,8 @@ The cosmos illustration and earned appearances follow real discoveries and proje
 
 After your first Prestige, Automation > Development Plan enables a persistent
 Energy, Matter or Time strategy for six-hour visits. It manages routing, development
-points, focus, laws and construction, and repeats previously discovered resets.
+points, chapter autobuyers, focus, laws and construction, and repeats discovered
+resets. After higher resets it can repeat Prestige to fund paid buyers.
 The first Prestige, Ascension and Genesis remain your decision. Existing saves
 start with the plan OFF. Stop the plan before manually managing its settings.
 Guided routing now restores affordable basic research when no queue is pending.
@@ -92,4 +98,4 @@ $before=Get-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/saves
 $saves=@($before | ForEach-Object {[pscustomobject]@{path=$_.path;unchanged=((Get-FileHash -LiteralPath $_.path).Hash -eq $_.sha256)}})
 if(@($saves | Where-Object {!$_.unchanged}).Count){throw 'User saves changed during this task; inspect before delivery'}
 $saves | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/save-integrity.json')
-[pscustomobject]@{version='2.7.0';path=$zipPath;bytes=(Get-Item -LiteralPath $zipPath).Length;sha256=(Get-FileHash -LiteralPath $zipPath).Hash;verifiedEntries=$verified;userSavesUnchanged=$saves.Count;build=$build.result;errors=$build.errors;desktopControlled=$false;screenCaptured=$false;playerLaunched=$true;visiblePlayerLaunched=$false;graphicsEnabled=$false;headlessPlayerPassed=$player.pass;visual='OBSERVED: offscreen Unity URP UI fixtures; desktop interaction and FPS unverified';utc=[DateTime]::UtcNow.ToString('o')} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/artifact.json')
+[pscustomobject]@{version='2.8.0';path=$zipPath;bytes=(Get-Item -LiteralPath $zipPath).Length;sha256=(Get-FileHash -LiteralPath $zipPath).Hash;verifiedEntries=$verified;userSavesUnchanged=$saves.Count;build=$build.result;errors=$build.errors;desktopControlled=$false;screenCaptured=$false;playerLaunched=$true;visiblePlayerLaunched=$false;graphicsEnabled=$false;headlessPlayerPassed=$player.pass;visual='OBSERVED: offscreen Unity URP UI fixtures; desktop interaction and FPS unverified';utc=[DateTime]::UtcNow.ToString('o')} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $script:Root 'Logs/Observatory/artifact.json')

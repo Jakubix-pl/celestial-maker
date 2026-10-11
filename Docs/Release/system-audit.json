@@ -7,93 +7,93 @@
       "id": 0,
       "completed": true,
       "hours": 0.016666666666666666,
-      "review": "Silent vacuum / Completed / reached 100 of 1e2 / net 2772.77 per second. Maximum 25 units per process. Distribute production across the chain."
+      "review": "Silent vacuum / Completed / reached 100 of 1e2 / net 1.34e4 per second. Maximum 25 units per process. Distribute production across the chain."
     },
     {
       "kind": "challenge",
       "id": 1,
       "completed": true,
       "hours": 0.03333333333333333,
-      "review": "Particle drought / Completed / reached 100 of 1e2 / net 3288.38 per second. Resonance links and expeditions are unavailable. Build a self-sufficient chain."
+      "review": "Particle drought / Completed / reached 100 of 1e2 / net 1.59e4 per second. Resonance links and expeditions are unavailable. Build a self-sufficient chain."
     },
     {
       "kind": "challenge",
       "id": 2,
       "completed": true,
       "hours": 0.06666666666666667,
-      "review": "Atomic austerity / Completed / reached 1000 of 1e3 / net 6.65e7 per second. Inputs cost twice as much. Reduce consumption or increase upstream supply."
+      "review": "Atomic austerity / Completed / reached 1000 of 1e3 / net 4.19e8 per second. Inputs cost twice as much. Reduce consumption or increase upstream supply."
     },
     {
       "kind": "challenge",
       "id": 3,
       "completed": true,
       "hours": 0.06666666666666667,
-      "review": "Matter friction / Completed / reached 10000 of 1e4 / net 5.12e7 per second. Maximum 25 units per process. Distribute production across the chain."
+      "review": "Matter friction / Completed / reached 10000 of 1e4 / net 2.76e8 per second. Maximum 25 units per process. Distribute production across the chain."
     },
     {
       "kind": "challenge",
       "id": 4,
       "completed": true,
       "hours": 0.08333333333333333,
-      "review": "Lonely orbit / Completed / reached 1.00e5 of 1e5 / net 1.48e11 per second. Resonance links and expeditions are unavailable. Build a self-sufficient chain."
+      "review": "Lonely orbit / Completed / reached 10.00e4 of 1e5 / net 9.42e11 per second. Resonance links and expeditions are unavailable. Build a self-sufficient chain."
     },
     {
       "kind": "challenge",
       "id": 5,
       "completed": true,
       "hours": 0.08333333333333333,
-      "review": "Fuel scarcity / Completed / reached 1.00e6 of 1e6 / net 4.09e10 per second. Inputs cost twice as much. Reduce consumption or increase upstream supply."
+      "review": "Fuel scarcity / Completed / reached 1.00e6 of 1e6 / net 3.02e11 per second. Inputs cost twice as much. Reduce consumption or increase upstream supply."
     },
     {
       "kind": "challenge",
       "id": 6,
       "completed": true,
-      "hours": 0.1,
-      "review": "Dim stars / Completed / reached 10.00e5 of 1e6 / net 7.33e12 per second. Maximum 25 units per process. Distribute production across the chain."
+      "hours": 0.11666666666666667,
+      "review": "Dim stars / Completed / reached 1.00e6 of 1e6 / net 1.16e11 per second. Maximum 25 units per process. Distribute production across the chain."
     },
     {
       "kind": "challenge",
       "id": 7,
       "completed": true,
-      "hours": 0.16666666666666666,
-      "review": "Dust eclipse / Completed / reached 1.00e7 of 1e7 / net 8.47e12 per second. Resonance links and expeditions are unavailable. Build a self-sufficient chain."
+      "hours": 0.13333333333333333,
+      "review": "Dust eclipse / Completed / reached 1.00e7 of 1e7 / net 4.11e13 per second. Resonance links and expeditions are unavailable. Build a self-sufficient chain."
     },
     {
       "kind": "challenge",
       "id": 8,
       "completed": true,
-      "hours": 0.18333333333333332,
-      "review": "Shallow gravity / Completed / reached 2.98e10 of 1e8 / net 3.22e17 per second. Inputs cost twice as much. Reduce consumption or increase upstream supply."
+      "hours": 0.16666666666666666,
+      "review": "Shallow gravity / Completed / reached 1.60e11 of 1e8 / net 1.73e18 per second. Inputs cost twice as much. Reduce consumption or increase upstream supply."
     },
     {
       "kind": "challenge",
       "id": 9,
       "completed": true,
-      "hours": 0.18333333333333332,
-      "review": "Dark silence / Completed / reached 1.30e10 of 1e9 / net 1.40e17 per second. Maximum 25 units per process. Distribute production across the chain."
+      "hours": 0.16666666666666666,
+      "review": "Dark silence / Completed / reached 6.30e10 of 1e9 / net 6.81e17 per second. Maximum 25 units per process. Distribute production across the chain."
     },
     {
       "kind": "challenge",
       "id": 10,
       "completed": true,
-      "hours": 0.2,
-      "review": "Time dilation / Completed / reached 1.25e14 of 1e10 / net 1.35e21 per second. Resonance links and expeditions are unavailable. Build a self-sufficient chain."
+      "hours": 0.18333333333333332,
+      "review": "Time dilation / Completed / reached 3.99e14 of 1e10 / net 4.31e21 per second. Resonance links and expeditions are unavailable. Build a self-sufficient chain."
     },
     {
       "kind": "challenge",
       "id": 11,
       "completed": true,
-      "hours": 0.2,
-      "review": "Genesis restraint / Completed / reached 1.14e13 of 1e10 / net 1.23e20 per second. Inputs cost twice as much. Reduce consumption or increase upstream supply."
+      "hours": 0.18333333333333332,
+      "review": "Genesis restraint / Completed / reached 7.82e13 of 1e10 / net 8.45e20 per second. Inputs cost twice as much. Reduce consumption or increase upstream supply."
     },
     {
       "kind": "scenario",
       "scenario": 1,
       "seed": 0,
       "complete": true,
-      "hours": 0.4999999999999069,
-      "elapsedHours": 0.4999999999999069,
-      "resumes": 1,
+      "hours": 5.666666666665605,
+      "elapsedHours": 5.666666666665605,
+      "resumes": 6,
       "matter": "1.01e6"
     },
     {
@@ -101,80 +101,80 @@
       "scenario": 1,
       "seed": 1,
       "complete": true,
-      "hours": 0.9499999999998292,
-      "elapsedHours": 0.9999999999998137,
-      "resumes": 1,
-      "matter": "1.16e7"
+      "hours": 6.316666666665496,
+      "elapsedHours": 6.3333333333321455,
+      "resumes": 7,
+      "matter": "1.05e7"
     },
     {
       "kind": "scenario",
       "scenario": 1,
       "seed": 2,
       "complete": true,
-      "hours": 3.1166666666660885,
-      "elapsedHours": 3.1666666666660728,
-      "resumes": 4,
-      "matter": "1.05e8"
+      "hours": 11.849999999997763,
+      "elapsedHours": 11.916666666664414,
+      "resumes": 12,
+      "matter": "1.01e8"
     },
     {
       "kind": "scenario",
       "scenario": 2,
       "seed": 0,
       "complete": true,
-      "hours": 0.4999999999999069,
-      "elapsedHours": 0.4999999999999069,
-      "resumes": 1,
+      "hours": 4.74999999999911,
+      "elapsedHours": 4.74999999999911,
+      "resumes": 5,
+      "matter": "1.02e6"
+    },
+    {
+      "kind": "scenario",
+      "scenario": 2,
+      "seed": 1,
+      "complete": true,
+      "hours": 5.416666666665651,
+      "elapsedHours": 5.416666666665651,
+      "resumes": 6,
+      "matter": "1.03e7"
+    },
+    {
+      "kind": "scenario",
+      "scenario": 2,
+      "seed": 2,
+      "complete": true,
+      "hours": 8.749999999998359,
+      "elapsedHours": 8.749999999998359,
+      "resumes": 9,
+      "matter": "1.00e8"
+    },
+    {
+      "kind": "scenario",
+      "scenario": 3,
+      "seed": 0,
+      "complete": true,
+      "hours": 5.249999999999017,
+      "elapsedHours": 5.249999999999017,
+      "resumes": 6,
       "matter": "1.00e6"
     },
     {
       "kind": "scenario",
-      "scenario": 2,
-      "seed": 1,
-      "complete": true,
-      "hours": 0.9833333333331625,
-      "elapsedHours": 0.9999999999998137,
-      "resumes": 1,
-      "matter": "1.06e7"
-    },
-    {
-      "kind": "scenario",
-      "scenario": 2,
-      "seed": 2,
-      "complete": true,
-      "hours": 2.399999999999563,
-      "elapsedHours": 2.416666666666214,
-      "resumes": 3,
-      "matter": "1.06e8"
-    },
-    {
-      "kind": "scenario",
-      "scenario": 3,
-      "seed": 0,
-      "complete": true,
-      "hours": 1.9333333333329765,
-      "elapsedHours": 1.9999999999996279,
-      "resumes": 2,
-      "matter": "2.19e6"
-    },
-    {
-      "kind": "scenario",
       "scenario": 3,
       "seed": 1,
       "complete": true,
-      "hours": 4.933333333332419,
-      "elapsedHours": 4.999999999999069,
-      "resumes": 5,
-      "matter": "1.21e7"
+      "hours": 7.749999999998547,
+      "elapsedHours": 7.749999999998547,
+      "resumes": 8,
+      "matter": "1.01e7"
     },
     {
       "kind": "scenario",
       "scenario": 3,
       "seed": 2,
       "complete": true,
-      "hours": 17.266666666663458,
-      "elapsedHours": 17.33333333333011,
-      "resumes": 18,
-      "matter": "1.03e8"
+      "hours": 22.666666666662326,
+      "elapsedHours": 22.666666666662326,
+      "resumes": 23,
+      "matter": "1.00e8"
     }
   ]
 }

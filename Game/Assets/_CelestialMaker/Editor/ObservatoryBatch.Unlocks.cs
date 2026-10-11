@@ -10,6 +10,16 @@ namespace CelestialMaker.EditorTools {
   static bool VisibleCurrency(string currency)=>ui.GetComponentsInChildren<TMP_Text>().Any(t=>t.text.IndexOf(currency,StringComparison.OrdinalIgnoreCase)>=0);
   static void ReadyPrestige(){session.Sim.S.lifetime[0]=BigDouble.Pow10(ProgressionBalance.PrestigeEnergyLog);Call("RefreshPc");Settle();}
   static void UnlockChecks(){
+   Check("Prestige paid buyers and progressive navigation",()=>{
+    Fixture(false,1,false,1920,1080);var tabs=Get<System.Collections.Generic.Dictionary<string,UnityEngine.UI.Button>>("pcTabs");Require(tabs.Keys.SequenceEqual(new[]{"Overview","Production"}),"Locked category visible");
+    Require(!Button("Buy process 1"),"Distant building visible");var sim=session.Sim;sim.S.resources[0]=sim.Cost(1)-sim.Rate(0)*30;Call("ShowPc");Settle();Require(Button("Buy process 1"),"30 second building missing");
+    sim.S.lifetime[0]=BigDouble.Pow10(ProgressionBalance.PrestigeEnergyLog);Require(sim.Rebirth(0),"Reset not ready");Call("BuildPc");Require(Get<System.Collections.Generic.Dictionary<string,UnityEngine.UI.Button>>("pcTabs").ContainsKey("Automation"),"Automation not discovered");
+    Set("page","Production");Call("ShowPc");Settle();Require(ui.GetComponentsInChildren<UnityEngine.UI.Button>().Count(b=>b.name.StartsWith("Buy process "))==24,"Reset did not reveal every building");Require(!Button("Buy process 23").interactable,"Discovery bypassed chapter gate");
+    Call("ProcessDetailsPc",0);Require(!Button("Pause process")&&!Button("Resume process"),"Production toggle remains");Call("ClosePcModal");Set("page","Automation");Call("ShowPc");Settle();Click("Unlock autobuyer 0");Require(sim.S.autobuyers[0]&&sim.S.prestige[0].Value==0&&!Button("Unlock autobuyer 1").interactable,"Paid unlock callback differs from Core");
+   });
+   Check("Overview geometry moves and reduced motion freezes it",()=>{
+    Fixture(true,1,false,1920,1080);Set("page","Overview");Call("ShowPc");Settle();var art=ui.GetComponentInChildren<ObservatoryCosmos>();Require(art,"Missing living artwork");float phase=art.Phase;art.AdvanceMotion(1,false);Require(art.Phase!=phase,"Static artwork");phase=art.Phase;art.AdvanceMotion(1,true);Require(art.Phase==phase,"Reduced motion ignored");
+   });
    Check("Fresh UI hides unknown balances and currencies without leaving meter gaps",()=>{
     foreach(bool light in new[]{false,true}){
      Fixture(false,1,light,1920,1080);

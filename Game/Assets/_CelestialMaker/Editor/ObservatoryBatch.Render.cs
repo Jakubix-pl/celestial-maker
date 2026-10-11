@@ -43,9 +43,13 @@ namespace CelestialMaker.EditorTools {
    File.WriteAllText(Path.Combine(renderDir,"render-manifest.json"),JsonUtility.ToJson(new RenderEvidence{files=rendered.ToArray(),utc=DateTime.UtcNow.ToString("o"),device=SystemInfo.graphicsDeviceName,pipeline=renderedPipeline},true));
   }
   static void RenderPublication(){
+   Fixture(false,1,false,1920,1080);Set("page","Production");Call("ShowPc");Shot("prestige-fresh-production");
+   session.Sim.S.resources[0]=session.Sim.Cost(1)-session.Sim.Rate(0)*30;Call("ShowPc");Shot("prestige-30second-discovery");
+   session.Sim.S.lifetime[0]=BreakInfinity.BigDouble.Pow10(ProgressionBalance.PrestigeEnergyLog);session.Sim.Rebirth(0);Call("BuildPc");Set("page","Production");Call("ShowPc");Shot("prestige-revealed-production");
+   Set("page","Automation");Call("ShowPc");Shot("prestige-autobuyer-purchase");
    Fixture(false,1,false,1920,1080);ui.menu=true;Call("BuildPc");Shot("publication-menu");
    Fixture(true,1,false,1920,1080);
-   foreach(string page in new[]{"Overview","Production","Research","Automation","Megastructures","Parallel universes","Challenges"}){Set("page",page);Call("ShowPc");Shot("publication-"+page.Replace(' ','-').ToLowerInvariant());}
+   foreach(string page in new[]{"Overview","Production","Research","Automation","Megastructures","Parallel universes","Challenges"}){Set("page",page);Call("ShowPc");Shot("publication-"+page.Replace(' ','-').ToLowerInvariant());if(page=="Overview"){var art=ui.GetComponentInChildren<ObservatoryCosmos>();for(int step=0;step<20;step++){art.AdvanceMotion(.5f,false);Shot("prestige-motion-"+step.ToString("00"));}}}
    Call("ModulesPc",2);Shot("publication-engineering");Call("ClosePcModal");
    Set("page","Automation");Call("ShowPc");Call("GoalSequencePc");Shot("publication-goals");Call("ClosePcModal");
    Call("ChroniclePc");Shot("publication-chronicle");Call("ClosePcModal");

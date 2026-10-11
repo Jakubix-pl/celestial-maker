@@ -1,0 +1,86 @@
+# Prestige automation and progressive discovery — 2.8.0
+
+Windows 2.8.0, English only. This report covers the Prestige automation and
+Observatory changes; earlier reports describe historical builds. Android
+APK work is deferred following the user's change of scope; no SDK terms were
+accepted and no APK is claimed.
+
+## Implemented
+
+- Six chapter autobuyers, each costing **1 Prestige Point**, cover four processes
+  and share their purchased unlock with parallel universes. Ownership is stored
+  outside automation profiles. A profile or old enabled flag cannot grant an unlock.
+- Buyers survive Prestige and reset on Ascension/Genesis. The optional Development
+  Plan funds buyers before production upgrades and can repeat discovered Prestige
+  to restore automation after a higher reset. Explicit goal reset holds take priority.
+- No process pause/start controls or paused production in the engine. Old pause
+  flags are cleared when loading. Input shortages and protected reserves still
+  constrain consumers; resources are never created without their required inputs.
+- Guided purchases bank 20% of incoming target-resource supply while consumers
+  continue receiving the rest. Other input allocation keeps its nonnegative
+  remainder to prevent rounding dust from stalling offline replay.
+- Before the first reset, a building is revealed when its chapter requirement and
+  unreserved purchase stock are reachable within 30 seconds at current rates.
+  This is a forecast at unchanged rates, not a reservation against future spending.
+  Discovery is persistent and does not flicker after purchases. The first reset
+  reveals every building permanently; actual chapter purchase gates still apply.
+- Locked navigation sections and their views are omitted from the left rail,
+  compact drawer and search. Production/Overview and Settings remain available.
+- Brighter panel/text contrast, stronger tab tints, retained resource/category
+  symbols, and animated orbiting bodies and megastructure arcs in Overview.
+  Reduced Motion freezes the animation. Its geometry uses its own canvas.
+- Later resets start with six dynamos once Ascension has been discovered (eight
+  with Cosmic seed); first Prestige still starts with one. Base project work is
+  six hours, retaining the existing exponential stage curve.
+
+## Verification
+
+- IMPLEMENTED: all behavior above, including legacy pause migration without
+  spending points or granting free autobuyers.
+- COMPILED / TESTED: shared Core 276/276; extended systems 63/63; Unity Core
+  20/20; desktop UI 1481/1481; phone layout 432/432. The Core and system suites
+  also run from a clean source copy, without user backups or Unity Library.
+- BUILT: Unity 6000.6.3f1 Windows x64 Release, zero errors; portable ZIP and
+  unsigned per-user installer. The packaged EXE passes 99 checks, the installed
+  EXE passes the same 99 checks, and installer verification passes 32 checks.
+- OBSERVED: actual private URP UI renders, animation phases and reduced-motion
+  behavior; literal offline campaign replay; installation, upgrade and removal.
+  No desktop capture/control or visible game/editor was used.
+
+The animation runtime check follows the current graphic across unlock-driven
+view rebuilds. The search check targets the palette's input and waits for its
+real debounce. Earlier failures of those checks remain in local logs; the final
+player and installed-player checks passed after correcting the test harness.
+
+## Campaign measurement
+
+The real 60 Hz engine replayed every offline tick with six-hour visits and
+serialized reloads. Scripts purchase paid packages with earned Prestige Points,
+enable the optional Development Plan, choose modules/roles and manually approve
+the first reset of each type. No resources are injected into campaign runs.
+
+| Strategy | First Prestige | First Ascension | First Genesis | Campaign complete |
+| --- | --- | --- | --- | --- |
+| Energy | 18 h | 30 h | 96 h | 430.878 h |
+| Matter | 18 h | 30 h | 108 h | 450.753 h |
+| Time | 18 h | 30 h | 114 h | 438.012 h |
+
+The roughly 400-hour goal is a target, not an exact guarantee. Matter currently
+exceeds the earlier 360–440 h acceptance band. Removing free early automation
+also makes the first reset slower for a player checking only every six hours.
+These are measured scripted policies, not human playtests. Raw results are in
+`Docs/Release/pacing.json` and `Logs/Pacing400/prestige-fixed-*.json`.
+
+## Limits
+
+The performance report retains the offscreen workload measurements, including
+spikes above 16.67 ms, and does not claim verified desktop FPS. See
+`Docs/Release/VALIDATION.md` for current measurements. Human input, physical
+display FPS, Windows DPI, clean-machine installation and Android remain unverified.
+
+Existing saves are not used as test input or rewritten. Simulations use synthetic
+states and explicitly isolated save paths. The new `routing-dust.json` fixture is
+generated by the campaign simulator, not copied from a player's save.
+
+Packaging compares 19 protected local files with the build baseline; all match.
+Installer checks compare 18 of them, excluding the framework's test XML file.

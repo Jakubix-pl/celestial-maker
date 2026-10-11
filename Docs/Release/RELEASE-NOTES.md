@@ -1,36 +1,34 @@
-# Celestial Maker 2.7.0 — Discovery
+# Celestial Maker 2.8.0 — Prestige Automation
 
-Build a connected cosmos at your own pace. This English-language Windows release includes the Observatory interface and the full Discovery expansion.
+Unlock automation with earned Prestige Points and follow a clearer, animated Observatory. Windows x64, English only.
 
-## Download
+## Changes
 
-- **CelestialMaker-Setup-2.7.0.exe**: recommended per-user installer, with an optional desktop shortcut and game icon.
-- **CelestialMaker-Observatory-Windows.zip**: portable game; extract every file together and launch `CelestialMaker.exe`.
-- **CelestialMaker-2.7.0-SHA256.txt**: checksums for both downloads.
+- Six chapter autobuyers cost **1 Prestige Point each**, covering four processes per chapter in every universe. They survive Prestige; Ascension and Genesis clear them. The optional Development Plan earns and spends points to restore them.
+- Production runs continuously. Stop/start controls are removed, and old paused processes resume on load. Missing inputs and protected reserves still limit output.
+- New buildings appear when chapter requirements and purchase resources are forecast to be reachable within 30 seconds. Discovery persists after spending. The first reset reveals every building; normal purchase requirements remain.
+- Locked categories and views stay hidden until unlocked. Stronger text/panel contrast and category tints make the interface easier to scan.
+- Overview has moving orbital bodies and megastructure arcs. Reduced Motion freezes the animation.
+- Fixed an offline replay stall caused by floating-point dust in input allocation.
 
-No account, shop or payment is required. Installation does not launch the game automatically. The installer is unsigned. Supported existing saves are migrated; uninstalling preserves player saves.
+## Existing saves
 
-## Included
+No new campaign is required. Saves retain their progress and points. Old free autobuyer flags do not grant purchased packages: unlock packages in Automation, or let an enabled Development Plan buy them with your points. Paid packages remain separate from saved automation profiles.
 
-- Prestige, Ascension and Genesis, development trees, three staged megastructures, nine reality laws and parallel economies.
-- Engineering module tradeoffs, ordered automation goals and reset holds.
-- Six-hour plan comparisons on isolated copies, executed by a background worker.
-- Twelve challenges with varied constraints, readiness trials and attempt reviews.
-- Permanent expedition route discoveries and cooperating universe specializations.
-- Optional safe lessons, a decision chronicle, campaign finale and separate scenario profiles.
-- Colored category/resource icons, compact expandable screens, Night/Dawn themes, adjustable text, search, favorites and reduced motion.
-- Uncapped, resumable offline replay through every 60 Hz tick, including active automation.
+## Downloads
 
-## Fixes and balance
+- **CelestialMaker-Setup-2.8.0.exe** — per-user installer with an optional desktop shortcut and game icon. It does not launch the game automatically.
+- **CelestialMaker-Observatory-Windows.zip** — extract the complete folder.
+- **CelestialMaker-2.8.0-SHA256.txt** — checksums for both downloads.
 
-Fixed numerical tick stalls at resource depletion, protected-stock accounting, blocking laboratory comparisons and the Overview's progress layout. Added precise transfer timing and stock-goal explanations.
+The installer is unsigned. No account, shop or payment is required. Uninstalling preserves saves.
 
-Three scripted campaigns visiting every six hours completed in 415.625 h (Energy), 371.800 h (Matter) and 407.083 h (Time), measured with the real tick logic and serialized reloads. The target is around 400 hours of elapsed progression, including background/offline time. Individual play varies.
+## Verification and pacing
 
-## Verification
+Core **276/276**, extended system audit **63/63**, desktop UI **1481/1481**, Unity Core **20/20**, phone layout **432/432**. Windows Release built with zero errors. The packaged and installed EXE each passed **99 checks**; installer, upgrade, uninstall and preservation checks passed **32/32**.
 
-Windows x64 Release built with zero errors. The actual release player and installed player each passed 94 checks; silent installer/upgrade/uninstall verification passed 26 checks. The portable Core suite has 250 checks and the extended system audit has 63. Unity UI, Core and framework checks are documented in the linked report.
+Literal offline tick campaigns visiting every six hours completed in **430.878 h (Energy), 450.753 h (Matter), and 438.012 h (Time)**. The roughly 400-hour target is not an exact guarantee; Matter exceeds the earlier 360–440 h acceptance band.
 
-The offscreen late-game benchmark covered 22 cases and 5,280 measured frames with zero samples above 16.67 ms on the tested RTX 4070 Ti / Ryzen 7 9800X3D. This does not certify physical desktop FPS. Human playtesting, Windows DPI behavior, clean-machine installation and other hardware remain unverified. No desktop was controlled or captured, and no visible game window was used for validation.
+Private UI renders and offscreen workloads were measured. Performance spikes are retained in the report; physical desktop FPS, human playtesting and a clean machine remain unverified. No desktop control/capture or visible game was used. Android APK work is deferred and no APK is included.
 
-See [the game and screenshots](https://github.com/Jakubix-pl/celestial-maker), [validation](https://github.com/Jakubix-pl/celestial-maker/blob/main/Docs/Release/VALIDATION.md) and [building instructions](https://github.com/Jakubix-pl/celestial-maker/blob/main/Docs/BUILDING.md).
+See [screenshots](https://github.com/Jakubix-pl/celestial-maker), [validation](https://github.com/Jakubix-pl/celestial-maker/blob/main/Docs/Release/VALIDATION.md) and the [implementation report](https://github.com/Jakubix-pl/celestial-maker/blob/main/Docs/PrestigeAutomation/REPORT.md).

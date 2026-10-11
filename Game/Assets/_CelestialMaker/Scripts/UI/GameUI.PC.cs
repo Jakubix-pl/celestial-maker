@@ -150,8 +150,9 @@ namespace CelestialMaker {
    PresentPc();
    if(Time.unscaledTime<pcTick)return;pcTick=Time.unscaledTime+.25f;var gs=GameSession.Instance;if(gs==null)return;
    if(status){status.text=gs.SaveBusy?"Saving...":gs.SaveFailed?"Save failed / open Settings to retry":gs.LastSavedUtc>0?"Saved locally / "+DateTimeOffset.FromUnixTimeSeconds((long)gs.LastSavedUtc).ToLocalTime().ToString("HH:mm:ss",System.Globalization.CultureInfo.InvariantCulture):"Local save ready";if(S!=null&&S.offlineRemaining>0){var r=S.offlineReport;status.text="Catching up "+(r==null?"":(100*r.processedSeconds/Math.Max(1,r.requestedSeconds)).ToString("0.0")+"% / "+r.fixedTicks.ToString("N0")+" ticks / ")+OfflineReport.Duration(S.offlineRemaining)+" remaining";}}
-   if(menu)return;if(S==null)return;int unlockStamp=(Sim.HasLayer(1)?1:0)+(Sim.UniverseCapacity>1?2:0);if(pcExpansionStamp!=unlockStamp&&!pcModal){pcExpansionStamp=unlockStamp;BuildPc();return;}
+   if(menu)return;if(S==null)return;int unlockStamp=NavigationStampPc();if(pcExpansionStamp!=unlockStamp&&!pcModal){pcExpansionStamp=unlockStamp;BuildPc();return;}
    if(S.offlineReport!=null&&!S.offlineReport.active&&!S.offlineReport.dismissed&&S.offlineReport.processedSeconds>=60&&S.offlineReport.id!=lastOfflineShown&&!pcModal){lastOfflineShown=S.offlineReport.id;ShowOfflinePc();}
+   int discovery=EconomyPc.DiscoverProcesses();if(discovery!=pcDiscoveryMask&&!pcModal){pcDiscoveryMask=discovery;if(page=="Production")ShowPc();}
    int stage=HighestStage();if(pcStage!=stage&&!pcModal){pcStage=stage;if(page!="Settings")ShowPc();}
    if(pcAchievements>=0&&S.achievements.Count>pcAchievements){ToastPc("Discovery unlocked / "+S.achievements.Count+" of 48");if(page=="Achievements")ShowPc();}pcAchievements=S.achievements.Count;
    CheckPinnedGoalPc();RefreshPc();

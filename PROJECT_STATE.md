@@ -4,13 +4,29 @@ Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
 Public Windows v2.7.0 is published and its local delivery is verified.
 
+## Prestige automation and discovery — 2.8.0
+
+IMPLEMENTED: six 1-PP chapter buyers, continuous production, 30-second building
+discovery, first-reset reveal, gated navigation, brighter colors and animated Overview.
+COMPILED: Core 276/276 and systems 63/63 also pass in a clean source copy;
+Unity Core 20/20, desktop UI 1481/1481, phone layout 432/432.
+BUILT: Windows x64 Release, zero errors; packaged and installed EXE 99/99;
+installer/upgrade/uninstall 32/32. Package 193 matching files, 19 protected files unchanged.
+OBSERVED: private UI renders and motion phases; literal tick campaigns at
+430.878 / 450.753 / 438.012 h for six-hour Energy / Matter / Time policies.
+Matter exceeds the old 360–440 h acceptance band. Physical FPS and human play
+remain unverified. Offscreen benchmark spikes are recorded, not hidden.
+Report: Docs/PrestigeAutomation/REPORT.md and Docs/Release/VALIDATION.md.
+Android APK work is deferred following the user's change of scope; no SDK acceptance.
+Publication/delivery of 2.8.0 is prepared; verify final release record before claiming it live.
+
 ## Android phone preparation - 2026-10-11
 
 Branch: codex/android-s26. Full Observatory adapted for Android, portrait and
 landscape touch controls, safe-area scaling, resource overview and ARM64/API 37
 sideload profile. Phone geometry/callback checks 432/432; desktop regression
 1479/1479. Editor compilation and private render fixtures OBSERVED.
-APK NOT BUILT: missing SDK/NDK; explicit Google SDK terms acceptance is pending.
+APK NOT BUILT: missing SDK/NDK. Work was deferred by the later request; no SDK terms accepted.
 No phone runtime, touch, 16 KB native binary or physical FPS pass is claimed.
 Continuation: Docs/Android/STATUS.md. Windows release remains available below.
 

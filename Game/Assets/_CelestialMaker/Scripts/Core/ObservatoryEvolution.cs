@@ -88,11 +88,12 @@ namespace CelestialMaker.Core {
     return new RuleStatus(!S.researchPlan.automatic?"OFF":!HasA("a_time_2")?"LOCKED":next==null?"WAITING":CanResearch(next)&&ResearchAvailable(next.costResource)>=BigDouble.Parse(next.cost)?"READY":"BLOCKED",(!HasA("a_time_2")?"Temporal workshop required. ":tick)+ResearchBlock());
    }
    if(key=="buy"){
+    if(!AnyAutobuyer)return new RuleStatus("LOCKED","Buy a chapter autobuyer for 1 Prestige Point in Automation. Production continues without it.");
     if(!S.automation.buy)return new RuleStatus("OFF","Manual purchases remain available.");
-    int missing=Array.FindIndex(Data.generators,g=>Open(g)&&S.owned[Array.IndexOf(Data.generators,g)]==0);
-    if(Meta.guidedAutomation&&missing>=0){var g=Data.generators[missing];var need=BigDouble.Max(0,Cost(missing)-ResearchAvailable(g.costResource));return new RuleStatus(need>0?"SAVING":"READY",tick+g.name+" needs "+new Number(need)+" more unreserved "+Data.resources[g.costResource]+". Routing may pause its consumers.");}
-    int next=Array.Find(S.automation.priority,i=>Open(Data.generators[i])&&MaxBuy(i)>0);
-    bool ready=Open(Data.generators[next])&&MaxBuy(next)>0;return new RuleStatus(ready?"READY":"WAITING",tick+(ready?"Buy "+Data.generators[next].name+" in saved priority order.":"No process is affordable above reserves and construction funding."));
+    int missing=Array.FindIndex(Data.generators,g=>Open(g)&&AutobuyerUnlocked(Array.IndexOf(Data.generators,g))&&S.owned[Array.IndexOf(Data.generators,g)]==0);
+    if(Meta.guidedAutomation&&missing>=0){var g=Data.generators[missing];var need=BigDouble.Max(0,Cost(missing)-ResearchAvailable(g.costResource));return new RuleStatus(need>0?"SAVING":"READY",tick+g.name+" needs "+new Number(need)+" more unreserved "+Data.resources[g.costResource]+". Routing banks 20% of incoming supply; consumers keep running.");}
+    int next=Array.Find(S.automation.priority,i=>AutobuyerUnlocked(i)&&Open(Data.generators[i])&&MaxBuy(i)>0);
+    bool ready=AutobuyerUnlocked(next)&&Open(Data.generators[next])&&MaxBuy(next)>0;return new RuleStatus(ready?"READY":"WAITING",tick+(ready?"Buy "+Data.generators[next].name+" in saved priority order.":"No process is affordable above reserves and construction funding."));
    }
    if(key=="build"){
     if(!Meta.autoBuild)return new RuleStatus("OFF","Manual construction remains available.");if(!HasLayer(1))return new RuleStatus("LOCKED","Complete Ascension.");int p=PlannedMega();if(p<0)return new RuleStatus("WAITING","Projects are building or reached the planner target.");
@@ -100,21 +101,18 @@ namespace CelestialMaker.Core {
    }
    if(key=="all-research")return new RuleStatus(!Meta.autoResearch?"OFF":!HasA("a_time_2")?"LOCKED":"ARMED",!HasA("a_time_2")?"Temporal workshop required.":tick+"Affordable research after queued work; reserves remain protected.");
    if(key=="expeditions")return new RuleStatus(!S.automation.expeditions?"OFF":!HasLayer(1)?"LOCKED":"ARMED",!HasLayer(1)?"Complete Ascension.":tick+"Claim completed voyages; relaunch funded voyages above reserves.");
-   return new RuleStatus(Meta.guidedAutomation&&S.automation.buy?"ARMED":"OFF", "Routing saves for the next process or upgrade and owns pauses. After Prestige it also restores affordable research, unless an explicit research queue takes priority.");
+   return new RuleStatus(Meta.guidedAutomation&&S.automation.buy?"ARMED":"OFF", "Routing saves for a purchased autobuyer's next process or upgrade by banking 20% of incoming supply. Production stays active. After Prestige it also restores affordable research, unless an explicit research queue takes priority.");
   }
   public ObservatoryAdvice[] Diagnose(){
    RefreshRates();var result=new List<ObservatoryAdvice>();
    if(S.researchPlan.automatic&&S.researchPlan.queue.Count>0)result.Add(new ObservatoryAdvice{title="Research plan",detail=ExplainRule("research").ToString(),route="Research"});
-   foreach(int i in Enumerable.Range(0,24).Where(i=>S.owned[i]>0&&Open(Data.generators[i]))){var g=Data.generators[i];
-    if(S.paused[i]){result.Add(new ObservatoryAdvice{title=g.name+" is paused",detail=S.automation.buy&&Meta.guidedAutomation?"Guided routing is saving for the next purchase. Review its target before changing pauses.":"Resume this process to restore output.",route=S.automation.buy&&Meta.guidedAutomation?"Automation":"Production",process=i});break;}
-   }
-   foreach(int i in Enumerable.Range(0,24).Where(i=>S.owned[i]>0&&!S.paused[i]&&Open(Data.generators[i]))){var g=Data.generators[i];if(g.input<0||flows[i]>=installedMultipliers[i]*g.rate*S.owned[i]*.999)continue;
+   foreach(int i in Enumerable.Range(0,24).Where(i=>S.owned[i]>0&&Open(Data.generators[i]))){var g=Data.generators[i];if(g.input<0||flows[i]>=installedMultipliers[i]*g.rate*S.owned[i]*.999)continue;
     int r=g.input;var protectedStock=EffectiveReserve(r);string cause=protectedStock>0&&S.resources[r].Value<=protectedStock?"Protected "+new Number(protectedStock)+" "+Data.resources[r]+" limits available input. Review reserves and construction funding.":"Demand for "+Data.resources[r]+" exceeds supply. Inspect producers and competing consumers.";
     result.Add(new ObservatoryAdvice{title=g.name+" is input limited",detail=cause,route="Analytics",resource=r,process=i});break;
    }
    if(!S.automation.buy)result.Add(new ObservatoryAdvice{title="Automatic purchases are off",detail="The economy produces resources, but installed capacity will not grow by itself.",route="Automation"});
    var ready=Data.research.FirstOrDefault(u=>CanResearch(u));if(ready!=null)result.Add(new ObservatoryAdvice{title="Research ready: "+ready.name,detail="An available upgrade can strengthen production. Compare its effect before buying.",route="Research"});
-   if(result.Count==0)result.Add(new ObservatoryAdvice{title="Production is running",detail="Review your next chapter or compare another strategy. Current checks found no paused or input-limited owned process.",route="Roadmap"});
+   if(result.Count==0)result.Add(new ObservatoryAdvice{title="Production is running",detail="Review your next chapter or compare another strategy. Current checks found no input-limited owned process.",route="Roadmap"});
    return result.Take(3).ToArray();
   }
  }

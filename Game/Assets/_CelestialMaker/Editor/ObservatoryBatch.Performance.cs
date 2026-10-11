@@ -15,7 +15,7 @@ using CelestialMaker.Core;
 namespace CelestialMaker.EditorTools {
  public static partial class ObservatoryBatch {
   [Serializable] class FrameSample {public string page,mode;public int width,height,frames,texts,universes,ownedTypes;public double meanMs,p50Ms,p95Ms,p99Ms,maxMs,simulationMeanMs,uiMeanMs,renderMeanMs,uiP95Ms,simulationP95Ms,simulationMaxMs,allocatedBytesPerFrame=-1;public int overBudget;}
-  [Serializable] class PerformanceEvidence {public string version=GameUI.ObservatoryVersion,utc,device,cpu,method="Isolated late-game edit-mode fixture: actual Core 60 Hz, actual uGUI, URP camera to private RenderTexture, synchronous 1-pixel GPU readback. Includes readback overhead; not desktop/player FPS.";public string fixture="Tools/Expansion/Fixtures/late-campaign.json";public bool desktopControlled=false,visibleWindow=false;public int warmup=45;public FrameSample[] results;}
+  [Serializable] class PerformanceEvidence {public string version=GameUI.ObservatoryVersion,utc,device,cpu,method="Isolated late-game edit-mode fixture with six purchased autobuyers: actual Core 60 Hz, animated Overview, actual uGUI, URP camera to private RenderTexture, synchronous 1-pixel GPU readback. Includes readback overhead; not desktop/player FPS.";public string fixture="Tools/Expansion/Fixtures/late-campaign.json";public bool desktopControlled=false,visibleWindow=false;public int warmup=45;public FrameSample[] results;}
   public static void Benchmark(){
    if(!Application.isBatchMode||SystemInfo.graphicsDeviceType==GraphicsDeviceType.Null)throw new Exception("Offscreen GPU batch required");
    bool after=Environment.GetCommandLineArgs().Contains("-cmAfter");string dir=Path.Combine(ProjectBootstrap.Root,"Logs/ObservatoryPerformance");Directory.CreateDirectory(dir);
@@ -28,7 +28,7 @@ namespace CelestialMaker.EditorTools {
     cam=new GameObject("Offscreen performance camera",typeof(Camera));var camera=cam.GetComponent<Camera>();camera.enabled=false;camera.orthographic=true;camera.transform.position=new Vector3(0,0,-100);camera.nearClipPlane=.1f;camera.farClipPlane=200;camera.cullingMask=1<<31;camera.allowHDR=false;camera.allowMSAA=false;camera.GetUniversalAdditionalCameraData().renderPostProcessing=false;hud.GetComponent<Canvas>().worldCamera=camera;
     foreach(string mode in after?new[]{"optimized-60hz"}:new[]{"baseline-4hz","naive-60hz"})foreach(string page in new[]{"Production","Analytics","Automation","Parallel universes","Trees","Research","Production-QHD","Production-4K","Overview","Prestige","Megastructures","Satellite","Automation burst","Research-expanded","Research-goal","Search","Goal sequence","Laboratory","Chronicle","Engineering","Signals","Overview-large-text"}){
      int width=page.EndsWith("4K")?3840:page.EndsWith("QHD")?2560:1920,height=width*9/16;
-     Fixture(true,page=="Overview-large-text"?2:1,false,width,height);session.Sim.S.automation.buy=true;session.Sim.S.automation.expeditions=true;session.Sim.Meta.autoResearch=true;session.Sim.Meta.autoBuild=true;
+     Fixture(true,page=="Overview-large-text"?2:1,false,width,height);session.Sim.S.autobuyers=Enumerable.Repeat(true,6).ToArray();session.Sim.S.automation.buy=true;session.Sim.S.automation.expeditions=true;session.Sim.Meta.autoResearch=true;session.Sim.Meta.autoBuild=true;
      if(page=="Satellite")Set("pcWorld",1);Set("page",page=="Satellite"?"Production":page=="Automation burst"?"Automation":page.Split('-')[0]);Call("ShowPc");if(page=="Research-expanded"){Set("pcExpandedResearch",GameSession.Content.research[0].id);Call("ShowPc");}if(page=="Research-goal"){session.CurrentSettings.observatory.goal=GameSession.Content.research[0].id;Call("ShowPc");}if(page=="Search")Call("SearchPalettePc",false);
      if(page=="Goal sequence")Call("GoalSequencePc");
      if(page=="Laboratory"){PopulateDiscoveryLab();Call("PlanLaboratoryPc");}
@@ -36,6 +36,7 @@ namespace CelestialMaker.EditorTools {
      if(page=="Engineering")Call("ModulesPc",2);
      if(page=="Signals"){session.Sim.Discover.signals=Enumerable.Repeat(true,8).ToArray();Set("page","Expeditions");Call("ShowPc");Click("Signals and route discoveries");}
      Settle();foreach(var t in hud.GetComponentsInChildren<Transform>())t.gameObject.layer=31;
+     var animated=ui.GetComponentsInChildren<ObservatoryCosmos>();
      var refresh=(Action)Delegate.CreateDelegate(typeof(Action),ui,typeof(GameUI).GetMethod("RefreshPc",Private));var presentMethod=typeof(GameUI).GetMethod("PresentPc",Private);Action present=presentMethod==null?null:(Action)Delegate.CreateDelegate(typeof(Action),ui,presentMethod);
      camera.orthographicSize=height/2f;camera.aspect=(float)width/height;camera.backgroundColor=CosmicStyle.Background;var target=new RenderTexture(width,height,24,RenderTextureFormat.ARGB32);target.Create();camera.targetTexture=target;var pixel=new Texture2D(1,1,TextureFormat.RGB24,false);var old=RenderTexture.active;
      var frameTimes=new List<double>();var uiTimes=new List<double>();var simTimes=new List<double>();double simTotal=0,uiTotal=0,renderTotal=0;
@@ -44,6 +45,7 @@ namespace CelestialMaker.EditorTools {
       // including both parallel economies. The normal campaign interval is unchanged.
       if(page=="Automation burst"&&f%60==0){session.Sim.Meta.nextAutomation=session.Sim.S.time;foreach(var u in session.Sim.Meta.universes){u.nextAutomation=session.Sim.S.time;session.Sim.Universe(u.id).Meta.nextAutomation=session.Sim.S.time;}}
       long start=Stopwatch.GetTimestamp();FixedStepClock.Advance(session.Sim,1d/60);long simEnd=Stopwatch.GetTimestamp();
+      foreach(var art in animated)art.AdvanceMotion(1f/60,session.CurrentSettings.reducedMotion);
       if(mode=="naive-60hz"||f%15==0)refresh();if(mode=="optimized-60hz")present?.Invoke();Canvas.ForceUpdateCanvases();long uiEnd=Stopwatch.GetTimestamp();
       camera.Render();RenderTexture.active=target;pixel.ReadPixels(new Rect(0,0,1,1),0,0,false);long end=Stopwatch.GetTimestamp();
       if(f>=0){frameTimes.Add(Millis(end-start));simTimes.Add(Millis(simEnd-start));uiTimes.Add(Millis(uiEnd-simEnd));simTotal+=Millis(simEnd-start);uiTotal+=Millis(uiEnd-simEnd);renderTotal+=Millis(end-uiEnd);}

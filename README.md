@@ -8,7 +8,7 @@ A patient cosmos. An unfolding experiment. Build production chains, automate you
 
 **Windows x64 · English · Single player · Free to play · No account required**
 
-[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.7.0/CelestialMaker-Setup-2.7.0.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.7.0/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md)
+[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.0/CelestialMaker-Setup-2.8.0.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.0/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md)
 
 ![Celestial Maker title screen and orbital artwork](Docs/images/menu.png)
 
@@ -36,13 +36,15 @@ There is no shop, checkout or paid production boost. Cosmetics are earned in the
 
 ## The Observatory
 
-An interface built around readable numbers and clear decisions: category colors and icons, compact expandable rows, contextual explanations, search, favorites, adjustable text, two themes and reduced motion. Advanced currencies appear as you unlock them.
+An interface built around readable numbers and clear decisions: category colors and icons, compact expandable rows, contextual explanations, search, favorites, adjustable text, two themes and reduced motion. Advanced currencies and locked navigation appear as you unlock them. Buildings emerge when their requirements are within a 30-second forecast; the first reset reveals every building. Overview has animated orbital bodies and megastructure arcs, with Reduced Motion available.
 
 ![The Observatory overview, with colored resources and navigation](Docs/images/overview.png)
 
 **Plan the next visit.** Keep a simple Energy, Matter or Time development plan, or use more specific goals and reserves.
 
-![Automation and six-hour development plans](Docs/images/automation.png)
+![Prestige-funded chapter autobuyers](Docs/images/autobuyer-purchase.png)
+
+Each chapter autobuyer costs **1 Prestige Point** and covers four processes. Unlocks survive Prestige; Ascension and Genesis clear them. Production runs continuously, subject to inputs and reserves. Old saves keep their progress but must purchase the new buyer unlocks.
 
 **Make engineering tradeoffs.** Tune megastructures for production or transport and see each choice's cost.
 
@@ -59,29 +61,29 @@ An interface built around readable numbers and clear decisions: category colors 
 
 </details>
 
-These images show the actual 2.7.0 Unity interface, rendered offscreen from a fresh game and a simulated late-campaign state. They are not concept mockups or desktop captures. Late-game screens contain progression spoilers. [Capture method and manifest](Docs/Release/screenshots.json).
+These images show the actual 2.8.0 Unity interface, rendered offscreen from a fresh game and a simulated late-campaign state. The late-game fixture retains its historical completion time, which is not the current pacing measurement. These are not concept mockups or desktop captures. Late-game screens contain progression spoilers. [Capture method and manifest](Docs/Release/screenshots.json).
 
 ## Play at your pace
 
 The campaign targets roughly **400 hours of elapsed progression**, with active play, background play or offline simulation. It does not require 400 hours of clicking.
 
-Three measured policies that revisit the game every six hours completed the campaign in **371.8–415.6 hours**. These are simulation results using the game's real tick engine, not a guarantee for every player. The Development Plan is optional; the first reset of each type requires your confirmation. Choices, strategy and automation affect the pace.
+Three measured policies that revisit the game every six hours completed the campaign in **430.9–450.8 hours**. Matter exceeds the earlier 360–440-hour acceptance band; further balancing may be needed for that policy. These are simulation results using the game's real tick engine, not a guarantee for every player. The Development Plan is optional; the first reset of each type requires your confirmation. Choices, strategy and automation affect the pace.
 
 ## Install and start
 
-1. Download **CelestialMaker-Setup-2.7.0.exe** from [Releases](https://github.com/Jakubix-pl/celestial-maker/releases/latest), or extract the entire portable ZIP.
+1. Download **CelestialMaker-Setup-2.8.0.exe** from [Releases](https://github.com/Jakubix-pl/celestial-maker/releases/latest), or extract the entire portable ZIP.
 2. Install for your Windows user, or run **CelestialMaker.exe** in the extracted folder. Keep its data folder alongside it.
 3. Choose **New Game**. Existing supported saves are migrated when loaded; a new game is not required for an upgrade.
 
-The installer offers a desktop shortcut with the game's icon. It does not launch the game automatically. Uninstalling preserves player saves. Local profiles and export/import work without an account or backend. The current installer is unsigned; published [SHA-256 checksums](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.7.0/CelestialMaker-2.7.0-SHA256.txt) identify these exact files.
+The installer offers a desktop shortcut with the game's icon. It does not launch the game automatically. Uninstalling preserves player saves. Local profiles and export/import work without an account or backend. The current installer is unsigned; published [SHA-256 checksums](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.0/CelestialMaker-2.8.0-SHA256.txt) identify these exact files.
 
 ## Release verification
 
-The release has a built Windows player, automated core/UI checks, installed-player tests, silent installation/upgrade/removal checks, and measured campaigns. The portable source suite contains **250 checks** and the extended system audit contains **63 checks**. A GitHub Actions template is included in `Tools/CI/github-core.yml`; these tests were verified locally from a clean source copy. Hosted CI is not active because the publication credential cannot write workflow files.
+The release has a built Windows player, automated core/UI checks, installed-player tests, silent installation/upgrade/removal checks, and measured campaigns. The portable source suite contains **276 checks** and the extended system audit contains **63 checks**. A GitHub Actions template is included in `Tools/CI/github-core.yml`; these tests were verified locally from a clean source copy. Hosted CI is not active because the publication credential cannot write workflow files.
 
-The late-game offscreen benchmark covered **22 cases and 5,280 measured frames**, including 4K, large text, dialogs and forced automation decision boundaries. No measured sample exceeded 16.67 ms on the tested RTX 4070 Ti / Ryzen 7 9800X3D system. **This is an offscreen workload measurement, not a verified desktop FPS claim.** Human playtesting, Windows DPI behavior and a clean-machine install remain open acceptance checks.
+The late-game offscreen benchmark covered **22 cases and 5,280 measured frames**, including 4K, large text, dialogs and forced automation decision boundaries. Two runs on the RTX 4070 Ti / Ryzen 7 9800X3D system retained 198 and 39 samples above 16.67 ms respectively; the report records the spikes and both runs. **This is an offscreen workload measurement, not a verified desktop FPS claim.** Human playtesting, Windows DPI behavior and a clean-machine install remain open acceptance checks.
 
-[Detailed validation and limitations](Docs/Release/VALIDATION.md) · [Measured performance data](Docs/Release/performance.json) · [Discovery implementation report](Docs/Discovery/REPORT.txt)
+[Detailed validation and limitations](Docs/Release/VALIDATION.md) · [Measured performance data](Docs/Release/performance.json) · [Prestige automation report](Docs/PrestigeAutomation/REPORT.md)
 
 ## Explore the source
 

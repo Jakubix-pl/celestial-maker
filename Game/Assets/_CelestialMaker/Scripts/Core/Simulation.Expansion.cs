@@ -14,11 +14,36 @@ namespace CelestialMaker.Core {
   public bool ThemeUnlocked(int theme)=>theme==0||Meta.cosmetics.Contains("theme-"+theme)||S.achievements.Count>=(theme==1?8:24);
   public int LawSlots=>Math.Min(3,HasLayer(2)?3:HasA("a_energy_3")?3:HasLayer(1)?2:0);
   public bool AdvancedAutomation=>HasLayer(0)||HasLayer(1);
+  public bool AnyAutobuyer=>Array.Exists(S.autobuyers,x=>x);
+  public int AutobuyerCost(int chapter)=>1;
+  public bool AutobuyerUnlocked(int process)=>process>=0&&process<24&&S.autobuyers[Data.generators[process].stage];
+  public bool UnlockAutobuyer(int chapter){
+   if(S.satellite||chapter<0||chapter>=6||!HasLayer(0)||S.autobuyers[chapter]||S.prestige[0].Value<AutobuyerCost(chapter))return false;
+   SettleUniverses();int cost=AutobuyerCost(chapter);Spend(12,cost);S.prestige[0]=S.prestige[0].Value-cost;S.autobuyers[chapter]=true;Revision++;return true;
+  }
+  public bool AllProcessesDiscovered=>HasLayer(0)||Array.Exists(Meta.historicResets,n=>n>0);
+  // Discovery is sticky. Forecast only spendable stock at current net rates;
+  // an unmet chapter gate must also be reachable within the same 30 seconds.
+  public int DiscoverProcesses(){
+   RefreshRates();int mask=0;for(int i=0;i<24;i++){
+    var g=Data.generators[i];bool chapter=Open(g)||g.stage>0&&Meets(S.lifetime[g.stage*2-1].Value+gross[g.stage*2-1]*30,StageTargets[g.stage]);
+    if(AllProcessesDiscovered||S.owned[i]>0||chapter&&Meets(ResearchAvailable(g.costResource)+BigDouble.Max(0,rates[g.costResource])*30,Cost(i)))S.discoveredProcesses[i]=true;
+    if(S.discoveredProcesses[i])mask|=1<<i;
+   }return mask;
+  }
+  public bool ProcessDiscovered(int id)=>id>=0&&id<24&&(AllProcessesDiscovered||S.discoveredProcesses[id]||S.owned[id]>0);
+  public bool SectionUnlocked(int section)=>section<2||section==2&&(HasLayer(0)||PrestigeReward(0)>=1)||section==3&&HasLayer(0)||section==4&&(HasLayer(0)||StageOpen(1))||section==5&&(S.achievements.Count>0||S.discoveredStories.Count>0||S.offlineReport!=null);
+  int GuidedCurrency(){
+   if(!S.automation.buy||!Meta.guidedAutomation||!AnyAutobuyer)return -1;
+   int missing=Array.FindIndex(Data.generators,g=>Open(g)&&AutobuyerUnlocked(Array.IndexOf(Data.generators,g))&&S.owned[Array.IndexOf(Data.generators,g)]==0);
+   if(missing>=0)return Data.generators[missing].costResource;
+   var goal=Array.Find(Data.upgrades,u=>StageOpen(u.stage)&&S.autobuyers[u.stage]&&!S.purchases.Contains(u.id));return goal?.costResource??-1;
+  }
   public BigDouble Gross(int resource){RefreshRates();return gross[resource];}
   public BigDouble CachedGross(int resource)=>gross[resource];
   public BigDouble CachedSpend(int resource)=>BigDouble.Max(0,gross[resource]-rates[resource]);
   public double GoalSeconds(int resource,BigDouble target){RefreshRates();return Boundary(target-S.resources[resource].Value,rates[resource]);}
-  public string[] MultiplierContributions(int id){RefreshRates();BigDouble ordinary=1,discoveries=1,challenge=1,prestige=1;foreach(string key in S.purchases){var u=FindUpgrade(key);if(u.target<0||u.target==id)ordinary*=u.effect;}foreach(string key in S.achievements)discoveries*=achievementIndex[key].reward;foreach(string key in S.completedChallenges)challenge*=challengeIndex[key].reward;for(int i=0;i<3;i++)prestige*=BigDouble.Pow(S.prestige[i].Value+1,.25+.15*i);var g=Data.generators[id];var possible=CachedProductionMultiplier(id)*g.rate*S.owned[id];return new[]{"Installed upgrades ×"+new Number(ordinary),"Discoveries ×"+new Number(discoveries)+" / challenges ×"+new Number(challenge),"Unspent meta currency ×"+new Number(prestige),"Trees, cosmic projects and laws ×"+new Number(ExpansionMultiplier(id)),"Combined production multiplier ×"+new Number(CachedProductionMultiplier(id)),S.paused[id]?"Process paused":g.input>=0&&flows[id]<possible*.999999?"Bottleneck: "+Data.resources[g.input]+" / input or protected stock":"No input bottleneck"};}
+  public string[] MultiplierContributions(int id){RefreshRates();BigDouble ordinary=1,discoveries=1,challenge=1,prestige=1;foreach(string key in S.purchases){var u=FindUpgrade(key);if(u.target<0||u.target==id)ordinary*=u.effect;}foreach(string key in S.achievements)discoveries*=achievementIndex[key].reward;foreach(string key in S.completedChallenges)challenge*=challengeIndex[key].reward;for(int i=0;i<3;i++)prestige*=BigDouble.Pow(S.prestige[i].Value+1,.25+.15*i);var g=Data.generators[id];var possible=CachedProductionMultiplier(id)*g.rate*S.owned[id];return new[]{"Installed upgrades ×"+new Number(ordinary),"Discoveries ×"+new Number(discoveries)+" / challenges ×"+new Number(challenge),"Unspent meta currency ×"+new Number(prestige),"Trees, cosmic projects and laws ×"+new Number(ExpansionMultiplier(id)),"Combined production multiplier ×"+new Number(CachedProductionMultiplier(id)),g.input>=0&&flows[id]<possible*.999999?"Bottleneck: "+Data.resources[g.input]+" / input or protected stock":"No input bottleneck"};}
 
   void ValidateExpansion(){
    var e=Meta;if(e==null||e.megas?.Length!=3||e.strategies?.Length!=3||e.historicEarned?.Length!=3||e.historicResets?.Length!=3||e.universes==null||e.universes.Count>2||e.laws==null||e.transfers==null||e.transfers.Count>3||e.ascensionUpgrades==null||e.genesisUpgrades==null||e.cosmetics==null||e.records==null||e.completedTransfers<0||e.historicResets.Any(n=>n<0))throw new ArgumentException("Invalid expansion schema");
@@ -90,7 +115,7 @@ namespace CelestialMaker.Core {
    if(S.time+1e-7>=Meta.nextHistory){RefreshRates();History.Enqueue(new ProductionSample{time=S.time,energy=S.resources[0],net=new Number(rates[0])});while(History.Count>120)History.Dequeue();Meta.nextHistory=S.time+60;}
    if(S.time+1e-7<Meta.nextAutomation)return;Meta.nextAutomation=S.time+AutomationInterval;
    DiscoveryEvents();if(RunGoal())return;RunDevelopmentPurchases();RunResearchPlan();
-   if(Meta.autoBuild&&!S.satellite&&HasLayer(1))StartMega(PlannedMega());if(S.automation.buy){if(Meta.guidedAutomation)GuidedPurchases();else for(int j=0;j<24;j++){int i=S.automation.priority[j];long old=S.owned[i];Buy(i,MaxBuy(i));if(Report!=null)Report.automaticUnits[i]+=S.owned[i]-old;}}
+   if(Meta.autoBuild&&!S.satellite&&HasLayer(1))StartMega(PlannedMega());if(S.automation.buy&&AnyAutobuyer){if(Meta.guidedAutomation)GuidedPurchases();else for(int j=0;j<24;j++){int i=S.automation.priority[j];if(!AutobuyerUnlocked(i))continue;long old=S.owned[i];Buy(i,MaxBuy(i));if(Report!=null)Report.automaticUnits[i]+=S.owned[i]-old;}}
    if(Meta.autoResearch&&HasA("a_time_2")&&(!S.researchPlan.automatic||S.researchPlan.queue.Count==0))foreach(var u in Data.research)if(ResearchAvailable(u.costResource)>=BigDouble.Parse(u.cost))Purchase(u);
    if(HasLayer(1)&&S.automation.expeditions){foreach(var v in S.voyages)if(!v.claimed&&v.finish<=S.time+1e-7)Claim(v);for(int i=0;i<8;i++)if(ResearchAvailable(0)>=BigDouble.Parse(Data.expeditions[i].cost)*BigDouble.Pow(2,S.expeditionLevels[i]))StartVoyage(i);}
    if(GoalHoldsResets)return;
@@ -98,14 +123,13 @@ namespace CelestialMaker.Core {
    if(AdvancedAutomation)for(int i=2;i>=0;i--)if(S.resets[i]>0&&S.automation.repeatPrestige[i]&&(i!=0||Meta.prestigeEarned.Value<ProgressionBalance.PrestigeForAscension)&&PrestigeReward(i)>=S.automation.prestigeThreshold){Rebirth(i);break;}
   }
   void GuidedPurchases(){
-   int missing=Array.FindIndex(Data.generators,g=>Open(g)&&S.owned[Array.IndexOf(Data.generators,g)]==0);
+   int missing=Array.FindIndex(Data.generators,g=>Open(g)&&AutobuyerUnlocked(Array.IndexOf(Data.generators,g))&&S.owned[Array.IndexOf(Data.generators,g)]==0);
    int currency=missing>=0?Data.generators[missing].costResource:-1;
-   var goal=missing<0?Array.Find(Data.upgrades,u=>StageOpen(u.stage)&&!S.purchases.Contains(u.id)):null;if(goal!=null)currency=goal.costResource;
-   // Auto routing is opt-in and declares its ownership of pauses in the UI.
-   for(int i=0;i<24;i++)S.paused[i]=currency>=0&&Data.generators[i].input==currency;
-   if(missing>=0&&Buy(missing,1)){if(Report!=null)Report.automaticUnits[missing]++;Array.Clear(S.paused,0,24);}
-   for(int j=0;j<24;j++){int i=S.automation.priority[j];if(Data.generators[i].costResource==currency)continue;long old=S.owned[i];Buy(i,Math.Max(1,MaxBuy(i)/4));if(Report!=null)Report.automaticUnits[i]+=S.owned[i]-old;}
-   if(goal!=null&&ResearchAvailable(goal.costResource)>=BigDouble.Parse(goal.cost)&&Purchase(goal))Array.Clear(S.paused,0,24);
+   var goal=missing<0?Array.Find(Data.upgrades,u=>StageOpen(u.stage)&&S.autobuyers[u.stage]&&!S.purchases.Contains(u.id)):null;if(goal!=null)currency=goal.costResource;
+   // Routing banks 20% of incoming target currency while consumers keep running.
+   if(missing>=0&&Buy(missing,1)){if(Report!=null)Report.automaticUnits[missing]++;}
+   for(int j=0;j<24;j++){int i=S.automation.priority[j];if(!AutobuyerUnlocked(i)||Data.generators[i].costResource==currency)continue;long old=S.owned[i];Buy(i,Math.Max(1,MaxBuy(i)/4));if(Report!=null)Report.automaticUnits[i]+=S.owned[i]-old;}
+   if(goal!=null&&ResearchAvailable(goal.costResource)>=BigDouble.Parse(goal.cost))Purchase(goal);
    // Basic routing restores routine research between visits; an explicit plan takes priority.
    if(HasLayer(0)&&S.researchPlan.queue.Count==0)foreach(var u in Data.research)if(ResearchAvailable(u.costResource)>=BigDouble.Parse(u.cost))Purchase(u);
    

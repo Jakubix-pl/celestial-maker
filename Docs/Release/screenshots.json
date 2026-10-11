@@ -1,49 +1,62 @@
 {
   "files": [
     {
+      "path": "Docs/images/30second-discovery.png",
+      "sha256": "33B655E8FC43D44C03627363F50E698FEBCE93CA850F463760F14950BC0E5305"
+    },
+    {
+      "path": "Docs/images/autobuyer-purchase.png",
+      "sha256": "48B29628AB319527642B472A2DFBA743653448A0DB79B1DB12B2120118AC7DC6"
+    },
+    {
       "path": "Docs/images/automation.png",
-      "sha256": "B2E647EEBC69135D7929F36ACBD649749EA4197927A9E02C4101978705A77E44"
+      "sha256": "E092044E1F47C302107AD40E63543C7062AA4CEDF4CAA263C1DB54658BD46B27"
     },
     {
       "path": "Docs/images/challenges.png",
-      "sha256": "47EC95A417A957386105C827C480EAD3DBA2712A17928C4BB2FFF33CE3C64C4E"
+      "sha256": "0E22C1703530F675D2A5DA3FE6450337AB0EC1FE158FDE0D259AC6E68BE16777"
     },
     {
       "path": "Docs/images/dawn.png",
-      "sha256": "A13BAFED380251B46A131270FAEDCB88611D09E3623CB16351A5D4D077BA4DA5"
+      "sha256": "21F69AF4952B143F11C6AA797ED81FAB2E7EB59C00E40A536381C00C96AFE32D"
     },
     {
       "path": "Docs/images/engineering.png",
-      "sha256": "DB89F6A5B71AABEE86AB44108DD1B272FFB4A2A6CE645F0C2E1415C09A1F97E8"
+      "sha256": "B714497B99AF6A32FF05BB9CC7B3A5C805A6D0ADDE0CAF95C225B0D227D80EBA"
+    },
+    {
+      "path": "Docs/images/fresh-production.png",
+      "sha256": "C40BAB3CE055B64F52A1F71203A16777562990A2B2836E2EF9962B034F76F27C"
     },
     {
       "path": "Docs/images/menu.png",
-      "sha256": "6322669975DC4F17B55CACAFD67546F83DFB408154AA764B642F193D1680C0AE"
+      "sha256": "EF548B656ECBFD5CBC79025B0052F344BF00DEFA2A7C55E6913A56714CDAEFA8"
     },
     {
       "path": "Docs/images/overview.png",
-      "sha256": "9CA0A9E83516774DD6C59395A56A2B2BE350462FAC315E6CE32545497066BAAF"
+      "sha256": "2167EA36A2A2768E44CD8F6CF69B1EF7CC1CFB0C8FDF097676662B8FC96C3D04"
     },
     {
       "path": "Docs/images/parallel-universes.png",
-      "sha256": "54422CF49A7C795508CF097E4D19FD525EF7C2180CFE2CAF61BB332C64658B66"
+      "sha256": "BCF8E283B2658A866167EB123A58785B89212B225C73DB03AFCAE83451DFC9FE"
     },
     {
       "path": "Docs/images/production.png",
-      "sha256": "33240919A77E0B9EC48AE471EE2FCCB69F81598224473EB24179E61261183D0B"
+      "sha256": "BF414865BBD5C84142005D76D2583D797EF61F89556D420BCD201B9B37B59B4F"
     },
     {
       "path": "Docs/images/research.png",
-      "sha256": "224BBD43DD8A135BA45DB70627A24F24F50D712DB1A4D41E742155EACE0C8825"
+      "sha256": "05EF7C18618C514D28E4FFA531BE0F85C7EF8A242FCBB32793AD9E2539C22530"
     }
   ],
-  "utc": "2026-10-11T15:02:09.1996278Z",
+  "utc": "2026-10-11T16:08:41.2177137Z",
   "device": "NVIDIA GeForce RTX 4070 Ti",
   "pipeline": "UniversalRenderPipelineAsset / Desktop / PC",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "desktopControlled": false,
   "desktopCaptured": false,
   "visibleGameWindow": false,
   "method": "Edit-mode uGUI / TMP fixture rendered directly to RenderTexture",
-  "fixture": "Tools/Expansion/Fixtures/late-campaign.json (synthetic simulation output), plus a new game"
+  "fixture": "Historical synthetic late-campaign fixture rendered in 2.8.0, plus fresh game/first reset. Displayed historical completion time is not the 2.8 pacing measurement.",
+  "distinctAnimationPhaseRenders": 20
 }

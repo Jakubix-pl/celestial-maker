@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: CelestialMaker.Runtime::CelestialMaker.CosmicPanel
   m_Material: {fileID: 0}
-  m_Color: {r: 0.07058824, g: 0.10980392, b: 0.15294118, a: 1}
+  m_Color: {r: 0.09019608, g: 0.13725491, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -75,6 +75,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
-  edgeColor: {r: 0.20784314, g: 0.28235295, b: 0.34509805, a: 1}
+  edgeColor: {r: 0.32156864, g: 0.41568628, b: 0.5176471, a: 1}
   cut: 6
   edge: 1

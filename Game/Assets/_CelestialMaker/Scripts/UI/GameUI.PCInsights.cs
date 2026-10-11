@@ -26,7 +26,6 @@ namespace CelestialMaker {
   string ProcessStatusPc(int id){
    var g=GameSession.Content.generators[id];
    if(S.owned[id]==0)return "NOT OWNED";
-   if(S.paused[id])return "PAUSED";
    var capacity=Sim.CachedProductionMultiplier(id)*g.rate*S.owned[id];
    if(g.input>=0&&capacity>0&&Sim.CachedFlow(id)<capacity*.999){
     double ratio=Math.Max(0,Math.Min(1,(Sim.CachedFlow(id)/capacity).ToDouble()));
@@ -40,9 +39,9 @@ namespace CelestialMaker {
    Caption(ProcessStatusPc(id),dialog);
    var capacity=Sim.CachedProductionMultiplier(id)*g.rate*S.owned[id];
    Label("Actual output  "+new Number(Sim.CachedFlow(id))+" "+GameSession.Content.resources[g.output]+" /s\nInstalled capacity  "+new Number(capacity)+" /s\nProduction multiplier  ×"+new Number(Sim.CachedProductionMultiplier(id)),dialog,20,108,CosmicStyle.Cyan);
-   string note=S.owned[id]==0?"Buy the first unit to begin production.":S.paused[id]?"This process is paused. Resume it from the production card.":"This process uses its full installed capacity.";
+   string note=S.owned[id]==0?"Buy the first unit to begin production.":"This process uses its full installed capacity.";
    if(g.input>=0){
-    int r=g.input;bool limited=S.owned[id]>0&&!S.paused[id]&&Sim.CachedFlow(id)<capacity*.999;
+    int r=g.input;bool limited=S.owned[id]>0&&Sim.CachedFlow(id)<capacity*.999;
     note="Input: "+GameSession.Content.resources[r]+" / Stock "+S.resources[r]+" / Reserve "+S.reserves[r]+"\n\n"+(limited?(S.resources[r].Value<S.reserves[r].Value?"The input reserve is still filling. Release the reserve or increase upstream production.":"Input supply limits output. Expand or resume an upstream producer; review any protected reserve."):note);
    }
    Label(note,dialog,18,140,CosmicStyle.Muted);

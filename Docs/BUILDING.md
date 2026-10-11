@@ -12,7 +12,7 @@ dotnet Tools/Expansion/bin/Release/net8.0/Expansion.dll "$PWD"
 dotnet Tools/Expansion/bin/Release/net8.0/Expansion.dll "$PWD" --system-audit
 ```
 
-The default suite has 250 checks. The separate system audit has 63. These compile the actual game Core sources, not a duplicate economy model. Output is written under `Logs`, which is ignored by Git. Synthetic fixtures in `Tools/Expansion/Fixtures` make these checks portable. The historical `--local-legacy` option additionally reads private task-local backup fixtures; those files are intentionally not published and that option is not required for the portable suite.
+The default suite has 276 checks. The separate system audit has 63. These compile the actual game Core sources, not a duplicate economy model. Output is written under `Logs`, which is ignored by Git. Synthetic fixtures in `Tools/Expansion/Fixtures` make these checks portable. The historical `--local-legacy` option additionally reads private task-local backup fixtures; those files are intentionally not published and that option is not required for the portable suite.
 
 `Tools/CI/github-core.yml` contains a Linux GitHub Actions template. To enable hosted CI, place it at `.github/workflows/core.yml` using an account credential with workflow permission. The publication credential lacked that scope, so hosted execution is not claimed. Unity's bundled .NET SDK is also usable locally: `Editor/Data/DotNetSdk/dotnet.exe`.
 
@@ -42,7 +42,7 @@ The release used **Inno Setup 6.7.3**. Its compiler is not vendored. Obtain Inno
 ./Tools/build-installer.ps1 -Compiler 'C:/Program Files (x86)/Inno Setup 6/ISCC.exe'
 ```
 
-The default fallback path is `Tools/.tools/InnoSetup-6.7.3/ISCC.exe`. Build the Windows player first. The output is `Builds/CelestialMaker-Setup-2.7.0.exe`, with SHA-256 checksums in `Builds`.
+The default fallback path is `Tools/.tools/InnoSetup-6.7.3/ISCC.exe`. Build the Windows player first. The output is `Builds/CelestialMaker-Setup-2.8.0.exe`, with SHA-256 checksums in `Builds`.
 
 The per-user installer is English, offers an optional desktop shortcut, preserves saves on removal, and does not automatically launch the game. Code signing is not configured. `Tools/test-installer.ps1` performs a silent install, upgrade, installed-player checks and uninstall; it refuses an existing normal installation and should be run in an isolated test environment.
 
@@ -65,4 +65,4 @@ node --test Backend/test/*.test.ts
 node Website/build.mjs
 ```
 
-The website build can succeed without a WebGL export; that does not create a playable WebGL game. Account integrations require separately configured services. Android and refreshed WebGL players are not part of the verified 2.7.0 release.
+The website build can succeed without a WebGL export; that does not create a playable WebGL game. Account integrations require separately configured services. Android and refreshed WebGL players are not part of the verified 2.8.0 release.
