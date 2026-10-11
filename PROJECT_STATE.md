@@ -2,11 +2,14 @@
 
 Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
-Public Windows release preparation is validated; publication status is recorded below.
+Public Windows v2.7.0 is published and its local delivery is verified.
 
 ## Public Windows delivery - 2026-10-11
 
-Public publication authorized by the owner. Target: https://github.com/Jakubix-pl/celestial-maker.
+Public repository: https://github.com/Jakubix-pl/celestial-maker.
+Published release: https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.7.0.
+Anonymous readback verified the README, all ten gallery/icon files and downloadable
+checksums. GitHub asset SHA-256 digests match all three local release files.
 English README, nine actual offscreen UI screenshots, release notes, portable
 fixtures and a GitHub Actions template are prepared. Hosted CI is not enabled:
 the authenticated publication token lacks workflow scope. Clean source: Core 250/250 and extended
@@ -15,7 +18,8 @@ system audit 63/63. Repeated Unity UI: 1479/1479. Runtime sources match the test
 Offscreen performance: 22 cases, 5280 measured frames, zero >16.67 ms;
 worst p95 3.6681 ms, maximum 15.507 ms on RTX 4070 Ti / Ryzen 7 9800X3D.
 Physical FPS, Windows DPI and human play remain UNVERIFIED.
-Delivery destination: C:/Users/Jakubix/Desktop/Calestial Maker.
+DELIVERED: installer, portable ZIP, SHA-256 and English START HERE.txt copied to
+C:/Users/Jakubix/Desktop/Calestial Maker. All copied artifact hashes match.
 Details: Docs/Release/VALIDATION.md. APK for S26 Ultra / Android 17 / One UI 9
 is newly requested and will follow the Windows delivery; it is not yet built.
 
