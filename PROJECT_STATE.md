@@ -2,9 +2,9 @@
 
 Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
-Public Windows and Android v2.8.3 are published; local delivery and downloads hash-verified.
+Public Windows v2.8.3 and Android v2.8.4 are published; local delivery and downloads hash-verified.
 
-## Android touch repair — 2.8.4 built; publication pending
+## Android touch repair — 2.8.4 published
 
 User reports: main menu responds, but in-game buttons including Menu and scrolling
 do not. The complete physical-device failure is not yet reproduced on the host.
@@ -16,7 +16,12 @@ and destruction of a pressed control by automatic navigation refresh. Prior
 geometry/callback checks bypassed the input module and did not cover these paths.
 COMPILED: 17/17 PlayMode tests; three controlled pre-fix failures confirmed.
 BUILT: APK 2.8.4 / 28401, zero errors, 34/34 package checks; signing identity
-and compiled icons match 2.8.3. Publication/delivery pending.
+and compiled icons match 2.8.3. DELIVERED: Desktop / Calestial Maker, APK and checksum;
+older files retained. PUBLISHED: https://github.com/Jakubix-pl/celestial-maker/releases/tag/v2.8.4.
+Both assets anonymously downloaded and SHA-256 matched. README verified against
+the committed Git blob. Release source: 7d6e27447c427da200b4ffda84fb37a7209177b6.
+All 19 files in the local pre-build preservation baseline remain unchanged.
+Publication evidence: Docs/Android/Touch-2.8.4/publication.json.
 Evidence: Docs/Android/TOUCH-2.8.4.md, Logs/AndroidTouch, Logs/Release284.
 No physical Android device is connected through ADB. No desktop control or visible
 game/editor launch. Economy, save schema and progression remain unchanged.
