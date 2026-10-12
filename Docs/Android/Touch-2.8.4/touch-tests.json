@@ -1,0 +1,99 @@
+{
+  "result": "Passed",
+  "total": "17",
+  "passed": "17",
+  "failed": "0",
+  "start-time": "2026-10-12 05:08:28Z",
+  "end-time": "2026-10-12 05:09:01Z",
+  "tests": [
+    {
+      "name": "BootstrapMenuGameProduction",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "ContinueWorksAfterSceneReload",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "FingerWorksWithMouseAndPenPresent",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "LongPressShowsHintWithoutActionThenNormalTapWorks",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "OfflineCatchupReleasesButtons",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "PhysicalPixelsScaleWithPhoneUi(480,960,0,16)",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "PhysicalPixelsScaleWithPhoneUi(1080,2340,420,36)",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "PhysicalPixelsScaleWithPhoneUi(1440,3120,500,48)",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "PhysicalPixelsScaleWithPhoneUi(3120,1440,500,48)",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "PhysicalPixelsScaleWithPhoneUi(1440,3120,99999,48)",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "RepeatedPurchasesUseTouchAndDisabledPurchaseDoesNotSpend",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "ResourceHeaderOpensByTouch",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "SceneOwnsItsActionsAndResumeRestoresInput",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "SmallFingerMovementStillClicks",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "SwipeScrollsWithoutStartingGameAndNextTapWorks",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "TouchStartsPhoneGameAndOpensNavigation",
+      "result": "Passed",
+      "failure": null
+    },
+    {
+      "name": "UnlockDuringFingerPressDoesNotDestroyMenu",
+      "result": "Passed",
+      "failure": null
+    }
+  ],
+  "physicalDevice": "UNVERIFIED",
+  "desktopControlled": false,
+  "visibleGameWindow": false,
+  "method": "Hidden Unity PlayMode; synthetic Touchscreen state events through InputSystemUIInputModule and EventSystem. Five scale cases are pure policy tests; StartupTests is the existing callback smoke test."
+}

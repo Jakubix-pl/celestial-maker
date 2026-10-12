@@ -1,1 +1,1 @@
-{"name":"CelestialMaker.PlayTests","references":["CelestialMaker.Core","CelestialMaker.Runtime","Unity.ugui"],"optionalUnityReferences":["TestAssemblies"]}
+{"name":"CelestialMaker.PlayTests","references":["CelestialMaker.Core","CelestialMaker.Runtime","Unity.ugui","Unity.InputSystem"],"optionalUnityReferences":["TestAssemblies"]}

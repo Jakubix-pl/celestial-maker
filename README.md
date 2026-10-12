@@ -8,7 +8,7 @@ A patient cosmos. An unfolding experiment. Build production chains, automate you
 
 **Windows x64 / Android ARM64 · English · Single player · Free to play · No account required**
 
-[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.3/CelestialMaker-Setup-2.8.3.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.3/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md) · [Android APK](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.3/CelestialMaker-2.8.3-Android-arm64.apk)
+[Download the installer](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.3/CelestialMaker-Setup-2.8.3.exe) · [Portable ZIP](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.3/CelestialMaker-Observatory-Windows.zip) · [Release notes](Docs/Release/RELEASE-NOTES.md) · [Build from source](Docs/BUILDING.md) · [Android APK](https://github.com/Jakubix-pl/celestial-maker/releases/download/v2.8.4/CelestialMaker-2.8.4-Android-arm64.apk)
 
 ![Celestial Maker title screen and orbital artwork](Docs/images/menu.png)
 
@@ -101,7 +101,7 @@ The installer offers a desktop shortcut with the game's icon. It does not launch
 
 ## Android build
 
-An English ARM64 APK is available for Android 17 / One UI 9, intended for S26 Ultra. Portrait and landscape touch layouts share the complete 2.8.3 game. Package checks passed; physical device installation, touch, lifecycle and FPS remain unverified. The APK uses development signing for sideloading, not a store release. [Android evidence and installation](Docs/Android/STATUS.md).
+An English ARM64 APK is available for Android 17 / One UI 9, intended for S26 Ultra. Android 2.8.4 contains the complete 2.8.3 game plus touch repairs: scene-owned input actions, finger-tolerant scrolling, interactive resource headers and stable controls during automatic refresh. Hidden Unity tests exercise actual synthetic touch events; physical S26 Ultra installation, touch, lifecycle and FPS remain unverified. Windows downloads remain 2.8.3. [Touch repair evidence](Docs/Android/TOUCH-2.8.4.md). The APK uses development signing for sideloading, not a store release. [Android evidence and installation](Docs/Android/STATUS.md).
 
 ![Portrait autobuyer introduction](Docs/Android/Images/portrait-autobuyer-guide.png)
 

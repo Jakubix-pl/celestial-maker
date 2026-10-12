@@ -1,0 +1,11 @@
+{
+  "result": "Succeeded",
+  "profile": "AndroidAPKSideload",
+  "target": "Android",
+  "unity": "6000.6.3f1",
+  "utc": "2026-10-12T05:10:36.348133Z",
+  "sourceHash": "00a681674abbbd5112c809c362f097890ca3a62c7feb88022565fcadf7015fdc",
+  "sourceState": "local uncommitted work; not a clean commit",
+  "errors": 0,
+  "seconds": 67.0997108
+}

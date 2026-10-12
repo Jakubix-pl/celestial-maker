@@ -144,11 +144,14 @@ namespace CelestialMaker {
   void RefreshPc(){RefreshSnapshotPc();PresentPc();}
   void UpdatePc(){
    KeyboardObservatoryPc();
-   ReadabilitySearchTickPc();
    if(back!=null&&back.WasPressedThisFrame()){if(pcModal){if(offlineDialog&&S?.offlineReport!=null){S.offlineReport.dismissed=true;GameSession.Instance.Save();}ClosePcModal();}else if(menu)ShowMenuPc();else{page="Overview";ShowPc();}}
-   if(Screen.width!=previousWidth||Screen.height!=previousHeight||PhoneObservatory&&pcLastSafeArea!=Screen.safeArea){Build();return;}
    if(pcToastPanel&&pcToastPanel.gameObject.activeSelf&&Time.unscaledTime>pcToastUntil)pcToastPanel.gameObject.SetActive(false);
    PresentPc();
+   // Preserve the pressed control until EventSystem dispatches pointer-up/click.
+   // Discovery, sorting and safe-area rebuilds must not destroy an active gesture.
+   if(ObservatoryInput.PointerGestureActive)return;
+   ReadabilitySearchTickPc();
+   if(Screen.width!=previousWidth||Screen.height!=previousHeight||PhoneObservatory&&pcLastSafeArea!=Screen.safeArea){Build();return;}
    if(Time.unscaledTime<pcTick)return;pcTick=Time.unscaledTime+.25f;var gs=GameSession.Instance;if(gs==null)return;
    if(status){status.text=gs.SaveBusy?"Saving...":gs.SaveFailed?"Save failed / open Settings to retry":gs.LastSavedUtc>0?"Saved locally / "+DateTimeOffset.FromUnixTimeSeconds((long)gs.LastSavedUtc).ToLocalTime().ToString("HH:mm:ss",System.Globalization.CultureInfo.InvariantCulture):"Local save ready";if(S!=null&&S.offlineRemaining>0){var r=S.offlineReport;status.text="Catching up "+(r==null?"":(100*r.processedSeconds/Math.Max(1,r.requestedSeconds)).ToString("0.0")+"% / "+r.fixedTicks.ToString("N0")+" ticks / ")+OfflineReport.Duration(S.offlineRemaining)+" remaining";}}
    if(menu)return;if(S==null)return;int unlockStamp=NavigationStampPc();if(pcExpansionStamp!=unlockStamp&&!pcModal){pcExpansionStamp=unlockStamp;BuildPc();return;}

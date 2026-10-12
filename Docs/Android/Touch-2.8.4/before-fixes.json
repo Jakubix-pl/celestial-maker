@@ -1,0 +1,29 @@
+{
+  "result": "Failed(Child)",
+  "total": "3",
+  "passed": "0",
+  "failed": "3",
+  "start-time": "2026-10-12 05:07:49Z",
+  "end-time": "2026-10-12 05:07:54Z",
+  "tests": [
+    {
+      "name": "ResourceHeaderOpensByTouch",
+      "result": "Failed",
+      "failure": "  Top raycast must target the requested button\n  Expected: <Resource meter 0 (UnityEngine.GameObject)>\n  But was:  null\n"
+    },
+    {
+      "name": "SmallFingerMovementStillClicks",
+      "result": "Failed",
+      "failure": "  Normal finger jitter must not cancel a tap inside a scroll view\n  Expected string length 7 but was 11. Strings differ at index 1.\n  Expected: \"02_Game\"\n  But was:  \"01_MainMenu\"\n  ------------^\n"
+    },
+    {
+      "name": "UnlockDuringFingerPressDoesNotDestroyMenu",
+      "result": "Failed",
+      "failure": "  The pressed navigation control must survive an automatic unlock refresh\n  Expected: True\n  But was:  False\n"
+    }
+  ],
+  "physicalDevice": "UNVERIFIED",
+  "desktopControlled": false,
+  "visibleGameWindow": false,
+  "method": "Hidden Unity PlayMode; synthetic Touchscreen state events through InputSystemUIInputModule and EventSystem. Five scale cases are pure policy tests; StartupTests is the existing callback smoke test."
+}

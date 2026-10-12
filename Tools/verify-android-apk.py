@@ -19,7 +19,7 @@ def inspect(apk,sdk,jdk,output):
     certs=run([jdk/'bin/java.exe','-jar',tools/'lib/apksigner.jar','verify','--verbose','--print-certs',apk])
     alignment=run([tools/'zipalign.exe','-c','-P','16','-v','4',apk])
     require("package: name='com.celestialmaker.game'" in badging,'Expected application identifier')
-    require("versionName='2.8.3'" in badging and "versionCode='28301'" in badging,'Version 2.8.3 / 28301')
+    require("versionName='2.8.4'" in badging and "versionCode='28401'" in badging,'Version 2.8.4 / 28401')
     require(re.search(r"^(?:minSdkVersion|sdkVersion):'26'$",badging,re.M) is not None,'Minimum Android API 26')
     require("targetSdkVersion:'37'" in badging,'Target Android API 37')
     require("native-code: 'arm64-v8a'" in badging,'ARM64 application')
@@ -62,7 +62,7 @@ def inspect(apk,sdk,jdk,output):
     digest=hashlib.sha256(apk.read_bytes()).hexdigest().upper()
     for name,text in [('badging.txt',badging),('manifest.txt',manifest),('resources.txt',resources),('signature.txt',certs),('zipalign.txt',alignment)]:
         (output/name).write_text(text,encoding='utf-8')
-    result={'pass':True,'checks':checks,'version':'2.8.3','versionCode':28301,'package':'com.celestialmaker.game','minSdk':26,'targetSdk':37,'abi':['arm64-v8a'],'bytes':apk.stat().st_size,'sha256':digest,'permissions':permissions,'nativeLibraries':native,'signature':'Unity development signing identity; not production-signed','physicalDevice':'UNVERIFIED','desktopControlled':False,'visibleGameWindow':False}
+    result={'pass':True,'checks':checks,'version':'2.8.4','versionCode':28401,'package':'com.celestialmaker.game','minSdk':26,'targetSdk':37,'abi':['arm64-v8a'],'bytes':apk.stat().st_size,'sha256':digest,'permissions':permissions,'nativeLibraries':native,'signature':'Unity development signing identity; not production-signed','physicalDevice':'UNVERIFIED','desktopControlled':False,'visibleGameWindow':False}
     (output/'apk-verification.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'pass':True,'checks':len(checks),'bytes':result['bytes'],'sha256':digest,'permissions':permissions}))
 

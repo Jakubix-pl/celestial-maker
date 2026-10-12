@@ -10,7 +10,7 @@ using CelestialMaker.Core;
 
 namespace CelestialMaker {
  public sealed partial class GameUI {
-  public const string ObservatoryVersion="2.8.3";
+  public const string ObservatoryVersion="2.8.4";
   static readonly string[] ObservatorySections={"Overview","Production","Development","Automation","Cosmos","Journal"};
   static readonly string[][] ObservatoryRoutes={new[]{"Overview"},new[]{"Production","Research","Upgrades","Analytics"},new[]{"Prestige","Trees","Roadmap","Challenges"},new[]{"Automation"},new[]{"Megastructures","Reality laws","Parallel universes","Constellations","Expeditions"},new[]{"Achievements","Codex","Offline summary"}};
   static readonly string[][] ObservatoryLabels={new[]{"Overview"},new[]{"Processes","Research","Upgrades","Flows"},new[]{"Resets","Trees & profiles","Milestones","Challenges"},new[]{"Automation"},new[]{"Megastructures","Reality laws","Universes","Connections","Expeditions"},new[]{"Achievements","Codex","Last absence"}};
@@ -36,6 +36,8 @@ namespace CelestialMaker {
   void EditEconomyPc(Action<Simulation> edit){if(pcWorld>0&&Sim.Meta.universes.Any(u=>u.id==pcWorld))Sim.EditUniverse(pcWorld,edit);else edit(Sim);}
 
   void BuildObservatoryPc(){
+   if(Application.isPlaying)ObservatoryInput.Ensure(EventSystem.current);
+   if(PhoneObservatory)ObservatoryTouch.Configure(EventSystem.current,Screen.width,Screen.height,Screen.dpi);
    LoadReadabilityPreferencesPc();
    CosmicStyle.Light=GameSession.Instance?.CurrentSettings.lightUI??false;
    pcBody=Resources.Load<TMP_FontAsset>("UI/PC/BodyFontHD");pcDisplay=Resources.Load<TMP_FontAsset>("UI/PC/DisplayFontHD");
@@ -56,7 +58,7 @@ namespace CelestialMaker {
    if(pcCompactNav)PcButton(PhoneObservatory?"Menu":"Menu / Find",brand,NavigationDrawerPc);
    if(!PhoneObservatory){var wordmark=Label("CELESTIAL\nMAKER",brand,22);wordmark.font=pcDisplay?pcDisplay:pcBody;wordmark.characterSpacing=2;if(pcCompactNav){wordmark.text="CELESTIAL MAKER";wordmark.fontSize=14*PcScale;}}
    var meters=PcBox("Live resource meters",header,Color.clear);Stretch(meters,Vector2.zero,Vector2.one,new Vector2(brandWidth+16,8),new Vector2(-12,-8));var flow=meters.gameObject.AddComponent<HorizontalLayoutGroup>();flow.spacing=20;flow.childControlWidth=flow.childForceExpandWidth=flow.childControlHeight=flow.childForceExpandHeight=true;
-   PresentationCanvas(meters,false);
+   PresentationCanvas(meters,PhoneObservatory);
    int meterCount=PhoneObservatory&&root.rect.width<600*PcScale?1:root.rect.width<1500*PcScale?2:4;
    for(int slot=0;slot<meterCount;slot++)ResourceMeterPc(meters,slot);
    if(!pcCompactNav){nav=PcBox("Navigation rail",root,CosmicStyle.Panel);Stretch(nav,Vector2.zero,new Vector2(0,1),new Vector2(pad,foot+pad*2),new Vector2(pad+rail,-top-pad*2));pcNav=ScrollContent(nav,out var ns,12);

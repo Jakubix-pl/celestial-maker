@@ -1,8 +1,25 @@
-# Celestial Maker — current project state, 2026-10-11
+# Celestial Maker — current project state, 2026-10-12
 
 Root: C:/Users/Jakubix/Desktop/Idle; Unity project: Game, editor 6000.6.3f1.
 Closure continued the existing project. Regional Logistics was untouched.
 Public Windows and Android v2.8.3 are published; local delivery and downloads hash-verified.
+
+## Android touch repair — 2.8.4 built; publication pending
+
+User reports: main menu responds, but in-game buttons including Menu and scrolling
+do not. The complete physical-device failure is not yet reproduced on the host.
+IMPLEMENTED: scene-owned UI input actions with focus/resume activation, a phone
+drag threshold scaled to UI density, a raycaster for interactive resource meters,
+and deferred hierarchy refresh while a pointer gesture is active.
+OBSERVED: synthetic touch exposed resource-header raycast loss, tap/drag sensitivity
+and destruction of a pressed control by automatic navigation refresh. Prior
+geometry/callback checks bypassed the input module and did not cover these paths.
+COMPILED: 17/17 PlayMode tests; three controlled pre-fix failures confirmed.
+BUILT: APK 2.8.4 / 28401, zero errors, 34/34 package checks; signing identity
+and compiled icons match 2.8.3. Publication/delivery pending.
+Evidence: Docs/Android/TOUCH-2.8.4.md, Logs/AndroidTouch, Logs/Release284.
+No physical Android device is connected through ADB. No desktop control or visible
+game/editor launch. Economy, save schema and progression remain unchanged.
 
 ## First two hours — 2.8.3 validated
 

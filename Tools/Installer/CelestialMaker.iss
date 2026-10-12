@@ -1,4 +1,4 @@
-#define GameVersion "2.8.3"
+#define GameVersion "2.8.4"
 #ifndef ProjectRoot
   #error ProjectRoot is required
 #endif
